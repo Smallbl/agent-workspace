@@ -49,6 +49,18 @@
 
 **📋 所有简报规则：中文优先，英文翻译概述，每条必附原文链接**
 
+## 系统稳定性（2026-03-29配置）
+
+### LaunchAgent 开机启动
+- ✅ 已安装 LaunchAgent 服务
+- 电脑重启后 OpenClaw 自动启动
+- 日志：`~/.openclaw/logs/gateway.log`
+- 状态：`openclaw daemon status` 查看
+
+### 当前运行状态
+- Gateway: 运行中 (pid 48712)
+- Dashboard: http://127.0.0.1:18789/
+
 ## 工作助手规则（2026-03-29确立）
 
 ### 核心流程
