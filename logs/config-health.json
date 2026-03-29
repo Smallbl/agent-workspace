@@ -1,0 +1,16 @@
+{
+  "entries": {
+    "/Users/doujiang/.openclaw/openclaw.json": {
+      "lastKnownGood": {
+        "hash": "e015fb00066752fa815901053c46415849b8f42f24043b337edfe2992dd24df6",
+        "bytes": 2724,
+        "mtimeMs": 1774746110034.2852,
+        "ctimeMs": 1774746110034.9802,
+        "hasMeta": true,
+        "gatewayMode": "local",
+        "observedAt": "2026-03-29T01:01:50.037Z"
+      },
+      "lastObservedSuspiciousSignature": null
+    }
+  }
+}
