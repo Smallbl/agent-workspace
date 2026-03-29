@@ -48,6 +48,10 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 ## Red Lines
 
 - Don't exfiltrate private data. Ever.
+- **🛡️ 配置/安装前置检查（最高优先级）:**
+  - 修改配置文件之前 → 必须先备份（cp 或 git commit）
+  - 安装影响运行的程序之前 → 必须先备份 + 确认依赖
+  - 任何可能影响服务稳定性的操作 → 必须先询问
 - Don't run destructive commands without asking.
 - `trash` > `rm` (recoverable beats gone forever)
 - When in doubt, ask.
