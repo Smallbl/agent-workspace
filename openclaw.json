@@ -87,19 +87,21 @@
   "session": {
     "dmScope": "per-channel-peer"
   },
-  "channels": {
-    "feishu": {
-      "enabled": true,
-      "appId": "cli_a94c1f7994f8dbc8",
-      "appSecret": "CdfkPo3aHEYP7q8xodS2odUZAtyIGgjg",
-      "endpoint": "https://open.feishu.cn",
-      "mode": "websocket",
-      "chatPolicy": {
-        "direct": true,
-        "group": "mention"
+"channels": {
+  "feishu": {
+    "enabled": true,
+    "connectionMode": "websocket",  // 新版：mode → connectionMode
+    "domain": "feishu",             // 国内必填（默认就是feishu）
+    "dmPolicy": "open",             // 私聊：直接响应（对应旧 direct:true）
+    "groupPolicy": "mention",       // 群聊：需@机器人（对应旧 group:"mention"）
+    "accounts": {                   // ✅ 新版必须用 accounts 包裹
+      "main": {                     // 账户id（固定main即可）
+        "appId": "cli_a94c1f7994f8dbc8",
+        "appSecret": "CdfkPo3aHEYP7q8xodS2odUZAtyIGgjg"
       }
     }
-  },
+  }
+},
   "gateway": {
     "port": 18789,
     "mode": "local",
