@@ -1,4 +1,10 @@
 {
+  "wizard": {
+    "lastRunAt": "2026-03-29T00:56:42.122Z",
+    "lastRunVersion": "2026.3.24",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
   "auth": {
     "profiles": {
       "minimax:cn": {
@@ -49,7 +55,13 @@
     }
   },
   "tools": {
-    "profile": "coding"
+    "profile": "coding",
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "tavily"
+      }
+    }
   },
   "commands": {
     "native": "auto",
@@ -84,8 +96,33 @@
       ]
     }
   },
+  "plugins": {
+    "entries": {
+      "tavily": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "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"
+          }
+        }
+      }
+    }
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "appId": "cli_a94c1f7994f8dbc8",
+      "appSecret": "CdfkPo3aHEYP7q8xodS2odUZAtyIGgjg",
+      "endpoint": "https://open.feishu.cn",
+      "mode": "websocket",
+      "chatPolicy": {
+        "direct": true,
+        "group": "mention"
+      }
+    }
+  },
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-03-29T00:55:55.104Z"
+    "lastTouchedAt": "2026-03-29T00:56:42.161Z"
   }
 }

@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.24",
-    "lastTouchedAt": "2026-03-29T01:01:50.034Z"
+    "lastTouchedAt": "2026-03-30T13:51:20.266Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-29T00:56:42.122Z",
@@ -56,7 +56,18 @@
         }
       },
       "workspace": "/Users/doujiang/.openclaw/workspace"
-    }
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "frontend-dev",
+        "name": "frontend-dev",
+        "workspace": "/Users/doujiang/.openclaw/workspace-frontend",
+        "agentDir": "/Users/doujiang/.openclaw/agents/agent-frontend/agent"
+      }
+    ]
   },
   "tools": {
     "profile": "coding",
