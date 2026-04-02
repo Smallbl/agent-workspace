@@ -8,7 +8,7 @@
       "description": "每天零点记忆巡检备份",
       "enabled": true,
       "createdAtMs": 1774763435580,
-      "updatedAtMs": 1775047252238,
+      "updatedAtMs": 1775145661864,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -27,15 +27,16 @@
         "to": "ou_748c15a782356f78466b01436dbbcbe8"
       },
       "state": {
-        "nextRunAtMs": 1775145600000,
-        "lastRunAtMs": 1775045909433,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 75943,
+        "nextRunAtMs": 1775232000000,
+        "lastRunAtMs": 1775145600008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 61856,
         "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1775137625128
+        "consecutiveErrors": 2,
+        "lastErrorReason": "timeout",
+        "lastError": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
+        "lastDelivered": true
       }
     },
     {
@@ -81,7 +82,7 @@
       "description": "每天9点推送OpenClaw最新资讯",
       "enabled": true,
       "createdAtMs": 1774764197660,
-      "updatedAtMs": 1775091792192,
+      "updatedAtMs": 1775142199074,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -91,7 +92,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是飞书官+工具官。请搜索OpenClaw最新资讯：\n1. 使用tavily搜索 \"OpenClaw 最新更新 2026\" 和 \"OpenClaw news March 2026\"\n2. 整理3-5条最新相关资讯，中文内容直接使用，英文内容翻译成中文概述\n3. 每条必须包含：中文标题、中文概述、原文链接\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n只推送真正有价值的内容，无新内容时简单告知即可。",
+        "message": "你是飞书官+工具官。请搜索OpenClaw最新资讯：\n1. 使用tavily搜索 \"OpenClaw 最新更新 2026\" 和 \"OpenClaw news March 2026\"\n2. 整理3-5条最新相关资讯，中文内容直接使用，英文内容翻译成中文概述\n3. 每条必须包含：中文标题、中文概述、原文链接\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n\n同时请你自己认真阅读这些内容，思考：\n- 这些更新对你和你的团队有什么价值？\n- 有哪些功能或改进可以直接应用到我们的工作流？\n- 有没有值得尝试的新特性？\n\n请在简报最后添加【豆浆学习笔记】部分，写下你认为有价值的内容和你计划如何应用。",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -220,6 +221,35 @@
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
+      }
+    },
+    {
+      "id": "b1c34438-58b0-47ab-96f0-f783692d8dd7",
+      "agentId": "main",
+      "name": "每周工作回顾",
+      "description": "每周日晚9点生成工作回顾",
+      "enabled": true,
+      "createdAtMs": 1775141949000,
+      "updatedAtMs": 1775141949000,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * 0",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请从每日任务系统拉取本周任务完成情况，生成周报发给我",
+        "timeoutSeconds": 180
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "last",
+        "to": "ou_748c15a782356f78466b01436dbbcbe8"
+      },
+      "state": {
+        "nextRunAtMs": 1775394000000
       }
     }
   ]

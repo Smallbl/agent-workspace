@@ -1,0 +1,18 @@
+# 排除敏感文件
+credentials/
+sessions/
+logs/
+media/
+*.log
+
+# 排除临时文件
+.DS_Store
+*.bak
+*.swp
+
+# 排除 node_modules
+node_modules/
+
+# 排除 session 文件（太大，不需要备份）
+*.jsonl
+sessions.json
