@@ -3,12 +3,12 @@
   "jobs": [
     {
       "id": "b142b71c-4191-4f03-9888-9402d2f57e05",
-      "agentId": "main",
+      "agentId": "memory-agent",
       "name": "memory-daily-backup",
       "description": "每天零点记忆巡检备份",
       "enabled": true,
       "createdAtMs": 1774763435580,
-      "updatedAtMs": 1775045898890,
+      "updatedAtMs": 1775047252238,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -18,7 +18,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是记忆官。请执行每日备份任务：\n1) 检查 ~/.openclaw/ 目录下是否有未提交的配置文件变更，如有则：cd ~/.openclaw && git add openclaw.json cron/jobs.json agents/ identity/ devices/ feishu/ && git commit -m \"配置备份 $(date '+%Y-%m-%d')\" && git push origin-workspace main:config-backup\n2) 检查 memory/ 目录下是否有新内容，如有则：git add . && git commit -m \"记忆每日备份 $(date '+%Y-%m-%d')\" && git push\n3) 返回备份结果简报（告知哪些内容被备份了）",
+        "message": "你是记忆官。请执行每日记忆整合任务：\n\n1. 读取以下记忆文件，检查过去24小时内是否有新内容：\n   - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆）\n   - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆）\n   \n2. 识别新增内容：项目进展、决策记录、问题备忘\n\n3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记忆库）\n\n4. 执行备份：\n   cd ~/.openclaw && git add workspace/memory/ agents/ cron/jobs.json openclaw.json && git commit -m \"记忆日备份 $(date '+%Y-%m-%d')\" && git push origin-workspace main:config-backup\n\n5. 返回简报：哪些记忆被更新了，下次注意什么",
         "timeoutSeconds": 180
       },
       "delivery": {
@@ -27,25 +27,25 @@
         "to": "ou_748c15a782356f78466b01436dbbcbe8"
       },
       "state": {
-        "nextRunAtMs": 1775059200000,
-        "lastRunAtMs": 1774972800010,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 60015,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastErrorReason": "timeout",
-        "runningAtMs": 1775045909433
+        "nextRunAtMs": 1775145600000,
+        "lastRunAtMs": 1775045909433,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 75943,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true,
+        "runningAtMs": 1775137625128
       }
     },
     {
       "id": "e24ab4d8-5a96-49f3-8ffb-1bd76e055535",
-      "agentId": "main",
+      "agentId": "memory-agent",
       "name": "memory-weekly-review",
       "description": "每周一早上9点记忆回顾更新",
       "enabled": true,
       "createdAtMs": 1774763444066,
-      "updatedAtMs": 1774870826104,
+      "updatedAtMs": 1775047259651,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * 1",
@@ -55,7 +55,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是记忆官。请执行每周记忆回顾任务：1) 读取 memory/ 目录下本周的所有日记文件 2) 读取 MEMORY.md 了解当前长期记忆 3) 将本周重要内容提炼更新到 MEMORY.md 4) 执行 git add . && git commit -m \"记忆官每周回顾 2026-03-29\" && git push 5) 返回本周回顾简报",
+        "message": "你是记忆官。请执行每周记忆回顾任务：\n\n1) 读取 ~/.openclaw/workspace/memory/ 目录下本周的所有日记文件\n2) 读取 ~/.openclaw/workspace/MEMORY.md 了解当前长期记忆\n3) 将本周重要内容提炼更新到 MEMORY.md（中央记忆库）\n4) 清理过期或不再相关的内容\n5) 执行备份：\n   cd ~/.openclaw && git add workspace/memory/ agents/ cron/jobs.json openclaw.json && git commit -m \"记忆官每周回顾 $(date '+%Y-%m-%d')\" && git push origin-workspace main:config-backup\n6) 返回本周回顾简报（做了哪些更新）",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -81,7 +81,7 @@
       "description": "每天9点推送OpenClaw最新资讯",
       "enabled": true,
       "createdAtMs": 1774764197660,
-      "updatedAtMs": 1775043442411,
+      "updatedAtMs": 1775091792192,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -91,7 +91,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是飞书官+工具官。请搜索OpenClaw最新资讯：\n1. 使用tavily搜索 \"OpenClaw 最新更新 2026\" 和 \"OpenClaw news March 2026\"\n2. 整理3-5条最新相关资讯，中文内容直接使用，英文内容翻译成中文概述\n3. 每条必须包含：中文标题、中文概述、原文链接\n4. 通过feishu工具主动发送给王（openId: ou_748c15a782356f78466b01436dbbcbe8），格式：【OpenClaw日报】📅日期 + 资讯\n只推送真正有价值的内容，无新内容时简单告知即可。",
+        "message": "你是飞书官+工具官。请搜索OpenClaw最新资讯：\n1. 使用tavily搜索 \"OpenClaw 最新更新 2026\" 和 \"OpenClaw news March 2026\"\n2. 整理3-5条最新相关资讯，中文内容直接使用，英文内容翻译成中文概述\n3. 每条必须包含：中文标题、中文概述、原文链接\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n只推送真正有价值的内容，无新内容时简单告知即可。",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -101,14 +101,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775091600000,
-        "lastRunAtMs": 1775043254817,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 187594,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 3,
-        "lastError": "AxiosError: Request failed with status code 400"
+        "nextRunAtMs": 1775178000000,
+        "lastRunAtMs": 1775091600007,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 192185,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -118,7 +118,7 @@
       "description": "工作日早上8点AI前沿简报",
       "enabled": true,
       "createdAtMs": 1774764624250,
-      "updatedAtMs": 1775005437540,
+      "updatedAtMs": 1775088192246,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * 1-5",
@@ -128,7 +128,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是飞书官+工具官。请为王准备今日AI前沿早报（个人兴趣）：\n1. 使用tavily搜索: 'AI人工智能 最新新闻 2026' 和 'artificial intelligence news today'\n2. 整理3-5条最新最热的AI科技新闻，翻译成中文，附原文链接\n3. 纯个人兴趣，不限行业，越有趣越好\n4. 通过飞书发送给王，格式：【AI早报】📅日期 + 3-5条资讯\n无新内容时简单告知即可。",
+        "message": "你是飞书官+工具官。请为王准备今日AI前沿早报（个人兴趣）：\n1. 使用tavily搜索: 'AI人工智能 最新新闻 2026' 和 'artificial intelligence news today'\n2. 整理3-5条最新最热的AI科技新闻，翻译成中文，附原文链接\n3. 纯个人兴趣，不限行业，越有趣越好\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n无新内容时简单告知即可。",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -138,11 +138,11 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775088000000,
-        "lastRunAtMs": 1775005226298,
+        "nextRunAtMs": 1775174400000,
+        "lastRunAtMs": 1775088000008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 211242,
+        "lastDurationMs": 192238,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
@@ -155,7 +155,7 @@
       "description": "工作日下午5点AI前沿简报",
       "enabled": true,
       "createdAtMs": 1774764636221,
-      "updatedAtMs": 1775044717815,
+      "updatedAtMs": 1775120594416,
       "schedule": {
         "kind": "cron",
         "expr": "0 17 * * 1-5",
@@ -165,7 +165,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是飞书官+工具官。请为王准备今日AI前沿晚报（个人兴趣）：\n1. 使用tavily搜索: \"AI人工智能 最新资讯 2026\" 和 \"artificial intelligence latest developments\"\n2. 整理3-5条今日最值得关注的AI科技新闻，翻译成中文，附原文链接\n3. 纯个人兴趣，不限行业，越有趣越好\n4. 通过feishu工具发送给王（openId: ou_748c15a782356f78466b01436dbbcbe8），格式：【AI晚报】📅日期 + 资讯\n无新内容时简单告知即可。",
+        "message": "你是飞书官+工具官。请为王准备今日AI前沿晚报（个人兴趣）：\n1. 使用tavily搜索: \"AI人工智能 最新资讯 2026\" 和 \"artificial intelligence latest developments\"\n2. 整理3-5条今日最值得关注的AI科技新闻，翻译成中文，附原文链接\n3. 纯个人兴趣，不限行业，越有趣越好\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n无新内容时简单告知即可。",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -175,42 +175,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775120400000,
-        "lastRunAtMs": 1775044651458,
+        "nextRunAtMs": 1775206800000,
+        "lastRunAtMs": 1775120400010,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 66357,
+        "lastDurationMs": 194406,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
         "lastDelivered": true
-      }
-    },
-    {
-      "id": "30d4919b-8058-426d-b045-e0aebb699ae3",
-      "agentId": "main",
-      "name": "提醒-周四中招联合进度汇报",
-      "description": "周四9:30中招联合例会提醒",
-      "enabled": true,
-      "deleteAfterRun": true,
-      "createdAtMs": 1774768824274,
-      "updatedAtMs": 1774768824274,
-      "schedule": {
-        "kind": "at",
-        "at": "2026-04-02T01:00:00.000Z"
-      },
-      "sessionTarget": "isolated",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "agentTurn",
-        "message": "📅 【会议提醒】周四 09:30 | 中招联合例会 | 议题：汇报电子招投标平台私有化部署进度"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_748c15a782356f78466b01436dbbcbe8"
-      },
-      "state": {
-        "nextRunAtMs": 1775091600000
       }
     },
     {
@@ -220,7 +192,7 @@
       "description": "工作日11:30招投标行业AI简报",
       "enabled": true,
       "createdAtMs": 1774785904453,
-      "updatedAtMs": 1775045913834,
+      "updatedAtMs": 1775098987211,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 30 * 1-5",
@@ -230,7 +202,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "你是飞书官+工具官。请为王准备今日招投标行业AI应用简报：\n1. 使用tavily搜索: \"人工智能 招投标 数字化转型 2026\" 和 \"AI 政府招标 智能采购\"\n2. 从36氪、中国政府采购网、亿邦动力等权威渠道筛选\n3. 整理2-3条今日AI+招投标相关的最新动态，每条包含：标题、简要、原文链接\n4. 通过feishu工具发送给王（openId: ou_748c15a782356f78466b01436dbbcbe8），格式：【工作AI简报】📅日期 + 资讯\n无相关内容时简单告知即可。",
+        "message": "你是飞书官+工具官。请为王准备今日招投标行业AI应用简报：\n1. 使用tavily搜索: \"人工智能 招投标 数字化转型 2026\" 和 \"AI 政府招标 智能采购\"\n2. 从36氪、中国政府采购网、亿邦动力等权威渠道筛选\n3. 整理2-3条今日AI+招投标相关的最新动态，每条包含：标题、简要、原文链接\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n无相关内容时简单告知即可。",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -240,15 +212,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775098800000,
-        "lastRunAtMs": 1775012400006,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 180014,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "lastErrorReason": "timeout",
-        "lastError": "cron: job execution timed out"
+        "nextRunAtMs": 1775185200000,
+        "lastRunAtMs": 1775098800010,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 187201,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     }
   ]

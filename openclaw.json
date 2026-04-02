@@ -62,6 +62,27 @@
         "id": "main"
       },
       {
+        "id": "memory-agent",
+        "name": "记忆官",
+        "workspace": "/Users/doujiang/.openclaw/workspace-memory",
+        "agentDir": "/Users/doujiang/.openclaw/agents/agent-memory",
+        "model": "minimax/MiniMax-M2.7"
+      },
+      {
+        "id": "feishu-agent",
+        "name": "飞书官",
+        "workspace": "/Users/doujiang/.openclaw/workspace-feishu",
+        "agentDir": "/Users/doujiang/.openclaw/agents/agent-feishu",
+        "model": "minimax/MiniMax-M2.7"
+      },
+      {
+        "id": "tools-agent",
+        "name": "工具官",
+        "workspace": "/Users/doujiang/.openclaw/workspace-tools",
+        "agentDir": "/Users/doujiang/.openclaw/agents/agent-tools",
+        "model": "minimax/MiniMax-M2.7"
+      },
+      {
         "id": "frontend-dev",
         "name": "frontend-dev",
         "workspace": "/Users/doujiang/.openclaw/workspace-frontend",
@@ -77,14 +98,14 @@
       {
         "id": "subagent-backend",
         "name": "subagent-backend",
-        "workspace": "/Users/doujiang/.openclaw/workspace",
+        "workspace": "/Users/doujiang/.openclaw/workspace-backend",
         "agentDir": "/Users/doujiang/.openclaw/agents/subagent-backend",
         "model": "minimax/MiniMax-M2.7"
       },
       {
         "id": "subagent-test",
         "name": "subagent-test",
-        "workspace": "/Users/doujiang/.openclaw/workspace",
+        "workspace": "/Users/doujiang/.openclaw/workspace-test",
         "agentDir": "/Users/doujiang/.openclaw/agents/subagent-test",
         "model": "minimax/MiniMax-M2.7"
       }
