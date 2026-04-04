@@ -137,6 +137,13 @@
 | Phase 2 | 流程规范化：测试证据模板、Token监控 | 2026-04-09 | ⏳ 进行中 |
 | Phase 3 | 完整流水线：前后端并行、质量闸门、熔断机制 | 长期 | 📋 待开始 |
 
+### 架构整理待办（节后处理）
+- [ ] 清理重复 workspace：frontend-dev vs subagent-frontend
+- [ ] 确认 tools-agent 是否在使用
+- [ ] 验证 cron 超时修复是否生效（明个工作日）
+- [ ] 向 OpenClaw 官方反馈 announce bug
+- [ ] 考虑简化简报机制：合并到每日一次主动推送
+
 ### Phase 2 任务清单
 - [ ] 测试Agent输出标准化模板（必须有运行日志/截图/接口返回）
 - [ ] Token使用监控+超限告警
@@ -158,6 +165,30 @@
 ## 学习与成长
 
 ### 故障记录（重要）
+
+**2026-04-04 OpenClaw 2026.4.1 announce bug**
+- **现象：** memory-daily-backup、openclaw-daily-news 状态为 error
+  错误：`TypeError: Cannot read properties of undefined (reading 'trim')`
+  ai-evening-briefing 状态为 skipped：`main job requires payload.kind="systemEvent"`
+- **根本原因：** OpenClaw 2026.4.1 版本的 announce 机制内部 bug
+- **影响范围：**
+  - 记忆日备份（每天00:00）失效
+  - OpenClaw日报（每天09:00）失效
+  - AI晚报（每天17:00）失效
+- **临时方案：**
+  - 记忆备份：已手动备份（2026-04-04），节后第一天再手动备份
+  - 日报：改为豆浆主动推送，王发消息时附带简报
+- **状态：** 等待 OpenClaw 官方修复
+
+**2026-04-04 超时配置修复**
+- **现象：** ai-morning-briefing、ai-work-briefing 超时
+- **根本原因：** agents.defaults.timeoutSeconds 300秒不够
+- **解决方案：** 修改 ~/.openclaw/openclaw.json：`timeoutSeconds: 300 → 600`
+- **验证：** Gateway 已重启，明个工作日验证
+
+**2026-04-04 Skill安装**
+- self-improving-agent 已安装（clawhub）
+- .learnings/ 目录已初始化
 
 **2026-04-01 cron任务超时问题**
 - **现象：** 所有定时简报任务（AI早报、AI晚报、工作AI简报、OpenClaw日报）连续两天失败，状态为 error
