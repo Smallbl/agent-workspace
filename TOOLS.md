@@ -46,6 +46,26 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - **模板**：见 `memory/sessions/SESSION-TEMPLATE.md`
 - **限制**：每条摘要不超过 2000 tokens
 
+## 工具并发标记
+
+派发任务时，可并行的工具标注 `🔗`，必须串行的标注 `🔒`：
+
+| 工具 | 标记 | 说明 |
+|------|------|------|
+| tavily_search | 🔗 | 可并行，多源同时搜索 |
+| feishu_bitable_* | 🔗 | 可并行，多表同时读写 |
+| feishu_doc read | 🔗 | 可并行，多文档同时读取 |
+| feishu_doc write | 🔒 | 串行，避免写入冲突 |
+| exec | 🔒 | 必须串行，副作用强 |
+| git | 🔒 | 必须串行，文件锁 |
+| read/write/edit | 🔗 | 可并行，同一文件不同区域 |
+| message send | 🔗 | 可并行，多人同时通知 |
+
+**并行派发原则**：
+- 独立任务优先并行（搜索、读取、格式化）
+- 写入类必须串行
+- 有副作用的命令必须串行
+
 ## 目录结构
 
 ```
