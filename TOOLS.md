@@ -37,4 +37,23 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 
 ---
 
+## Session 管理
+
+基于 Claude Code Session Memory 设计：
+
+- **触发阈值**：10,000 tokens 初始化 + 每 5,000 tokens 增量
+- **摘要文件**：`memory/sessions/{date}-{topic}.md`
+- **模板**：见 `memory/sessions/SESSION-TEMPLATE.md`
+- **限制**：每条摘要不超过 2000 tokens
+
+## 目录结构
+
+```
+memory/
+├── topics/          # 永久记忆分主题
+├── sessions/        # Session 摘要
+├── cron-output/    # 定时简报输出
+└── YYYY-MM-DD.md   # 每日记忆
+```
+
 Add whatever helps you do your job. This is your cheat sheet.
