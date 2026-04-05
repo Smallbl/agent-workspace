@@ -120,6 +120,10 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 
 **📋 代码操作前必查（任何时候想写代码/改代码前）：**
 
+- [ ] **需要测试验证吗？**
+  → 功能开发完成后 → 必须派发给 test-agent
+  → 禁止自己用 curl 代替专业测试
+
 - [ ] **这是新功能/实现吗？**
   → 是 → ❌ 禁止自己写 → 必须派发
   
