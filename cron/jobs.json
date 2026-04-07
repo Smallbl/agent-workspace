@@ -80,7 +80,7 @@
       "description": "每天9点推送OpenClaw最新资讯",
       "enabled": true,
       "createdAtMs": 1774764197660,
-      "updatedAtMs": 1775437200014,
+      "updatedAtMs": 1775523600017,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -90,7 +90,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "systemEvent",
-        "message": "你是飞书官+工具官。请搜索OpenClaw最新资讯：\n1. 使用tavily搜索 \"OpenClaw 最新更新 2026\" 和 \"OpenClaw news March 2026\"\n2. 整理3-5条最新相关资讯，中文内容直接使用，英文内容翻译成中文概述\n3. 每条必须包含：中文标题、中文概述、原文链接\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n\n同时请你自己认真阅读这些内容，思考：\n- 这些更新对你和你的团队有什么价值？\n- 有哪些功能或改进可以直接应用到我们的工作流？\n- 有没有值得尝试的新特性？\n\n请在简报最后添加【豆浆学习笔记】部分，写下你认为有价值的内容和你计划如何应用。",
+        "message": "你是飞书官+工具官。请搜索OpenClaw最新资讯：\n\n1. 使用tavily搜索: \"OpenClaw 最新更新 2026\" 和 \"OpenClaw news March April 2026\"\n\n2. 获取内容后必须：\n   - 用tavily_extract提取每个链接的正文内容\n   - 把英文内容翻译成中文\n   - 把中文内容直接使用\n   \n3. 整理3-5条最新资讯，每条包含：\n   - 中文标题\n   - 2-3句中文概要（说明这是什么、为什么重要）\n   - 原文链接（保留，供需要时查阅）\n\n4. 搜索结果如果都是英文网站，必须全部翻译后再提供\n\n5. 额外任务：认真阅读这些内容，思考：\n   - 这些更新对你和你的团队有什么价值？\n   - 有哪些功能或改进可以直接应用到我们的工作流？\n   - 有没有值得尝试的新特性？\n   \n   在简报最后添加【豆浆学习笔记】部分。\n\n返回整理好的简报内容（不要自己发送，announce投递会自动发送）。",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -100,13 +100,13 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775523600000,
-        "lastRunAtMs": 1775437200012,
+        "nextRunAtMs": 1775610000000,
+        "lastRunAtMs": 1775523600010,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 2,
+        "lastDurationMs": 7,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 4,
+        "consecutiveErrors": 5,
         "lastError": "TypeError: Cannot read properties of undefined (reading 'trim')"
       }
     },
