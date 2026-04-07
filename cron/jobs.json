@@ -184,7 +184,7 @@
       "description": "工作日11:30招投标行业AI简报",
       "enabled": true,
       "createdAtMs": 1774785904453,
-      "updatedAtMs": 1775444400012,
+      "updatedAtMs": 1775530800013,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 30 * 1-5",
@@ -194,7 +194,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "systemEvent",
-        "message": "你是飞书官+工具官。请为王准备今日招投标行业AI应用简报：\n1. 使用tavily搜索: \"人工智能 招投标 数字化转型 2026\" 和 \"AI 政府招标 智能采购\"\n2. 从36氪、中国政府采购网、亿邦动力等权威渠道筛选\n3. 整理2-3条今日AI+招投标相关的最新动态，每条包含：标题、简要、原文链接\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n无相关内容时简单告知即可。",
+        "message": "你是飞书官+工具官。请为王准备今日招投标行业AI应用简报：\n\n1. 使用tavily搜索时必须包含时间限定词：\n   - \"人工智能 招投标 数字化转型 今天\" \n   - \"AI 政府招标 智能采购 最新\"\n   - \"招投标 人工智能 2026年4月\"\n   - time_range 设置为 \"day\" 或 \"week\"\n\n2. 严格筛选信息源：\n   - 优先：36氪(36kr.com)、中国政府购买服务信息平台、各省政府采购网/公共资源交易中心\n   - 其次：省级政府采购网、招标投标协会官网\n   - 排除：个人博客、无明确日期的汇总文章\n\n3. 每条新闻必须满足：\n   - 有明确日期（今日/昨天/本周）\n   - 内容与\"招投标+AI\"直接相关\n   - 不是旧闻翻炒\n\n4. 格式：\n   - 中文标题\n   - 2-3句中文概要（含日期来源）\n   - 原文链接\n\n无相关最新内容时简单告知即可。返回整理好的简报内容（不要自己发送，announce投递会自动发送）。",
         "timeoutSeconds": 300
       },
       "delivery": {
@@ -204,13 +204,13 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775530800000,
-        "lastRunAtMs": 1775444400008,
+        "nextRunAtMs": 1775617200000,
+        "lastRunAtMs": 1775530800007,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 4,
+        "lastDurationMs": 6,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 3,
+        "consecutiveErrors": 4,
         "lastError": "TypeError: Cannot read properties of undefined (reading 'trim')"
       }
     },
