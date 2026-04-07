@@ -8,16 +8,16 @@
       "description": "每天零点记忆巡检备份",
       "enabled": true,
       "createdAtMs": 1774763435580,
-      "updatedAtMs": 1775145661864,
+      "updatedAtMs": 1775491200015,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
+        "kind": "systemEvent",
         "message": "你是记忆官。请执行每日记忆整合任务：\n\n1. 读取以下记忆文件，检查过去24小时内是否有新内容：\n   - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆）\n   - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆）\n   \n2. 识别新增内容：项目进展、决策记录、问题备忘\n\n3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记忆库）\n\n4. 执行备份：\n   cd ~/.openclaw && git add workspace/memory/ agents/ cron/jobs.json openclaw.json && git commit -m \"记忆日备份 $(date '+%Y-%m-%d')\" && git push origin-workspace main:config-backup\n\n5. 返回简报：哪些记忆被更新了，下次注意什么",
         "timeoutSeconds": 180
       },
@@ -27,16 +27,14 @@
         "to": "ou_748c15a782356f78466b01436dbbcbe8"
       },
       "state": {
-        "nextRunAtMs": 1775232000000,
-        "lastRunAtMs": 1775145600008,
+        "nextRunAtMs": 1775577600000,
+        "lastRunAtMs": 1775491200009,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 61856,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 2,
-        "lastErrorReason": "timeout",
-        "lastError": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
-        "lastDelivered": true
+        "lastDurationMs": 6,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 6,
+        "lastError": "TypeError: Cannot read properties of undefined (reading 'trim')"
       }
     },
     {
@@ -46,16 +44,16 @@
       "description": "每周一早上9点记忆回顾更新",
       "enabled": true,
       "createdAtMs": 1774763444066,
-      "updatedAtMs": 1775047259651,
+      "updatedAtMs": 1775437200012,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * 1",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
+        "kind": "systemEvent",
         "message": "你是记忆官。请执行每周记忆回顾任务：\n\n1) 读取 ~/.openclaw/workspace/memory/ 目录下本周的所有日记文件\n2) 读取 ~/.openclaw/workspace/MEMORY.md 了解当前长期记忆\n3) 将本周重要内容提炼更新到 MEMORY.md（中央记忆库）\n4) 清理过期或不再相关的内容\n5) 执行备份：\n   cd ~/.openclaw && git add workspace/memory/ agents/ cron/jobs.json openclaw.json && git commit -m \"记忆官每周回顾 $(date '+%Y-%m-%d')\" && git push origin-workspace main:config-backup\n6) 返回本周回顾简报（做了哪些更新）",
         "timeoutSeconds": 300
       },
@@ -65,14 +63,14 @@
         "to": "ou_748c15a782356f78466b01436dbbcbe8"
       },
       "state": {
-        "nextRunAtMs": 1775437200000,
-        "lastRunAtMs": 1774870789643,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 36461,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1776042000000,
+        "lastRunAtMs": 1775437200007,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 5,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1,
+        "lastError": "TypeError: Cannot read properties of undefined (reading 'trim')"
       }
     },
     {
@@ -82,16 +80,16 @@
       "description": "每天9点推送OpenClaw最新资讯",
       "enabled": true,
       "createdAtMs": 1774764197660,
-      "updatedAtMs": 1775178066354,
+      "updatedAtMs": 1775437200014,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
+        "kind": "systemEvent",
         "message": "你是飞书官+工具官。请搜索OpenClaw最新资讯：\n1. 使用tavily搜索 \"OpenClaw 最新更新 2026\" 和 \"OpenClaw news March 2026\"\n2. 整理3-5条最新相关资讯，中文内容直接使用，英文内容翻译成中文概述\n3. 每条必须包含：中文标题、中文概述、原文链接\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n\n同时请你自己认真阅读这些内容，思考：\n- 这些更新对你和你的团队有什么价值？\n- 有哪些功能或改进可以直接应用到我们的工作流？\n- 有没有值得尝试的新特性？\n\n请在简报最后添加【豆浆学习笔记】部分，写下你认为有价值的内容和你计划如何应用。",
         "timeoutSeconds": 600
       },
@@ -102,16 +100,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775264400000,
-        "lastRunAtMs": 1775178000008,
+        "nextRunAtMs": 1775523600000,
+        "lastRunAtMs": 1775437200012,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 66346,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastDelivered": true,
-        "lastError": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
-        "lastErrorReason": "timeout"
+        "lastDurationMs": 2,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 4,
+        "lastError": "TypeError: Cannot read properties of undefined (reading 'trim')"
       }
     },
     {
@@ -121,17 +117,17 @@
       "description": "工作日早上8点AI前沿简报",
       "enabled": true,
       "createdAtMs": 1774764624250,
-      "updatedAtMs": 1775174461742,
+      "updatedAtMs": 1775520000016,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * 1-5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
-        "message": "你是飞书官+工具官。请为王准备今日AI前沿早报（个人兴趣）：\n1. 使用tavily搜索: 'AI人工智能 最新新闻 2026' 和 'artificial intelligence news today'\n2. 整理3-5条最新最热的AI科技新闻，翻译成中文，附原文链接\n3. 纯个人兴趣，不限行业，越有趣越好\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n无新内容时简单告知即可。",
+        "kind": "systemEvent",
+        "message": "你是飞书官+工具官。请为王准备今日AI前沿早报（个人兴趣）：\n\n1. 使用tavily搜索:\n   - 英文: 'artificial intelligence latest news today 2026' (优先用英文，新闻源更广)\n   - 中文: 'AI人工智能 最新突破 2026'\n   - 每次搜索设置 max_results=10\n\n2. 严格过滤信息来源：\n   - ✅ 优先选择：官方网站、知名科技媒体、AI公司官方博客、权威新闻网站\n   - ❌ 排除聚合站/导航站：ainav.cn、gorden-sun.notion.site、youtube、类似汇总类站点\n   - ❌ 排除二手转载：只转载标题没有原创内容的网站\n\n3. 挑选3-5条真正值得看的新闻：\n   - 每条必须是【原始新闻】（有具体事件、产品发布、研究突破）\n   - 排除\"AI资讯日报\"、\"每日AI新闻聚合\"这类汇总合集\n   - 看到标题+概要就能判断是否值得点开\n\n4. 格式要求：\n   - 中文标题\n   - 2-3句话的中文概要（说明这是什么、为什么重要）\n   - 原文链接（必须是原始新闻页，不是聚合页）\n   \n无新内容时简单告知即可。返回整理好的简报内容（不要自己发送，announce投递会自动发送）。",
         "timeoutSeconds": 600
       },
       "delivery": {
@@ -141,16 +137,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775433600000,
-        "lastRunAtMs": 1775174400005,
+        "nextRunAtMs": 1775606400000,
+        "lastRunAtMs": 1775520000010,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 61737,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 1,
-        "lastDelivered": true,
-        "lastError": "Request timed out before a response was generated. Please try again, or increase `agents.defaults.timeoutSeconds` in your config.",
-        "lastErrorReason": "timeout"
+        "lastDurationMs": 6,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 4,
+        "lastError": "TypeError: Cannot read properties of undefined (reading 'trim')"
       }
     },
     {
@@ -158,36 +152,29 @@
       "agentId": "main",
       "name": "ai-evening-briefing",
       "description": "工作日下午5点AI前沿简报",
-      "enabled": true,
+      "enabled": false,
       "createdAtMs": 1774764636221,
-      "updatedAtMs": 1775120594416,
+      "updatedAtMs": 1775286952411,
       "schedule": {
         "kind": "cron",
         "expr": "0 17 * * 1-5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
+        "kind": "systemEvent",
         "message": "你是飞书官+工具官。请为王准备今日AI前沿晚报（个人兴趣）：\n1. 使用tavily搜索: \"AI人工智能 最新资讯 2026\" 和 \"artificial intelligence latest developments\"\n2. 整理3-5条今日最值得关注的AI科技新闻，翻译成中文，附原文链接\n3. 纯个人兴趣，不限行业，越有趣越好\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n无新内容时简单告知即可。",
         "timeoutSeconds": 600
       },
-      "delivery": {
-        "mode": "announce",
-        "channel": "feishu",
-        "to": "ou_748c15a782356f78466b01436dbbcbe8",
-        "bestEffort": true
-      },
       "state": {
-        "nextRunAtMs": 1775206800000,
-        "lastRunAtMs": 1775120400010,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 194406,
-        "lastDeliveryStatus": "delivered",
+        "lastRunAtMs": 1775206800006,
+        "lastRunStatus": "skipped",
+        "lastStatus": "skipped",
+        "lastDurationMs": 5,
+        "lastDeliveryStatus": "unknown",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastError": "main job requires payload.kind=\"systemEvent\""
       }
     },
     {
@@ -197,16 +184,16 @@
       "description": "工作日11:30招投标行业AI简报",
       "enabled": true,
       "createdAtMs": 1774785904453,
-      "updatedAtMs": 1775098987211,
+      "updatedAtMs": 1775444400012,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 30 * 1-5",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
+        "kind": "systemEvent",
         "message": "你是飞书官+工具官。请为王准备今日招投标行业AI应用简报：\n1. 使用tavily搜索: \"人工智能 招投标 数字化转型 2026\" 和 \"AI 政府招标 智能采购\"\n2. 从36氪、中国政府采购网、亿邦动力等权威渠道筛选\n3. 整理2-3条今日AI+招投标相关的最新动态，每条包含：标题、简要、原文链接\n4. 返回整理好的简报内容（不要自己发送，announce投递会自动发送）\n无相关内容时简单告知即可。",
         "timeoutSeconds": 300
       },
@@ -217,14 +204,14 @@
         "bestEffort": true
       },
       "state": {
-        "nextRunAtMs": 1775185200000,
-        "lastRunAtMs": 1775098800010,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 187201,
-        "lastDeliveryStatus": "delivered",
-        "consecutiveErrors": 0,
-        "lastDelivered": true
+        "nextRunAtMs": 1775530800000,
+        "lastRunAtMs": 1775444400008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 4,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 3,
+        "lastError": "TypeError: Cannot read properties of undefined (reading 'trim')"
       }
     },
     {
@@ -234,16 +221,16 @@
       "description": "每周日晚9点生成工作回顾",
       "enabled": true,
       "createdAtMs": 1775141949000,
-      "updatedAtMs": 1775141949000,
+      "updatedAtMs": 1775394000013,
       "schedule": {
         "kind": "cron",
         "expr": "0 21 * * 0",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
-        "kind": "agentTurn",
+        "kind": "systemEvent",
         "message": "请从每日任务系统拉取本周任务完成情况，生成周报发给我",
         "timeoutSeconds": 180
       },
@@ -253,7 +240,14 @@
         "to": "ou_748c15a782356f78466b01436dbbcbe8"
       },
       "state": {
-        "nextRunAtMs": 1775394000000
+        "nextRunAtMs": 1775998800000,
+        "lastRunAtMs": 1775394000008,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 5,
+        "lastError": "TypeError: Cannot read properties of undefined (reading 'trim')",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
       }
     }
   ]
