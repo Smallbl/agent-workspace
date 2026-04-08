@@ -93,7 +93,10 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 【已知根因】精准问题原因 / 待进一步定位方向
 【已尝试方案】已执行操作、结果、无效原因
 【需要执行内容】明确具体工作，指令清晰无歧义
-【输入输出约束】参数、格式、性能、兼容性要求
+【API字段要求】涉及后端API时必须明确
+- 请求字段：字段名 (类型) ，如 `task_ids: array`, `new_date: string`
+- 响应格式：如 `{success: bool, moved: int, error?: string}`
+- 如果没有API则写"无"
 【依赖文件/代码片段】仅必要的相关内容
 【预期结果】可量化、可验证的完成标准
 【超时设置】{N}分钟
