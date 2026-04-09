@@ -66,6 +66,12 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - 写入类必须串行
 - 有副作用的命令必须串行
 
+## 服务重启规则
+
+**任何代码修改后必须立即重启服务**：
+- 项目跟踪系统：`bash /tmp/run-server.sh`（先 kill 旧进程）
+- 重启后验证服务正常运行
+
 ## 目录结构
 
 ```
