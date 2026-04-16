@@ -1,7 +1,7 @@
 {
   "agent:main:feishu:direct:ou_748c15a782356f78466b01436dbbcbe8": {
     "sessionId": "b698b4e8-4cc0-47dc-ad5e-77729142aa99",
-    "updatedAt": 1776341792958,
+    "updatedAt": 1776344021439,
     "systemSent": true,
     "abortedLastRun": false,
     "authProfileOverride": "minimax:cn",
@@ -236,14 +236,14 @@
       ],
       "version": 0
     },
-    "status": "running",
-    "startedAt": 1776341792732,
+    "status": "done",
+    "startedAt": 1776344013699,
     "modelProvider": "minimax",
     "model": "MiniMax-M2.7",
     "contextTokens": 204800,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1776341754592,
+      "generatedAt": 1776344013687,
       "sessionId": "b698b4e8-4cc0-47dc-ad5e-77729142aa99",
       "sessionKey": "agent:main:feishu:direct:ou_748c15a782356f78466b01436dbbcbe8",
       "provider": "minimax",
@@ -263,9 +263,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 32431,
-        "projectContextChars": 16096,
-        "nonProjectContextChars": 16335
+        "chars": 33906,
+        "projectContextChars": 15896,
+        "nonProjectContextChars": 18010
       },
       "injectedWorkspaceFiles": [
         {
@@ -384,7 +384,7 @@
       },
       "tools": {
         "listChars": 0,
-        "schemaChars": 32001,
+        "schemaChars": 34073,
         "entries": [
           {
             "name": "read",
@@ -424,8 +424,8 @@
           },
           {
             "name": "message",
-            "summaryChars": 321,
-            "schemaChars": 5888,
+            "summaryChars": 327,
+            "schemaChars": 5876,
             "propertiesCount": 106
           },
           {
@@ -449,8 +449,8 @@
           {
             "name": "video_generate",
             "summaryChars": 225,
-            "schemaChars": 1650,
-            "propertiesCount": 14
+            "schemaChars": 3734,
+            "propertiesCount": 20
           },
           {
             "name": "agents_list",
@@ -635,17 +635,19 @@
         ]
       }
     },
-    "inputTokens": 83027,
-    "outputTokens": 232,
-    "cacheRead": 1152,
-    "cacheWrite": 0,
-    "estimatedCostUsd": 1.67087214,
+    "inputTokens": 106,
+    "outputTokens": 109,
+    "cacheRead": 90852,
+    "cacheWrite": 404,
+    "estimatedCostUsd": 2.11730043,
     "totalTokensFresh": true,
-    "totalTokens": 84179
+    "totalTokens": 91362,
+    "endedAt": 1776344021293,
+    "runtimeMs": 7594
   },
   "agent:main:main": {
     "sessionId": "1efb2ce6-a677-48a0-af54-694c193d8a05",
-    "updatedAt": 1776340958058,
+    "updatedAt": 1776355038342,
     "systemSent": true,
     "abortedLastRun": false,
     "authProfileOverride": "minimax:cn",
@@ -830,13 +832,13 @@
       "version": 0
     },
     "status": "done",
-    "startedAt": 1776340937772,
+    "startedAt": 1776355027642,
     "modelProvider": "minimax",
     "model": "MiniMax-M2.7",
     "contextTokens": 204800,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1776340937729,
+      "generatedAt": 1776355027597,
       "sessionId": "1efb2ce6-a677-48a0-af54-694c193d8a05",
       "sessionKey": "agent:main:main",
       "provider": "minimax",
@@ -856,9 +858,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 31338,
-        "projectContextChars": 16096,
-        "nonProjectContextChars": 15242
+        "chars": 32370,
+        "projectContextChars": 15896,
+        "nonProjectContextChars": 16474
       },
       "injectedWorkspaceFiles": [
         {
@@ -969,7 +971,7 @@
       },
       "tools": {
         "listChars": 0,
-        "schemaChars": 32001,
+        "schemaChars": 34085,
         "entries": [
           {
             "name": "read",
@@ -1034,8 +1036,8 @@
           {
             "name": "video_generate",
             "summaryChars": 225,
-            "schemaChars": 1650,
-            "propertiesCount": 14
+            "schemaChars": 3734,
+            "propertiesCount": 20
           },
           {
             "name": "agents_list",
@@ -1220,7 +1222,7 @@
         ]
       }
     },
-    "estimatedCostUsd": 37.30027728000002,
+    "estimatedCostUsd": 38.04427795500002,
     "totalTokensFresh": true,
     "lastChannel": "webchat",
     "lastTo": "heartbeat",
@@ -1271,13 +1273,13 @@
         }
       }
     ],
-    "inputTokens": 162959,
-    "outputTokens": 129,
-    "cacheRead": 20914,
-    "cacheWrite": 0,
-    "totalTokens": 183771,
-    "endedAt": 1776340957728,
-    "runtimeMs": 19956
+    "inputTokens": 106,
+    "outputTokens": 28,
+    "cacheRead": 0,
+    "cacheWrite": 187963,
+    "totalTokens": 188069,
+    "endedAt": 1776355038176,
+    "runtimeMs": 10534
   },
   "agent:main:subagent:c7e911f8-ed71-406c-9b41-7396610ecf73": {
     "sessionId": "872ffdb9-fefc-47ac-b125-19dcc2f26192",
