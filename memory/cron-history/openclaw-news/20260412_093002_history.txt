@@ -1,0 +1,26 @@
+【OpenClaw日报】📅 2026-04-12
+
+【OpenClaw能实现什么应用场景?OpenClaw最新使用指南（附零门槛上手教程）_ZNDS资讯】（译自外媒）
+  2026 年火遍 AI 圈的 OpenClaw(圈内昵称 “龙虾”)，作为开源工程型 AI 智能体，彻底打破了传统 AI “只说不做”. 的局限，能靠自然语言指令完成电脑端各类自动化操作。不管是职场人想解放双手，还是开发者想快速实现工具协同...
+  → 原文：https://n.znds.com/mip/69406.html
+
+【​MiniMax Agent 大升级，普通人也能玩转Openclaw 了| 极客公园】（译自外媒）
+  # ​MiniMax Agent 大升级，普通人也能玩转 Openclaw 了. 每个人都能一键部署自己的 agent 和 OpenClaw 了。. 从 2025 年 Manus、GenSpark 轮番霸榜科技头条，到 2026 年初 Op...
+  → 原文：https://www.geekpark.net/news/360394
+
+【建议收藏|2026唯①讲明白OpenClaw原理，AI数字员工开发！Agent ...】（译自外媒）
+  [](https://www.youtube.com/watch?v=5o4d4seN58w). [](https://www.youtube.com/watch?v=5o4d4seN58w). [](https://www.youtube...
+  → 原文：https://www.youtube.com/watch?v=5o4d4seN58w
+
+【精选10 个OpenClaw Skill 推荐：2026 年最实用的AI Agent 技能清单】（译自外媒）
+  # 精选 10 个 OpenClaw Skill 推荐：2026 年最实用的 AI Agent 技能清单. ## OpenClaw Skill 推荐：为什么你需要精选技能清单. ### OpenClaw Skill 推荐总览表. ## Op...
+  → 原文：https://help.apiyi.com/openclaw-skill-recommendations-2026.html
+
+【OpenClaw智能体功能定制开发服务商推荐：2026年最新测评 - 财富号】（译自外媒）
+  通过定制开发OpenClaw智能体功能，企业可以实现业务流程的自动化与智能化。无论是研发运维、客户服务还是日常办公，智能体都能有效减轻员工负担，提高工作...
+  → 原文：https://caifuhao.eastmoney.com/news/20260307142527908512820
+
+
+
+---
+生成时间：09:30 | 本次推送 5 条

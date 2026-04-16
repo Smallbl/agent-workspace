@@ -1,0 +1,26 @@
+【工作AI简报】📅 2026-04-14
+
+【浅谈政府采购智能化转型之路 - 中国财经报】（译自外媒）
+  开发政府采购AI审计平台，运用自然语言处理技术自动解析招投标文件，通过知识图谱技术识别围标串标行为。建立全国电子化质疑投诉平台，引入智能仲裁...
+  → 原文：https://www.cfen.com.cn/xw/zfcg/zfcgllsw/202507/t20250716_882939.html
+
+【AI赋能政府采购：全流程数字化转型深度解析-协同运营平台-协同运营平台-致远互联官网】（译自外媒）
+  # AI赋能政府采购：全流程数字化转型深度解析. 政府采购数字化转型已成为提升政务效率、优化资源配置的关键路径。传统的采购模式面临诸多挑战，如信息不对称、流程不透明、效率低下等，这些问题不仅增加了采购成本，也容易滋生腐败。AI协同运营平台通...
+  → 原文：https://www.seeyon.com/article/fSFb35D5.html
+
+【国务院部署“人工智能+政府采购”新举措招投标智能化加速落地】（译自外媒）
+  加快人工智能在各类公共资源招标投标活动中的应用，提升智能交易服务和监管水平。 2.打造安全治理多元共治新格局。推动构建面向自然人、数字人、智能...
+  → 原文：https://shangqiu.zfcg.henan.gov.cn/shangqiu/content?infoId=1756279537007882&channelCode=H750702
+
+【[PDF] 人工智能+：政府采购领域的智能变革时代 - SciOpen】（译自外媒）
+  Artificial intelligence+: Era of intelligent transformation in government procurement[J]. China Government Procurement, ...
+  → 原文：https://www.sciopen.com/local/article_pdf/10.16791/j.cnki.sjg.2025.11.034.pdf
+
+【上海交通大学数字化采购平台】（译自外媒）
+  # 深圳大学招投标管理中心来我校调研. 发布时间：2026-03-27 点击次数：121 发布人：招投标与政府采购办公室. 3月27日上午，深圳大学招投标管理中心主任黄雪峰、副主任陈峥一行5人莅临我校，就采购与招标管理工作开展专题调研。上海...
+  → 原文：https://pboffice.sjtu.edu.cn/sfw_cms/e?page=cms.detail&cid=103248&aid=102846
+
+
+
+---
+生成时间：12:00 | 本次推送 5 条

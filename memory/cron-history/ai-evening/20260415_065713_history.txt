@@ -1,0 +1,121 @@
+【AI晚报】📅 2026-04-15\n\n【针对Altman的攻击是AI行业的警示
+TRANSSUMMARY:20岁嫌疑人涉嫌向OpenAI CEO Sam Altman家中投掷燃烧弹，此前曾发文称AI竞赛将导致人类灭绝。两天后其住所再次遭袭。印第安纳波利斯一议员家中亦被射13弹，留有"不要数据中心"字条。这些事件引发AI行业警惕，反对技术的声音正在升级。】（译自外媒）
+  20岁嫌疑人涉嫌向OpenAI CEO Sam Altman家中投掷燃烧弹，此前曾发文称AI竞赛将导致人类灭绝。两天后其住所再次遭袭。印第安纳波利斯一议员家中亦被射13弹，留有"不要数据中心"字条。这些事件引发AI行业警惕，反对技术的声音正在升级。
+  → 原文：https://www.theverge.com/ai-artificial-intelligence/911778/ai-violence-sam-altman-home
+
+【Chrome可将AI提示词保存为可复用的"技能"
+TRANSSUMMARY:Google推出Chrome新功能，允许用户将常用Gemini提示词保存为"技能"，实现一键跨标签页复用。例如食谱素食化替换等重复任务，只需保存一次即可在任何页面快速调用，无需反复输入。】（译自外媒）
+  Google推出Chrome新功能，允许用户将常用Gemini提示词保存为"技能"，实现一键跨标签页复用。例如食谱素食化替换等重复任务，只需保存一次即可在任何页面快速调用，无需反复输入。
+  → 原文：https://www.theverge.com/tech/911658/google-chrome-gemini-ai-skills-availability-launch
+
+【谷歌AI水印系统SynthID被逆向？
+TRANSSUMMARY:开发者Aloshdenny声称已逆向Google DeepMind的SynthID水印系统，展示了如何去除AI生成图像中的水印或手动嵌入。Google回应称该说法不实。开发者已将代码开源，方法是用200张纯色Gemini图像配合信号处理分析水印信号。但其表示仍无法完全去除水印，仅能干扰检测器。】（译自外媒）
+  开发者Aloshdenny声称已逆向Google DeepMind的SynthID水印系统，展示了如何去除AI生成图像中的水印或手动嵌入。Google回应称该说法不实。开发者已将代码开源，方法是用200张纯色Gemini图像配合信号处理分析水印信号。但其表示仍无法完全去除水印，仅能干扰检测器。
+  → 原文：https://www.theverge.com/ai-artificial-intelligence/911579/google-synthid-ai-watermarking-system-reverse-engineered
+
+【袭击Altman住宅及OpenAI总部的男子被诉
+TRANSSUMMARY:Daniel Moreno-Gama从德州前往加州，涉嫌于4月10日向Altman家中投掷燃烧弹，并试图闯入OpenAI总部用椅子砸玻璃门，声称要烧毁大楼、杀死里面的人。联邦起诉其"用爆炸物蓄意破坏财产"及"非法持有枪支"罪，最高可判20年和10年。其随身携带一份名为《你的最后警告》的文件，宣扬反AI并呼吁杀害AI公司CEO。】（译自外媒）
+  Daniel Moreno-Gama从德州前往加州，涉嫌于4月10日向Altman家中投掷燃烧弹，并试图闯入OpenAI总部用椅子砸玻璃门，声称要烧毁大楼、杀死里面的人。联邦起诉其"用爆炸物蓄意破坏财产"及"非法持有枪支"罪，最高可判20年和10年。其随身携带一份名为《你的最后警告》的文件，宣扬反AI并呼吁杀害AI公司CEO。
+  → 原文：https://www.theverge.com/ai-artificial-intelligence/911423/openai-sam-altman-attack
+
+【AI网红在科切拉音乐节"无处不在"
+TRANSSUMMARY:科切拉音乐节上周五开幕，AI生成的"网红"大量涌现。这些虚假博主在社交媒体发布与Kardashian/Jenner家族明星合影的合成照片，部分粉丝超百万。部分账户明确标注为"数字创作者"，但多数未披露为AI生成，画面存在明显失真。】（译自外媒）
+  科切拉音乐节上周五开幕，AI生成的"网红"大量涌现。这些虚假博主在社交媒体发布与Kardashian/Jenner家族明星合影的合成照片，部分粉丝超百万。部分账户明确标注为"数字创作者"，但多数未披露为AI生成，画面存在明显失真。
+  → 原文：https://www.theverge.com/ai-artificial-intelligence/911267/ai-influencers-coachella
+
+【OpenAI内部备忘录曝光：如何击败竞争对手
+TRANSSUMMARY:OpenAI首席营收官Denise Dresser周日向员工发送四页备忘录，强调构建AI产品护城河的重要性，以对抗用户频繁切换模型的现状。备忘录点名Anthropic，称其"靠恐惧叙事"且单一产品难以赢得平台战。备忘录还指出Anthropic虚报运营指标、错失算力收购良机。】（译自外媒）
+  OpenAI首席营收官Denise Dresser周日向员工发送四页备忘录，强调构建AI产品护城河的重要性，以对抗用户频繁切换模型的现状。备忘录点名Anthropic，称其"靠恐惧叙事"且单一产品难以赢得平台战。备忘录还指出Anthropic虚报运营指标、错失算力收购良机。
+  → 原文：https://www.theverge.com/ai-artificial-intelligence/911118/openai-memo-cro-ai-competition-anthropic
+
+【微软正测试类OpenClaw的AI助手功能
+TRANSSUMMARY:据The Information报道，微软正探索将OpenClaw式功能集成到Copilot中，实现Microsoft 365 Copilot全天候自动执行任务。新功能可监控邮箱和日历并每日推荐待办事项，同时正在开发面向营销、销售、财务等特定角色的AI代理。】（译自外媒）
+  据The Information报道，微软正探索将OpenClaw式功能集成到Copilot中，实现Microsoft 365 Copilot全天候自动执行任务。新功能可监控邮箱和日历并每日推荐待办事项，同时正在开发面向营销、销售、财务等特定角色的AI代理。
+  → 原文：https://www.theverge.com/tech/911080/microsoft-ai-openclaw-365-businesses
+
+【扎克伯格据报正训练AI替身代其参会
+TRANSSUMMARY:据Financial Times报道，Meta CEO扎克伯格正在训练AI克隆版本来与员工互动反馈。该AI基于其举止、语调及公开言论构建，让员工"更有连接感"。若成功，Meta计划允许创作者制作个人AI替身。】（译自外媒）
+  据Financial Times报道，Meta CEO扎克伯格正在训练AI克隆版本来与员工互动反馈。该AI基于其举止、语调及公开言论构建，让员工"更有连接感"。若成功，Meta计划允许创作者制作个人AI替身。
+  → 原文：https://www.theverge.com/tech/910990/meta-ceo-mark-zuckerberg-ai-clone
+
+【Altman据报遭遇第二次袭击
+TRANSSUMMARY:据San Francisco Standard报道，Altman周日早晨在俄罗斯山住宅遭遇第二次袭击，两名嫌疑人被捕。监控显示一辆汽车乘客向其住宅开枪，警方在其住所缴获三把枪支。此前世人对同一住宅投掷燃烧弹被捕，两案仍在调查中。】（译自外媒）
+  据San Francisco Standard报道，Altman周日早晨在俄罗斯山住宅遭遇第二次袭击，两名嫌疑人被捕。监控显示一辆汽车乘客向其住宅开枪，警方在其住所缴获三把枪支。此前世人对同一住宅投掷燃烧弹被捕，两案仍在调查中。
+  → 原文：https://www.theverge.com/ai-artificial-intelligence/910890/openai-sam-altman-second-home-attack-shooting
+
+【AI编程大战升温
+TRANSSUMMARY:AI编程工具正成为首个真正主流的AI用例和最具潜力的商业化方向。Anthropic的Claude Code横空出世后，OpenAI的Codex和Google的Gemini纷纷加码竞争。两大AI公司均计划今年上市，AI编程赛道日趋白热化。】（译自外媒）
+  AI编程工具正成为首个真正主流的AI用例和最具潜力的商业化方向。Anthropic的Claude Code横空出世后，OpenAI的Codex和Google的Gemini纷纷加码竞争。两大AI公司均计划今年上市，AI编程赛道日趋白热化。
+  → 原文：https://www.theverge.com/column/910019/ai-coding-wars-openai-google-anthropic
+
+【氪星晚报｜高德首款具身机器人将亮相；日产发布转型计划：削减20%车型，冲刺中美百万销量；OpenAI的8520亿美元估值遭投资者质疑
+TRANSSUMMARY:本期晚报要点：①高德首款具身机器人即将亮相，为阿里巴巴首款四足机器人产品；②日产削减20%车型，聚焦中美百万销量目标；③OpenAI战略转向企业市场，估值遭投资者质疑；④苹果平价本MacBook Neo首批售罄，预期销量上调至1000万台。】（译自外媒）
+  本期晚报要点：①高德首款具身机器人即将亮相，为阿里巴巴首款四足机器人产品；②日产削减20%车型，聚焦中美百万销量目标；③OpenAI战略转向企业市场，估值遭投资者质疑；④苹果平价本MacBook Neo首批售罄，预期销量上调至1000万台。
+  → 原文：https://36kr.com/p/3766487517594377?f=rss
+
+【半年融资近2亿，AI发球机器人解决1亿人训练难题
+TRANSSUMMARY:庞伯特创始人张海波半年完成近2亿元融资，其AI网球发球机器人可模拟真实训练场景。公司全球用户超30万，海外月销数千万元。全球网球参与人数达1.06亿，专业教练严重不足，AI技术正填补这一训练缺口。】（译自外媒）
+  庞伯特创始人张海波半年完成近2亿元融资，其AI网球发球机器人可模拟真实训练场景。公司全球用户超30万，海外月销数千万元。全球网球参与人数达1.06亿，专业教练严重不足，AI技术正填补这一训练缺口。
+  → 原文：https://36kr.com/p/3764953900990977?f=rss
+
+【荣耀"养虾本"发布：YOYO Claw重新定义AI PC
+TRANSSUMMARY:荣耀发布自研"龙虾"AI智能体YOYO Claw，首发搭载于MagicBook笔记本。对比OpenClaw，YOYO Claw节省50% Token消耗，任务成功率94.5%。预设5大主虾23个子虾，覆盖办公、教育等场景，数据本地存储保障隐私。】（译自外媒）
+  荣耀发布自研"龙虾"AI智能体YOYO Claw，首发搭载于MagicBook笔记本。对比OpenClaw，YOYO Claw节省50% Token消耗，任务成功率94.5%。预设5大主虾23个子虾，覆盖办公、教育等场景，数据本地存储保障隐私。
+  → 原文：https://36kr.com/p/3765331768967686?f=rss
+
+【氪星晚报｜"马斯克版微信"或本周五上线；Meta打造AI版扎克伯格；AI潮玩品牌融资
+TRANSSUMMARY:本期晚报要点：①"马斯克版微信"XChat预计4月17日上架，支持加密通话、阅后即焚；②Meta正在打造AI版扎克伯格数字人，代其与员工互动；③AI潮玩品牌MOMOTOY完成数千万元融资；④荣耀机器人将出征北京亦庄马拉松；⑤苹果折叠手机预计今年拿下近20%市场份额。】（译自外媒）
+  本期晚报要点：①"马斯克版微信"XChat预计4月17日上架，支持加密通话、阅后即焚；②Meta正在打造AI版扎克伯格数字人，代其与员工互动；③AI潮玩品牌MOMOTOY完成数千万元融资；④荣耀机器人将出征北京亦庄马拉松；⑤苹果折叠手机预计今年拿下近20%市场份额。
+  → 原文：https://36kr.com/p/3765146768376326?f=rss
+
+【甲骨文将自主智能体AI平台拓展至企业银行业务
+TRANSSUMMARY:甲骨文将自主智能体AI平台扩展至企业银行业务领域，助力银行提升运营效率和客户服务的自动化水平。】（译自外媒）
+  甲骨文将自主智能体AI平台扩展至企业银行业务领域，助力银行提升运营效率和客户服务的自动化水平。
+  → 原文：https://36kr.com/newsflashes/3766624658146055?f=rss
+
+【生数科技Vidu系列模型登陆阿里云百炼平台
+TRANSSUMMARY:生数科技与阿里云达成战略合作，共建多模态大模型与世界模型基础设施。Vidu系列模型正式登陆阿里云百炼平台，支持文生视频、图生视频、参考生视频等能力。】（译自外媒）
+  生数科技与阿里云达成战略合作，共建多模态大模型与世界模型基础设施。Vidu系列模型正式登陆阿里云百炼平台，支持文生视频、图生视频、参考生视频等能力。
+  → 原文：https://36kr.com/newsflashes/3766613599568385?f=rss
+
+【Anthropic推出Claude Managed Agents一站式服务，但引发厂商锁定担忧
+TRANSSUMMARY:Anthropic发布Claude Managed Agents平台，帮助企业数天内快速部署AI代理，简化配置。但企业需将更多控制权交给Anthropic，面临更大"锁定"风险。研究显示Anthropic在编排层面增长强劲，正成为企业首选框架。】（译自外媒）
+  Anthropic发布Claude Managed Agents平台，帮助企业数天内快速部署AI代理，简化配置。但企业需将更多控制权交给Anthropic，面临更大"锁定"风险。研究显示Anthropic在编排层面增长强劲，正成为企业首选框架。
+  → 原文：https://venturebeat.com/orchestration/anthropics-claude-managed-agents-gives-enterprises-a-new-one-stop-shop-but
+
+【Google高管反驳内部AI采用率不均的批评
+TRANSSUMMARY:前Google工程师Steve Yegge发帖称Google内部AI使用呈"平均"分布：20%拒绝AI，60%仅用基础聊天辅助，20%深度使用代理工具。这一说法引发Google AI领导人公开反驳。Yegge因2011年内部备忘录公开事件而闻名，其观点受业界关注。】（译自外媒）
+  前Google工程师Steve Yegge发帖称Google内部AI使用呈"平均"分布：20%拒绝AI，60%仅用基础聊天辅助，20%深度使用代理工具。这一说法引发Google AI领导人公开反驳。Yegge因2011年内部备忘录公开事件而闻名，其观点受业界关注。
+  → 原文：https://venturebeat.com/orchestration/google-leaders-including-demis-hassabis-push-back-on-claim-of-uneven-ai-adoption-internally
+
+【微软发布MAI-Image-2-Efficient：更便宜更快的AI图像模型
+TRANSSUMMARY:微软发布MAI-Image-2-Efficient，定价比旗舰版低41%，速度快22%，吞吐量提升4倍。该模型已上线Microsoft Foundry和MAI Playground，并扩展至Copilot和Bing。微软正构建不依赖OpenAI的独立AI技术栈。】（译自外媒）
+  微软发布MAI-Image-2-Efficient，定价比旗舰版低41%，速度快22%，吞吐量提升4倍。该模型已上线Microsoft Foundry和MAI Playground，并扩展至Copilot和Bing。微软正构建不依赖OpenAI的独立AI技术栈。
+  → 原文：https://venturebeat.com/technology/microsoft-launches-mai-image-2-efficient-a-cheaper-and-faster-ai-image-model
+
+【调查：43%的AI生成代码需在生产环境调试
+TRANSSUMMARY:调查显示，43%的AI生成代码变更在通过质量保证和预发布测试后，仍需在生产环境手动调试。88%企业需2-3次部署周期才能验证修复。微软和谷歌均称约25%代码已由AI生成，但尚无一家企业对AI代码在生产环境的正确性"非常有信心"。】（译自外媒）
+  调查显示，43%的AI生成代码变更在通过质量保证和预发布测试后，仍需在生产环境手动调试。88%企业需2-3次部署周期才能验证修复。微软和谷歌均称约25%代码已由AI生成，但尚无一家企业对AI代码在生产环境的正确性"非常有信心"。
+  → 原文：https://venturebeat.com/technology/43-of-ai-generated-code-changes-need-debugging-in-production-survey-finds
+
+【企业级Agentic编程需要规范驱动开发
+TRANSSUMMARY:企业级自主代理正将软件交付周期从数周压缩至数天。Kiro IDE团队用规范驱动开发将功能开发时间从两周缩短至两天。AWS团队用6人替代30人，76天完成18个月的架构重构项目。规范驱动开发为可信赖的自主编程奠定了基础。】（译自外媒）
+  企业级自主代理正将软件交付周期从数周压缩至数天。Kiro IDE团队用规范驱动开发将功能开发时间从两周缩短至两天。AWS团队用6人替代30人，76天完成18个月的架构重构项目。规范驱动开发为可信赖的自主编程奠定了基础。
+  → 原文：https://venturebeat.com/orchestration/agentic-coding-at-enterprise-scale-demands-spec-driven-development
+
+【Anthropic被指"暗改"Claude？用户抱怨性能下降
+TRANSSUMMARY:越来越多开发者在GitHub、X和Reddit上反映Claude Opus 4.6和Claude Code性能下降，表现为持续推理能力减弱、更易中途放弃任务、幻觉增多。部分用户将此称为"AI通胀"。Anthropic员工否认故意降级，但承认近期调整了使用限制和推理默认值。】（译自外媒）
+  越来越多开发者在GitHub、X和Reddit上反映Claude Opus 4.6和Claude Code性能下降，表现为持续推理能力减弱、更易中途放弃任务、幻觉增多。部分用户将此称为"AI通胀"。Anthropic员工否认故意降级，但承认近期调整了使用限制和推理默认值。
+  → 原文：https://venturebeat.com/technology/is-anthropic-nerfing-claude-users-increasingly-report-performance
+
+【为可衡量绩效而生的Agentic AI企业
+TRANSSUMMARY:企业部署AI代理不能仅靠巧妙提示词和概念验证，需从明确目标、数据驱动工作流出发，将组织KPI转化为代理目标。下一波价值在于应用间的"运营灰色地带"，如审批、数据查询等流程。成功的代理部署需平衡自主性、治理、可观测性和灵活性。】（译自外媒）
+  企业部署AI代理不能仅靠巧妙提示词和概念验证，需从明确目标、数据驱动工作流出发，将组织KPI转化为代理目标。下一波价值在于应用间的"运营灰色地带"，如审批、数据查询等流程。成功的代理部署需平衡自主性、治理、可观测性和灵活性。
+  → 原文：https://venturebeat.com/orchestration/designing-the-agentic-ai-enterprise-for-measurable-performance
+
+【OpenAI推出ChatGPT Pro $100套餐，Codex使用限额为Plus的5倍
+TRANSSUMMARY:OpenAI推出100美元ChatGPT Pro新套餐，Codex使用限额为20美元Plus版的5倍。同时OpenAI调整Plus用户每日使用限制，此举被视作吸引开发者和 vibe coder 离开 Anthropic 竞品的策略。】（译自外媒）
+  OpenAI推出100美元ChatGPT Pro新套餐，Codex使用限额为20美元Plus版的5倍。同时OpenAI调整Plus用户每日使用限制，此举被视作吸引开发者和 vibe coder 离开 Anthropic 竞品的策略。
+  → 原文：https://venturebeat.com/orchestration/openai-introduces-chatgpt-pro-usd100-tier-with-5x-usage-limits-for-codex
+
+\n\n---\n生成时间：06:57 | 本次推送 24 条

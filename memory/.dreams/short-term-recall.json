@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-08T23:00:47.358Z",
+  "updatedAt": "2026-04-12T14:27:24.647Z",
   "entries": {
     "memory:memory/2026-04-05.md:1:42": {
       "key": "memory:memory/2026-04-05.md:1:42",
@@ -9,22 +9,25 @@
       "endLine": 42,
       "source": "memory",
       "snippet": "# 2026-04-05 每日记忆 ## 📅 日期 2026-04-05（周日） --- ## 🤖 今日主要工作 ### 1. OpenClaw 备援方案搭建 - OpenClaw 2026.4.1 announce bug 导致所有 cron 任务失效 - 搭建外部系统 cron 作为备援方案 - 编写统一备援脚本：`~/scripts/openclaw-fallback.sh` - 配置 crontab 5个定时任务（00:30~17:30，每30分钟备援窗口） - Tavily API Key：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 - 搜索词已改为中文，优先返回国内源 ### 2. 项目跟踪系统 v3/v4 开发 **今天解决的问题：** - Bug: tab白名单写死，中招联合等新公司无法正常使用 - Bug: 空公司无法添加项目 - 优化: 任务默认折叠，点击展开 - 优化: 项目统计卡片（全部项目tab显示） - 优化: 任务汇总条（优先级+完成率，每项目卡片上方） **UI重构 v4：** - 固定顶部header（56px，深色背景） - 两级导航（项目/会议/每日任务 + 全部/四建/亚太/中招联合） - 紧凑统计卡片5列布局 - 紧凑项目卡片 - 拖拽排序功能 - 会议管理（新增/编辑/删除/标记完成） **代码路径：** `~/.openclaw/workspace/work/projects/` **访问地址：** `http://localhost:876",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
-      "totalScore": 2.9940634228622214,
+      "groundedCount": 0,
+      "totalScore": 3.6625049908600293,
       "maxScore": 0.7505169654147241,
       "firstRecalledAt": "2026-04-07T05:01:08.446Z",
-      "lastRecalledAt": "2026-04-08T23:00:47.358Z",
+      "lastRecalledAt": "2026-04-10T09:01:47.190Z",
       "queryHashes": [
         "d68bbadfb78e",
         "f0d1c99afa2c",
         "d0d5da3b9c9c",
-        "1c63b83c27e6"
+        "1c63b83c27e6",
+        "1eb689c6daab"
       ],
       "recallDays": [
         "2026-04-07",
         "2026-04-08",
-        "2026-04-09"
+        "2026-04-09",
+        "2026-04-10"
       ],
       "conceptTags": [
         "2026.4.1",
@@ -35,6 +38,37 @@
         "新增/编辑/删除/标记完成",
         "openclaw/workspace/work/projects",
         "每日"
+      ]
+    },
+    "memory:memory/2026-03-29.md:1:34": {
+      "key": "memory:memory/2026-03-29.md:1:34",
+      "path": "memory/2026-03-29.md",
+      "startLine": 1,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "# 2026-03-29 日记 ## 今天发生的事 - 豆浆正式上线 - 王给豆浆命名、定义角色（agent主控大脑） - 王提出完整的记忆方案需求 ## 任务 - [x] 建立记忆架构 - [ ] 配置git自动备份 - [ ] 首次记忆同步 ## 备注 首次启动对话，完成了身份确认和记忆框架搭建。 **重要规则已添加：配置修改/安装程序前必须先备份并询问** ## 云端备份已配置 - GitHub账号: Smallbl - 仓库: agent-workspace (https://github.com/Smallbl/agent-workspace) - 已成功推送本地所有记忆文件到云端 ## 智能体框架确立 - 主控大脑：豆浆 - 记忆官、飞书官、工具官 - 新建智能体需双方评估，不可泛滥 ## 飞书官定位更新（2026-03-29） - 定位：主动推送/提醒专家 - 职责：定时任务、主动通知、定时简报 - 核心价值：主动推送，区别于豆浆的被动回复",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6665408882318069,
+      "maxScore": 0.6665408882318069,
+      "firstRecalledAt": "2026-04-12T14:27:24.647Z",
+      "lastRecalledAt": "2026-04-12T14:27:24.647Z",
+      "queryHashes": [
+        "b077570f2a13"
+      ],
+      "recallDays": [
+        "2026-04-12"
+      ],
+      "conceptTags": [
+        "备份",
+        "配置修改/安装程序前必须先备份并询问",
+        "agent-workspace",
+        "主动推送/提醒专家",
+        "日记",
+        "今天",
+        "发生",
+        "豆浆"
       ]
     }
   }

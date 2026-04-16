@@ -1,0 +1,26 @@
+【AI晚报】📅 2026-04-13
+
+【2026年4月Gemini重大更新：实时危机干预机制与全球热线连接服务 ...】（译自外媒）
+  全模型覆盖，一键接入：可直接接入Gemini、Claude、ChatGPT 等全球主流模型，无需单独对接各平台官方API，大幅降低技术接入成本。 · 极致价格优势，成本可控：...
+  → 原文：https://poloapi.com/poloapi-blog/Gemini-Major-Update-in-April-2026
+
+【2026 年了，为什么我建议你现在就升级 ChatGPT Plus？-腾讯云开发者社区-腾讯云】（译自外媒）
+  ## 2026 年了，为什么我建议你现在就升级 ChatGPT Plus？. # 2026 年了，为什么我建议你现在就升级 ChatGPT Plus？. 先放结论：如果你只打算订阅一个 AI 服务，2026 年的 ChatGPT Plus ...
+  → 原文：https://cloud.tencent.com/developer/article/2650629
+
+【传GPT-6 4 月14 日上线，性能暴涨；段永平改口怒夸泡泡玛特：中国 ...】（译自外媒）
+  GPT-6 预计将于4 月14 日发布性能暴增40%在大家焦急等待DeepSeek V4 的同时，美国的AI 发展也没有停歇，OpenAI 去年底启动红色警报，专注打造一个超级强大的AI，...
+  → 原文：https://new.qq.com/rain/a/20260406A02IY600
+
+【ChatGPT — 发布说明】（译自外媒）
+  该功能此前已在[2025 年 8 月 12 日](https://help.openai.com/zh-hans-cn/articles/6825453-chatgpt-%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%9...
+  → 原文：https://help.openai.com/zh-hans-cn/articles/6825453-chatgpt-%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97
+
+【Gemini 最强版本上线：推理力断层领先，姚顺宇预告更强版本还在路上】（译自外媒）
+  就在上周谷歌发布Gemini Deep Think 重大更新后，谷歌于今日正式推出新一代基础大模型Gemini 3.1 Pro。 谷歌CEO 桑达尔·皮查伊(Sundar Pichai)在社交平台上确认了这一...
+  → 原文：https://www.mittrchina.com/news/detail/15947
+
+
+
+---
+生成时间：17:30 | 本次推送 5 条

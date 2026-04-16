@@ -1,0 +1,36 @@
+【AI晚报】📅 2026-04-14
+
+1. 【OpenAI challenges Anthropic with ChatGPT Pro subscription tier（译自外媒）】
+   [![foreground of header](https://image.cnbcfm.com/api/v1/image/108047415-1729017766754-AI_AGE_CNBC_COM_SPECIAL_REPORT_HEADER_LOGO_TEMPLATE_500x160_v06
+   → 原文：https://www.cnbc.com/2026/04/09/openai-chatgpt-pro-subscription-anthropic-claude-code.html
+
+2. 【Anthropic debuts preview of powerful new AI model Mythos ... - TechCrunch（译自外媒）】
+   [Register now.](https://techcrunch.com/events/strictlyvc-san-francisco-2026/?utm_source=tc&utm_medium=ad&utm_campaign=svcsf2026&utm_content=ticketsale
+   → 原文：https://techcrunch.com/2026/04/07/anthropic-mythos-ai-model-preview-security/
+
+3. 【Why Anthropic won't release its new Claude Mythos AI model to the public（译自外媒）】
+   *   [U.S. News](https://www.nbcnews.com/us-news). *   [World](https://www.nbcnews.com/world). [Subscribe](https://www.nbcnews.com/subscribe). *   [U.S
+   → 原文：https://www.nbcnews.com/tech/security/anthropic-project-glasswing-mythos-preview-claude-gets-limited-release-rcna267234
+
+4. 【OpenAI will be launching new model on 14th-16th of April - Reddit（译自外媒）】
+   [Skip to main content](https://www.reddit.com/r/ChatGPTcomplaints/comments/1sfn7ef/openai_will_be_launching_new_model_on_14th16th_of/#main-content)Ope
+   → 原文：https://www.reddit.com/r/ChatGPTcomplaints/comments/1sfn7ef/openai_will_be_launching_new_model_on_14th16th_of/
+
+5. 【Anthropic canceled the public release of its new Claude Mythos AI ...（译自外媒）】
+   Anthropic CEO Dario Amodei confirmed the restriction on April 7, 2026, launching an initiative called Project Glasswing instead. ... Anthropic's
+   → 原文：https://www.facebook.com/Nerdiest/posts/anthropic-canceled-the-public-release-of-its-new-claude-mythos-ai-because-it-is-/1368224555350281/
+
+6. 【Project Glasswing: Securing critical software for the AI era - Anthropic（译自外媒）】
+   [Introduction](https://www.anthropic.com/glasswing#introduction)[Cybersecurity in the age of AI](https://www.anthropic.com/glasswing#cybersecurity-in-
+   → 原文：https://www.anthropic.com/glasswing
+
+7. 【Anthropic's New Product Aims to Handle the Hard Part of Building AI ...（译自外媒）】
+   Amid rapid enterprise growth, Anthropic is trying to lower the barrier to entry for businesses to build AI agents with Claude. Anthropic announced Wed
+   → 原文：https://www.wired.com/story/anthropic-launches-claude-managed-agents/
+
+8. 【Claude Mythos Preview \ red.anthropic.com（译自外媒）】
+   Interested readers can read the later section on [Turning N-Day Vulnerabilities into Exploits](https://red.anthropic.com/2026/mythos-preview/#n-day-ex
+   → 原文：https://red.anthropic.com/2026/mythos-preview/
+
+---
+生成时间：21:04 | 本次推送 16 条

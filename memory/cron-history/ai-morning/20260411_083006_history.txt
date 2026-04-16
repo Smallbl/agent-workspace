@@ -1,0 +1,21 @@
+【OpenAI vs Anthropic vs Google：2026年AI大模型竞争格局 - 搜狐】（译自外媒）
+  一、2026年AI竞争新格局. 2026年4月，AI大模型市场竞争进入新阶段。OpenAI、Anthropic、Google三大巨头纷纷推出新模型和功能，竞争态势愈发激烈。...
+  → 原文：https://www.sohu.com/a/1004758084_122544903
+
+【AI 日报- 2026年4月8日_人工智能 - AtomGit开源社区】（译自外媒）
+  科技类5 条. 1. Anthropic年化收入首超OpenAI，Claude神话持续上演. Anthropic最新披露，其年化营收已突破300亿美元，正式超越OpenAI的250亿美元。...
+  → 原文：https://gitcode.csdn.net/69d5aabe0a2f6a37c59db10a.html
+
+【Anthropic 於2026 年4 月6 日宣布，與Google 和Broadcom 簽署新 ...】（译自外媒）
+  Anthropic 擴大與Google 及Broadcom 的合作，取得gigawatts次世代運算能力，Anthropic 於 2026 年4 月6 日宣布，與Google 和Broadcom 簽署新協議，將...
+  → 原文：https://www.facebook.com/jerry.chang.505523/photos/anthropic-%E6%93%B4%E5%A4%A7%E8%88%87-google-%E5%8F%8A-broadcom-%E7%9A%84%E5%90%88%E4%BD%9C%E5%8F%96%E5%BE%97gigawatts%E6%AC%A1%E4%B8%96%E4%BB%A3%E9%81%8B%E7%AE%97%E8%83%BD%E5%8A%9Banthropic-%E6%96%BC-2026-%E5%B9%B4-4-%E6%9C%88-6-%E6%97%A5%E5%AE%A3/10239948979637574/
+
+【OpenAI、Anthropic与谷歌合作，共享情报以应对中国AI实验室威胁】（译自外媒）
+  长期在人才、算力、市场、政策全面厮杀的美国3大AI巨头——OpenAI、Anthropic、谷歌，突然放下竞争、联手防御。 2026年4月6日，3家公司宣布通过2023年与...
+  → 原文：https://www.sohu.com/a/1007177887_120174320
+
+【OpenAI、Anthropic和谷歌罕見合作聯手打擊中國AI對手的蒸餾行為】（译自外媒）
+  【彭博】— 競爭對手OpenAI、Anthropic PBC以及Alphabet旗下的谷歌已開始合作，試圖遏制中國競爭對手從美國先進人工智能模型中提取結果，以在全球AI競賽...
+  → 原文：https://hk.finance.yahoo.com/news/openai-anthropic%E5%92%8C%E8%B0%B7%E6%AD%8C%E7%BD%95%E8%A6%8B%E5%90%88%E4%BD%9C-%E8%81%AF%E6%89%8B%E6%89%93%E6%93%8A%E4%B8%AD%E5%9C%8Bai%E5%B0%8D%E6%89%8B%E7%9A%84%E8%92%B8%E9%A4%BE%E8%A1%8C%E7%82%BA-220446443.html
+
+

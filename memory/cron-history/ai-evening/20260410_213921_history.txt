@@ -1,0 +1,21 @@
+【GPT-5、Gemini 3、Claude 4谁真强？国内模型免费版已反超！】（译自外媒）
+  2026年主流AI大模型（GPT-5、Gemini 3、Claude 4及国产DeepSeek等）各有优势：Claude 4和GPT-5在代码编写表现突出，Gemini 3擅长长文档处理，国产模型中文...
+  → 原文：https://gitcode.csdn.net/69ccc5440a2f6a37c59c3fe8.html
+
+【97.6%接近满分！Claude最强模型发布，但不敢给用户用】（译自外媒）
+  Claude Mythos 预览版，官方自称「迄今为止最强大的AI 模型」，一个全新能力层级，甚至大幅甩开了之前自家最强的Claude Opus 4.6。 至少从目前展现出的数据和...
+  → 原文：https://m.ofweek.com/ai/2026-04/ART-201718-8110-30684608.html
+
+【April 2026: Comparing GPT-5, Claude 4.6, Gemini 3 Preview】（译自外媒）
+  # AI Model Benchmarks – April 2026: Comparing GPT-5, Claude 4.6, Gemini 3 Preview2026年4月AI模型基准比较：GPT-5、Claude 4.6 和 Gemi...
+  → 原文：https://af.net/realtime/ai-model-benchmarks-april-2026-comparing-gpt-5-claude-4-6-gemini-3-preview/
+
+【2026年，AI的三个关键趋势 - 澎湃新闻】
+  # 2026年，AI的三个关键趋势. 2026年初，AI领域的“三足鼎立”格局已经从单纯的“大模型参数竞赛”转向了“推理能力、智能体（Agents）与场景闭环”的深度较量。. 结合我今天在上海创智学院听到的“小场景闭环”和“端云协同”思想，...
+  → 原文：https://m.thepaper.cn/newsDetail_forward_32889979
+
+【刚刚，Anthropic祭出最强Claude Mythos！暴击Opus 4.6，跪求千万别用 - 53AI-AI知识库|企业AI知识库|大模型知识库|AIHub】（译自外媒）
+  大模型技术 多模态技术 RAG技术 知识图谱 模型微调 Skill 提示词技巧 开源大模型 智能硬件 Palantir. langchain llamaindex RAGFlow coze Dify Fastgpt Bisheng Qany...
+  → 原文：https://www.53ai.com/news/LargeLanguageModel/2026040863547.html
+
+

@@ -1,0 +1,21 @@
+【AI大模型有哪些？2025年最全面最新15款主流大模型技术对比 | BetterYeah AI智能体】（译自外媒）
+  # AI大模型有哪些？2025年最全面最新15款主流大模型技术对比. 发布于2025-04-08 21:36:54. ## AI大模型发展概述与市场格局. 2025年，AI大模型已进入成熟发展阶段，应用场景日益丰富多元。北京智源人工智能研究...
+  → 原文：https://www.betteryeah.com/blog/comprehensive-comparison-of-15-mainstream-large-model-technologies
+
+【25年7月底AI大模型动态跟踪 - 知乎专栏】（译自外媒）
+  07月17号OpenAI发布ChatGPT agent，是一个统一的智能体系统。融合了此前三大技术突破的优势：Operator与网站交互的能力，Deep Research整合信息的技巧，以及ChatGPT智能对话...
+  → 原文：https://zhuanlan.zhihu.com/p/1931002981626681246
+
+【一文读懂2025年十大AI技术趋势 - 华尔街见闻】（译自外媒）
+  # 一文读懂2025年十大AI技术趋势 - 华尔街见闻. # 一文读懂2025年十大AI技术趋势. Image 2: article.author.display_name刘宝丹 2025-01-08 11:26. 1月8日，北京智源人工智...
+  → 原文：https://wallstreetcn.com/articles/3738684
+
+【全球AI 大模型全栈技术研究报告2024 - 飞书文档】
+  大模型具有强大的泛化性、通用性和实用性，能够降低AI 开发门槛、提高模型精度和泛化能力、提高内容生成质量和效率等多种价值，实现了对传统AI 技术的突破，并成为AGI的重要...
+  → 原文：https://docs.feishu.cn/article/wiki/P225wEjZwihR81kCYXkcHIPinyc
+
+【深度剖析目前主流的大模型技术 - CSDN博客】（译自外媒）
+  2026大模型实战指南：小白也能看懂，收藏对比国内外主流模型（附选型攻略）. 2026年初，全球AI大模型技术迎来新突破，国际巨头与国内厂商密集发布新一代产品。...
+  → 原文：https://blog.csdn.net/penggerhe/article/details/140772996
+
+
