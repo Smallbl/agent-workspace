@@ -187,7 +187,7 @@
       "description": "每天零点记忆巡检备份",
       "enabled": true,
       "createdAtMs": 1776341063286,
-      "updatedAtMs": 1776341493432,
+      "updatedAtMs": 1776341800647,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -198,7 +198,7 @@
       "payload": {
         "kind": "agentTurn",
         "message": "你是记忆官。请执行每日记忆整合任务：\n\n1. 读取以下记忆文件，检查过去24小时内是否有新内容：\n   - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆）\n   - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆）\n   \n2. 识别新增内容：项目进展、决策记录、问题备忘\n\n3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记忆库）\n\n4. 执行备份（注意：workspace/ 是submodule，只需备份config文件）：\n   cd ~/.openclaw && git add agents/ cron/jobs.json openclaw.json && git commit -m '记忆日备份 2026-04-16' && git push origin-workspace main:config-backup\n\n5. 返回简报：哪些记忆被更新了，下次注意什么",
-        "timeoutSeconds": 180
+        "timeoutSeconds": 300
       },
       "delivery": {
         "mode": "announce",
@@ -208,13 +208,14 @@
       },
       "state": {
         "nextRunAtMs": 1776355200000,
-        "lastRunAtMs": 1776341154081,
+        "lastRunAtMs": 1776341502643,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 171355,
+        "lastDurationMs": 180016,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "runningAtMs": 1776341502643
+        "consecutiveErrors": 2,
+        "lastErrorReason": "timeout",
+        "runningAtMs": 1776341812350
       }
     },
     {
