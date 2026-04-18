@@ -42,6 +42,17 @@
             "maxTokens": 131072
           }
         ]
+      },
+      "ollama": {
+        "baseUrl": "http://127.0.0.1:11434",
+        "api": "ollama",
+        "models": [
+          {
+            "id": "nomic-embed-text",
+            "name": "Nomic Embed Text",
+            "input": ["text"]
+          }
+        ]
       }
     }
   },
@@ -51,6 +62,9 @@
         "primary": "minimax/MiniMax-M2.7"
       },
       "timeoutSeconds": 600,
+      "memorySearch": {
+        "provider": "ollama"
+      },
       "models": {
         "minimax/MiniMax-M2.7": {
           "alias": "Minimax"
@@ -185,6 +199,13 @@
   },
   "plugins": {
     "entries": {
+      "memory-core": {
+        "config": {
+          "dreaming": {
+            "enabled": true
+          }
+        }
+      },
       "tavily": {
         "enabled": true,
         "config": {
