@@ -1,7 +1,7 @@
 {
   "meta": {
-    "lastTouchedVersion": "2026.4.1",
-    "lastTouchedAt": "2026-04-03T01:30:41.796Z"
+    "lastTouchedVersion": "2026.4.14",
+    "lastTouchedAt": "2026-04-20T13:07:36.710Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-29T00:56:42.122Z",
@@ -50,7 +50,9 @@
           {
             "id": "nomic-embed-text",
             "name": "Nomic Embed Text",
-            "input": ["text"]
+            "input": [
+              "text"
+            ]
           }
         ]
       }
@@ -128,6 +130,12 @@
         "workspace": "/Users/doujiang/.openclaw/workspace-test",
         "agentDir": "/Users/doujiang/.openclaw/agents/subagent-test",
         "model": "minimax/MiniMax-M2.7"
+      },
+      {
+        "id": "zhanling",
+        "name": "战灵",
+        "workspace": "/Users/doujiang/.openclaw/workspace-zhanling",
+        "model": "minimax/MiniMax-M2.7"
       }
     ]
   },
@@ -159,15 +167,24 @@
       "enabled": true,
       "connectionMode": "websocket",
       "domain": "feishu",
-      "dmPolicy": "open",
-      "groupPolicy": "mention",
       "accounts": {
         "main": {
           "appId": "cli_a94c1f7994f8dbc8",
           "appSecret": "CdfkPo3aHEYP7q8xodS2odUZAtyIGgjg"
+        },
+        "default": {
+          "dmPolicy": "open",
+          "groupPolicy": "mention",
+          "webhookPath": "/feishu/events"
+        },
+        "zhanling": {
+          "appId": "cli_a96ca544d1785ccb",
+          "appSecret": "EuIHvXdQ4K0ZUbCqfh5tQeC1IpdToKqp",
+          "groupAllowFrom": [
+            "oc_7ffa2ca99242ae246037198f4bde6030"
+          ]
         }
       },
-      "webhookPath": "/feishu/events",
       "reactionNotifications": "own",
       "typingIndicator": true,
       "resolveSenderNames": true
@@ -222,5 +239,14 @@
         "enabled": true
       }
     }
-  }
+  },
+  "bindings": [
+    {
+      "match": {
+        "channel": "feishu",
+        "accountId": "zhanling"
+      },
+      "agentId": "zhanling"
+    }
+  ]
 }
