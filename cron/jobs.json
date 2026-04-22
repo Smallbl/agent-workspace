@@ -150,7 +150,8 @@
         "lastDurationMs": 312129,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDelivered": true,
+        "runningAtMs": 1776873600005
       }
     },
     {
@@ -160,7 +161,7 @@
       "description": "每周一早上9点记忆回顾更新",
       "enabled": true,
       "createdAtMs": 1776341076713,
-      "updatedAtMs": 1776865052732,
+      "updatedAtMs": 1776865167370,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * 1",
@@ -181,13 +182,13 @@
       },
       "state": {
         "nextRunAtMs": 1777251600000,
-        "lastRunAtMs": 1776864741554,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 177759,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "runningAtMs": 1776865056848
+        "lastRunAtMs": 1776865056848,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 110522,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {

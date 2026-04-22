@@ -13,9 +13,13 @@
     },
     "lastChannel": "feishu",
     "origin": {
-      "provider": "webchat",
-      "surface": "webchat",
-      "chatType": "direct"
+      "provider": "feishu",
+      "surface": "feishu",
+      "chatType": "direct",
+      "label": "feishu:ou_748c15a782356f78466b01436dbbcbe8",
+      "from": "feishu:ou_748c15a782356f78466b01436dbbcbe8",
+      "to": "ou_748c15a782356f78466b01436dbbcbe8",
+      "accountId": "main"
     },
     "sessionFile": "/Users/doujiang/.openclaw/agents/main/sessions/66ea9bcf-d681-4aca-b04d-91ce5b61aaed.jsonl",
     "compactionCount": 0,
@@ -681,7 +685,7 @@
   },
   "agent:main:main": {
     "sessionId": "1efb2ce6-a677-48a0-af54-694c193d8a05",
-    "updatedAt": 1776864710001,
+    "updatedAt": 1776873435667,
     "systemSent": true,
     "abortedLastRun": false,
     "authProfileOverride": "minimax:cn",
@@ -865,13 +869,13 @@
       "version": 0
     },
     "status": "done",
-    "startedAt": 1776864425829,
+    "startedAt": 1776873427721,
     "modelProvider": "minimax",
     "model": "MiniMax-M2.7",
     "contextTokens": 204800,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1776864425731,
+      "generatedAt": 1776873427633,
       "sessionId": "1efb2ce6-a677-48a0-af54-694c193d8a05",
       "sessionKey": "agent:main:main",
       "provider": "minimax",
@@ -1255,7 +1259,7 @@
         ]
       }
     },
-    "estimatedCostUsd": 59.920986435000025,
+    "estimatedCostUsd": 60.23886672000002,
     "totalTokensFresh": true,
     "lastChannel": "webchat",
     "channel": "webchat",
@@ -1305,13 +1309,13 @@
         }
       }
     ],
-    "inputTokens": 92319,
-    "outputTokens": 92,
-    "cacheRead": 92352,
+    "inputTokens": 76649,
+    "outputTokens": 70,
+    "cacheRead": 24011,
     "cacheWrite": 0,
-    "totalTokens": 92527,
-    "endedAt": 1776864465542,
-    "runtimeMs": 39713
+    "totalTokens": 100554,
+    "endedAt": 1776873435473,
+    "runtimeMs": 7752
   },
   "agent:main:subagent:c7e911f8-ed71-406c-9b41-7396610ecf73": {
     "sessionId": "872ffdb9-fefc-47ac-b125-19dcc2f26192",
@@ -75068,7 +75072,7 @@
       "accountId": "de893e7b45c9-im-bot"
     },
     "sessionId": "863997e9-bb1d-42b4-a607-e645053eedc7",
-    "updatedAt": 1776864714424,
+    "updatedAt": 1776865190196,
     "systemSent": true,
     "abortedLastRun": false,
     "authProfileOverride": "minimax:cn",
@@ -75329,14 +75333,14 @@
       ],
       "version": 0
     },
-    "status": "running",
-    "startedAt": 1776864714403,
+    "status": "done",
+    "startedAt": 1776865178257,
     "modelProvider": "minimax",
     "model": "MiniMax-M2.7",
     "contextTokens": 204800,
     "systemPromptReport": {
       "source": "run",
-      "generatedAt": 1776862797269,
+      "generatedAt": 1776865178246,
       "sessionId": "863997e9-bb1d-42b4-a607-e645053eedc7",
       "sessionKey": "agent:main:openclaw-weixin:direct:o9cq803aeptmwkw5-eqthnbtnfsw@im.wechat",
       "provider": "minimax",
@@ -75356,9 +75360,9 @@
         "sandboxed": false
       },
       "systemPrompt": {
-        "chars": 40900,
-        "projectContextChars": 20745,
-        "nonProjectContextChars": 20155
+        "chars": 39330,
+        "projectContextChars": 20743,
+        "nonProjectContextChars": 18587
       },
       "injectedWorkspaceFiles": [
         {
@@ -75421,8 +75425,8 @@
           "name": "MEMORY.md",
           "path": "/Users/doujiang/.openclaw/workspace/MEMORY.md",
           "missing": false,
-          "rawChars": 5806,
-          "injectedChars": 5806,
+          "rawChars": 5804,
+          "injectedChars": 5804,
           "truncated": false
         }
       ],
@@ -75485,7 +75489,7 @@
       },
       "tools": {
         "listChars": 0,
-        "schemaChars": 33798,
+        "schemaChars": 34085,
         "entries": [
           {
             "name": "read",
@@ -75525,9 +75529,9 @@
           },
           {
             "name": "message",
-            "summaryChars": 89,
-            "schemaChars": 5601,
-            "propertiesCount": 105
+            "summaryChars": 321,
+            "schemaChars": 5888,
+            "propertiesCount": 106
           },
           {
             "name": "tts",
@@ -75736,13 +75740,15 @@
         ]
       }
     },
-    "inputTokens": 208137,
-    "outputTokens": 7277,
-    "cacheRead": 24768,
+    "inputTokens": 67536,
+    "outputTokens": 48,
+    "cacheRead": 448,
     "cacheWrite": 0,
-    "estimatedCostUsd": 0.14799684,
-    "totalTokens": 41216,
-    "totalTokensFresh": true
+    "estimatedCostUsd": 0.780058695,
+    "totalTokens": 67984,
+    "totalTokensFresh": true,
+    "endedAt": 1776865190008,
+    "runtimeMs": 11751
   },
   "agent:main:openclaw-weixin:direct:o9cq80yqow4eajkzspsz6ps5x2ra@im.wechat": {
     "origin": {
