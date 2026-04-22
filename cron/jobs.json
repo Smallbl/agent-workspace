@@ -160,7 +160,7 @@
       "description": "每周一早上9点记忆回顾更新",
       "enabled": true,
       "createdAtMs": 1776341076713,
-      "updatedAtMs": 1776862909856,
+      "updatedAtMs": 1776865052732,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * 1",
@@ -175,19 +175,19 @@
       },
       "delivery": {
         "mode": "announce",
-        "channel": "last",
+        "channel": "feishu",
         "to": "ou_748c15a782356f78466b01436dbbcbe8",
         "accountId": "main"
       },
       "state": {
         "nextRunAtMs": 1777251600000,
-        "lastRunAtMs": 1776646854113,
+        "lastRunAtMs": 1776864741554,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 163657,
+        "lastDurationMs": 177759,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1,
-        "runningAtMs": 1776864741554
+        "consecutiveErrors": 2,
+        "runningAtMs": 1776865056848
       }
     },
     {
@@ -223,7 +223,7 @@
       "description": "每天凌晨1点备份战灵workspace配置",
       "enabled": true,
       "createdAtMs": 1776691586167,
-      "updatedAtMs": 1776864741537,
+      "updatedAtMs": 1776865012164,
       "schedule": {
         "kind": "cron",
         "expr": "0 1 * * *",
@@ -237,18 +237,19 @@
       },
       "delivery": {
         "mode": "announce",
-        "channel": "last",
+        "channel": "feishu",
+        "to": "ou_748c15a782356f78466b01436dbbcbe8",
         "accountId": "main"
       },
       "state": {
         "nextRunAtMs": 1776877200000,
-        "lastRunAtMs": 1776864727027,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 14510,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 3,
-        "lastError": "Channel is required when multiple channels are configured: feishu, openclaw-weixin Set delivery.channel explicitly or use a main session with a previous channel."
+        "lastRunAtMs": 1776864979026,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 33138,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
       }
     },
     {
@@ -257,7 +258,7 @@
       "description": "每周日晚9点生成工作回顾",
       "enabled": true,
       "createdAtMs": 1776864846210,
-      "updatedAtMs": 1776864846210,
+      "updatedAtMs": 1776864919319,
       "schedule": {
         "kind": "cron",
         "expr": "0 21 * * 0",
@@ -270,7 +271,13 @@
         "text": "你是豆浆的助手。请为王生成本周工作回顾简报，包括：\\n\\n1. 本周完成的主要工作\\n2. 遇到的问题和解决方案\\n3. 下周工作计划\\n4. 需要关注的事项\\n\\n请用中文回复，简明扼要。"
       },
       "state": {
-        "nextRunAtMs": 1777208400000
+        "nextRunAtMs": 1777208400000,
+        "lastRunAtMs": 1776864919318,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 1,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
       }
     }
   ]
