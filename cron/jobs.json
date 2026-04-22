@@ -8,7 +8,7 @@
       "description": "每天9点推送OpenClaw最新资讯",
       "enabled": true,
       "createdAtMs": 1774764197660,
-      "updatedAtMs": 1776733200013,
+      "updatedAtMs": 1776819676236,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * *",
@@ -21,11 +21,11 @@
         "text": "你是飞书官+工具官。请搜索OpenClaw最新资讯：\n\n1. **首先获取本地版本**：执行 `openclaw --version` 确认当前运行的版本号\n\n2. **使用tavily搜索**: \"OpenClaw 最新更新 2026\" 和 \"OpenClaw news April 2026\"\n\n3. **获取内容后必须**：\n   - 用tavily_extract提取每个链接的正文内容\n   - 把英文内容翻译成中文\n   - 把中文内容直接使用\n   \n4. **整理3-5条最新资讯，每条包含**：\n   - 中文标题\n   - 2-3句中文概要（说明这是什么、为什么重要）\n   - **原文链接（必须保留，供需要时查阅）**\n\n5. **搜索结果如果是英文网站，必须全部翻译后再提供**\n\n6. **额外任务：认真阅读这些内容，思考**：\n   - 这些更新对你和你的团队有什么价值？\n   - 有哪些功能或改进可以直接应用到我们的工作流？\n   - 有没有值得尝试的新特性？\n   \n   在简报最后添加【豆浆学习笔记】部分。\n\n无新内容时简单告知即可。返回整理好的简报内容。\n\n【存档要求】在返回简报内容之前，先执行以下操作：\n1. 将简报内容写入 ~/.openclaw/workspace/memory/cron-output/openclaw-daily-news.txt\n   - 格式：第一行是【OpenClaw日报】📅日期（用英文格式如2026-04-15），第二行空行，第三行开始是简报正文\n2. 将简报内容写入 ~/.openclaw/workspace/memory/cron-history/openclaw-news/今日日期.md（如果目录不存在则创建）"
       },
       "state": {
-        "nextRunAtMs": 1776819600000,
-        "lastRunAtMs": 1776733200008,
+        "nextRunAtMs": 1776906000000,
+        "lastRunAtMs": 1776819600008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 5,
+        "lastDurationMs": 76228,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -37,7 +37,7 @@
       "description": "工作日早上8点AI前沿早报（豆浆学习用）",
       "enabled": true,
       "createdAtMs": 1774764624250,
-      "updatedAtMs": 1776729948823,
+      "updatedAtMs": 1776816227948,
       "schedule": {
         "kind": "cron",
         "expr": "0 8 * * 1-5",
@@ -50,11 +50,11 @@
         "text": "你是飞书官+工具官。请为王准备今日AI前沿早报（个人兴趣）：\n\n1. 搜索顺序：\n   - 第一优先：中文AI新闻（用tavily搜索 'AI人工智能 最新新闻 2026'）\n   - 第二优先：中文转载的外媒报道（用tavily搜索 'AI 人工智能 最新突破 2026 site:36kr.com OR site:jiqizhixin.com OR site:leiphone.com'）\n   - 实在没有中文时才用英文，但必须翻译成中文概要\n\n2. 严格过滤信息来源：\n   - ✅ 优先：36氪、机器之心、雷峰网、爱范儿等中文科技媒体\n   - ✅ 其次：公众号搬运的外媒（这类有中文翻译）\n   - ❌ 排除聚合站：ainav.cn、gorden-sun.notion.site、youtube、汇总类站点\n   - ❌ 排除英文原文网站（除非是特别重要的突破性进展）\n\n3. 严格控制在10条以内，优先选择最重要的新闻：\n   - 每条必须是【原始新闻】\n   - 看到标题+中文概要就能判断是否值得点开\n   - 特别重要的外媒进展才保留英文原文链接\n   - 宁缺毋滥，不要为了凑数量放凑数的内容\n\n4. 格式要求（每条都要完整，不能省略任何字段）：\n   - 中文标题\n   - 2-3句话的中文概要\n   - **原文链接（必须有，如果tavily搜索结果没有URL，必须用tavily_extract从文章提取；如果实在没有URL，标注\"来源：媒体名称\"）**\n   \n无新内容时简单告知即可。返回整理好的简报内容。\n\n【存档要求】在返回简报内容之前，先执行以下操作：\n1. 将简报内容写入 ~/.openclaw/workspace/memory/cron-output/ai-morning-briefing.txt\n   - 格式：第一行是【AI早报】📅日期（用英文格式如2026-04-15），第二行空行，第三行开始是简报正文\n2. 将简报内容写入 ~/.openclaw/workspace/memory/cron-history/ai-morning-briefing/今日日期.md（如果目录不存在则创建）"
       },
       "state": {
-        "nextRunAtMs": 1776816000000,
-        "lastRunAtMs": 1776729600008,
+        "nextRunAtMs": 1776902400000,
+        "lastRunAtMs": 1776816000009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 348815,
+        "lastDurationMs": 227939,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -66,7 +66,7 @@
       "description": "工作日11:30招投标行业AI简报",
       "enabled": true,
       "createdAtMs": 1774785904453,
-      "updatedAtMs": 1776740542228,
+      "updatedAtMs": 1776826915134,
       "schedule": {
         "kind": "cron",
         "expr": "0 11 30 * 1-5",
@@ -79,47 +79,13 @@
         "text": "你是飞书官+工具官。请为王准备今日招投标行业AI应用简报：\n\n1. 使用tavily搜索时必须包含时间限定词：\n   - \"人工智能 招投标 数字化转型 今天\" \n   - \"AI 政府招标 智能采购 最新\"\n   - \"招投标 人工智能 2026年4月\"\n   - time_range 设置为 \"day\" 或 \"week\"\n\n2. 严格筛选信息源：\n   - 优先：36氪(36kr.com)、中国政府购买服务信息平台、各省政府采购网/公共资源交易中心\n   - 其次：省级政府采购网、招标投标协会官网\n   - 排除：个人博客、无明确日期的汇总文章\n\n3. 每条新闻必须满足：\n   - 有明确日期（今日/昨天/本周）\n   - 内容与\"招投标+AI\"直接相关\n   - 不是旧闻翻炒\n   - **原文链接（必须有，如果tavily搜索结果没有URL，必须用tavily_extract从文章提取）**\n\n4. 格式（每条都要完整，不能省略任何字段）：\n   - 中文标题\n   - 2-3句中文概要（含日期来源）\n   - 原文链接（如果没有URL，标注来源媒体名称，如\"来源：经济日报\"）\n\n无相关最新内容时简单告知即可。返回整理好的简报内容。\n\n【存档要求】在返回简报内容之前，先执行以下操作：\n1. 将简报内容写入 ~/.openclaw/workspace/memory/cron-output/ai-work-briefing.txt\n   - 格式：第一行是【工作AI简报】📅日期（用英文格式如2026-04-15），第二行空行，第三行开始是简报正文\n2. 将简报内容写入 ~/.openclaw/workspace/memory/cron-history/ai-work/今日日期.md（如果目录不存在则创建）"
       },
       "state": {
-        "nextRunAtMs": 1776826800000,
-        "lastRunAtMs": 1776740400008,
+        "nextRunAtMs": 1776913200000,
+        "lastRunAtMs": 1776826800008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 142220,
+        "lastDurationMs": 115126,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
-      }
-    },
-    {
-      "id": "b1c34438-58b0-47ab-96f0-f783692d8dd7",
-      "agentId": "main",
-      "name": "每周工作回顾",
-      "description": "每周日晚9点生成工作回顾",
-      "enabled": true,
-      "createdAtMs": 1775141949000,
-      "updatedAtMs": 1776603600015,
-      "schedule": {
-        "kind": "cron",
-        "expr": "0 21 * * 0",
-        "tz": "Asia/Shanghai"
-      },
-      "sessionTarget": "main",
-      "wakeMode": "now",
-      "payload": {
-        "kind": "systemEvent"
-      },
-      "delivery": {
-        "mode": "announce",
-        "channel": "last",
-        "to": "ou_748c15a782356f78466b01436dbbcbe8"
-      },
-      "state": {
-        "nextRunAtMs": 1777208400000,
-        "lastRunAtMs": 1776603600008,
-        "lastRunStatus": "error",
-        "lastStatus": "error",
-        "lastDurationMs": 7,
-        "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 3,
-        "lastError": "TypeError: Cannot read properties of undefined (reading 'trim')"
       }
     },
     {
@@ -128,7 +94,7 @@
       "description": "工作日傍晚5点AI晚报（豆浆学习用）",
       "enabled": true,
       "createdAtMs": 1776215404106,
-      "updatedAtMs": 1776762159326,
+      "updatedAtMs": 1776848672267,
       "schedule": {
         "kind": "cron",
         "expr": "0 17 * * 1-5",
@@ -141,11 +107,11 @@
         "text": "你是飞书官+工具官。请为王准备今日AI前沿晚报（个人兴趣）：\n\n1. 搜索顺序：\n   - 第一优先：中文AI新闻（用tavily搜索 'AI人工智能 最新新闻 2026'）\n   - 第二优先：中文转载的外媒报道（用tavily搜索 'AI 人工智能 最新突破 2026 site:36kr.com OR site:jiqizhixin.com OR site:leiphone.com'）\n   - 实在没有中文时才用英文，但必须翻译成中文概要\n\n2. 严格过滤信息来源：\n   - ✅ 优先：36氪、机器之心、雷峰网、爱范儿等中文科技媒体\n   - ✅ 其次：公众号搬运的外媒（这类有中文翻译）\n   - ❌ 排除聚合站：ainav.cn、gorden-sun.notion.site、youtube、汇总类站点\n   - ❌ 排除英文原文网站（除非是特别重要的突破性进展）\n\n3. 严格控制在10条以内，优先选择最重要的新闻：\n   - 每条必须是【原始新闻】\n   - 看到标题+中文概要就能判断是否值得点开\n   - 特别重要的外媒进展才保留英文原文链接\n   - 宁缺毋滥，不要为了凑数量放凑数的内容\n\n4. 格式要求（每条都要完整，不能省略任何字段）：\n   - 中文标题\n   - 2-3句话的中文概要\n   - **原文链接（必须有，如果tavily搜索结果没有URL，必须用tavily_extract从文章提取；如果实在没有URL，标注\"来源：媒体名称\"）**\n   \n无新内容时简单告知即可。返回整理好的简报内容。\n\n【存档要求】在返回简报内容之前，先执行以下操作：\n1. 将简报内容写入 ~/.openclaw/workspace/memory/cron-output/ai-evening-briefing.txt\n   - 格式：第一行是【AI晚报】📅日期（用英文格式如2026-04-15），第二行空行，第三行开始是简报正文\n2. 将简报内容写入 ~/.openclaw/workspace/memory/cron-history/ai-evening-briefing/今日日期.md（如果目录不存在则创建）"
       },
       "state": {
-        "nextRunAtMs": 1776848400000,
-        "lastRunAtMs": 1776762000008,
+        "nextRunAtMs": 1776934800000,
+        "lastRunAtMs": 1776848400009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 159318,
+        "lastDurationMs": 272258,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -157,7 +123,7 @@
       "description": "每天零点记忆巡检备份",
       "enabled": true,
       "createdAtMs": 1776341063286,
-      "updatedAtMs": 1776701041856,
+      "updatedAtMs": 1776787512137,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -177,15 +143,14 @@
         "accountId": "main"
       },
       "state": {
-        "nextRunAtMs": 1776787200000,
-        "lastRunAtMs": 1776700800008,
+        "nextRunAtMs": 1776873600000,
+        "lastRunAtMs": 1776787200008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 241848,
+        "lastDurationMs": 312129,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true,
-        "runningAtMs": 1776787200005
+        "lastDelivered": true
       }
     },
     {
@@ -195,7 +160,7 @@
       "description": "每周一早上9点记忆回顾更新",
       "enabled": true,
       "createdAtMs": 1776341076713,
-      "updatedAtMs": 1776647017770,
+      "updatedAtMs": 1776862909856,
       "schedule": {
         "kind": "cron",
         "expr": "0 9 * * 1",
@@ -211,7 +176,8 @@
       "delivery": {
         "mode": "announce",
         "channel": "last",
-        "to": "ou_748c15a782356f78466b01436dbbcbe8"
+        "to": "ou_748c15a782356f78466b01436dbbcbe8",
+        "accountId": "main"
       },
       "state": {
         "nextRunAtMs": 1777251600000,
@@ -219,9 +185,9 @@
         "lastRunStatus": "error",
         "lastStatus": "error",
         "lastDurationMs": 163657,
-        "lastError": "Error: Feishu account \"default\" not configured",
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1
+        "consecutiveErrors": 1,
+        "runningAtMs": 1776864741554
       }
     },
     {
@@ -230,7 +196,7 @@
       "description": "[managed-by=memory-core.short-term-promotion] Promote weighted short-term recalls into MEMORY.md (limit=10, minScore=0.800, minRecallCount=3, minUniqueQueries=3, recencyHalfLifeDays=14, maxAgeDays=30).",
       "enabled": true,
       "createdAtMs": 1776425319694,
-      "updatedAtMs": 1776712089781,
+      "updatedAtMs": 1776798441427,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *"
@@ -242,11 +208,11 @@
         "text": "__openclaw_memory_core_short_term_promotion_dream__"
       },
       "state": {
-        "nextRunAtMs": 1776798000000,
-        "lastRunAtMs": 1776711600008,
+        "nextRunAtMs": 1776884400000,
+        "lastRunAtMs": 1776798000009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 489773,
+        "lastDurationMs": 441418,
         "lastDeliveryStatus": "not-requested",
         "consecutiveErrors": 0
       }
@@ -257,7 +223,7 @@
       "description": "每天凌晨1点备份战灵workspace配置",
       "enabled": true,
       "createdAtMs": 1776691586167,
-      "updatedAtMs": 1776704578455,
+      "updatedAtMs": 1776864741537,
       "schedule": {
         "kind": "cron",
         "expr": "0 1 * * *",
@@ -271,17 +237,40 @@
       },
       "delivery": {
         "mode": "announce",
-        "channel": "last"
+        "channel": "last",
+        "accountId": "main"
       },
       "state": {
-        "nextRunAtMs": 1776790800000,
-        "lastRunAtMs": 1776704400008,
+        "nextRunAtMs": 1776877200000,
+        "lastRunAtMs": 1776864727027,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 178447,
-        "lastError": "Error: Feishu account \"default\" not configured",
+        "lastDurationMs": 14510,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 1
+        "consecutiveErrors": 3,
+        "lastError": "Channel is required when multiple channels are configured: feishu, openclaw-weixin Set delivery.channel explicitly or use a main session with a previous channel."
+      }
+    },
+    {
+      "id": "b7eb2bfa-d554-4971-9e05-ba09961eee4c",
+      "name": "每周工作回顾",
+      "description": "每周日晚9点生成工作回顾",
+      "enabled": true,
+      "createdAtMs": 1776864846210,
+      "updatedAtMs": 1776864846210,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * 0",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "你是豆浆的助手。请为王生成本周工作回顾简报，包括：\\n\\n1. 本周完成的主要工作\\n2. 遇到的问题和解决方案\\n3. 下周工作计划\\n4. 需要关注的事项\\n\\n请用中文回复，简明扼要。"
+      },
+      "state": {
+        "nextRunAtMs": 1777208400000
       }
     }
   ]
