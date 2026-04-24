@@ -19,8 +19,7 @@
             "cacheWrite": 0.375
           },
           "contextWindow": 204800,
-          "maxTokens": 131072,
-          "api": "anthropic-messages"
+          "maxTokens": 131072
         }
       ],
       "apiKey": "sk-cp-40p6uC3822QHsSkJ4rlL1wyRzX4uZkRG7yukvIUkVDt3U_QsuOJoXRwM3DM1l83F4WsDMk7ZXLav51ObIbJfMUB6d59qQmR9q2S4WC380AZ6qEf8aIJRueY"
@@ -44,8 +43,7 @@
             "cacheWrite": 0.375
           },
           "contextWindow": 204800,
-          "maxTokens": 131072,
-          "api": "anthropic-messages"
+          "maxTokens": 131072
         }
       ],
       "apiKey": "sk-cp-40p6uC3822QHsSkJ4rlL1wyRzX4uZkRG7yukvIUkVDt3U_QsuOJoXRwM3DM1l83F4WsDMk7ZXLav51ObIbJfMUB6d59qQmR9q2S4WC380AZ6qEf8aIJRueY"
@@ -133,17 +131,7 @@
           "name": "Nomic Embed Text",
           "input": [
             "text"
-          ],
-          "reasoning": false,
-          "cost": {
-            "input": 0,
-            "output": 0,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "contextWindow": 200000,
-          "maxTokens": 8192,
-          "api": "ollama"
+          ]
         }
       ],
       "apiKey": "ollama-local"
