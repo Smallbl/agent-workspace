@@ -27,7 +27,8 @@
         "lastStatus": "ok",
         "lastDurationMs": 75985,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "runningAtMs": 1777154420555
       }
     },
     {
@@ -123,7 +124,7 @@
       "description": "每天零点记忆巡检备份",
       "enabled": true,
       "createdAtMs": 1776341063286,
-      "updatedAtMs": 1776981931539,
+      "updatedAtMs": 1777046796418,
       "schedule": {
         "kind": "cron",
         "expr": "0 0 * * *",
@@ -143,14 +144,14 @@
         "accountId": "main"
       },
       "state": {
-        "nextRunAtMs": 1777046400000,
-        "lastRunAtMs": 1776981868875,
+        "nextRunAtMs": 1777132800000,
+        "lastRunAtMs": 1777046400010,
         "lastRunStatus": "error",
         "lastStatus": "error",
-        "lastDurationMs": 62664,
+        "lastDurationMs": 396408,
         "lastDeliveryStatus": "unknown",
-        "consecutiveErrors": 2,
-        "runningAtMs": 1777046400004
+        "consecutiveErrors": 3,
+        "runningAtMs": 1777154420555
       }
     },
     {
@@ -196,7 +197,7 @@
       "description": "[managed-by=memory-core.short-term-promotion] Promote weighted short-term recalls into MEMORY.md (limit=10, minScore=0.800, minRecallCount=3, minUniqueQueries=3, recencyHalfLifeDays=14, maxAgeDays=30).",
       "enabled": true,
       "createdAtMs": 1776425319694,
-      "updatedAtMs": 1776982208538,
+      "updatedAtMs": 1777057652656,
       "schedule": {
         "kind": "cron",
         "expr": "0 3 * * *"
@@ -208,13 +209,14 @@
         "text": "__openclaw_memory_core_short_term_promotion_dream__"
       },
       "state": {
-        "nextRunAtMs": 1777057200000,
-        "lastRunAtMs": 1776981956316,
+        "nextRunAtMs": 1777143600000,
+        "lastRunAtMs": 1777057200009,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 252222,
+        "lastDurationMs": 452647,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0
+        "consecutiveErrors": 0,
+        "runningAtMs": 1777154420555
       }
     },
     {
@@ -223,7 +225,7 @@
       "description": "每天凌晨1点备份战灵workspace配置",
       "enabled": true,
       "createdAtMs": 1776691586167,
-      "updatedAtMs": 1776981954197,
+      "updatedAtMs": 1777050142041,
       "schedule": {
         "kind": "cron",
         "expr": "0 1 * * *",
@@ -242,14 +244,15 @@
         "accountId": "main"
       },
       "state": {
-        "nextRunAtMs": 1777050000000,
-        "lastRunAtMs": 1776981936558,
+        "nextRunAtMs": 1777136400000,
+        "lastRunAtMs": 1777050000008,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 17639,
+        "lastDurationMs": 142033,
         "lastDeliveryStatus": "delivered",
         "consecutiveErrors": 0,
-        "lastDelivered": true
+        "lastDelivered": true,
+        "runningAtMs": 1777154420555
       }
     },
     {
