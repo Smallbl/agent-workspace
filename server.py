@@ -7,15 +7,52 @@
 import os
 import json
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file
+from flask import Flask, render_template, request, redirect, url_for, jsonify, send_file, make_response
 import html
 import io
 
 app = Flask(__name__)
 app.config['JSON_AS_cii'] = False
 
+# ===== 简易身份认证（cookie方案）=====
+AUTH_TOKEN = "ptk_2026"
+COOKIE_NAME = "project_tracker_auth"
+
+
+@app.before_request
+def check_auth():
+    """所有非静态、非API的请求都需要token验证
+    首次带token访问后写入cookie，后续自动读cookie"""
+    if request.path.startswith('/static/') or request.path.startswith('/api/'):
+        return None
+
+    # 1. 先检查 cookie
+    if request.cookies.get(COOKIE_NAME) == AUTH_TOKEN:
+        return None
+
+    # 2. 检查 URL 参数 token
+    token = request.args.get('token', '')
+    if token == AUTH_TOKEN:
+        # 验证成功 → 设置 cookie（有效期30天），然后重定向到无 token 的 URL
+        from urllib.parse import urlparse, urlencode, parse_qs, urlunparse
+        parsed = urlparse(request.url)
+        query = parse_qs(parsed.query)
+        query.pop('token', None)
+        new_query = urlencode(query, doseq=True)
+        clean_url = urlunparse((parsed.scheme, parsed.netloc, parsed.path, parsed.params, new_query, parsed.fragment))
+        resp = make_response('', 302)
+        resp.headers['Location'] = clean_url
+        resp.set_cookie(COOKIE_NAME, AUTH_TOKEN, max_age=30*24*3600, httponly=True)
+        return resp
+
+    # 3. 都不通过
+    return "Unauthorized: 请使用 ?token=ptk_2026 访问", 401
+
+
+# ===== 数据目录定义 =====
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 PROJECTS_FILE = os.path.join(DATA_DIR, 'projects.json')
+
 
 # ===== 服务器代码更新检测 =====
 SERVER_FILE = os.path.abspath(__file__)
@@ -1030,7 +1067,7 @@ if __name__ == '__main__':
     print("=" * 50)
     print("📋 项目跟踪系统 v3.0")
     print("=" * 50)
-    print("🌐 访问地址: http://localhost:8765")
+    print("🌐 访问地址: http://localhost:8765/?token=" + AUTH_TOKEN)
     print("📝 按 Ctrl+C 停止服务")
     print("=" * 50)
     app.run(host='0.0.0.0', port=8765, debug=False)

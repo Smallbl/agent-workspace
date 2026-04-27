@@ -379,7 +379,7 @@
       "id": 121,
       "content": "确认中招联合给到的报价费用",
       "date": "2026-04-13",
-      "status": "pending",
+      "status": "delayed",
       "source": "temp",
       "source_dept": "中招联合",
       "priority": "medium",
@@ -392,13 +392,14 @@
       "created_at": "2026-04-13 10:20:53.200231",
       "completed_at": null,
       "done": false,
-      "original_task_id": "99"
+      "original_task_id": "99",
+      "original_date": "2026-04-13"
     },
     {
       "id": 122,
       "content": "排查风险预警系统报错问题",
       "date": "2026-04-13",
-      "status": "pending",
+      "status": "delayed",
       "source": "temp",
       "source_dept": "招标五处",
       "priority": "high",
@@ -410,13 +411,14 @@
       "created_at": "2026-04-13 10:20:53.200283",
       "completed_at": null,
       "done": false,
-      "original_task_id": "103"
+      "original_task_id": "103",
+      "original_date": "2026-04-13"
     },
     {
       "id": 123,
       "content": "预开票数据处理",
       "date": "2026-04-13",
-      "status": "pending",
+      "status": "delayed",
       "source": "planned",
       "source_dept": "",
       "priority": "medium",
@@ -428,13 +430,14 @@
       "created_at": "2026-04-13 10:20:53.200298",
       "completed_at": null,
       "done": false,
-      "original_task_id": "105"
+      "original_task_id": "105",
+      "original_date": "2026-04-13"
     },
     {
       "id": 124,
       "content": "商飞数据对接需求评估反馈：核对对接要求",
       "date": "2026-04-13",
-      "status": "pending",
+      "status": "delayed",
       "source": "temp",
       "source_dept": "总经理",
       "priority": "high",
@@ -447,13 +450,14 @@
       "created_at": "2026-04-13 10:20:53.200315",
       "completed_at": null,
       "done": false,
-      "original_task_id": "114"
+      "original_task_id": "114",
+      "original_date": "2026-04-13"
     },
     {
       "id": 125,
       "content": "公众号在线购标支付问题：时不时出现支付成功，但是显示未支付，这个问题需要尽快修复",
       "date": "2026-04-13",
-      "status": "pending",
+      "status": "delayed",
       "source": "temp",
       "source_dept": "招标业务处",
       "priority": "medium",
@@ -463,13 +467,14 @@
       ],
       "project": "在线购标",
       "created_at": "2026-04-13 10:39:48.046368",
-      "completed_at": null
+      "completed_at": null,
+      "original_date": "2026-04-13"
     },
     {
       "id": 126,
       "content": "天翼云测试云主机申请：3台，1台500，2台300",
       "date": "2026-04-13",
-      "status": "pending",
+      "status": "delayed",
       "source": "planned",
       "source_dept": "",
       "priority": "medium",
@@ -480,8 +485,550 @@
       ],
       "project": "电子招投标平台啊私有化部署项目",
       "created_at": "2026-04-13 10:45:53.070293",
+      "completed_at": null,
+      "original_date": "2026-04-13"
+    },
+    {
+      "id": 127,
+      "content": "确认中招联合给到的报价费用",
+      "date": "2026-04-14",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "中招联合",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "本周",
+        "跟进"
+      ],
+      "project": "",
+      "created_at": "2026-04-14 13:53:30.867209",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "121",
+      "original_date": "2026-04-14"
+    },
+    {
+      "id": 128,
+      "content": "排查风险预警系统报错问题（已修改，待测试确认后上线）",
+      "date": "2026-04-16",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "招标五处",
+      "priority": "high",
+      "notes": "",
+      "tags": [
+        "跟进",
+        "本周"
+      ],
+      "project": "风险预警系统",
+      "created_at": "2026-04-14 13:53:30.867246",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "122",
+      "original_date": "2026-04-16"
+    },
+    {
+      "id": 129,
+      "content": "预开票数据处理（数字大屏）",
+      "date": "2026-04-14",
+      "status": "delayed",
+      "source": "planned",
+      "source_dept": "",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要"
+      ],
+      "project": "数字化综合管理平台信创升级",
+      "created_at": "2026-04-14 13:53:30.867266",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "123",
+      "original_date": "2026-04-14"
+    },
+    {
+      "id": 130,
+      "content": "商飞数据对接需求评估反馈：核对对接要求",
+      "date": "2026-04-14",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "总经理",
+      "priority": "high",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "",
+      "created_at": "2026-04-14 13:53:30.867285",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "124",
+      "original_date": "2026-04-14"
+    },
+    {
+      "id": 131,
+      "content": "公众号在线购标支付问题：时不时出现支付成功，但是显示未支付，这个问题需要尽快修复",
+      "date": "2026-04-14",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "招标业务处",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要"
+      ],
+      "project": "在线购标",
+      "created_at": "2026-04-14 13:53:30.867307",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "125",
+      "original_date": "2026-04-14"
+    },
+    {
+      "id": 132,
+      "content": "天翼云测试云主机申请：3台，1台500，2台300",
+      "date": "2026-04-14",
+      "status": "delayed",
+      "source": "planned",
+      "source_dept": "",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "电子招投标平台啊私有化部署项目",
+      "created_at": "2026-04-14 13:53:30.867326",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "126",
+      "original_date": "2026-04-14"
+    },
+    {
+      "id": 133,
+      "content": "成套在线购标支付问题",
+      "date": "2026-04-16",
+      "status": "completed",
+      "source": "temp",
+      "source_dept": "招标四处",
+      "priority": "high",
+      "notes": "因证书到期，导致云收款支付无法正常使用，平安银行正在抓紧时间处理，跟踪银行虚拟账号支付标书费情况",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "在线购标系统",
+      "created_at": "2026-04-15 09:04:09.017779",
+      "completed_at": "2026-04-16 13:47:00.776396",
+      "done": true
+    },
+    {
+      "id": 134,
+      "content": "确认中招联合给到的报价费用",
+      "date": "2026-04-17",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "中招联合",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "本周",
+        "跟进"
+      ],
+      "project": "",
+      "created_at": "2026-04-15 09:04:29.871228",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "127",
+      "original_date": "2026-04-17"
+    },
+    {
+      "id": 135,
+      "content": "预开票数据处理（数字大屏）",
+      "date": "2026-04-15",
+      "status": "completed",
+      "source": "planned",
+      "source_dept": "",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要"
+      ],
+      "project": "数字化综合管理平台信创升级",
+      "created_at": "2026-04-15 09:04:29.871280",
+      "completed_at": "2026-04-15 19:56:34.296350",
+      "done": true,
+      "original_task_id": "129"
+    },
+    {
+      "id": 136,
+      "content": "商飞数据对接需求评估反馈：核对对接要求",
+      "date": "2026-04-16",
+      "status": "completed",
+      "source": "temp",
+      "source_dept": "总经理",
+      "priority": "high",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "",
+      "created_at": "2026-04-15 09:04:29.871305",
+      "completed_at": "2026-04-16 10:14:16.940389",
+      "done": true,
+      "original_task_id": "130"
+    },
+    {
+      "id": 137,
+      "content": "公众号在线购标支付问题：时不时出现支付成功，但是显示未支付，这个问题需要尽快修复",
+      "date": "2026-04-17",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "招标业务处",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要"
+      ],
+      "project": "在线购标",
+      "created_at": "2026-04-15 09:04:29.871327",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "131",
+      "original_date": "2026-04-17"
+    },
+    {
+      "id": 138,
+      "content": "天翼云测试云主机申请：3台，1台500，2台300",
+      "date": "2026-04-15",
+      "status": "completed",
+      "source": "planned",
+      "source_dept": "",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "电子招投标平台啊私有化部署项目",
+      "created_at": "2026-04-15 09:04:29.871353",
+      "completed_at": "2026-04-15 19:56:47.827407",
+      "done": true,
+      "original_task_id": "132"
+    },
+    {
+      "id": 139,
+      "content": "对外服务运维内容确认",
+      "date": "2026-04-16",
+      "status": "completed",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "high",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "对外服务",
+      "created_at": "2026-04-15 20:00:12.832452",
+      "completed_at": "2026-04-16 10:14:12.246447",
+      "done": true
+    },
+    {
+      "id": 140,
+      "content": "反馈问题、公司意见功能已上线，需通知",
+      "date": "2026-04-17",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "本周"
+      ],
+      "project": "",
+      "created_at": "2026-04-16 10:19:20.069971",
+      "completed_at": null,
+      "original_date": "2026-04-17"
+    },
+    {
+      "id": 141,
+      "content": "部门大屏",
+      "date": "2026-04-16",
+      "status": "delayed",
+      "source": "planned",
+      "source_dept": "",
+      "priority": "high",
+      "notes": "",
+      "tags": [
+        "本周"
+      ],
+      "project": "数字化综合管理平台",
+      "created_at": "2026-04-16 13:50:02.282095",
+      "completed_at": null,
+      "original_date": "2026-04-16"
+    },
+    {
+      "id": 142,
+      "content": "专家聘费开票申请失败短信，阿里云申请",
+      "date": "2026-04-17",
+      "status": "completed",
+      "source": "planned",
+      "source_dept": "",
+      "priority": "medium",
+      "notes": "",
+      "tags": [],
+      "project": "",
+      "created_at": "2026-04-17 14:17:11.743195",
+      "completed_at": "2026-04-17 14:17:14.577693",
+      "done": true
+    },
+    {
+      "id": 143,
+      "content": "排查风险预警系统报错问题（已修改，待测试确认后上线）",
+      "date": "2026-04-17",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "招标五处",
+      "priority": "high",
+      "notes": "",
+      "tags": [
+        "跟进",
+        "本周"
+      ],
+      "project": "风险预警系统",
+      "created_at": "2026-04-17 14:17:32.907772",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "128",
+      "original_date": "2026-04-17"
+    },
+    {
+      "id": 144,
+      "content": "公司及部门大屏",
+      "date": "2026-04-23",
+      "status": "pending",
+      "source": "planned",
+      "source_dept": "",
+      "priority": "high",
+      "notes": "优先项目统计数据展示，财务的如果数据没核对准确，以横杠形式展示，核对准确后再更新显示\n确认是否先关闭",
+      "tags": [
+        "本周"
+      ],
+      "project": "数字化综合管理平台",
+      "created_at": "2026-04-17 14:17:32.907821",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "141"
+    },
+    {
+      "id": 145,
+      "content": "确认中招联合给到的报价费用",
+      "date": "2026-04-20",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "中招联合",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "本周",
+        "跟进"
+      ],
+      "project": "",
+      "created_at": "2026-04-20 11:24:11.528327",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "134",
+      "original_date": "2026-04-20"
+    },
+    {
+      "id": 146,
+      "content": "公众号在线购标支付问题：时不时出现支付成功，但是显示未支付，这个问题需要尽快修复",
+      "date": "2026-04-20",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "招标业务处",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要"
+      ],
+      "project": "在线购标",
+      "created_at": "2026-04-20 11:24:11.528367",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "137",
+      "original_date": "2026-04-20"
+    },
+    {
+      "id": 147,
+      "content": "反馈问题、公司意见功能已上线，需通知",
+      "date": "2026-04-20",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "本周"
+      ],
+      "project": "",
+      "created_at": "2026-04-20 11:24:11.528395",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "140",
+      "original_date": "2026-04-20"
+    },
+    {
+      "id": 148,
+      "content": "排查风险预警系统报错问题（已修改，待测试确认后上线）",
+      "date": "2026-04-20",
+      "status": "delayed",
+      "source": "temp",
+      "source_dept": "招标五处",
+      "priority": "high",
+      "notes": "",
+      "tags": [
+        "跟进",
+        "本周"
+      ],
+      "project": "风险预警系统",
+      "created_at": "2026-04-20 11:24:11.528422",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "143",
+      "original_date": "2026-04-20"
+    },
+    {
+      "id": 149,
+      "content": "排查风险预警系统报错问题（已修改，待测试确认后上线）",
+      "date": "2026-04-22",
+      "status": "pending",
+      "source": "temp",
+      "source_dept": "招标五处",
+      "priority": "high",
+      "notes": "",
+      "tags": [
+        "跟进",
+        "本周"
+      ],
+      "project": "风险预警系统",
+      "created_at": "2026-04-20 11:24:24.359434",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "148"
+    },
+    {
+      "id": 150,
+      "content": "反馈问题、公司意见功能已上线，需通知",
+      "date": "2026-04-24",
+      "status": "pending",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "本周"
+      ],
+      "project": "",
+      "created_at": "2026-04-22 17:12:54.019233",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "147"
+    },
+    {
+      "id": 151,
+      "content": "公众号在线购标支付问题：时不时出现支付成功，但是显示未支付，这个问题需要尽快修复",
+      "date": "2026-04-23",
+      "status": "pending",
+      "source": "temp",
+      "source_dept": "招标业务处",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要"
+      ],
+      "project": "在线购标",
+      "created_at": "2026-04-22 21:26:50.527848",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "146"
+    },
+    {
+      "id": 152,
+      "content": "确认中招联合给到的报价费用",
+      "date": "2026-04-23",
+      "status": "pending",
+      "source": "temp",
+      "source_dept": "中招联合",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "本周",
+        "跟进"
+      ],
+      "project": "",
+      "created_at": "2026-04-22 21:26:50.527877",
+      "completed_at": null,
+      "done": false,
+      "original_task_id": "145"
+    },
+    {
+      "id": 153,
+      "content": "用户协议确认",
+      "date": "2026-04-24",
+      "status": "pending",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "中招联合私有化部署",
+      "created_at": "2026-04-22 21:27:49.824229",
+      "completed_at": null,
+      "done": false
+    },
+    {
+      "id": 154,
+      "content": "开通坚果云私有化部署云资源",
+      "date": "2026-04-23",
+      "status": "pending",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "坚果云私有化部署",
+      "created_at": "2026-04-22 21:28:32.552301",
       "completed_at": null
+    },
+    {
+      "id": 155,
+      "content": "公司大屏问题跟领导确认",
+      "date": "2026-04-23",
+      "status": "completed",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "",
+      "created_at": "2026-04-22 21:29:11.657192",
+      "completed_at": "2026-04-23 15:38:24.117649",
+      "done": true
     }
   ],
-  "last_id": 126
+  "last_id": 155
 }
