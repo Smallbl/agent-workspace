@@ -10,7 +10,7 @@
       "tasks": [
         {
           "text": "错别字模型更新（亚太也用，需确认同步）",
-          "done": false,
+          "done": true,
           "priority": "medium",
           "due": "",
           "createdAt": "2026-03-23"
@@ -24,7 +24,7 @@
         },
         {
           "text": "版面还原丢失信息修复",
-          "done": false,
+          "done": true,
           "priority": "medium",
           "due": "",
           "createdAt": "2026-03-23"
@@ -38,7 +38,7 @@
         },
         {
           "text": "国际标模板白名单入库（本周完成）",
-          "done": false,
+          "done": true,
           "priority": "medium",
           "due": "",
           "createdAt": "2026-03-23"

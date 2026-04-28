@@ -1028,7 +1028,75 @@
       "created_at": "2026-04-22 21:29:11.657192",
       "completed_at": "2026-04-23 15:38:24.117649",
       "done": true
+    },
+    {
+      "id": 156,
+      "content": "阿里云语音触发管控需要单独申请无限制号码",
+      "date": "2026-04-29",
+      "status": "pending",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "中招联合私有化部署",
+      "created_at": "2026-04-28 19:20:20.669133",
+      "completed_at": null
+    },
+    {
+      "id": 157,
+      "content": "风控手册：提供给集团的简易操作说明，包含股权穿透，但是需要说明付费使用，对外开账号不开设该功能",
+      "date": "2026-04-29",
+      "status": "pending",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "风险预警系统",
+      "created_at": "2026-04-28 19:21:27.348284",
+      "completed_at": null
+    },
+    {
+      "id": 158,
+      "content": "风控单机版无法执行，打包问题",
+      "date": "2026-04-29",
+      "status": "pending",
+      "source": "planned",
+      "source_dept": "",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "风险预警系统",
+      "created_at": "2026-04-28 19:21:57.820859",
+      "completed_at": null
+    },
+    {
+      "id": 159,
+      "content": "研发人员会议：介绍近期研发项目",
+      "date": "2026-04-30",
+      "status": "pending",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "风险预警系统",
+      "created_at": "2026-04-28 19:22:40.636130",
+      "completed_at": null
     }
   ],
-  "last_id": 155
+  "last_id": 159
 }
