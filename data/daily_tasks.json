@@ -1096,7 +1096,24 @@
       "project": "风险预警系统",
       "created_at": "2026-04-28 19:22:40.636130",
       "completed_at": null
+    },
+    {
+      "id": 160,
+      "content": "中招联合本地化部署注册协议修改确认",
+      "date": "2026-04-29",
+      "status": "pending",
+      "source": "temp",
+      "source_dept": "技术中心",
+      "priority": "medium",
+      "notes": "",
+      "tags": [
+        "重要",
+        "本周"
+      ],
+      "project": "中招联合私有化部署",
+      "created_at": "2026-04-29 10:49:03.345106",
+      "completed_at": null
     }
   ],
-  "last_id": 159
+  "last_id": 160
 }
