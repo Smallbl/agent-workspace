@@ -26,13 +26,16 @@
 
 ## 🚨 紧急关注
 
-### announce bug 重复发送问题（2026-04-16 发现）
-- **症状**：cron 任务执行成功后，announce 投递模块内部重试队列未正确清空，导致重复发送或发送空内容
-- **具体案例**：
-  - AI工作简报 4/16 发送了两次（11:01 正常，12:00 重试成功）
-  - OpenClaw日报 4/16 9:30 发送了空内容（9:01 发送成功后重试队列残留）
-- **处理**：4/16 晚已重启 OpenClaw 服务清空重试队列
-- **后续**：4/21 观察正常，未再复发 ✅
+### ⚠️ 微信第二账号 crash（2026-04-29 → ⏳ 待排查）
+- `aa1b373441f2-im-bot` 启动时报 `Cannot read properties of undefined (reading 'logger')`
+- 微信双账号绑定（04-22）已完成，但第二个账号不稳定
+
+### 战灵测试结果（2026-04-21 计划 → ⏳ 仍待确认）
+- 王计划当晚陪皓测试战灵，但至今未见测试结果记录
+- 需在合适时机询问确认
+
+### OpenClaw 版本
+- **当前运行：v2026.4.25**（aa36ee6，04-27 升级完成）
 
 ---
 
@@ -46,7 +49,144 @@
 
 ---
 
-*最后更新：2026-04-22 | 记忆官每周整合*
+---
+
+## 📅 2026-04-28 每日记忆整合（记忆官）
+
+### 记忆文件检查
+- **豆浆记忆**：正常（`2026-04-27.md`，3:00生成，包含4/26做梦内容）
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在，无记忆记录
+
+### 做梦内容摘要（04-26晚 → 04-27凌晨）
+- DeepSeek融资：腾讯阿里洽谈，估值200亿美元
+- GPT-5.5 发布（OpenAI 4/23）
+- 小米 MiMo-V2.5，支持百万Token超长上下文
+- 战灵备份持续正常（04-25: 50K，04-26: 50K）
+- 微信双账号绑定持续（`de893e7b45c9-im-bot`豆浆 / `aa1b373441f2-im-bot`战灵）
+
+### OpenClaw 版本状态（截至4/27）
+- **当前运行**：v2026.4.14（连续10天无变化）
+- **最新可用**：v2026.4.24（4/26发布，共10个小版本差）
+- 王计划4/27晚手动升级，结果待确认
+
+### Git备份结果
+- ✅ **commit成功**：`018f73e`，5文件变更，+12611/-619行
+- ❌ **push失败**：SSL connection timeout（网络问题，非配置问题）
+- **内容**：agents/、cron/jobs.json、openclaw.json
+
+### 下次注意
+1. **Git push SSL超时**：origin-workspace 推送失败，需重试或检查网络代理
+2. **OpenClaw升级确认**：王4/27晚执行升级，结果需记录（版本是否更新到v2026.4.24）
+3. **微信第二账号路由验证**：战灵微信绑定后实际效果待确认
+
+---
+
+*最后更新：2026-04-28 | 记忆官每日整合*
+
+---
+
+## 📝 2026-04-28 ~ 2026-05-03 每日记忆整合（记忆官）
+
+> **本周关键词**：Gateway凌晨被杀死（04-29）、简报触发时间混乱、系统静默期、微信第二账号crash
+
+### 记忆文件检查结果
+- **豆浆日记**：最后更新 2026-04-27.md（3:00生成），04-28 ~ 05-02 无新日记
+- **做梦记忆**：04-28、04-29、05-02、05-03、05-04 均有 light/rem/deep 三阶段输出
+- **cron简报历史**：
+  - AI早报：最后 04-29
+  - AI晚报：最后 04-30（06:29异常早）
+  - AI工作：最后 04-28
+  - OpenClaw新闻：最后 04-18（静默期前）
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在
+
+### 🚨 重大故障：Gateway 凌晨被 LaunchAgent 杀死（04-29 06:00）
+- **现象**：Gateway 06:00 收到 SIGTERM，挂掉 1 小时 27 分，直到王手动 `openclaw gateway run` 恢复
+- **根因**：两个本应禁用的 LaunchAgent plist 仍在被 launchd 调度
+  - `gateway-restart`（05:00）：调用不存在的 `/usr/bin/openclaw`，每5分钟重试28次
+  - `gateway-daily-restart`（06:00）：执行 `launchctl bootout` 杀死 gateway
+- **关键教训**：macOS launchd 对 `.disabled-` 前缀只是 community convention，**launchd 仍会加载并调度**。正确做法：`launchctl bootout` + 物理移走文件
+- **修复**：bootout 两个任务 + 物理移走 plist 到 `~/Library/LaunchAgents/disabled-backup/`
+- **附带发现**：
+  - 微信第二账号 `aa1b373441f2-im-bot` 启动 crash：`Cannot read properties of undefined (reading 'logger')`
+  - Memory Dreaming 03:00 三阶段全部 timeout（Gateway 挂机中）
+
+### 📰 简报触发时间混乱（04-30凌晨）
+- AI晚报在 04-29 11:05（上午）触发，04-30 06:29（清晨）触发
+- 根因：Gateway 04-29 14:47 才手动恢复后，系统可能在补跑积压的 cron
+- 王的处理意见：备援脚本不要造成隔天补发
+
+### 做梦记忆亮点（04-29 Deep阶段）
+- Repaired recall artifacts: rewrote recall store
+- Ranked 9 candidates for durable promotion
+- Promoted 3 candidates into MEMORY.md
+
+### 系统静默期分析（04-28 ~ 05-02）
+- 连续多日无新日记文件 + 简报最后更新在 04-29~04-30
+- 判断：Gateway 04-29 被杀死后手动恢复，但可能未持续运行至周末
+- 05-02 做梦系统正常输出（light 34KB，rem 1.7KB，deep 155B），说明系统已恢复活跃
+- **教训**：连续3天无日记文件时应发提醒或尝试唤醒
+
+### OpenClaw 版本状态
+- **当前运行**：v2026.4.25（aa36ee6，04-27 升级完成）
+- 05-01 ~ 05-03 无新版本更新记录
+
+### 定时任务状态（04-28 ~ 05-03）
+
+| 任务 | 最后执行 | 状态 |
+|------|---------|------|
+| ai-morning-briefing | 04-29 08:02 | ⚠️ 04-30后停止 |
+| ai-work-briefing | 04-28 12:00 | ⚠️ 静默期 |
+| ai-evening-briefing | 04-30 06:29 | ⚠️ 时间异常 |
+| openclaw-daily-news | 04-18 | ❌ 静默期未生成 |
+| memory-daily-backup | 待确认 | ⚠️ 需检查 |
+| 战灵每日备份 | 04-27 51K | ⏳ 需确认后续状态 |
+| Memory Dreaming | 05-02 正常 | ✅ 系统活跃 |
+
+### 待处理
+
+| 项目 | 状态 | 来源 |
+|------|------|------|
+| 微信第二账号 crash（logger undefined） | ⏳ 待排查 | 04-29 |
+| LaunchAgent 禁用状态确认 | ⏳ 待确认 | 04-29 |
+| 简报 cron 时间混乱修复 | ⏳ 待排查 | 04-30 |
+| 战灵测试结果确认 | ⏳ 仍待确认 | 04-21 |
+| 备援脚本清理 | ⏳ 待执行 | 04-30王要求 |
+
+### Git 备份状态
+- **最后提交**：da9d753（2026-04-30 00:04），距今 5 天
+- **备份内容**：agents/main/agent/、cron/jobs.json、openclaw.json
+
+### 教训总结（本周新增）
+
+1. **LaunchAgent 禁用**：`.disabled-` 前缀不能被 launchd 识别，必须 `bootout` + 物理移走
+2. **Gateway 手动恢复后检查**：恢复后应确认 cron 任务调度是否正常
+3. **静默期检测**：连续3天无日记文件应主动发提醒
+4. **备援脚本避免补发**：补发导致简报时间混乱，用户体验差
+
+---
+
+*最后更新：2026-05-04 | 记忆官每周回顾*
+
+---
+
+### 📜 历史周报（归档）
+
+#### 2026-04-27 每周整合（本周 4/21-4/27）
+
+> **本周关键词**：微信双账号绑定、Cron任务修复、Gateway异常断连、OpenClaw升级预备
+
+**本周重大事项：**
+
+1. **微信双账号绑定成功（4/22）**：豆浆 `de893e7b45c9-im-bot` + 战灵 `aa1b373441f2-im-bot`
+2. **Cron 任务多项修复（4/22）**：战灵备份/每周回顾delivery配置修复
+3. **Gateway 异常断连（4/26 22:41）**：约7分钟自动恢复，已停用 health check plist
+4. **OpenClaw 升级预备完成**：备份 `~/.openclaw-backup-2026-04-26/`（83MB）
+5. **战灵每日备份持续正常**：4/21（17K）→ 4/24（43K）→ 4/27（51K）
+
+**教训：**
+- cron 任务 channel 配置必须明确指定 channel 和 to
+- systemEvent vs agentTurn：main session cron 必须用 systemEvent 类型
+- health check plist 依赖脚本删除后要同步停用
 
 ---
 
@@ -170,11 +310,13 @@
 
 1. **版本更新**：v2026.4.15 可择机更新，建议备份配置后操作
 2. **Active Memory 测试**：待王确认后更新并测试主动记忆检索功能
-3. **MEMORY.md 分支备份**：已验证config文件备份路径正常
+3. **战灵测试确认**：4/21晚王陪皓测试战灵，测试结果待记录
 
 ---
 
 ## 📝 2026-04-22 每周整合（本周 4/13-4/22）
+
+> **本周关键词**：Ollama向量搜索落地、战灵项目启动、Cron体系多项修复、OpenClaw v2026.4.15发布
 
 ### 本周重大事项
 
@@ -256,3 +398,349 @@
 2. **备援机制需避免与主任务时间重叠**：防止双重执行
 3. **git submodule 不能直接 git add**：需在子仓库单独操作
 4. **Ollama 不需要 Homebrew**：macOS 直接下载安装包即可
+
+---
+
+## 📅 2026-04-24 每日记忆整合
+
+### OpenClaw 版本状态
+- **当前运行版本**：v2026.4.14（已落后7个小版本）
+- **最新可用**：v2026.4.21（发布于4月22日）
+- **重要修复**：v2026.4.21 修复 npm 相关问题，图像生成默认切换为 gpt-image-2
+- **升级建议**：如运行稳定可继续观望；若需安装插件建议升级
+
+### 工作领域动态
+- 造价行业 AI 渗透加速：自动算量（20分钟建模+2分钟算量）、AI 审图准确率超95%
+- 招投标规则重大变化：造价咨询强制招标、AI 监管2026年底前部分省市全覆盖、资料保存≥15年
+- 文兜、云境等工具在投标领域持续迭代
+
+### 工作workspace状态
+- ~/.openclaw/workspace-work/memory/ 目录不存在，该路径暂无记忆记录
+
+### Git备份
+- 已提交 agents/main/agent/auth-state.json、agents/main/sessions/sessions.json、cron/jobs.json
+- 推送至 origin-workspace/main:config-backup
+
+---
+
+## 📅 2026-04-25 每日记忆整合（记忆官）
+
+### OpenClaw 版本状态
+- **当前运行**：v2026.4.14（连续5天无变化）
+- **最新可用**：v2026.4.21（4/22发布，含npm修复、图像生成默认切gpt-image-2）
+- **版本差距**：7个小版本，建议择机更新
+
+### 昨日新闻亮点（2026-04-24早报）
+- 腾讯阿里洽谈投资DeepSeek：估值一周翻倍至**200亿美元**
+- 小米发布**MiMo-V2.5**，支持**百万Token超长上下文**
+- 字节跳动发布Seed3D 2.0（MoE架构），API已上线火山引擎
+- 特斯拉车机语音大模型服务完成**上海备案**（2013入华以来首次大更新）
+- 谷歌发布**第八代TPU**，算力提升3倍；基于自研Axion ARM CPU
+- 华为发布乾崑智驾**ADS 5**，世界模型升级至"六维安全"
+- 千寻智能开源具身大模型**Spirit v1.5**，全球榜单登顶
+- 黑湖科技完成近**10亿元D轮融资**，估值超70亿元
+
+### 系统状态
+- **workspace-work/memory/**：目录不存在，无记忆记录
+- **战灵每日备份**：2026-04-24 06:05 成功，43KB
+- 定时任务体系稳定运行（昨日各任务均正常）
+
+### 今日工作
+- 执行 Git 备份（agents/、cron/jobs.json、openclaw.json）
+- 推送至 origin-workspace:main:config-backup
+
+### 待处理
+1. OpenClaw v2026.4.21 升级评估
+2. workspace-work/memory/ 目录初始化（如有工作项目记忆需求）
+3. 备援脚本持续监控（注意返回0条问题）
+
+---
+
+## 📅 2026-04-26 每日记忆整合（记忆官）
+
+### 记忆文件检查结果
+
+- **豆浆记忆**：正常（`~/.openclaw/workspace/memory/2026-04-25.md`，3:00生成）
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在，无记忆记录
+
+### OpenClaw 版本状态
+- **当前运行**：v2026.4.14（连续9天无变化）
+- **最新可用**：v2026.4.23（4/26发布，共9个小版本差）
+- **v2026.4.23核心更新**：GPT-image-2 OAuth直连、子代理三层嵌套、安全加固
+- **版本差距**：9个小版本，建议尽快评估升级
+
+### 做梦记忆亮点（04-25）
+
+做梦系统（Light/REM）整理出以下值得晋升的观察：
+- 定时任务体系稳定，各简报正常推送
+- OpenClaw日报版本bug后续验证正常
+- 战灵备份成功（04-24: 43KB）
+
+### 备份执行结果
+- **Git备份**：已提交并推送至 `origin-workspace/main:config-backup`
+- **备份内容**：agents/、cron/jobs.json、openclaw.json
+- **提交SHA**：`b6d0cea`
+
+### 待处理
+1. **OpenClaw v2026.4.23 升级**：9个版本差，含安全加固，建议评估后升级
+2. workspace-work/memory/ 目录仍不存在，暂无工作项目记忆需求
+3. 战灵项目测试结果待确认（04/21晚王陪皓测试）
+
+---
+
+## 📅 2026-04-27 每日记忆整合（记忆官）
+
+### 记忆文件检查结果
+
+- **豆浆记忆**：正常（`~/.openclaw/workspace/memory/2026-04-26.md`，3:00生成）
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在，无记忆记录
+
+### OpenClaw 版本状态
+- **当前运行**：v2026.4.14（连续10天无变化）
+- **最新可用**：v2026.4.23（4/26发布，共9个小版本差）
+- **版本差距**：9个小版本，建议尽快评估升级
+
+### 做梦记忆亮点（04-26）
+
+- GPT-5.5发布（OpenAI 4/23）
+- 腾讯阿里洽谈投资DeepSeek（估值200亿美元）
+- 小米MiMo-V2.5，支持百万Token超长上下文
+- 战灵备份：04-25成功（50K）、04-26成功（50K）
+- 微信双账号：`de893e7b45c9-im-bot`（豆浆）、`aa1b373441f2-im-bot`（战灵），bindings路由调试中
+
+### 备份执行
+- 执行 Git 备份（agents/、cron/jobs.json、openclaw.json）
+- 推送至 origin-workspace:main:config-backup
+
+### 微信双账号绑定进展（04-22 → 🔄 进行中）
+- 第一个微信：`de893e7b45c9-im-bot`（豆浆主账号）
+- 第二个微信：`aa1b373441f2-im-bot`（战灵）
+- 绑定已完成，正在配置bindings路由到战灵agent
+
+### 待处理
+1. **OpenClaw v2026.4.23 升级**：9个版本差，含安全加固，建议评估后升级
+2. **微信第二账号路由**：验证 bindings 路由到战灵agent是否生效
+3. workspace-work/memory/ 目录仍不存在，暂无工作项目记忆需求
+4. 战灵项目测试结果待确认（04/21晚王陪皓测试）
+
+---
+
+## 📅 2026-04-28 每日记忆整合（记忆官）
+
+### 记忆文件检查结果
+
+- **豆浆记忆**：❌ 2026-04-28 日记不存在（最后日记为 2026-04-27 03:00）
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在，无记忆记录
+- **做梦记忆**：2026-04-28 03:00 生成（light/rem/deep 三阶段均有输出）
+
+### ⚠️ 重要发现：2026-04-28 定时简报部分缺失
+
+| 任务 | 状态 | 备注 |
+|------|------|------|
+| AI早报 | ❌ 未生成 | 无历史文件 |
+| AI工作简报 | ✅ 成功 | 12:00生成，5条新闻（政府采购AI） |
+| AI晚报 | ✅ 成功 | 18:37生成，10条新闻 |
+| OpenClaw日报 | ❌ 未生成 | 无历史文件 |
+
+**根因分析**：AI早报和OpenClaw日报在 2026-04-28 未生成具体原因待查，ai-work 正常说明 cron 基础运行正常，可能是这两个任务的 prompt 执行异常或 API 问题。建议后续观察。
+
+### OpenClaw 版本状态
+- **当前运行**：v2026.4.25 ✅
+- **升级记录**：v2026.4.14 → v2026.4.25（跨越11个小版本），王于04-27手动升级完成
+
+### AI晚报亮点（2026-04-28）
+- **DeepSeek 融资**：梁文锋持股从1%提高至34%，注册资本增50%至1500万元
+- **Ineffable**：前DeepMind研究员创立，获11亿美元种子轮（欧洲史上最大）
+- **曦智科技**：港交所上市首日涨超380%，"全球AI硅光芯片第一股"
+- **马斯克诉OpenAI**：4/27加州联邦法院开庭
+- **国产开源模型**：全球累计下载量突破100亿次
+
+### 战灵项目状态
+- 微信双账号绑定：已完成（`de893e7b45c9-im-bot` 豆浆 / `aa1b373441f2-im-bot` 战灵）
+- 战灵每日备份：04-27 成功（51KB）
+- **待确认**：04/21晚王陪皓测试战灵结果
+
+### 备份执行
+- 执行 Git 备份（agents/、cron/jobs.json、openclaw.json）
+- 推送至 origin-workspace:main:config-backup
+
+### 待处理
+1. **微信第二账号 crash（04-29发现）**：`aa1b373441f2-im-bot` 启动时报 `Cannot read properties of undefined (reading 'logger')`，需后续排查
+2. **LaunchAgent 禁用机制重新验证**：本次事故证明 `.disabled-` 前缀不可靠，禁用 LaunchAgent 必须 `bootout` + 物理移走文件
+3. **战灵项目测试结果**：04/21晚王陪皓测试结果仍待确认
+4. workspace-work/memory/ 目录不存在，暂无工作项目记忆需求
+
+## 📅 2026-04-29 每日记忆整合（记忆官）
+
+### 记忆文件检查结果
+- **豆浆记忆**：cron-history 有 04-29 完整记录（AI晚报、AI工作、OpenClaw日报、AI早报均成功）
+- **做梦记忆**：04-29 dreaming/light+rem+deep 三阶段均正常输出，Deep阶段promoted 3条candidate
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在
+
+### 🚨 重大故障：Gateway 凌晨被 LaunchAgent 杀死（04-29 06:00）
+
+**现象**：
+- 凌晨 06:00:04 Gateway 收到 SIGTERM，挂掉 1 小时 27 分，直到王手动执行 `openclaw gateway run` 才恢复
+
+**根因**：两个本应禁用的 LaunchAgent plist 仍在被 launchd 调度：
+1. `gateway-restart`（05:00）：调用 `/usr/bin/openclaw gateway restart`，路径不存在，每5分钟重试共28次
+2. `gateway-daily-restart`（06:00）：执行 `launchctl bootout` 杀死 gateway
+
+**关键教训**：macOS launchd 对 `.disabled-` 前缀文件名只是 community convention，**launchd 仍会加载并调度**。正确做法是 `launchctl bootout` + 物理移走文件。
+
+**修复**：
+1. `launchctl bootout` 两个任务
+2. 物理移走 plist 到 `~/Library/LaunchAgents/disabled-backup/`
+
+**附带发现**：
+- 03:00 Memory Dreaming 的 light/rem/deep 三阶段全部 timeout
+- 微信第二账号 `aa1b373441f2-im-bot` 启动 crash：`Cannot read properties of undefined (reading 'logger')`
+- OpenClaw 已升级到 v2026.4.25（daily-restart plist 仍标记 v2026.4.14 需要更新）
+
+### 定时简报状态（04-29）
+| 任务 | 状态 |
+|------|------|
+| AI早报 | ✅ 成功 |
+| AI工作简报 | ✅ 成功 |
+| AI晚报 | ✅ 成功 |
+| OpenClaw日报 | ✅ 成功 |
+
+**注**：04-28 的修复（memory-daily-backup channel→feishu，weekly-review timeout→600s）已生效。
+
+### OpenClaw 版本状态
+- **当前运行**：v2026.4.25 ✅（04-27升级）
+- **升级前**：v2026.4.14（连续11天无变化）
+
+### 做梦记忆亮点（04-29 Deep阶段）
+- Repaired recall artifacts: rewrote recall store
+- Ranked 9 candidates for durable promotion
+- Promoted 3 candidates into MEMORY.md
+
+### 备份执行
+- 执行 Git 备份（agents/、cron/jobs.json、openclaw.json）
+- 推送至 origin-workspace:main:config-backup
+
+## Promoted From Short-Term Memory (2026-04-29)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-21.md:388:390 -->
+- - Candidate: Possible Lasting Truths: - 时效一周内 - 去重（7天内不重复） - 优先中文，重要外文要翻译 - 后端Agent修改了备援脚本： - max_results=8 - time_range="week" - 新增历史记录目录 `~/.openclaw/workspace/memory/cron-history/{任务名}/` - 外文标注（译自外媒） - **⚠️ 注意**：后端Agent的修改可能引入了新bug（调试中发现返回0条），需后续验证 ### 4. 配置文件 - 飞书 App ID: `cli_a94c1f7994f - confidence: 0.62 - evidence: memory/2026-04-19.md:298-300 [score=0.845 recalls=0 avg=0.620 source=memory/2026-04-21.md:313-315]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:388:390 -->
+- - Candidate: Possible Lasting Truths: - 时效一周内 - 去重（7天内不重复） - 优先中文，重要外文要翻译 - 后端Agent修改了备援脚本： - max_results=8 - time_range="week" - 新增历史记录目录 `~/.openclaw/workspace/memory/cron-history/{任务名}/` - 外文标注（译自外媒） - **⚠️ 注意**：后端Agent的修改可能引入了新bug（调试中发现返回0条），需后续验证 ### 4. 配置文件 - 飞书 App ID: `cli_a94c1f7994f - confidence: 0.62 - evidence: memory/2026-04-20.md:398-400 [score=0.840 recalls=0 avg=0.620 source=memory/2026-04-22.md:218-220]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-23.md:338:340 -->
+- - Candidate: Possible Lasting Truths: - 时效一周内 - 去重（7天内不重复） - 优先中文，重要外文要翻译 - 后端Agent修改了备援脚本： - max_results=8 - time_range="week" - 新增历史记录目录 `~/.openclaw/workspace/memory/cron-history/{任务名}/` - 外文标注（译自外媒） - **⚠️ 注意**：后端Agent的修改可能引入了新bug（调试中发现返回0条），需后续验证 ### 4. 配置文件 - 飞书 App ID: `cli_a94c1f7994f - confidence: 0.62 - evidence: memory/2026-04-21.md:388-390 [score=0.834 recalls=0 avg=0.620 source=memory/2026-04-23.md:288-290]
+
+## Promoted From Short-Term Memory (2026-04-30)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-24.md:368:370 -->
+- - Candidate: Possible Lasting Truths: - 时效一周内 - 去重（7天内不重复） - 优先中文，重要外文要翻译 - 后端Agent修改了备援脚本： - max_results=8 - time_range="week" - 新增历史记录目录 `~/.openclaw/workspace/memory/cron-history/{任务名}/` - 外文标注（译自外媒） - **⚠️ 注意**：后端Agent的修改可能引入了新bug（调试中发现返回0条），需后续验证 ### 4. 配置文件 - 飞书 App ID: `cli_a94c1f7994f - confidence: 0.62 - evidence: memory/2026-04-22.md:388-390 [score=0.856 recalls=0 avg=0.620 source=memory/2026-04-24.md:213-215]
+
+## Promoted From Short-Term Memory (2026-05-01)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-25.md:328:330 -->
+- - Candidate: Possible Lasting Truths: - 时效一周内 - 去重（7天内不重复） - 优先中文，重要外文要翻译 - 后端Agent修改了备援脚本： - max_results=8 - time_range="week" - 新增历史记录目录 `~/.openclaw/workspace/memory/cron-history/{任务名}/` - 外文标注（译自外媒） - **⚠️ 注意**：后端Agent的修改可能引入了新bug（调试中发现返回0条），需后续验证 ### 4. 配置文件 - 飞书 App ID: `cli_a94c1f7994f - confidence: 0.62 - evidence: memory/2026-04-23.md:338-340 [score=0.888 recalls=0 avg=0.620 source=memory/2026-04-25.md:143-145]
+
+## 📅 2026-05-03 每日记忆整合（记忆官）
+
+> 实际执行时间：2026-05-03 00:00（周六凌晨）
+> 覆盖时段：2026-05-01 ~ 2026-05-03
+
+### 记忆文件检查结果
+- **豆浆记忆日记**：最后更新 2026-04-27（`2026-04-27.md`，3:00生成）
+  - 2026-04-28 ~ 2026-05-02 无新日记文件
+- **做梦记忆**：05-02 有完整输出（light/rem/deep 三阶段均有，内容来自 session-corpus）
+- **定时简报历史**：
+  - AI晚报：最后 2026-04-30
+  - AI早报/AI工作简报/OpenClaw日报：最后 2026-04-29
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在
+
+### ⚠️ 系统静默期判断
+
+连续多日无新日记文件 + 简报最后更新在 04-29~04-30，判断这期间系统处于低活跃/休眠状态（非故障）：
+- Gateway 可能未持续运行（4/29 凌晨被 LaunchAgent 杀死后手动恢复，之后未再观察）
+- 或 cron 任务在非工作日无输出（周末）
+- 05-01 是劳动节假期，05-02 是普通工作日
+
+### OpenClaw 版本状态
+- **当前运行**：v2026.4.25（aa36ee6）
+- **最后确认**：2026-04-29 做梦记忆记录（"OpenClaw 已升级到 v2026.4.25"）
+- 05-01 ~ 05-02 无新版本更新记录
+
+### MEMORY.md 结构观察
+- 永久记忆已整合大量历史条目（从 2026-04-05 到 2026-05-01）
+- topics/ 子目录结构清晰：12 个主题文件
+- 本次新增：本文（2026-05-03 日整合记录）
+
+### Git 备份执行
+- **备份内容**：agents/main/agent/（auth-state.json, models.json）、cron/jobs.json、openclaw.json
+- **提交历史**：da9d753（2026-04-30 00:04），距今 3 天
+- **注意**：sessions.json 是运行时文件，不属于配置，不备份
+
+### 待处理（积累）
+
+| 项目 | 来源 | 状态 |
+|------|------|------|
+| 简报 cron 触发时间混乱（凌晨触发） | 2026-05-01 回顾 | ⏳ 待排查 |
+| 备援脚本清理 | 2026-05-01 王的要求 | ⏳ 待执行 |
+| LaunchAgent 禁用状态确认 | 2026-05-01 | ⏳ 待确认 |
+| 微信第二账号 crash（`logger` undefined） | 2026-04-29 故障 | ⏳ 待排查 |
+| 战灵测试结果确认 | 2026-04-21 计划 | ⏳ 仍未确认 |
+
+### 下次注意
+
+1. **加强静默期检测**：如果连续 3 天无日记文件，应发提醒或尝试唤醒
+2. **cron 历史监控**：AI早报最后 04-29、AI晚报最后 04-30，说明系统可能 04-30 后未正常输出简报
+3. **Gateway 运行状态**：下次记忆整合前先检查 Gateway 是否运行中
+4. **workspace-work/memory/**：如王有工作项目记忆需求，需先建立目录结构
+
+---
+
+*最后更新：2026-05-03 | 记忆官每日整合*
+
+## 📅 2026-05-01 每日记忆整合（记忆官）
+
+### 记忆文件检查结果
+- **豆浆记忆**：最后更新 2026-04-27（日记），05-01 有做梦记录（light 34KB，rem 1.7KB，deep 155B）
+- **定时简报**：AI晚报（04-30），AI早报、AI工作简报、OpenClaw新闻均最后更新 04-29
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在
+
+### 🐛 重要故障：简报推送时间混乱（04-30凌晨）
+
+**问题现象**：
+- 王4/30早6:28收到【AI晚报】📅 2026-04-30（应该是17:00发的晚报，却在早上6点收到）
+- AI早报当天未收到
+
+**根因分析**（来自做梦记忆 light 阶段）：
+- 4/28 晚报：18:37（正常17:00）
+- 4/29 晚报：11:05（上午）
+- 4/30 晚报：06:29（早上）
+- 08:00 早报没触发，日志中无 cron 调度记录
+- **核心问题**：简报 cron 触发时间越来越早，且早报触发失败
+- Gateway 4/29 14:47 才手动启动（因 LaunchAgent 故障），cron 补跑可能造成时间混乱
+
+**王的处理意见**：
+- 不需要的备援脚本清理掉，避免隔天补发
+- 不要造成隔天补发的情况
+
+### OpenClaw 版本状态（05-01）
+- 最后已知运行版本：v2026.4.25（04-27升级）
+- 5月1日无新版本更新记录
+
+### 做梦记忆（05-01）
+- Light 阶段：34KB，包含大量简报推送混乱排查记录
+- Deep 阶段：promoted 1 candidate 到 MEMORY.md
+
+### 待处理
+1. **简报 cron 触发时间混乱**：需排查 ai-evening-briefing 为何凌晨就被触发，早报为何没触发
+2. **备援脚本清理**：按王的要求，清理不需要的备援脚本避免补发
+3. **LaunchAgent 禁用状态确认**：4/29 的两个问题 LaunchAgent 是否仍处于 disabled 状态
+
+### 备份执行
+- 无需备份 agents/（sessions.json 是运行时文件，不属于配置）
+- cron/jobs.json 和 openclaw.json 无变更，无需备份
+- 确认 workspace 是 submodule，不在主仓版本控制范围内
+
+
+## Promoted From Short-Term Memory (2026-05-03)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-27.md:329:331 -->
+- - Candidate: Possible Lasting Truths: 20:01 heartbeat发送问题已解决: **原因**：openClaw配置了多个飞书账号，但默认账号未设置 [confidence=0.58 evidence=memory/2026-04-15.md:6-6]; 20:01 heartbeat发送问题已解决: **已更新**：HEARTBEAT.md 已注明必须指定accountId [confidence=0.58 evidence=memory/2026-04-15.md:10-10]; 20:01 heartbeat发送问题已解决: **解 - confidence: 0.62 - evidence: memory/2026-04-26.md:289-291 [score=0.850 recalls=0 avg=0.620 source=memory/2026-04-27.md:8-10]
