@@ -58,6 +58,21 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 
 ---
 
+## 🚨 Gateway 重启安全规范（2026-04-17 新增）
+
+**问题背景**：config 变更会触发 gateway 立即重启，中断正在处理的消息导致 reply 丢失。
+
+**操作规范**：
+
+1. **改 config 后不要立即重启** — 先确认当前没有消息在处理（查看 dispatch 时间距当前 >30秒）
+2. **需要重启时使用安全脚本** — `bash ~/.scripts/safe-gateway-restart.sh`（内有 10 秒缓冲等待）
+3. **批量改 config** — 多个配置项可以一起改完后统一重启一次，避免反复重启
+4. **重要对话中** — 告知用户将要改配置，征得确认后再操作
+
+**注意**：openclaw gateway restart 会立即发 SIGTERM，无法取消。
+
+---
+
 ## 🔴 铁律：主Agent绝不自己写代码
 
 **2026-04-02 确立，基于 Cloud Code 多Agent架构**
