@@ -959,10 +959,11 @@ OpenClaw 日报（openclaw-daily-news）最后生成于 05-07，05-08 和 05-09 
 | 备援脚本清理 | ⏳ 待执行 | 04-30王要求 |
 | LaunchAgent 禁用状态确认 | ⏳ 待确认 | 04-29 |
 
-### 本周教训
-1. **简报时间混乱已修复**：备援脚本与cron重叠会导致补发，应避免
-2. **国际合作值得持续关注**：Spotify合作、香港01活动（5/15）
-3. **Git push网络问题**：05-10 push失败（35秒超时），类似04-28问题
+### Git push失败（2026-05-11）
+- **原因**：GitHub token认证失败（token可能过期或被撤销）
+- **状态**：workspace commit已保存（aadfef9），main分支领先远程
+- **主仓库备份**：已完成（agents/、cron/jobs.json、openclaw.json）
+- **处理**：需检查GitHub token或使用SSH方式推送
 
 ---
 
