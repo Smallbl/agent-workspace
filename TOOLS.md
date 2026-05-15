@@ -72,6 +72,11 @@ Skills are shared. Your setup is yours. Keeping them apart means you can update 
 - 项目跟踪系统：`bash /tmp/run-server.sh`（先 kill 旧进程）
 - 重启后验证服务正常运行
 
+**Gateway 重启**：
+- 配置文件修改后 → 使用 `bash ~/.scripts/safe-gateway-restart.sh`（10秒缓冲）
+- 不要直接 `openclaw gateway restart`（立即SIGTERM会丢消息）
+- 脚本路径：`~/.scripts/safe-gateway-restart.sh`
+
 ## 目录结构
 
 ```

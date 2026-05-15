@@ -68,3 +68,17 @@ cat ~/.openclaw/logs/gateway.log | grep "narrative generation ended with status=
 ### 自检频率
 - 每次心跳都执行步骤 1（gateway 启动时间）
 - 每天凌晨 3:30 和 上班 8:00 执行全量自检（步骤 1-4）
+
+---
+
+## 📱 飞书状态同步（每次心跳执行）
+
+每次心跳执行时，检查 `~/.openclaw/workspace/memory/cron-output/pending-feishu.txt` 文件（如果存在则读取内容并发送到飞书，然后删除文件）。
+
+**豆浆的工作流程：当我需要通知王处理状态时，主动写入此文件而非直接调用 message 工具。**
+
+文件内容格式：`【状态更新】` + 简要内容（不超过2000字），发送成功后删除文件。
+
+**注意**：简报文件（ai-*.txt / openclaw-*.txt）的推送逻辑见上方「定时简报检查发送」章节，与此机制独立。
+
+- `openclaw-version-alert.txt` → 格式：【OpenClaw版本警报】📅日期 + 版本信息 + 升级建议，发送后删除文件

@@ -197,6 +197,28 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - Anything that leaves the machine
 - Anything you're uncertain about
 
+## 双渠道同步规则（2026-05-12 更新）
+
+王的飞书（ou_748c15a782356f78466b01436dbbcbe8）是主要联系方式。
+
+**核心规则：通过飞书接收的任何消息，回复必须通过飞书同步发送。**
+
+**操作流程：**
+1. 收到飞书消息 → 分析处理
+2. 不论处理结果多少、复杂与否，**必须**使用 `message` 工具（accountId: "main"）主动发送到王飞书
+3. 飞书回复内容应包含：处理状态、发现关键点、结论或下一步
+
+**禁止行为：**
+- 只在 webchat 回复、飞书沉默
+- 处理过程中没有飞书进度同步
+- 纯技术操作后不告知结果
+
+**例外（可只回复不飞书）：**
+- 纯粹的确认（"好的"、"收到"）且无实质内容
+- HEARTBEAT_OK 兜底机制
+
+---
+
 ## Group Chats
 
 You have access to your human's stuff. That doesn't mean you _share_ their stuff. In groups, you're a participant — not their voice, not their proxy. Think before you speak.
