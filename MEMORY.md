@@ -1096,3 +1096,167 @@ OpenClaw 日报（openclaw-daily-news）最后生成于 05-07，05-08 和 05-09 
 ---
 
 *最后更新：2026-05-13 | 记忆官每日整合*
+
+---
+
+## 📅 2026-05-15 每日记忆整合（记忆官）
+
+> **日期**：2026-05-15，周三，00:00触发
+
+### 记忆文件检查（过去24小时：05-13 00:00 ~ 05-15 00:00）
+- **豆浆日记**：最后更新 2026-05-11.md（周六）
+  - 05-12（周日）无日记：正常，周日是休息日
+  - 05-13、05-14无新日记文件：周一/周二，但无daily记录（可能是手动发送简报后忘记写日记）
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在，无记忆记录
+- **做梦记忆**（05-14）：deep/rem/light 三阶段均有输出
+- **session-corpus**：05-11、05-12、05-13 均有记录（豆浆与王的重要对话被保留）
+
+### 重要发现：简报发送问题（05-12 ~ 05-14）
+
+#### 问题回顾
+1. **05-12**：用户（王）发现简报未收到，排查发现 cron announce 投递静默失败
+2. **问题根因**：MiniMax 模型不稳定导致 session 异常，announce 输出丢失
+3. **修复措施**：4个简报 cron（AI早报/工作/晚报/OpenClaw日报）改为 `isolated` + `not requested` 投递，改为写文件到 `cron-output/` → heartbeat 检测后发送飞书
+4. **当前状态**（cron list）：
+   - `ai-morning-briefing`：last 16h ago，status=**skipped**
+   - `ai-work-briefing`：last 13h ago，status=**skipped**
+   - `ai-evening-briefing`：last 7h ago，status=**skipped**
+   - `openclaw-daily-news`：last 15h ago，status=**skipped**
+   - 所有简报状态为 **skipped** 而非 ok，说明修复后的机制未正确工作
+
+#### 待修复
+- heartbeat 是否正确读取 `cron-output/` 并发送飞书？需验证
+- 所有简报 cron 状态是 **skipped** 而非 ok，原因待查
+
+### 系统状态（截至05-15）
+- **运行版本**：v2026.4.25（aa36ee6），连续稳定
+- **最新版本**：v2026.5.5（差5个小版本）
+- **LTS预告**：5月底，建议等LTS升级
+- **战灵备份**：05-08 成功（29K），05-09~05-14待确认
+
+### 其他重要事项
+- **香港01企业AI活动**（5月15日）：今天举办，OpenClaw专题
+- **战灵每日备份**：last 23h ago，status=**error**，需关注
+
+### Git备份状态
+- **Commit**：738e46d ✅（05-15，2文件，+18080/-18750行）
+- **Push状态**：❌ 仍然失败 `Authentication failed for 'https://github.com/Smallbl/agent-workspace.git/'`
+- **原因**：GitHub token 失效（持续问题，始于05-09）
+- **建议**：王需要提供有效的 GitHub PAT 或改用 SSH 方式
+
+### 下次注意
+
+1. **简报体系验证**：当前4个简报 cron 状态全是 skipped，需在 heartbeat 中验证 cron-output 文件读取逻辑
+2. **GitHub Push恢复**：token 持续失效，需王更新 credential 或切换 SSH
+3. **战灵备份错误**：战灵每日备份（cron）状态 error，需排查
+4. **daily 日记补记**：05-13、05-14 无日记，重要事件（香港01活动等）可能遗漏
+5. **LTS升级窗口**：5月底，建议本周内确认升级计划
+
+---
+
+## 📅 2026-05-15 每日记忆整合（记忆官）
+
+> **日期**：2026-05-15，周三，00:00触发
+
+### 记忆文件检查（过去24小时：05-13 00:00 ~ 05-15 00:00）
+- **豆浆日记**：最后更新 2026-05-11.md（周六）
+  - 05-12（周日）无日记：正常，周日是休息日
+  - 05-13、05-14无新日记文件：周一/周二，但无daily记录（可能是手动发送简报后忘记写日记）
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在，无记忆记录
+- **做梦记忆**（05-14）：deep/rem/light 三阶段均有输出
+- **session-corpus**：05-11、05-12、05-13 均有记录（豆浆与王的重要对话被保留）
+
+### 重要发现：简报发送问题（05-12 ~ 05-14）
+
+#### 问题回顾
+1. **05-12**：用户（王）发现简报未收到，排查发现 cron announce 投递静默失败
+2. **问题根因**：MiniMax 模型不稳定导致 session 异常，announce 输出丢失
+3. **修复措施**：4个简报 cron（AI早报/工作/晚报/OpenClaw日报）改为 `isolated` + `not requested` 投递，改为写文件到 `cron-output/` → heartbeat 检测后发送飞书
+4. **当前状态**（cron list）：
+   - `ai-morning-briefing`：last 16h ago，status=**skipped**
+   - `ai-work-briefing`：last 13h ago，status=**skipped**
+   - `ai-evening-briefing`：last 7h ago，status=**skipped**
+   - `openclaw-daily-news`：last 15h ago，status=**skipped**
+   - 所有简报状态为 **skipped** 而非 ok，说明修复后的机制未正确工作
+
+#### 待修复
+- heartbeat 是否正确读取 `cron-output/` 并发送飞书？需验证
+- 所有简报 cron 状态是 **skipped** 而非 ok，原因待查
+
+### 系统状态（截至05-15）
+- **运行版本**：v2026.4.25（aa36ee6），连续稳定
+- **最新版本**：v2026.5.5（差5个小版本）
+- **LTS预告**：5月底，建议等LTS升级
+- **战灵备份**：05-08 成功（29K），05-09~05-14待确认
+
+### 其他重要事项
+- **香港01企业AI活动**（5月15日）：今天举办，OpenClaw专题
+- **战灵每日备份**：last 23h ago，status=**error**，需关注
+
+### Git备份状态
+- **Commit**：738e46d ✅（05-15，2文件，+18080/-18750行）
+- **Push状态**：❌ 仍然失败 `Authentication failed for 'https://github.com/Smallbl/agent-workspace.git/'`
+- **原因**：GitHub token 失效（持续问题，始于05-09）
+- **建议**：王需要提供有效的 GitHub PAT 或改用 SSH 方式
+
+### 下次注意
+
+1. **简报体系验证**：当前4个简报 cron 状态全是 skipped，需在 heartbeat 中验证 cron-output 文件读取逻辑
+2. **GitHub Push恢复**：token 持续失效，需王更新 credential 或切换 SSH
+3. **战灵备份错误**：战灵每日备份（cron）状态 error，需排查
+4. **daily 日记补记**：05-13、05-14 无日记，重要事件（香港01活动等）可能遗漏
+5. **LTS升级窗口**：5月底，建议本周内确认升级计划
+
+---
+
+*最后更新：2026-05-15 | 记忆官每日整合*
+
+## 📅 2026-05-16 每日记忆整合（记忆官）
+
+> **日期**：2026-05-16，周五，00:00触发
+
+### 记忆文件检查（过去24小时：05-14 00:00 ~ 05-16 00:00）
+- **豆浆日记**：最后更新 2026-05-11.md（周六）
+  - 05-12~05-15连续4天无新日记（周日~周三），静默期较长
+  - 05-15（昨天）应该是工作日，可能简报恢复但未写日记
+- **工作项目记忆**：`~/.openclaw/workspace-work/memory/` 目录不存在，无记忆记录
+- **做梦记忆**：05-15 有三阶段输出（cron-output/有记录）
+
+### 新增内容摘要（05-11~05-15期间）
+
+#### 简报体系修复中
+- 05-12王发现问题：简报未收到，announce静默失败
+- 修复方向：简报改为写文件到cron-output/，heartbeat读取后发送飞书
+- 当前4个简报cron状态全是skipped，机制未完全生效
+
+#### 系统状态
+- **运行版本**：v2026.4.25（aa36ee6），连续稳定
+- **最新版本**：v2026.5.5（差5个小版本）
+- **LTS预告**：5月底，建议等LTS升级
+- **OpenClaw国际合作**：Spotify合作（AI播客）、香港01企业AI活动（5/15）OpenClaw专题
+
+#### AI行业重大事件（05-08~05-11期间）
+- 世界数字教育大会（5/11杭州）：AI+教育主题，浙江52万中小学师生AI通识教育
+- 招标采购联盟AI工作组成立，推动招投标AI标准化
+- 上海试点AI辅助评标
+
+### Git备份状态
+- **Commit**：bce4da7 ✅（05-16，3文件，+17720/-18463行）
+- **Push状态**：❌ GitHub token持续失效（已持续约7天）
+- **建议**：王需更新GitHub credential或切换SSH
+
+### 下次注意
+1. **简报机制验证**：4个简报cron状态仍是skipped，需确认heartbeat读取cron-output逻辑
+2. **GitHub Push恢复**：长期token失效，需根本解决
+3. **日记补记**：05-12~05-15连续无日记，重要事件可能遗漏
+4. **战灵备份状态**：error，需排查
+5. **LTS升级**：5月底，建议本周内确认升级计划
+
+---
+
+*最后更新：2026-05-16 | 记忆官每日整合*
+
+## Promoted From Short-Term Memory (2026-05-15)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-08.md:40:40 -->
+- *豆浆每日记忆 | 2026-05-08 | 周五* [score=0.875 recalls=0 avg=0.620 source=memory/2026-05-08.md:40-40]
