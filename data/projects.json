@@ -827,14 +827,14 @@
         },
         {
           "text": "对外投标统计千里马关联",
-          "done": false,
+          "done": true,
           "due": "2026-04-03",
           "priority": "high",
           "createdAt": "2026-03-23"
         },
         {
           "text": "国际标购标登记完善（本周上线）",
-          "done": false,
+          "done": true,
           "due": "2026-04-03",
           "priority": "high",
           "createdAt": "2026-03-23"
@@ -881,7 +881,7 @@
         },
         {
           "text": "外部注册功能需求",
-          "done": false,
+          "done": true,
           "due": "2026-04-30",
           "priority": "high",
           "createdAt": "2026-03-23"
@@ -1043,7 +1043,7 @@
       "date": "2026-04-13",
       "time": "09:30",
       "remark": "",
-      "completed": false,
+      "completed": true,
       "createdAt": "2026-04-09"
     },
     {
@@ -1052,7 +1052,7 @@
       "date": "2026-04-14",
       "time": "14:00",
       "remark": "",
-      "completed": false,
+      "completed": true,
       "createdAt": "2026-04-09"
     }
   ],
