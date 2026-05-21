@@ -245,6 +245,14 @@
       },
       "openclaw-weixin": {
         "enabled": true
+      },
+      "tavily": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "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"
+          }
+        }
       }
     }
   },
