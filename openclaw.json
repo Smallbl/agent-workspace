@@ -1,0 +1,349 @@
+{
+  "skills": {
+    "entries": {
+      "1password": {
+        "enabled": false
+      },
+      "apple-notes": {
+        "enabled": false
+      },
+      "apple-reminders": {
+        "enabled": false
+      },
+      "bear-notes": {
+        "enabled": false
+      },
+      "blogwatcher": {
+        "enabled": false
+      },
+      "blucli": {
+        "enabled": false
+      },
+      "camsnap": {
+        "enabled": false
+      },
+      "coding-agent": {
+        "enabled": false
+      },
+      "discord": {
+        "enabled": false
+      },
+      "eightctl": {
+        "enabled": false
+      },
+      "gemini": {
+        "enabled": false
+      },
+      "gh-issues": {
+        "enabled": false
+      },
+      "gifgrep": {
+        "enabled": false
+      },
+      "github": {
+        "enabled": false
+      },
+      "gog": {
+        "enabled": false
+      },
+      "goplaces": {
+        "enabled": false
+      },
+      "himalaya": {
+        "enabled": false
+      },
+      "imsg": {
+        "enabled": false
+      },
+      "mcporter": {
+        "enabled": false
+      },
+      "model-usage": {
+        "enabled": false
+      },
+      "nano-pdf": {
+        "enabled": false
+      },
+      "obsidian": {
+        "enabled": false
+      },
+      "openai-whisper": {
+        "enabled": false
+      },
+      "openai-whisper-api": {
+        "enabled": false
+      },
+      "openhue": {
+        "enabled": false
+      },
+      "oracle": {
+        "enabled": false
+      },
+      "ordercli": {
+        "enabled": false
+      },
+      "peekaboo": {
+        "enabled": false
+      },
+      "sag": {
+        "enabled": false
+      },
+      "session-logs": {
+        "enabled": false
+      },
+      "sherpa-onnx-tts": {
+        "enabled": false
+      },
+      "slack": {
+        "enabled": false
+      },
+      "songsee": {
+        "enabled": false
+      },
+      "sonoscli": {
+        "enabled": false
+      },
+      "spotify-player": {
+        "enabled": false
+      },
+      "summarize": {
+        "enabled": false
+      },
+      "things-mac": {
+        "enabled": false
+      },
+      "tmux": {
+        "enabled": false
+      },
+      "trello": {
+        "enabled": false
+      },
+      "video-frames": {
+        "enabled": false
+      },
+      "voice-call": {
+        "enabled": false
+      },
+      "wacli": {
+        "enabled": false
+      },
+      "xurl": {
+        "enabled": false
+      }
+    }
+  },
+  "wizard": {
+    "lastRunAt": "2026-05-19T12:36:20.835Z",
+    "lastRunVersion": "2026.5.18",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "meta": {
+    "lastTouchedVersion": "2026.5.18",
+    "lastTouchedAt": "2026-05-19T12:36:20.962Z"
+  },
+  "gateway": {
+    "mode": "local",
+    "auth": {
+      "mode": "token",
+      "token": "dba13bbd11822e1826faff47d04331c0ab32df366b744d3d"
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "minimax/MiniMax-M2.7",
+        "fallbacks": []
+      },
+      "timeoutSeconds": 600,
+      "memorySearch": {
+        "provider": "ollama"
+      },
+      "models": {
+        "minimax/MiniMax-M2.7": {
+          "alias": "Minimax"
+        }
+      },
+      "workspace": "/Users/doujiang/.openclaw/workspace",
+      "subagents": {
+        "allowAgents": [
+          "*"
+        ]
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "bootstrapMaxChars": 20000
+    },
+    "list": [
+      {
+        "id": "main"
+      },
+      {
+        "id": "memory-agent",
+        "name": "记忆官",
+        "workspace": "/Users/doujiang/.openclaw/workspace-memory",
+        "agentDir": "/Users/doujiang/.openclaw/agents/agent-memory",
+        "model": "minimax/MiniMax-M2.7"
+      },
+      {
+        "id": "feishu-agent",
+        "name": "飞书官",
+        "workspace": "/Users/doujiang/.openclaw/workspace-feishu",
+        "agentDir": "/Users/doujiang/.openclaw/agents/agent-feishu",
+        "model": "minimax/MiniMax-M2.7"
+      },
+      {
+        "id": "tools-agent",
+        "name": "工具官",
+        "workspace": "/Users/doujiang/.openclaw/workspace-tools",
+        "agentDir": "/Users/doujiang/.openclaw/agents/agent-tools",
+        "model": "minimax/MiniMax-M2.7"
+      },
+      {
+        "id": "frontend-dev",
+        "name": "frontend-dev",
+        "workspace": "/Users/doujiang/.openclaw/workspace-frontend",
+        "agentDir": "/Users/doujiang/.openclaw/agents/agent-frontend/agent"
+      },
+      {
+        "id": "subagent-frontend",
+        "name": "subagent-frontend",
+        "workspace": "/Users/doujiang/.openclaw/workspace-work-projects",
+        "agentDir": "/Users/doujiang/.openclaw/agents/subagent-frontend",
+        "model": "minimax/MiniMax-M2.7"
+      },
+      {
+        "id": "subagent-backend",
+        "name": "subagent-backend",
+        "workspace": "/Users/doujiang/.openclaw/workspace-backend",
+        "agentDir": "/Users/doujiang/.openclaw/agents/subagent-backend",
+        "model": "minimax/MiniMax-M2.7"
+      },
+      {
+        "id": "subagent-test",
+        "name": "subagent-test",
+        "workspace": "/Users/doujiang/.openclaw/workspace-test",
+        "agentDir": "/Users/doujiang/.openclaw/agents/subagent-test",
+        "model": "minimax/MiniMax-M2.7"
+      },
+      {
+        "id": "zhanling",
+        "name": "战灵",
+        "workspace": "/Users/doujiang/.openclaw/workspace-zhanling",
+        "model": "minimax/MiniMax-M2.7"
+      }
+    ]
+  },
+  "plugins": {
+    "entries": {
+      "minimax": {
+        "enabled": true
+      },
+      "feishu": {
+        "enabled": true
+      },
+      "openclaw-weixin": {
+        "enabled": true
+      },
+      "tavily": {
+        "enabled": true,
+        "config": {
+          "webSearch": {
+            "apiKey": "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"
+          }
+        }
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "minimax": {
+        "baseUrl": "https://api.minimaxi.com/anthropic",
+        "models": [
+          {
+            "id": "MiniMax-M2.7",
+            "name": "MiniMax M2.7",
+            "reasoning": true,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0.3,
+              "output": 1.2,
+              "cacheRead": 0.06,
+              "cacheWrite": 0.375
+            },
+            "contextWindow": 204800,
+            "maxTokens": 131072
+          }
+        ],
+        "api": "anthropic-messages",
+        "authHeader": true
+      }
+    }
+  },
+  "auth": {
+    "profiles": {
+      "minimax:cn": {
+        "provider": "minimax",
+        "mode": "api_key"
+      }
+    }
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "connectionMode": "websocket",
+      "domain": "feishu",
+      "accounts": {
+        "main": {
+          "appId": "cli_a94c1f7994f8dbc8",
+          "appSecret": "CdfkPo3aHEYP7q8xodS2odUZAtyIGgjg"
+        },
+        "default": {
+          "dmPolicy": "open",
+          "groupPolicy": "mention",
+          "webhookPath": "/feishu/events"
+        },
+        "zhanling": {
+          "appId": "cli_a96ca544d1785ccb",
+          "appSecret": "EuIHvXdQ4K0ZUbCqfh5tQeC1IpdToKqp",
+          "groupAllowFrom": [
+            "oc_7ffa2ca99242ae246037198f4bde6030"
+          ]
+        }
+      },
+      "reactionNotifications": "own",
+      "typingIndicator": true,
+      "resolveSenderNames": true
+    },
+    "openclaw-weixin": {
+      "channelConfigUpdatedAt": "2026-04-22T12:51:25.756Z"
+    }
+  },
+  "tools": {
+    "profile": "full",
+    "web": {
+      "search": {
+        "enabled": true,
+        "provider": "tavily"
+      }
+    },
+    "exec": {
+      "ask": "off",
+      "security": "full",
+      "host": "gateway"
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  }
+}
