@@ -93,7 +93,7 @@
         "expr": "0 0 * * *",
         "tz": "Asia/Shanghai"
       },
-      "sessionTarget": "isolated",
+      "sessionTarget": "main",
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
@@ -137,6 +137,7 @@
     },
     {
       "id": "d36fb032-ed05-42b9-a6ee-18069acbd3ab",
+      "agentId": "main",
       "name": "战灵每日备份",
       "description": "每天凌晨1点备份战灵workspace配置",
       "enabled": true,
@@ -150,10 +151,11 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "请执行以下备份命令：\n\nbash ~/.scripts/backup-zhanling.sh\n\n执行完成后返回备份结果（成功/失败/备份大小）。"
+        "message": "请执行以下备份命令：\n\nbash ~/.scripts/backup-zhanling.sh\n\n执行完成后返回备份结果（成功/失败/备份大小）。",
+        "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "announce",
+        "mode": "none",
         "channel": "feishu",
         "to": "ou_748c15a782356f78466b01436dbbcbe8",
         "accountId": "main"
@@ -198,10 +200,10 @@
       "payload": {
         "kind": "agentTurn",
         "message": "请执行项目跟踪系统数据备份任务：\n\n1. 执行备份脚本：\n   bash ~/.openclaw/workspace/work/projects/auto-backup.sh\n\n2. 检查备份结果：\n   - 检查 ~/.openclaw/workspace/work/projects/data/projects.json 是否存在及大小\n   - 检查 git log -1 --oneline 确认最后提交\n\n3. 如果备份失败，生成告警信息\n\n4. 返回简报：备份是否成功，文件大小",
-        "timeoutSeconds": 120
+        "timeoutSeconds": 300
       },
       "delivery": {
-        "mode": "announce",
+        "mode": "none",
         "channel": "feishu",
         "to": "ou_748c15a782356f78466b01436dbbcbe8",
         "accountId": "main"
@@ -224,7 +226,7 @@
       "wakeMode": "now",
       "payload": {
         "kind": "agentTurn",
-        "message": "【强制日期规则】第一步：执行 shell 命令 2026-05-12 获取真实系统日期\n\n你是OpenClaw版本监控官。请执行以下任务：\n\n1. **获取当前运行版本**：执行 OpenClaw 2026.4.25 (aa36ee6) 获取当前运行的版本号\n\n2. **搜索最新版本**：使用 tavily_search 搜索 \"OpenClaw latest version 2026\" 和 \"openclaw github releases May 2026\"\n\n3. **版本对比**：\n   - 当前运行版本：v2026.4.25\n   - 如果有比 v2026.4.25 更新的版本，说明有新版本\n\n4. **评估逻辑**：\n   - 如果有新版本：快速阅读release notes，评估是否有重大bug、回归问题、安全更新\n   - 根据已有信息判断是否推荐升级（参考：5.5有xAI兼容问题，5.6热修了5.5）\n\n5. **输出要求**：\n   - 结果写入 ~/.openclaw/workspace/memory/cron-output/openclaw-version-alert.txt\n   - 格式：版本号 + 发布日期 + 是否有重大变化 + 升级建议（升/不升/观望）\n   - 只有发现新版本（比4.25更新）时才写文件\n   - 无新版本时不写文件，安静退出\n\n6. **重要**：如果发现新版本且评估为\"建议升级\"，在文件中注明\"⚠️建议升级\"；如果评估为\"有重大bug\"，注明\"⚠️有bug，暂缓升级\""
+        "message": "【强制日期规则】第一步：执行 shell 命令 `date +%Y-%m-%d` 获取真实系统日期\n\n你是OpenClaw版本监控官。请执行以下任务：\n\n1. **获取当前运行版本**：执行 `openclaw --version` 获取当前运行的真实版本号\n\n2. **搜索最新版本**：使用 tavily_search 搜索 \"OpenClaw latest version 2026\" 和 \"openclaw github releases May 2026\"\n\n3. **版本对比**：\n   - 当前运行版本：（从步骤1获取的真实版本号）\n   - 如果有比当前运行版本更新的版本，说明有新版本\n\n4. **评估逻辑**：\n   - 如果有新版本：快速阅读release notes，评估是否有重大bug、回归问题、安全更新\n   - 根据已有信息判断是否推荐升级（参考：5.5有xAI兼容问题，5.6热修了5.5）\n\n5. **输出要求**：\n   - 结果写入 ~/.openclaw/workspace/memory/cron-output/openclaw-version-alert.txt\n   - 格式：版本号 + 发布日期 + 是否有重大变化 + 升级建议（升/不升/观望）\n   - 只有发现新版本（比当前运行版本更新）时才写文件\n   - 无新版本时不写文件，安静退出\n\n6. **重要**：如果发现新版本且评估为\"建议升级\"，在文件中注明\"⚠️建议升级\"；如果评估为\"有重大bug\"，注明\"⚠️有bug，暂缓升级\""
       },
       "state": {}
     }
