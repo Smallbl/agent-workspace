@@ -1,0 +1,24 @@
+OpenClaw 版本监控报告
+检查时间: 2026-06-01
+
+当前运行版本: 2026.5.28 (2026年5月28日)
+最新稳定版本: 2026.5.31 (2026年5月31日)
+
+版本对比: 发现新版本 (3天内的新版本)
+
+2026.5.31 发布日期: 2026年5月31日
+
+重大变化:
+- Agents/CLI运行时不那么被中断的tool calls、stale session bindings、compaction handoffs和media delivery retries影响
+- 多渠道(Telegram/WhatsApp/iMessage/Slack/Discord/Teams/Google Meet/iOS Talk)稳定性提升
+- Gateway和channel配置改进，包括Tailscale Serve service-name绑定
+- Provider和plugin请求添加了更严格的timer/retry限制，防止run卡住
+- Skills和session元数据的热路径优化
+- Skills/plugin加载处理stale disabled snapshots更清晰
+- Workboard相关(内容被截断)
+
+升级建议: 升
+
+⚠️建议升级
+
+说明: 2026.5.31是一个以稳定性为主的版本，修复了多个渠道的投递稳定性问题和Agent运行时的不稳定因素。当前5.28版本与最新版本相差3天，涉及较多可靠性修复，建议升级以获得更好的运行时稳定性。
