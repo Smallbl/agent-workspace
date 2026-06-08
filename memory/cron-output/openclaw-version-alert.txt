@@ -1,24 +1,33 @@
-OpenClaw 版本监控报告
-检查时间: 2026-06-01
+=== OpenClaw 版本监控报告 ===
+日期: 2026-06-07
 
-当前运行版本: 2026.5.28 (2026年5月28日)
-最新稳定版本: 2026.5.31 (2026年5月31日)
+【当前运行版本】
+- 版本号: OpenClaw 2026.5.28 (e932160)
+- 状态: ❌ 已落后于最新稳定版
 
-版本对比: 发现新版本 (3天内的新版本)
+【最新稳定版】
+- 版本号: v2026.6.1
+- 发布日期: 2026-06-03
+- 预发布: v2026.6.2-beta.1 (2026-06-03，同日发布)
 
-2026.5.31 发布日期: 2026年5月31日
+【重大变化】
+- ✅ 大规模 QA-Lab 推进：Codex-vs-Pi 运行时一致性
+- ✅ 工具修复增强 (tool-fixture improvements)
+- ✅ iOS App重大更新：Pro Command / Chat / Agents / Settings / Talk 实时播放
+- ✅ Tailscale Serve 服务名绑定支持
+- ✅ Gateway跨 Discord/Telegram/Slack/Matrix/Teams 可靠性提升
+- ✅ Skills Workshop 指南 +技能提案审查流程
 
-重大变化:
-- Agents/CLI运行时不那么被中断的tool calls、stale session bindings、compaction handoffs和media delivery retries影响
-- 多渠道(Telegram/WhatsApp/iMessage/Slack/Discord/Teams/Google Meet/iOS Talk)稳定性提升
-- Gateway和channel配置改进，包括Tailscale Serve service-name绑定
-- Provider和plugin请求添加了更严格的timer/retry限制，防止run卡住
-- Skills和session元数据的热路径优化
-- Skills/plugin加载处理stale disabled snapshots更清晰
-- Workboard相关(内容被截断)
+【已知风险背景】
+- ⚠️ 历史上 5.5 版本 xAI 兼容问题导致 5.6 紧急热修
+- ⚠️ 5.18 版本修复了 .25/.26/.27 遗留的 Gateway 性能下降问题
+- ⚠️ 6.1 → 6.2-beta 同日发布，说明6.x 分支可能存在快速迭代
 
-升级建议: 升
+【升级建议】观望
+-理由: 当前5.28 已包含5.18 的稳定性修复
+- 6.1 是重大功能更新 (iOS 重构 + Skills Workshop)，建议等待 6.2 稳定版
+- 除非有新增功能需求，否则不急于升级
+- ⚠️ 有重大功能需求时可升级，但需留意 Gateway 稳定性
 
-⚠️建议升级
-
-说明: 2026.5.31是一个以稳定性为主的版本，修复了多个渠道的投递稳定性问题和Agent运行时的不稳定因素。当前5.28版本与最新版本相差3天，涉及较多可靠性修复，建议升级以获得更好的运行时稳定性。
+【后续关注】
+- 建议监控 v2026.6.2-beta.1 的稳定版发布时间
