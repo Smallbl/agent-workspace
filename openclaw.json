@@ -133,14 +133,14 @@
     }
   },
   "wizard": {
-    "lastRunAt": "2026-05-19T12:36:20.835Z",
-    "lastRunVersion": "2026.5.18",
-    "lastRunCommand": "configure",
+    "lastRunAt": "2026-05-31T11:57:01.424Z",
+    "lastRunVersion": "2026.5.28",
+    "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.5.18",
-    "lastTouchedAt": "2026-05-19T12:36:20.962Z"
+    "lastTouchedVersion": "2026.5.28",
+    "lastTouchedAt": "2026-06-01T12:33:32.856Z"
   },
   "gateway": {
     "mode": "local",
@@ -171,7 +171,14 @@
         ]
       },
       "compaction": {
-        "mode": "safeguard"
+        "mode": "safeguard",
+        "notifyUser": true,
+        "keepRecentTokens": 8192,
+        "maxActiveTranscriptBytes": 512000,
+        "truncateAfterCompaction": true,
+        "memoryFlush": {
+          "enabled": true
+        }
       },
       "bootstrapMaxChars": 20000
     },
@@ -244,7 +251,7 @@
         "enabled": true
       },
       "openclaw-weixin": {
-        "enabled": true
+        "enabled": false
       },
       "tavily": {
         "enabled": true,
@@ -254,7 +261,10 @@
           }
         }
       }
-    }
+    },
+    "allow": [
+      "feishu"
+    ]
   },
   "models": {
     "mode": "merge",
@@ -305,7 +315,13 @@
         "default": {
           "dmPolicy": "open",
           "groupPolicy": "mention",
-          "webhookPath": "/feishu/events"
+          "webhookPath": "/feishu/events",
+          "allowFrom": [
+            "*"
+          ],
+          "groupAllowFrom": [
+            "*"
+          ]
         },
         "zhanling": {
           "appId": "cli_a96ca544d1785ccb",
@@ -318,9 +334,6 @@
       "reactionNotifications": "own",
       "typingIndicator": true,
       "resolveSenderNames": true
-    },
-    "openclaw-weixin": {
-      "channelConfigUpdatedAt": "2026-04-22T12:51:25.756Z"
     }
   },
   "tools": {
@@ -345,5 +358,8 @@
   },
   "session": {
     "dmScope": "per-channel-peer"
+  },
+  "cron": {
+    "sessionRetention": "6h"
   }
 }
