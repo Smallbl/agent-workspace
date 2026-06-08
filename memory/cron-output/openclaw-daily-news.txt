@@ -1,154 +1,87 @@
-【OpenClaw日报】📅2026-06-07
+【OpenClaw日报】📅 2026-06-08
 
-━━━━━━━━━━━━━━━━━━━━━━━━
-🔔 OpenClaw 最新动态（当前运行版本：2026.5.28）
-━━━━━━━━━━━━━━━━━━━━━━━━
+🦞 OpenClaw 最新动态 | 当前运行版本：2026.5.28
 
-📌 今日概览
-当前稳定版本：2026.5.31（5月31日发布）
-最新测试版：2026.6.2-alpha.2（6月2日）
-本机版本：2026.5.28（需考虑升级）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📦 头条：Skill Workshop 正式上线（2026.6.3）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OpenClaw 上线了全新的 Skill Workshop 功能，可以将 Agent 工作流转化为可复用的 Skill（技能），在正式应用前支持审查和修改。这改变了技能的创建方式——不再是直接改动生产环境，而是先review再部署。
 
-━━━━━━━━━━━━━━━━━━━━━━━━
-📰 五条重要资讯
-━━━━━━━━━━━━━━━━━━━━━━━━
+👉 对我们：可以用它把日常任务封装成标准化技能，团队共享更安全。飞书通知、任务派发、日报生成这些重复工作都可以做成可复用 Skill。
+🔗 原文：https://openclaw.ai
 
-1️⃣ 【性能大幅提升】冷启动速度提升2.9倍，npm包体积缩小59%
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔐 NVIDIA 合作：ClawHub 技能安全升级（2026.6.1）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OpenClaw 与 NVIDIA 合作推进 Skill 安全建设：每个 ClawHub 上的 Skill 现在都附带 Skill Card（说明来源和用途），并通过 SkillSpector 扫描隐藏指令和 Agent风险。同时，OpenClaw 在 Hugging Face 上公开了涵盖 67,453 个公开技能版本的安全扫描数据集。
 
-2026.5.27版本实现了重大性能突破：
-• 冷启动时间：从9.8秒降至3.4秒（2.9x提升）
-• 热启动时间：从7.5秒降至3.0秒（2.5x提升）
-• 内存占用（Peak RSS）：降低7%（686MB → 635MB）
-• 发布tarball：从43.3MB降至17.8MB（缩小59%）
-• npm依赖数量：从413个降至371个（减少42%）
+👉 对我们：Skill 来源更透明，引入第三方 Skill 时更有安全保障，放心使用社区生态。
+🔗 原文：https://openclaw.ai
 
-这意味着你的OpenClaw每次响应都快了很多，而且安装包也更轻量。官方正在推进"核心更小、插件更独立"的架构重构。
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🛡️ 企业级执行防护 Auto Mode（2026.5.31）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+新版本引入 Exec Auto Mode：先运行安全策略，低风险操作自动放行，高风险操作人工审核，始终保持人类在环。这让自动化执行既高效又安全，适合在正式工作流中大胆使用。
 
-📎 https://releasebot.io/updates/openclaw
+👉 对我们：可以把定时任务、Cron 自动化跑得更放心，不必担心危险命令误执行。
+🔗 原文：https://openclaw.ai
 
----
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 Agent 恢复能力大幅提升（2026.5.31）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5 月底的 Beta 更新让 Agent 和 Codex 运行时在中断后恢复得更干净：中断的工具调用、过期的 Session 绑定、压缩交接、媒体投递重试都能正确处理，不会再出现任务"挂死"的情况。Gateway 和回复路径也更快了。
 
-2️⃣ 【安全事件】ClawChain漏洞族被发现并修复，4个CVE被修复
+👉 对我们：我们的定时任务（cron）跑长流程时不再容易卡死，可靠性明显提升。
+🔗 原文：https://releasebot.io/updates/openclaw
 
-安全公司Cyera在5月中旬披露了一组4个高危漏洞（统称"ClawChain"）：
-• CVE-2026-44112（CVSS 9.6）：OpenShell沙箱TOCTOU竞态，可绑过权限写入任意目录
-• CVE-2026-44113（CVSS 7.7）：OpenShell沙箱TOCTOU竞态，可读取任意文件
-• CVE-2026-44115（CVSS 8.8）：heredoc注入绕过allowlist
-• CVE-2026-44118（CVSS 7.8）：senderIsOwner签名伪造导致权限提升
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📡 频道稳定性全面改善
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ Telegram、WhatsApp、iMessage、Slack、Discord、Microsoft Teams、Google Chat、Google Meet、iOS Realtime Talk 等频道稳定性全面改善。尤其是 WhatsApp 和 iOS 端，消息投递更可靠。
 
-这些漏洞组合可造成数据窃取、持久化后门和完整机器控制。所有漏洞已在2026.4.22版本中修复。
+👉 对我们：王通过飞书与我沟通，这条直接影响我的响应可靠性。
+🔗 原文：https://releasebot.io/updates/openclaw
 
-如果你运行的是2026.4.22之前的版本，请立即升级。同时注意不要给agent过高的权限配置。
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📌 升级提醒
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+王当前运行的是 2026.5.28，正式版最新已到 2026.5.31，Beta 已到 2026.6.5-beta.1。建议近期安排一次 `npm install -g openclaw@latest` 升级，获得以上所有改进。
 
-📎 https://thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 【豆浆学习笔记】
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
----
+🔍 对我和团队的直接价值：
 
-3️⃣ 【架构调整】4月底经历"艰难一周"，OpenClaw宣布核心精简+LTS路线图
+1. **Skill Workshop 是重点关注方向**
+   我们目前的"任务派发"模式其实可以进一步封装成团队 Skill——把派发格式、验证标准都做成模板，一次构建、重复使用，减少每次重新描述的成本。值得探索。
 
-2026.4.24和2026.4.29版本引发了严重稳定性问题：Gateway变慢、插件依赖循环、多个渠道降级。创始人Peter Steinberger公开承认问题并道歉。
+2. **Auto Mode 让 Cron 任务更安全**
+   以前跑自动化命令总有点担心，有了策略先行的 Auto Mode，可以把更多日常巡检、报表生成任务自动化，而不必守在机器旁边。
 
-核心调整：
-• 核心变得更小：把频道、provider、重型工具移出核心
-• ClawHub插件化：可选功能全部拆到插件
-• LTS版本即将宣布：稳定分支和快速迭代分支分离
-• 团队扩张：通过OpenClaw Foundation招聘更多维护者
+3. **Agent 恢复能力提升对长时间任务有意义**
+   我们有些跨日任务（日报生成、项目进度汇总），中断恢复变好意味着这类任务可以更放心地交给 Agent 完成。
 
-这是一次有诚意的自我修正，对用户来说长期是好事。
+4. **NVIDIA 安全合作信号积极**
+   Skill 生态有了安全背书，未来引入社区 Skill 会更放心。这也意味着 ClawHub 生态会越来越重要，提前熟悉很有价值。
 
-📎 https://openclaw.ai/blog/openclaw-rough-week
+💡 可以尝试的新特性：
+   - 把飞书消息同步、项目进度查询封装为可复用 Skill
+   - 开启 Exec Auto Mode，配置低危命令白名单
+   - 尝试用 Skill Workshop 把"每日简报生成"做成自动化 Skill
 
----
+🔮 长期观察点：
+   - OpenClaw 已移交 OpenClaw Foundation，项目持续性有保障
+   - 2026年被社区认为是"通用AI Agent元年"，OpenClaw 正在成为标准基础设施
+   - 随着 NVIDIA、OpenAI 的介入，企业级安全/治理功能会越来越完善
 
-4️⃣ 【安全升级】与NVIDIA合作推出ClawHub安全扫描体系，发布公开数据集
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📚 原文链接
+• OpenClaw 官方更新公告：https://openclaw.ai
+• OpenClaw 最新发布说明：https://releasebot.io/updates/openclaw
+• OpenClaw 官方更新日志：https://openclaw.com.au/updates
+• GitHub Releases：https://github.com/openclaw/openclaw/releases
+• OpenClaw 创始人访谈（2026）：https://techxplore.com/news/2026-03-openclaw-creator-year-general-ai.html
 
-OpenClaw与NVIDIA合作推出新一代技能安全扫描：
-• ClawScan：VirusTotal + 静态分析 + SkillSpector三引擎联合扫描
-• NVIDIA Skill Cards：每个发布技能都有安全卡片，注明来源和扫描结果
-• Hugging Face公开数据集（OpenClaw/clawhub-security-signals）：6.7万+技能扫描结果开放给社区
-• 发现：仅0.69%的技能被3个引擎同时标记，81.9%仅被单一引擎发现——说明多引擎交叉扫描很有必要
-
-这个方向很有价值：技能安全不能靠单一扫描器。
-
-📎 https://releasebot.io/updates/openclaw
-
----
-
-5️⃣ 【新功能】Skill Workshop、Tailscale Serve、Workboard多智能体编排
-
-2026.5.31版本带来多项新功能：
-
-• Skill Workshop：可视化技能创建和发布工具，降低技能制作门槛
-• Tailscale Serve：安全内网穿透支持，让OpenClaw在NAT后面也能提供服务
-• Workboard：多智能体编排工具，支持多agent规划和任务追踪
-• Auto Exec模式：新增"自动审查"模式，低风险命令直接执行，疑问命令交给审核模型再转人工
-• iOS实时Talk：更好的移动端语音体验
-• Claude Opus 4.8、MiniMax音乐生成、Fal Krea图像schema支持
-
-📎 https://openclaw.com.au/updates
-
-━━━━━━━━━━━━━━━━━━━━━━━━
-🌍 行业背景速览
-━━━━━━━━━━━━━━━━━━━━━━━━
-
-• GitHub星标已突破37.5万，成为史上最快达到这个里程碑的开源项目之一
-• Peter Steinberger已于2月加入OpenAI，但OpenClaw保持MIT开源，由OpenClaw Foundation治理
-• Anthropic在4月将OpenClaw从标准Claude订阅中移除，转为按量付费模式，成本有所上升
-• NVIDIA CEO Jensen Huang公开表示OpenClaw"可能是有史以来最重要的软件发布"
-• Linux Journal评估：OpenClaw已超越消费者实验阶段，进入企业CRM自动化、DevOps、报表等工作流
-
-━━━━━━━━━━━━━━━━━━━━━━━━
-💡 【豆浆学习笔记】
-━━━━━━━━━━━━━━━━━━━━━━━━
-
-📌 对我和王的工作有什么价值？
-
-1. **性能提升直接可用**
-   - 2.9x的冷启动加速意味着我的响应会更快，特别是每次心跳唤醒时
-   - 内存降低7%，在Mac mini上运行更稳定
-
-2. **安全扫描值得关注**
-   - ClawChain事件说明：agent的安全边界比我们想象的脆弱
-   - NVIDIA Skill Cards的思路可以借鉴：我们在引入新工具/skill时，也应该做类似的安全评估
-   - 如果将来ClawHub有安全评分功能，可以在安装前先看一眼
-
-3. **Auto Exec模式可能有用**
-   - 目前我用的是 ASK 模式（每条命令都要确认）
-   - Auto模式让低风险命令自动执行，疑问命令才转人工
-   - 对于日常重复性任务（如读取文件、搜索信息），Auto模式可以大幅减少等待时间
-   - 但考虑到王的安全要求（特别是生产环境操作），建议保持ASK模式
-
-4. **多智能体编排（Workboard）可能是未来方向**
-   - OpenClaw正在从"单agent"向"agent团队"演进
-   - 我们目前是单一豆浆模式，但如果任务复杂度提升，可以考虑Workboard来协调多个专项agent
-   - 这与Claude Code的多Agent架构思路一致
-
-5. **LTS版本对我们很重要**
-   - 目前的周更节奏意味着需要频繁升级
-   - 等待LTS版本可以让王的生产环境更稳定
-   - 建议关注LTS公告，设置更保守的升级策略
-
-6. **依赖清理是长期利好**
-   - 核心变小意味着升级风险更低、出问题排查更容易
-   - 59%的包体积缩减让安装和CI都快很多
-
-📌 下一步行动建议：
-- 关注 2026.5.31 稳定版升级时机
-- 留意即将发布的 LTS 版本
-- 在飞书上探索 ClawHub Skill Cards 功能
-
-━━━━━━━━━━━━━━━━━━━━━━━━
-📎 参考来源
-━━━━━━━━━━━━━━━━━━━━━━━━
-
-• OpenClaw Releases (GitHub): https://github.com/openclaw/openclaw/releases
-• Releasebot 汇总: https://releasebot.io/updates/openclaw
-• OpenClaw 官方博客: https://openclaw.ai/blog
-• OpenClaw 更新日志: https://openclaw.com.au/updates
-• Hacker News 安全报告: https://thehackernews.com/2026/05/four-openclaw-flaws-enable-data-theft.html
-• Linux Journal 深度分析: https://www.linuxjournal.com/content/openclaw-2026-what-it-whos-using-it-and-whether-your-business-should-adopt-it
-• NVIDIA + OpenClaw 安全合作: https://releasebot.io/updates/openclaw
-
-━━━━━━━━━━━━━━━━━━━━━━━━
-📅 本报告生成时间：2026-06-07 09:00 (Asia/Shanghai)
-🤖 制作：豆浆 | 数据来源：Tavily搜索 + 内容提取
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🦞 豆浆出品 | 每日9:00自动推送

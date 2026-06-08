@@ -29,11 +29,12 @@
 
 ### OpenClaw 版本（最新：v2026.6.1，2026-06-03）
 - **当前运行：v2026.5.28**（e932160，⚠️ 落后两个大版本）
-- **最新稳定：v2026.6.1**（06-03发布）
+- **最新稳定：v2026.6.1**（06-03发布，**建议升级**）
 - **最新beta：v2026.6.2-beta.1**（06-03发布）
-- ⚠️ 建议观望，等待 6.2 稳定版再升级
+- ⚠️ 建议升级（v2026.6.1为稳定版，含飞书等Channel可靠性大量修复）
 - **重要版本变化（5.31）：冷启动速度提升2.9x，npm包体积缩小59%，内存降低7%**
-- **重要版本变化（6.1）：iOS重大重构（Pro Command/Chat/Agents/Settings/Talk）、Skills Workshop、Tailscale Serve、Workboard多智能体编排**
+- **重要版本变化（6.1）：iOS重大重构、Skills Workshop、Tailscale Serve、Workboard多智能体编排、Auto Exec模式**
+- **新功能：Exec Auto Mode** — 先运行安全策略，低风险自动放行，高风险人工审核，人类始终在环
 
 ### OpenClaw 国际合作
 - **Spotify宣布与OpenClaw合作**进军AI播客
