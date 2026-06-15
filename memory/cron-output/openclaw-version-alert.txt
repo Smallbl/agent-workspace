@@ -1,46 +1,43 @@
-=================================================================
-OpenClaw 版本监控报告
-检查时间：2026-06-08 09:12 (Asia/Shanghai)
-=================================================================
+# OpenClaw 版本监控报告
+日期: 2026-06-15
 
-【当前运行版本】
-OpenClaw 2026.5.28 (e932160)
+## 版本对比
+- 当前运行版本: 2026.5.28 (2026-05-28, commit e932160)
+- 最新稳定版本: 2026.6.6 (npm latest, 约 2026-06-14)
+- 最新 beta: 2026.6.8-beta.1 (2026-06-14)
 
-【最新稳定版本】
-v2026.6.1（发布日期：2026年6月初，具体日期待确认）
+## 是否有新版本
+✅ 有新版本 — 2026.6.6 比当前运行版本 2026.5.28 更新
 
-【版本对比】
-当前版本2026.5.28 < 最新稳定版 2026.6.1
-✅ 发现新版本
+## 重大变化评估
+2026.6.x 是一个大规模稳定性和平台更新版本，主要包括：
+- 通道安全强化（channel safety）
+- MCP 和 Anthropic 恢复能力增强
+- 内置 Parallel Web Search（免费并行搜索）
+- 改进的 Google Vertex 支持
+- Feishu（飞书）、WhatsApp、Telegram、Matrix 等通道改进
+- 更可靠的 Agent 恢复路径和 SQLite-backed session state
+- Plugin 和 Skill Workshop 工作流强化
+- 平台维护：Android、Swift/macOS、Docker、CodeQL 依赖更新
 
-【重大变化】
-v2026.6.1 主要更新内容：
-1. Agent/Codex 运行时稳定性：
-   - 子Agent cwd/workspace 状态隔离增强
-   - hook上下文保持 prompt-local
-   - 超时中止时 session 锁正确释放
-   - 避免会话事件队列自等待
-   - 更好的 compaction handoff 和快照连续性
-2. Channel 交付可靠性：
-   - Matrix/iMessage/Slack/Discord/WhatsApp/Telegram/Microsoft Teams 等多平台修复
-3. 技能工作坊（Skill Workshop）正式推出：
-   - governed skill 创建流程
-   - CLI/Gateway 审批操作
-   - 支持文件哈希和回滚元数据
-4. 其他修复：C.UTF-8 locale、apiKey、sessions_send、message send 等
+## 历史背景参考
+- 5.5 版本存在 xAI 兼容问题
+- 5.6 热修了 5.5 的问题
+- 当前 6.x 稳定版本已修复大量 5.x 遗留问题
 
-【升级建议】
+## 升级建议
 ⚠️ 建议升级
 
 理由：
-1. v2026.6.1 是稳定版（stable），不是 beta
-2. 大量会话管理和 channel 交付相关的可靠性修复
-3. 无重大 bug 或回归问题报告
-4. 历史参考：5.5 有 xAI 兼容问题 → 5.6 热修，说明5.x → 6.x 跳级升级是安全的
-5. 特别适合多 channel（飞书等）使用场景
+1. 2026.6.6 是稳定性大版本，大量真实使用场景的稳定性修复
+2. 内置 Parallel Web Search 功能对 Agent 工作有实质帮助
+3. 飞书通道有明确改进（Feishu behavior improved）
+4. 从 5.5 → 5.6 → 6.x 的演进路径已较成熟
+5. 当前运行 2026.5.28，已落后约 3 周，建议升级到 2026.6.6
 
-【其他信息】
-- v2026.6.5-beta.2 也已发布（pre-release），包含更前沿的功能，但不适合生产环境追新
-- 参考链接：https://github.com/openclaw/openclaw/releases/tag/v2026.6.1
+## 操作建议
+升级命令: openclaw update --channel stable
+或在 npm: npm i -g openclaw@latest
 
-=================================================================
+## 下次监控
+建议 3 天后再次检查是否有 2026.6.7 / 2026.6.8 稳定版发布
