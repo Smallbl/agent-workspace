@@ -140,7 +140,7 @@
   },
   "meta": {
     "lastTouchedVersion": "2026.5.28",
-    "lastTouchedAt": "2026-06-01T12:33:32.856Z"
+    "lastTouchedAt": "2026-06-09T11:55:21.906Z"
   },
   "gateway": {
     "mode": "local",
@@ -333,7 +333,10 @@
       },
       "reactionNotifications": "own",
       "typingIndicator": true,
-      "resolveSenderNames": true
+      "resolveSenderNames": true,
+      "tools": {
+        "wiki": true
+      }
     }
   },
   "tools": {
