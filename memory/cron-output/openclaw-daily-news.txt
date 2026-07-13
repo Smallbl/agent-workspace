@@ -1,71 +1,80 @@
-【OpenClaw日报】📅 2026-07-06
+【OpenClaw日报】📅 2026-07-13
+
+🔖 版本速递：当前运行 v2026.5.28 (e932160)，最新测试版 v2026.7.1-beta.5（7月11日）
 
 ---
 
-## 📌 版本速览
+## 📰 OpenClaw 近日最新资讯
 
-- **当前运行版本**：OpenClaw 2026.5.28
-- **最新稳定版**：v2026.6.11（2026-06-26 发布，6/30正式公告）
-- **最新 Beta**：v2026.7.1-beta.2（2026-07-02，4天前）
-- **我们的版本落后**：约 1.5 个稳定版本 + 2 个 beta
+### 1️⃣ OpenClaw 正式登陆 iOS 和 Android
+**概要：** OpenClaw 于6月30日正式发布 iOS 和 Android 原生应用，采用"伴侣节点"（Companion Node）模式——手机不运行独立的 Gateway，而是作为摄像头、位置、语音、Canvas 等能力的延伸，连接到用户自托管的 OpenClaw Gateway。这意味着用户可以在口袋里随时调用自己的 AI Agent。
 
----
+**重要性：** 对于已经自建 Gateway 的用户，移动端补全了最后一公里——外出时也能通过手机向 Agent 发指令、拍照、查位置。这是将 AI Agent 从桌面扩展到真实移动场景的关键一步。
 
-## 📰 今日精选资讯
-
-### ① OpenClaw v2026.7.1-beta.2：GPT-5.6 + 外部工具链挂载
-
-7月2日刚发布的最前沿版本，最大亮点是**GPT-5.6模型族全面支持**（由OpenAI工程师@steipete-oai贡献），以及**openclaw attach 外部工具链挂载**——可将外部运行会话连接到已有Gateway会话，实现交互式Codex风格工作流的断点恢复和检查。另外新增**事件驱动型Cron**（on-exit计划任务）、iOS App大幅刷新、iMessage投票消息支持，以及Telegram的多列表格渲染能力。对我们而言：GPT-5.6支持值得关注，但需等稳定版；事件驱动Cron是一个更灵活的任务触发方式。
-
-🔗 https://releasebot.io/updates/openclaw
+🔗 https://techcrunch.com/2026/06/30/openclaw-is-finally-available-on-android-and-ios
 
 ---
 
-### ② v2026.6.11 稳定性补丁：频道可靠性大幅改善
+### 2️⃣ v2026.7.1-beta.5 发布（7月11日），移动端修复为主
+**概要：** 最新测试版包含大量 iOS/Android 专项修复：修复了 iOS 聊天换行符丢失问题（#98304）、iOS Talk 模式改用 Gateway 语音提供商（#98376）、Android 拒绝 IPv6 格式 gateway URL（#99570）。此外还有 Telegram 插件路由修复、cron 任务超时保留 provider/model 等多项稳定性改进。
 
-6月底发布的稳定版，核心修复：**消息丢失/错位/重复**问题（影响飞书、Discord、Telegram等）、Session意外中断后的模型恢复、TLS证书配置的默认值修正、插件敏感工具调用策略在Gateway重载后不再被跳过。这些修复直接影响我们的日常使用体验——特别是飞书频道的消息可靠性，是值得升级的最直接理由。
+**重要性：** 移动端是 OpenClaw 的新战场，这些修复体现了官方正在快速响应真实用户的使用反馈。若你在手机上使用 OpenClaw，建议关注正式版发布。
 
-🔗 https://docs.openclaw.ai/releases/2026.6.11
-
----
-
-### ③ NVIDIA CEO Jensen Huang："OpenClaw可能是软件史上最重要的发布"
-
-在2026年的某个公开场合，黄仁勋给出了这个令人震惊的评价。更实际的进展是：**NVIDIA正在围绕OpenClaw构建NemoClaw**——提供沙箱执行、政策执行和生产级运行环境。这意味着OpenClaw正在从个人助手向企业级基础设施演进。对我们而言：OpenClaw的生态吸附力持续增强，未来与NVIDIA生态的集成可能带来更多企业级能力。
-
-🔗 https://www.linuxjournal.com/content/openclaw-2026-what-it-whos-using-it-and-whether-your-business-should-adopt-it
+🔗 https://docs.openclaw.ai/releases
 
 ---
 
-### ④ Anthropic调整OpenClaw访问策略：Claude订阅移除，按量付费
+### 3️⃣ OpenClaw 被科技巨头争相"参考"——微软、谷歌、Anthropic 均推出对标产品
+**概要：** OpenClaw 官方 Press 页面汇总了媒体报道：微软推出 Scout（受 OpenClaw 启发，整合进 Microsoft 365）；谷歌正在开发"Remy"作为对标产品；Anthropic 也在打造类似 Agent 平台以满足客户需求；Nvidia CEO 黄仁勋直言"每家公司都需要一个 OpenClaw 策略"；Fast Company 将 OpenClaw 创始人列入"AI 20 for 2026"。
 
-2026年4月，Anthropic从标准Claude订阅中移除了OpenClaw访问，转向独立的按量付费模式。这反映了Agent类系统相比普通聊天工具的资源消耗差异。同期，OpenAI却做了相反的动作——**将Codex纳入所有付费ChatGPT计划**，并且OpenClaw创始人Peter Steinberger已加入OpenAI。这意味着OpenAI在积极拥抱OpenClaw生态，而Anthropic在设置边界。对我们来说：如果主模型切换到GPT/Codex路线，OpenClaw的兼容性会更好。
+**重要性：** OpenClaw 已从一个小众开源工具成长为行业标杆。作为深度用户，这意味着我们的工作流踩在了行业前沿，但也需要持续关注大厂动向，避免被快速迭代的竞品甩开。
 
-🔗 https://www.mindstudio.ai/blog/openclaw-april-2026-update-new-features-agentic-runtime
-
----
-
-### ⑤ Active Memory：会话级自动个性化记忆
-
-2026年4月引入的Active Memory插件在4.10和4.12版本持续迭代。核心变化：**每次回复前，Agent会自动触发一个记忆子Agent**，查询相关偏好、历史上下文、过往Session细节——无需手动维护MEMORY.md，Agent会随使用越来越个性化。结合Providence来源追踪（每条记忆标注来源：对话/工具/搜索/手动），记忆检索质量显著提升。对我们的价值：这个功能直接提升"第二大脑"的能力上限，是值得深入测试和启用的特性。
-
-🔗 https://petronellatech.com/blog/openclaw-ai-agent-guide-2026
+🔗 https://openclaw.ai/press
 
 ---
 
-## 【豆浆学习笔记】
+### 4️⃣ v2026.4.25：官方口号"Less mystery, more machinery"，可观测性成核心主题
+**概要：** 这是今年最重磅的工程更新之一，核心方向是让 AI Agent 不再是"黑箱"：① 接入 13 家 TTS 提供商，支持 persona 级别语音配置；② 全面集成 OpenTelemetry（OTEL）可观测性框架，覆盖模型调用链路、Token 消耗、工具循环、上下文组装、内存压力；③ 插件冷启动从"全量加载"改为"冷查找表+持久化注册表"，启动速度大幅提升；④ 浏览器安全加固和安装链路修复。
 
-**1. 升级优先级：v2026.6.11 是我们最应该优先升级的目标**
-理由：飞书频道可靠性改善直接影响每天的体验。v2026.7.1-beta虽然诱人，但GPT-5.6和openclaw attach还需要生态成熟。建议先用非主力环境测试v2026.6.11，确认飞书消息稳定性。
+**重要性：** 对自托管用户来说，OTEL 意味着 Agent 的每一次决策都有迹可循，调试不再靠"玄学"。对于我们这种依赖 AI 日常工作的场景，可观测性直接影响排查问题的效率，是生产级使用的基石。
 
-**2. 事件驱动Cron值得关注**
-新版Cron支持on-exit触发（即某个任务完成后自动触发下一个）。这对我们的项目跟进自动化场景很有价值——比如"开完会 → 自动整理纪要 → 写入飞书文档 → 发送提醒"。建议等beta稳定后测试这个能力。
+🔗 https://docs.openclaw.ai/gateway/observability
+🔗 https://finance.sina.com.cn/wm/2026-04-28/doc-inhvzmye8506740.shtml
 
-**3. Active Memory是"第二大脑"的核心升级**
-我们现在主要靠MEMORY.md和手工维护。Active Memory的自动上下文召回意味着：即使不在MEMORY.md里，只要历史对话有过，Agent也能主动找到。这会让豆浆的记忆能力提升一个层次，建议在测试环境开启体验。
+---
 
-**4. 警惕Anthropic与OpenAI的分叉趋势**
-OpenAI在拥抱OpenClaw（创始人加入、Codex纳入订阅），Anthropic在设置边界（移除访问、按量付费）。如果两个生态持续分化，我们的选择会越来越清晰：深度绑定OpenClaw + OpenAI路线是更顺畅的组合。
+### 5️⃣ TechCrunch 报道：用户用 OpenClaw 谈恋爱、追踪世界杯
+**概要：** TechCrunch 7月2日刊登了一篇轻松但有深度的报道，讲述用户将 OpenClaw 用于非典型场景：用它追踪世界杯比赛结果，甚至有人用它辅助约会——不是 AI 直接帮你谈恋爱，而是用 Agent 能力（记忆、日程、搜索）来管理约会对象的信息和安排。
 
-**5. NVIDIA的背书是重要信号**
-黄仁勋的评价 + NemoClaw基础设施投入，说明OpenClaw已经成为AI Agent领域的事实标准之一。这对我们长期押注OpenClaw生态的判断是一个有力外部确认。
+**重要性：** 这类报道反映了 OpenClaw 在"数字生活管理"上的潜力。对于我们，类似的思路可以迁移到：客户关系管理、项目跟进、会议纪要整理等场景——把 Agent 变成真正的数字助理。
+
+🔗 https://techcrunch.com/2026/07/02/yep-were-using-openclaw-to-date-now
+
+---
+
+## 🧠 豆浆学习笔记
+
+**对豆浆和团队的价值分析：**
+
+**1. 可观测性（OTEL）是最值得深入的方向**
+我们目前的工作流重度依赖 AI Agent 理解和执行任务。可观测性意味着我可以向王展示每一次调用的成本和链路，这对于向领导汇报 AI 投入产出比非常有价值。建议：学习 OpenClaw OTEL 的配置方法，探索能否对接我们的日志系统。
+
+**2. 移动端是下一步能力扩展点**
+iOS/Android 的 Companion Node 模式让我们可以在外出时真正"使用"Agent。未来若王需要在外处理系统问题，手机端的摄像头和位置能力可以派上用场（比如现场拍照+Agent 分析）。
+
+**3. 13家TTS语音方案值得关注**
+我们目前用飞书作为主要沟通渠道，但语音/TTS场景尚未探索。如果未来需要语音播报（定时提醒播报、告警语音通知），TTS 配置层是现成的基础设施。
+
+**4. 安全问题值得警惕**
+Conscia 那篇关于 CVE-2026-25253 和供应链投毒的分析提醒我们：ClawHub 插件市场虽然方便，但也存在风险。我们的 Workspace 不引入来源不明的 Skill，避免成为攻击向量。
+
+**5. 行业影响力持续扩大**
+微软、谷歌、Nvidia 都在"参考"OpenClaw，说明我们选对了技术方向。但大厂入局也意味着标准会快速统一——我们需要持续学习，避免被大厂原生支持的方案替代（比如微软的 Scout 如果深度集成到 M365，可能会削弱自托管 Gateway 的优势）。
+
+**值得尝试的新特性：**
+- OTEL 可观测性配置（docs.openclaw.ai/gateway/observability）
+- 移动端 Companion Node 配对（如果有备用手机）
+- ClawHub 插件市场探索（但严格审核来源）
+
+---
+*📋 本简报由豆浆自动整理 | 搜索源：Tavily | 参考站点：TechCrunch、新浪财经、OpenClaw官方Press、docs.openclaw.ai*
