@@ -1,0 +1,59 @@
+【OpenClaw日报】📅 2026-08-17
+
+🔖 版本速览
+当前运行版本：OpenClaw 2026.5.28 (e932160)
+
+━━━━━━━━━━━━━━━━━━━━
+
+📰 OpenClaw 最新资讯速报
+
+1️⃣ OpenClaw 2026.7.2-beta.6/7 发布：可靠性与协作者升级
+本次更新带来了大量可靠性、安全性和协作功能升级，包括：防崩溃数据恢复、持久化频道投递、会话回溯与分支、扩展的会议与消息支持、更丰富的MCP应用与仪表盘、改进的本地推理和新模型支持。其中"持久化频道投递"（Durable Channel Delivery）是一个重要特性，确保消息在网络波动时不会丢失。
+🔗 https://releasebot.io/updates/openclaw
+
+2️⃣ OpenClaw 2026.8.1-beta.2 发布（8月15日）
+这是目前最新的预发布版本，由Peter Steinberger亲自签名发布。更新重点包括：Control UI全面改版（聊天、会话、工作区和使用量）、iOS/Android/macOS官方应用重大更新、GPT-5.6兼容性、Tencent Hy3和Meta Muse Spark 1.1模型支持、更强的Codex和编程Agent工作流支持。
+🔗 https://github.com/openclaw/openclaw/releases
+
+3️⃣ OpenClaw 引入"扩展稳定版"机制（Extended-Stable Releases）
+OpenClaw正在从早期采用者的项目向企业可依赖的平台转型。为此引入了扩展稳定版通道，提供延长的支持周期和修复回溯服务。同时推出"功能成熟度评分卡"（Maturity Scorecard），对功能进行质量完整性评分，目标是保持超过90%的端到端测试覆盖率。企业用户现在可以更放心地用于关键业务负载。
+🔗 https://releasebot.io/updates/openclaw
+
+4️⃣ 安全加固更新（3-4月）：历年来最大规模
+2026年3-4月OpenClaw进行了项目历史上最长、技术密度最高的安全加固。包括：主机环境强化（阻止未信任来源注入环境变量）、FTP CRLF注入修复、跨组件信任修复（远程节点事件默认标记为untrusted）、WebSocket会话在令牌轮换后立即失效、skills的realpath()验证等。多用户系统或处理不受信任输入的系统务必立即升级。
+🔗 https://petronellatech.com/blog/openclaw-ai-agent-guide-2026
+
+5️⃣ Active Memory 插件：动态上下文检索
+v2026.4.10引入的Active Memory插件改变了OpenClaw的上下文检索方式。之前agent的记忆在会话启动时是静态的，现在可以动态检索MEMORY.md和相关记忆文件。配合Memory Search功能，agent可以主动查找相关的历史信息，而不是被动依赖会话启动时的内容。
+🔗 https://petronellatech.com/blog/openclaw-ai-agent-guide-2026
+
+━━━━━━━━━━━━━━━━━━━━
+
+【豆浆学习笔记】
+
+🔍 这些更新对我和我的团队的价值分析：
+
+1️⃣ 【可靠性提升】持久化频道投递 + 防崩溃数据恢复
+→ 我们目前用OpenClaw处理飞书消息和项目跟踪，这些功能确保在网络波动或服务重启时消息不丢失。对飞书这类重要渠道尤为重要。
+
+2️⃣ 【Control UI改版】
+→ 新版UI改善了会话管理和使用量可视化，我们可以更直观地监控token使用情况和会话状态。
+
+3️⃣ 【扩展稳定版机制】
+→ 这对企业级使用很重要，说明OpenClaw正在走向成熟。生产环境建议优先使用extended-stable版本，避免beta版本的频繁变更风险。
+
+4️⃣ 【安全加固必须重视】
+→ 如果我们的Mac mini暴露在外网，或处理来自不同来源的输入，这次3-4月的安全加固是必修课。特别是FTP CRLF注入和跨组件信任修复。
+
+5️⃣ 【Active Memory + Memory Search】
+→ 这是我目前工作流中最有价值的功能。它能让我在新的会话中主动检索相关记忆，而不只是依赖启动时加载的内容。我们的"记忆管理"流程可以更智能。
+
+💡 值得尝试的新特性：
+- MCP隔离（MCP server connections scoped to requesting session）：更安全的多会话隔离
+- Cron历史记录现在可以从任务账本中获取：我可以用它来更好地追踪自动化任务的执行历史
+- DuckDuckGo搜索已移至插件边界：未来可以更灵活地管理搜索provider
+
+⚠️ 行动建议：
+1. 关注 OpenClaw 2026.7.1-2 或 2026.8.1-beta.2 的稳定版发布，考虑升级
+2. 检查我们的Mac mini是否暴露在外网，评估安全加固的优先级
+3. 探索Active Memory功能，看能否提升我的记忆检索效率
