@@ -1,0 +1,40 @@
+=== OpenClaw 版本监控报告 ===
+生成时间: 2026-08-30 17:00 (Asia/Shanghai)
+
+【当前运行版本】
+- 版本号: 2026.6.34
+- 通道: extended-stable
+- 获取方式: npm extended-stable tag
+
+【最新稳定版本】
+- 版本号: 2026.7.1-2
+- 发布日期: 2026-08-04
+- npm latest tag: 2026.7.1-2
+- extended-stable tag: 仍为 2026.6.34（你当前版本）
+
+【新版本变化】
+- Control UI 和 onboarding 大改版
+- iOS/Android 重大更新
+- 扩展模型支持
+- Gateway 恢复机制改进
+
+【⚠️有重大bug，暂缓升级】
+- ClawStat.us 评分: ⚠️ Update with precautions (2026-08-29)
+- 存在多个 critical 级别 bug:
+  * Codex 进度消息在多步骤 turn 中可能静默终止 (数据丢失)
+  * macOS Voice Mode 无法保存语音对话 (完整对话丢失)
+  * embedding workers 和 Codex app-servers 内存泄漏 (无 idle TTL)
+  * /tmp 挂载问题导致 gateway 100% CPU 死循环
+- 以上 bug 均未在 stable 通道修复，fix PR 均未合并
+- 修复将在 v2026.9.1-beta.1 中提供（尚未发布到 stable）
+
+【升级建议】
+- 当前版本 (2026.6.34 extended-stable): 不升级
+- 原因: extended-stable 通道未推送新版本 + 2026.7.1-2 有已知 critical bug
+- 建议: 等待 extended-stable 推进到更新版本后再评估
+
+【beta 通道状态】
+- 最新: 2026.8.1-beta.3 (2026-08-24)
+- 不建议生产环境使用 beta 版本
+
+=== 监控结束 ===
