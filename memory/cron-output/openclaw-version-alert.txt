@@ -1,28 +1,19 @@
-OpenClaw 版本监控报告
-========================
-监控日期: 2026-10-05
+# OpenClaw 版本监控报告
+日期: 2026-10-12
 
+## 版本对比
 当前运行版本: 2026.9.5
-最新稳定版本: 2026.9.8
-最新版本发布日期: 2026-10-03
+最新版本: 2026.10.1
 
-是否有新版本: 是（当前运行 9.5，最新 9.8）
+## 最新版本详情
+版本号: 2026.10.1
+发布日期: 2026-10-08 (Oct 8, 2026)
 
-版本对比:
-- 9.5 → 9.8 主要更新:
-  * 新增 GPT-6.1 Sol 模型支持（OpenAI provider）
-  * 修复连接策略重载时工作丢失的问题
-  * 减少大型 Codex 配置的内存占用
-  * 修复 Windows 启动问题
-  * 修复失败的自动更新问题
-  * 安全: 修复认证模式变更后的重启要求
+## 重大变化
+有更新。包含 broad reliability and workflow improvements across Sessions, media replies, updates, Windows workspaces, cloud workers, plugins, Codex, and MCP，同时优化了 migrations、cleanup 和 runtime behavior。
+属于日常质量改进版本，非紧急安全补丁。
 
-是否有重大变化: 否（常规维护版本，含 bug 修复和安全改进）
+## 升级建议: 升
 
-升级建议: 升
-⚠️ 建议升级 - 包含多个 bug 修复和安全修复，Windows 用户尤其应该升级
-
-备注:
-- 9.9.x 系列相比 9.8.x 有实质改进，建议升级
-- 安全公告（2026-09-11）要求运行 >= 2026.8.1，当前 9.5 已满足最低安全要求
-- 这是例行维护版本，推荐升级以获得最新修复
+⚠️ 建议升级
+理由: 2026.10.1 是一个全面的可靠性提升版本，涵盖 Sessions、media replies、updates、Windows workspaces、cloud workers、plugins、Codex、MCP 等多个模块的 workflow 改进。当前运行版本 2026.9.5 与最新版本差距较大，建议升级以获得更好的稳定性。
