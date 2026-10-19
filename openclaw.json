@@ -133,14 +133,17 @@
     }
   },
   "wizard": {
-    "lastRunAt": "2026-05-31T11:57:01.424Z",
-    "lastRunVersion": "2026.5.28",
+    "lastRunAt": "2026-09-22T11:56:05.790Z",
+    "lastRunVersion": "2026.9.5",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "meta": {
-    "lastTouchedVersion": "2026.6.34",
-    "lastTouchedAt": "2026-08-23T12:36:36.627Z"
+    "lastTouchedVersion": "2026.9.5",
+    "migrations": {
+      "modelPolicyAllowlist": true,
+      "utilityModelSeparation": true
+    }
   },
   "gateway": {
     "mode": "local",
@@ -156,9 +159,6 @@
         "fallbacks": []
       },
       "timeoutSeconds": 600,
-      "memorySearch": {
-        "provider": "ollama"
-      },
       "models": {
         "minimax/MiniMax-M2.7": {
           "alias": "Minimax"
@@ -175,72 +175,75 @@
         "notifyUser": true,
         "keepRecentTokens": 8192,
         "maxActiveTranscriptBytes": 512000,
-        "truncateAfterCompaction": true,
         "memoryFlush": {
           "enabled": true
         }
       },
-      "bootstrapMaxChars": 20000
-    },
-    "list": [
-      {
-        "id": "main"
+      "bootstrapMaxChars": 20000,
+      "modelPolicy": {
+        "allow": [
+          "minimax/MiniMax-M2.7"
+        ]
       },
-      {
-        "id": "memory-agent",
+      "systemAgent": {
+        "agentId": "main"
+      },
+      "heartbeat": {
+        "agentId": "main"
+      }
+    },
+    "ownership": "explicit",
+    "entries": {
+      "main": {
+        "workspace": "/Users/doujiang/.openclaw/workspace"
+      },
+      "memory-agent": {
         "name": "记忆官",
         "workspace": "/Users/doujiang/.openclaw/workspace-memory",
         "agentDir": "/Users/doujiang/.openclaw/agents/agent-memory",
         "model": "minimax/MiniMax-M2.7"
       },
-      {
-        "id": "feishu-agent",
+      "feishu-agent": {
         "name": "飞书官",
         "workspace": "/Users/doujiang/.openclaw/workspace-feishu",
         "agentDir": "/Users/doujiang/.openclaw/agents/agent-feishu",
         "model": "minimax/MiniMax-M2.7"
       },
-      {
-        "id": "tools-agent",
+      "tools-agent": {
         "name": "工具官",
         "workspace": "/Users/doujiang/.openclaw/workspace-tools",
         "agentDir": "/Users/doujiang/.openclaw/agents/agent-tools",
         "model": "minimax/MiniMax-M2.7"
       },
-      {
-        "id": "frontend-dev",
+      "frontend-dev": {
         "name": "frontend-dev",
         "workspace": "/Users/doujiang/.openclaw/workspace-frontend",
         "agentDir": "/Users/doujiang/.openclaw/agents/agent-frontend/agent"
       },
-      {
-        "id": "subagent-frontend",
+      "subagent-frontend": {
         "name": "subagent-frontend",
         "workspace": "/Users/doujiang/.openclaw/workspace-work-projects",
         "agentDir": "/Users/doujiang/.openclaw/agents/subagent-frontend",
         "model": "minimax/MiniMax-M2.7"
       },
-      {
-        "id": "subagent-backend",
+      "subagent-backend": {
         "name": "subagent-backend",
         "workspace": "/Users/doujiang/.openclaw/workspace-backend",
         "agentDir": "/Users/doujiang/.openclaw/agents/subagent-backend",
         "model": "minimax/MiniMax-M2.7"
       },
-      {
-        "id": "subagent-test",
+      "subagent-test": {
         "name": "subagent-test",
         "workspace": "/Users/doujiang/.openclaw/workspace-test",
         "agentDir": "/Users/doujiang/.openclaw/agents/subagent-test",
         "model": "minimax/MiniMax-M2.7"
       },
-      {
-        "id": "zhanling",
+      "zhanling": {
         "name": "战灵",
         "workspace": "/Users/doujiang/.openclaw/workspace-zhanling",
         "model": "minimax/MiniMax-M2.7"
       }
-    ]
+    }
   },
   "plugins": {
     "entries": {
@@ -263,7 +266,9 @@
       }
     },
     "allow": [
-      "feishu"
+      "feishu",
+      "minimax",
+      "tavily"
     ]
   },
   "models": {
@@ -314,7 +319,7 @@
         },
         "default": {
           "dmPolicy": "open",
-          "groupPolicy": "mention",
+          "groupPolicy": "allowlist",
           "webhookPath": "/feishu/events",
           "allowFrom": [
             "*"
@@ -348,21 +353,47 @@
       }
     },
     "exec": {
-      "ask": "off",
-      "security": "full",
-      "host": "gateway"
+      "host": "gateway",
+      "mode": "full"
     }
   },
   "commands": {
     "native": "auto",
     "nativeSkills": "auto",
-    "restart": true,
-    "ownerDisplay": "raw"
+    "restart": true
   },
   "session": {
     "dmScope": "per-channel-peer"
   },
   "cron": {
     "sessionRetention": "6h"
-  }
+  },
+  "memory": {
+    "search": {
+      "provider": "ollama"
+    }
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "feishu",
+        "accountId": "default"
+      }
+    },
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "feishu",
+        "accountId": "main"
+      }
+    },
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "feishu",
+        "accountId": "zhanling"
+      }
+    }
+  ]
 }
