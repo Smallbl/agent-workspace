@@ -1,0 +1,1147 @@
+{
+  "四建": [
+    {
+      "id": "sijian-001",
+      "name": "智能审核系统优化",
+      "status": "进行中",
+      "node": "",
+      "deadline": "",
+      "issues": "① 错别字识别效果不佳 ② 版面还原丢失 ③ 词组空格干扰",
+      "tasks": [
+        {
+          "text": "错别字模型更新（亚太也用，需确认同步）",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "国家标准文件词库增量更新",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "版面还原丢失信息修复",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "词组空格导致识别问题优化",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "国际标模板白名单入库（本周完成）",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "createdAt": "2026-03-23"
+        }
+      ],
+      "status_text": "进行中",
+      "status_color": "status-todo",
+      "sort_order": 0
+    },
+    {
+      "id": "sijian-002",
+      "name": "翻建智能问答（知识库Agent化）",
+      "status": "待评估",
+      "node": "RAG模式改Agent模式方案评估",
+      "deadline": "待定",
+      "issues": "RAG问答效果不佳，可能改Agent模式（改动大）",
+      "tasks": [
+        {
+          "text": "完成资质入库",
+          "done": false,
+          "due": "2026-04-03",
+          "priority": "medium",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "Agent模式可行性评估",
+          "done": false,
+          "due": "2026-04-03",
+          "priority": "medium",
+          "createdAt": "2026-03-23"
+        }
+      ],
+      "sort_order": 1
+    }
+  ],
+  "亚太": [
+    {
+      "id": "亚太-001",
+      "name": "在线购标系统",
+      "status": "进行中",
+      "node": "",
+      "deadline": "",
+      "issues": "",
+      "tasks": [
+        {
+          "text": "在线购标支付成功，支付状态未生效问题",
+          "done": false,
+          "priority": "high",
+          "due": "2026-04-17",
+          "opinion": "",
+          "createdAt": "2026-04-08"
+        },
+        {
+          "text": "附件下载问题：根据业务员反馈IOS下载默认浏览器不支持，使用qq浏览器可以，附件为压缩包",
+          "done": false,
+          "priority": "medium",
+          "due": "2026-04-16",
+          "opinion": "",
+          "createdAt": "2026-04-09"
+        },
+        {
+          "text": "成套在线购标缺少重开发票功能",
+          "done": true,
+          "priority": "medium",
+          "due": "2026-04-16",
+          "opinion": "",
+          "createdAt": "2026-04-09"
+        }
+      ],
+      "status_text": "进行中",
+      "status_color": "",
+      "sort_order": 7
+    },
+    {
+      "id": "yatai-001",
+      "name": "数字化综合管理平台信创升级",
+      "status": "本周上线",
+      "node": "大部分功能测试完成，待和综合确认后出通知",
+      "deadline": "2026-04-03",
+      "issues": "多个财务需求需和综合开会讨论确认",
+      "tasks": [
+        {
+          "text": "项目实施计划/满意度/其他 → 本周上线，需尽快提供手册给综合出通知后上线：已提供操作手册，综合确认暂定下周4与7日出通知，晚上系统更新上线",
+          "done": true,
+          "due": "2026-04-07",
+          "priority": "high",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "新增问题收集功能 → 已上线",
+          "done": true,
+          "due": "2026-04-03",
+          "priority": "low",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "音视频归档通知功能",
+          "done": false,
+          "due": "2026-04-13",
+          "priority": "medium",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "专家聘费报税打款（OCR识别发票）",
+          "done": false,
+          "due": "2026-06-30",
+          "priority": "medium",
+          "createdAt": "2026-03-23",
+          "opinion": "新增针对异常情况处理需求\r\n如何计算税金额规则未定"
+        },
+        {
+          "text": "财务需求（培训费/分成权限/统计/外币等）→ 需开会",
+          "done": false,
+          "due": "2026-04-03",
+          "priority": "medium",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "PC首页待办消息刷新优化：将待归档拆出来",
+          "done": true,
+          "due": "2026-04-10",
+          "priority": "medium",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "千里马数据关联对外投标",
+          "done": false,
+          "due": "2026-04-10",
+          "priority": "medium",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "[12] 历史业绩快速查询、模糊搜索",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "已完成",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[22] 预开票到款OA提醒（公众号）",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "部分完成",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[23] 手机OA支持预开票审批",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "已完成",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[40] 投诉异议质疑处理汇总表",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "已完成",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[41] 专家聘费汇款明细查询",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "已完成",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[42] 造价项目费用统计",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "已完成",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[43] 咨询项目费用统计",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "已完成",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[44] 购买服务费用统计",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "已完成",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[45] 机电和成套费用统计",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "已完成",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[68] 支出性合同补充协议查看原合同",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "已回复",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[8] 个人驾驶舱统计分析（数量展示，点击看明细）",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "确认统计页面元素内容",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[9] 收费统计分析（应收实收、标书费、保证金等）",
+          "done": true,
+          "priority": "medium",
+          "due": "部分完成",
+          "opinion": "处长配置业务员查看权限",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[10] 未收服务费自动提醒（3月/半年/定期）",
+          "done": false,
+          "priority": "high",
+          "due": "",
+          "opinion": "国际标国内标做两个标签",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[11] 服务费自动计算、超比例提醒",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[14] 合同到期续签提醒（提前三个月）",
+          "done": false,
+          "priority": "medium",
+          "due": "待定",
+          "opinion": "框架协议有有效期才提醒",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[15] 投标数据便捷获取、业绩登记脱敏",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "协助法务先做脱敏处理",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[16] 音视频归档功能、会议室提醒",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "预定会议室时增加归档选项",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[17] 聘费短信通知增加评审时间等信息",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "通过公众号推送替代短信",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[18] 项目资料文件套打功能",
+          "done": false,
+          "priority": "low",
+          "due": "待定",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[19] 会议室查询页面移动端适配",
+          "done": false,
+          "priority": "low",
+          "due": "待定",
+          "opinion": "确认公众号还是手机浏览器",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[20] OA流程加急提醒、催办功能",
+          "done": true,
+          "priority": "low",
+          "due": "",
+          "opinion": "维持现状",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[21] 根据招标代理合同分类查询",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[25] 主界面个性化配置、流程优化（投标授权简化、批量建项等）",
+          "done": false,
+          "priority": "medium",
+          "due": "待定",
+          "opinion": "多项待讨论",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[28] OA协议、聘费审核改为同步审批",
+          "done": true,
+          "priority": "medium",
+          "due": "待定",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[29] 造价虚拟产值核算",
+          "done": true,
+          "priority": "low",
+          "due": "待定",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[30] 归档无纸化、实施计划线上审批",
+          "done": true,
+          "priority": "high",
+          "due": "待上线",
+          "opinion": "支持批量审批",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[31] 聘费审核并行审批",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "可按要求调整流程",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[32] 数据统计按需求制定",
+          "done": false,
+          "priority": "low",
+          "due": "待定",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[33] 其他项目模块开发",
+          "done": true,
+          "priority": "low",
+          "due": "待上线",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[34] 财务收入性合同管理",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[35] 外部平台注册及CA办理",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[36] 业务书籍管理",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[38] 员工疗休养管理",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[39] 业务文件资料借阅申请流程",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[47] 项目管理中增加'项目费用统计'",
+          "done": true,
+          "priority": "high",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[48-1] 支出性合同补充协议查看原合同信息",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "点击合同编号可查看",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[49-1] 收入金额含税/不含税自动计算",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "成本拆分专家聘费、运营成本",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[51-1] 预览水印过于密集优化",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[52] 专家聘费开票付款需求",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[53] 报销申请单线上化",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[54] 系统性能优化（首页加载卡顿）",
+          "done": false,
+          "priority": "high",
+          "due": "",
+          "opinion": "持续优化",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[55] BUG修复+意见征集机制建立",
+          "done": false,
+          "priority": "high",
+          "due": "",
+          "opinion": "标准化书面意见征集、季度推进",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[56] 投标信息统计（月报）",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[57] 千里马数据清理后邮件推送",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[58] 流程标题逐项优化（按使用量）",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "高频流程优先处理",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[59] 归档无纸化（批量审核）、法人授权嵌入",
+          "done": false,
+          "priority": "high",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[60] 进场项目聘费二维码功能",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[64] 线上报销、培训费、交易附言等多项",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "分期推进",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[66] 项目费用统计功能优化（速度慢）",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[73] 分成合同基准调整（补充协议）",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "增加'修改内容-合作分配比例'",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[74] 归档一致性选'否'后可调整信息",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "所有合同都需要",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[75] 合同/授权书查询显示审批节点",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[77] 收入性合同'服务类型'增加'其他'",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[78] 合同查询删除一年期限制",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "删除陆佳怡、李柯阳账号限制",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[79] 补充协议'是否含项目清单'默认改'是'",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "针对合作合同",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[80] 合同附件预览显示批注版",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[81] 2026年前合同附件数据导入",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[82] 老OA合同审批记录查看",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[83] 采购合同付款方式填写规范",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "与实际支付次数金额一致",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[84] 合同撤销申请流程图错误",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "与合同申请审批流程一致",
+          "createdAt": "2026-04-03"
+        }
+      ],
+      "sort_order": 0
+    },
+    {
+      "id": "yatai-002",
+      "name": "坚果云私有化部署",
+      "status": "两步走",
+      "node": "第一步替代网盘，第二步归档对接",
+      "deadline": "待定",
+      "issues": "需和综合开会讨论具体方案",
+      "tasks": [
+        {
+          "text": "第一步：替代网盘",
+          "done": false,
+          "due": "2026-04-30",
+          "priority": "medium",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "第二步：归档系统对接",
+          "done": false,
+          "due": "2026-06-30",
+          "priority": "medium",
+          "createdAt": "2026-03-23"
+        }
+      ],
+      "sort_order": 2
+    },
+    {
+      "id": "yatai-003",
+      "name": "风险预警系统",
+      "status": "进行中",
+      "node": "",
+      "deadline": "",
+      "issues": "",
+      "tasks": [
+        {
+          "text": "招标文件查重-证件比对（测试通过后上线）",
+          "done": false,
+          "priority": "medium",
+          "due": "2026-04-10",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "单机版加密狗集成开发（本周完成）",
+          "done": false,
+          "priority": "medium",
+          "due": "2026-04-10",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "测试单机版运行环境",
+          "done": false,
+          "priority": "medium",
+          "due": "2026-04-10",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "[61] 信用中国报告等截图一键下载",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "系统后续更新支持",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[62] 风险预警参数推荐规则优化",
+          "done": false,
+          "priority": "medium",
+          "due": "待定",
+          "opinion": "姓名重复可自动判断",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[63] 风险报告增加截图类型、批量下载",
+          "done": false,
+          "priority": "medium",
+          "due": "待定",
+          "opinion": "整合到word、无水印",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "查重未去除招标文件内容",
+          "done": false,
+          "priority": "high",
+          "due": "2026-04-10",
+          "opinion": "",
+          "createdAt": "2026-04-07"
+        },
+        {
+          "text": "查重bug无法准确查出图片重复内容",
+          "done": false,
+          "priority": "high",
+          "due": "2026-04-10",
+          "opinion": "",
+          "createdAt": "2026-04-07"
+        },
+        {
+          "text": "比对详情页面：右键功能缺失？无添加白名单、无百度搜索？",
+          "done": false,
+          "priority": "high",
+          "due": "2026-04-10",
+          "opinion": "",
+          "createdAt": "2026-04-07"
+        },
+        {
+          "text": "一键启动没了？",
+          "done": false,
+          "priority": "high",
+          "due": "2026-04-10",
+          "opinion": "",
+          "createdAt": "2026-04-07"
+        },
+        {
+          "text": "生成的查重报告里的图片重复显示了",
+          "done": false,
+          "priority": "medium",
+          "due": "2026-04-10",
+          "opinion": "",
+          "createdAt": "2026-04-08"
+        }
+      ],
+      "status_text": "进行中",
+      "status_color": "",
+      "sort_order": 1
+    },
+    {
+      "id": "yatai-004",
+      "name": "知识产权管理",
+      "status": "待跟进",
+      "node": "算法、系统两个专利申请",
+      "deadline": "今年内",
+      "issues": "",
+      "tasks": [
+        {
+          "text": "风险预警算法专利申请",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": ""
+        },
+        {
+          "text": "风险预警系统专利申请",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": ""
+        }
+      ],
+      "sort_order": 3,
+      "status_text": "待跟进",
+      "status_color": ""
+    },
+    {
+      "id": "yatai-005",
+      "name": "总经理提出需求",
+      "status": "多项待跟进",
+      "node": "6项需求，多项需讨论可行性",
+      "deadline": "待定",
+      "issues": "多项需求需开会讨论",
+      "tasks": [
+        {
+          "text": "聘费自动审批",
+          "done": false,
+          "due": "2026-04-30",
+          "priority": "low",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "历史招标文件二次售卖（法律风险需评估）",
+          "done": false,
+          "due": "",
+          "priority": "low",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "对外投标统计千里马关联",
+          "done": true,
+          "due": "2026-04-03",
+          "priority": "high",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "国际标购标登记完善（本周上线）",
+          "done": true,
+          "due": "2026-04-03",
+          "priority": "high",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "好软件推荐（需评估合规性）",
+          "done": false,
+          "due": "",
+          "priority": "low",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "门户网站引流（待中招联合上线）",
+          "done": false,
+          "due": "",
+          "priority": "low",
+          "createdAt": "2026-03-23"
+        }
+      ],
+      "sort_order": 4
+    },
+    {
+      "id": "yatai-006",
+      "name": "综合部提出需求",
+      "status": "待开会",
+      "node": "本周需安排会议和综合部沟通",
+      "deadline": "本周",
+      "issues": "待安排会议",
+      "tasks": [
+        {
+          "text": "批量建项领取编号（考虑分包情况）",
+          "done": false,
+          "due": "",
+          "priority": "low",
+          "opinion": "",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "合同脱敏需求",
+          "done": false,
+          "due": "2026-04-30",
+          "priority": "medium",
+          "createdAt": "2026-03-23"
+        },
+        {
+          "text": "外部注册功能需求",
+          "done": true,
+          "due": "2026-04-30",
+          "priority": "high",
+          "createdAt": "2026-03-23"
+        }
+      ],
+      "sort_order": 5
+    },
+    {
+      "id": "yatai-007",
+      "name": "专家库",
+      "status": "进行中",
+      "node": "专家库功能优化与新增",
+      "deadline": "",
+      "issues": "共7项专家库相关需求",
+      "tasks": [
+        {
+          "text": "[1] 专家评价限制改到聘费申请阶段",
+          "done": true,
+          "priority": "high",
+          "due": "",
+          "opinion": "默认给评价，支持批量操作",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[2] 专家抽取盲抽功能",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "评标前半小时展示，分类配置时间",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[3] 专家证书分类、含指定证书抽取",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "按政采/建交委/交易中心等分类",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[4] 增加专业检索和人数功能",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "老OA删除提示去掉、显示专业人数",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[5] 临时专家入口/简易入库",
+          "done": true,
+          "priority": "medium",
+          "due": "",
+          "opinion": "已完成部分，待按新要求调整",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[6] 专家抽取后公众号微信通知",
+          "done": false,
+          "priority": "high",
+          "due": "",
+          "opinion": "公众号消息未完成",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "[7] 抽取与聘费申请双向生成、占用信息",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "放开套打节点、身份证号改编号年龄",
+          "createdAt": "2026-04-03"
+        },
+        {
+          "text": "专家库语音通知功能完善",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "目前专家库自动语音通知功能不好用，导致业务员经常误操作乱打专家语音电话， 目前功能已关闭，待功能完善后再开启",
+          "createdAt": "2026-04-07"
+        },
+        {
+          "text": "专家短信通知，手动触发，仅通知",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "参照老OA仅手动发送短信通知",
+          "createdAt": "2026-04-07"
+        }
+      ],
+      "sort_order": 6
+    }
+  ],
+  "meetings": [
+    {
+      "date": "周二 03-31",
+      "time": "09:30",
+      "name": "新点AI产品介绍",
+      "remark": "",
+      "id": "meet-001",
+      "completed": true,
+      "createdAt": ""
+    },
+    {
+      "date": "周三 04-01",
+      "time": "09:30",
+      "name": "巨一例会-招投标需求",
+      "remark": "",
+      "id": "meet-002",
+      "completed": true,
+      "createdAt": ""
+    },
+    {
+      "date": "周四 04-02",
+      "time": "09:30",
+      "name": "中招联合-进度汇报",
+      "remark": "",
+      "id": "meet-003",
+      "completed": true,
+      "createdAt": ""
+    },
+    {
+      "date": "本周待定",
+      "time": "",
+      "name": "和综合部沟通",
+      "remark": "财务需求、坚果云、综合部需求",
+      "id": "meet-004",
+      "completed": true,
+      "createdAt": ""
+    },
+    {
+      "id": "meet-005",
+      "name": "亚太例会",
+      "date": "2026-04-08",
+      "time": "09:30",
+      "remark": "",
+      "completed": true,
+      "createdAt": "2026-04-06"
+    },
+    {
+      "id": "meet-006",
+      "name": "中招联合例会",
+      "date": "2026-04-08",
+      "time": "14:00",
+      "remark": "",
+      "completed": true,
+      "createdAt": "2026-04-06"
+    },
+    {
+      "id": "meet-007",
+      "name": "安全厂商会议",
+      "date": "2026-04-10",
+      "time": "09:30",
+      "remark": "申报项目安测、软测",
+      "completed": true,
+      "createdAt": "2026-04-09"
+    },
+    {
+      "id": "meet-008",
+      "name": "四建、亚太例会",
+      "date": "2026-04-13",
+      "time": "09:30",
+      "remark": "",
+      "completed": true,
+      "createdAt": "2026-04-09"
+    },
+    {
+      "id": "meet-009",
+      "name": "中招联合例会",
+      "date": "2026-04-14",
+      "time": "14:00",
+      "remark": "",
+      "completed": true,
+      "createdAt": "2026-04-09"
+    }
+  ],
+  "中招联合": [
+    {
+      "id": "中招联合-001",
+      "name": "电子招投标平台啊私有化部署项目",
+      "status": "进行中",
+      "node": "",
+      "deadline": "",
+      "issues": "",
+      "tasks": [
+        {
+          "text": "短信模板申请",
+          "done": false,
+          "priority": "high",
+          "due": "2026-04-10",
+          "opinion": "已安排中招联合自行登录阿里云账号行申请验证",
+          "createdAt": "2026-04-05"
+        },
+        {
+          "text": "测试服务器申请3台",
+          "done": false,
+          "priority": "medium",
+          "due": "2026-04-10",
+          "opinion": "",
+          "createdAt": "2026-04-06"
+        },
+        {
+          "text": "确认各页面中的logo 和 文案这些平台专属标志替换",
+          "done": true,
+          "priority": "medium",
+          "due": "2026-04-09",
+          "opinion": "",
+          "createdAt": "2026-04-09"
+        },
+        {
+          "text": "官网准备测试环境及测试接口联测推送公告",
+          "done": false,
+          "priority": "medium",
+          "due": "2026-04-10",
+          "opinion": "",
+          "createdAt": "2026-04-09"
+        },
+        {
+          "text": "平安银行相关对接工作推进",
+          "done": false,
+          "priority": "medium",
+          "due": "",
+          "opinion": "",
+          "createdAt": "2026-04-09"
+        }
+      ],
+      "status_text": "进行中",
+      "status_color": "",
+      "sort_order": 0
+    }
+  ],
+  "公司对外服务": [
+    {
+      "id": "公司对外服务-001",
+      "name": "供应商客户跟踪使用情况",
+      "status": "进行中",
+      "node": "",
+      "deadline": "2026-04-10",
+      "issues": "钱总使用情况跟踪",
+      "tasks": [],
+      "status_text": "进行中",
+      "status_color": "",
+      "sort_order": 1
+    },
+    {
+      "id": "wufang-hangzhou-001",
+      "name": "五处杭州航天私有化部署项目",
+      "status": "待跟进",
+      "node": "",
+      "deadline": "",
+      "issues": "风控模块评估、文件审核模块评估、文件编制模块评估 | 硬件配置+定制开发+运维+升级迭代+人员出差\r\n对方GPU环境是4090",
+      "tasks": [
+        {
+          "text": "报价评估",
+          "done": false,
+          "priority": "medium",
+          "due": ""
+        }
+      ],
+      "status_text": "待跟进",
+      "status_color": "status-todo",
+      "sort_order": 0
+    }
+  ]
+}
