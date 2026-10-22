@@ -1,20 +1,6 @@
 {
   "tasks": [
     {
-      "id": "92",
-      "done": true,
-      "priority": "high",
-      "date": "2026-04-10",
-      "content": "客户满意度等综合通知上线",
-      "status": "completed",
-      "completed_at": "2026-04-07 21:16:53.753860",
-      "source": "planned",
-      "source_dept": "",
-      "notes": "",
-      "tags": [],
-      "project": ""
-    },
-    {
       "id": "94",
       "done": true,
       "priority": "medium",
@@ -1104,7 +1090,7 @@
       "status": "pending",
       "source": "temp",
       "source_dept": "技术中心",
-      "priority": "medium",
+      "priority": "low",
       "notes": "",
       "tags": [
         "重要",
@@ -1112,7 +1098,8 @@
       ],
       "project": "中招联合私有化部署",
       "created_at": "2026-04-29 10:49:03.345106",
-      "completed_at": null
+      "completed_at": null,
+      "done": false
     }
   ],
   "last_id": 160
