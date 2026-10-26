@@ -1,19 +1,37 @@
-# OpenClaw 版本监控报告
-日期: 2026-10-12
+OpenClaw 版本监控告警
+检查日期: 2026-10-26 (系统真实日期)
 
-## 版本对比
-当前运行版本: 2026.9.5
-最新版本: 2026.10.1
+■ 当前运行版本: 2026.9.5 (ec9c1a1)  — 发布时间 2026-09-19
+■ 最新可用版本: 2026.10.7 (npm latest, 2026-10-24 发布)
+  另有: 2026.10.10-beta.3 (beta 通道) / 2026.9.34 (extended-stable, 相当于 LTS)
+■ 结论: 有新版本（落后 10 个稳定版），当前版本已明显过期
 
-## 最新版本详情
-版本号: 2026.10.1
-发布日期: 2026-10-08 (Oct 8, 2026)
+■ 是否有重大变化: 有
+主要变化(2026.10.1 ~ 2026.10.7):
+- 2026.10.1: 破坏性变更 —— metadata.clawdbot 更名为 metadata.openclaw（涉及所有 skill/hook）、
+  Discord voice-TTS 设置下线、定时任务继承所属会话的工具、codex/ 路由更名为 openai/
+- 2026.10.5: Skill Workshop 2.0（版本保存/Undo）、侧边栏重构、公开会话链接、2,704 commits
+- 2026.10.6: 安全驱动的 Node 版本要求 + 安装/更新/Gateway 启动紧急修复
+- 2026.10.7: 会话恢复、升级、备份、集成、跨平台 App 可靠性改进 + Gemini 4 Argon 支持 + macOS 引导优化
+- 2026.9.34 (extended-stable): 含关键安全更新
 
-## 重大变化
-有更新。包含 broad reliability and workflow improvements across Sessions, media replies, updates, Windows workspaces, cloud workers, plugins, Codex, and MCP，同时优化了 migrations、cleanup 和 runtime behavior。
-属于日常质量改进版本，非紧急安全补丁。
+■ 已知问题/风险:
+- 2026.9.6 曾导致 Apple Silicon macOS 启动即崩溃 (EXC_CRASH/SIGABRT)，2026.9.7 修复
+- 2026.10.7 发布仅 2 天，社区评估为「更新需谨慎」：已确认 1 起 Linux 回归（后续消息被阻断）、
+  1 起 Windows 更新修复失败（均非大面积问题）
+- Docker 升级 2026.7.2 → 2026.10.3 有 doctor 迁移卡住的报告
+- 社区推荐当前最稳妥版本: 2026.10.4（已发布 8 天，2 起可信已知问题，无大面积爆发）
 
-## 升级建议: 升
+■ 升级建议: 观望（不建议直接升到 2026.10.7）
+理由:
+1. 当前 2026.9.5 是 9.6 崩溃期间官方认可的「安全港」版本，本身稳定
+2. 10.1 有需要迁移的破坏性变更（skill/hook 元数据字段更名），升级跨度大
+3. 10.7 刚发布 2 天，回归问题仍在浮现
+4. 10.6 引入安全相关的 Node 版本要求，属需要跟进项
 
-⚠️ 建议升级
-理由: 2026.10.1 是一个全面的可靠性提升版本，涵盖 Sessions、media replies、updates、Windows workspaces、cloud workers、plugins、Codex、MCP 等多个模块的 workflow 改进。当前运行版本 2026.9.5 与最新版本差距较大，建议升级以获得更好的稳定性。
+建议路径:
+- 立即: 先备份配置与 memory/ 目录（cp -r 到备份目录），保持现状不动
+- 首选目标: 2026.10.4（若确认 10.6 的 Node 要求后可直接上 10.6，但需等 10.7 社区反馈稳定）
+- 升级步骤: 备份 → openclaw update → openclaw doctor --fix → bash ~/.scripts/safe-gateway-restart.sh
+  （网关重启务必用安全脚本，避免消息丢失）
+- 关注: https://github.com/openclaw/openclaw/issues 中 10.7 相关条目

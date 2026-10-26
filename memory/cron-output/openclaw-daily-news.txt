@@ -1,79 +1,69 @@
-【OpenClaw日报】📅 2026-10-12
+【OpenClaw日报】📅2026-10-26
 
-== OpenClaw 双周动态 ==
-当前版本：2026.9.5 | 最新稳定版：2026.9.7 | 最新完整包：2026.9.9
+📌 本地版本：OpenClaw 2026.9.5 (ec9c1a1) ｜ 官方最新：v2026.10.6（2026-10-23 发布）
 
----
+━━━━━━━━━━━━━━━━━━━━
+📰 今日要闻
 
-【1】OpenClaw 2026.10.1 发布：原子化更新机制上线
+1️⃣ 【v2026.10.6 补丁发布：专注安装、升级与启动稳定性】
+10 月 23 日发布的 2026.10.6 是一个不含新功能的纯维护版本，重点修复全新安装、更新器可靠性、Gateway 启动、Windows 安装流程、Discord 指令回归、iPhone Talk 崩溃等问题，并加入了"可重放"的安全会话恢复机制——被中断的升级可以在 Windows/macOS/Linux 上安全续跑。官方建议各团队在下一个维护窗口安排更新。
+🔗 原文链接：
+• https://docs.openclaw.ai/releases
+• https://github.com/openclaw/openclaw/releases
+• https://www.theclawreport.com
 
-10月初发布的 2026.10.1 带来了重磅改进——原子化更新（Atomic Updates）。新机制确保更新过程中原有 Gateway 保持运行，更新失败时自动回滚到上一个可用配置，始终保留一个可用的 Agent 来帮助诊断故障。这是 OpenClaw 历史上最可靠的更新机制，解决了"更新失败导致 Agent 下线无法自救"的长期痛点。对我们这类依赖 24/7 运行的服务来说，这个改进直接降低了维护风险。
+2️⃣ 【v2026.10.5：侧边栏重构 + Skill Workshop 2.0 上线】
+10 月 19 日发布的 10.5 是近期功能含量最高的一版：侧边栏新增 Subagents 与 Processes 面板，可以直接在父会话旁查看已派发的子任务和最近命令输出，支持定点 Stop 停止；完成的命令默认折叠、运行中的保持可见。同时 Skill Workshop 2.0 带来"版本留痕 + Undo"，最多保存 10 个版本，可对比改动、回滚旧版、归档后再恢复，新会话会使用更新后的技能。官方在 10.5 中合并了 2,250 个 PR、637 位贡献者。
+🔗 原文链接：
+• https://docs.openclaw.ai/releases/2026.10.5
+• https://x.com/openclaw/status/2112260434116108528
+• https://superpowerdaily.com/posts/openclaw-adds-undo-for-learned-skills-and-simplifies-public-chat-links
 
-原文链接：https://docs.openclaw.ai/releases/2026.10.1
+3️⃣ 【公开会话链接：无需登录即可阅读，但也会暴露后续消息】
+10.5 改进了会话分享：已发布的对话现在直接在正常的聊天地址打开，任何拿到链接的人都能读取记录，登录用户沿用原有权限。但官方在发布说明里特别强调风险边界——链接会暴露"现有及未来的"用户消息与最终回复，脱敏只是尽力而为，关闭分享也无法追回别人已经保存的副本。
+🔗 原文链接：
+• https://docs.openclaw.ai/releases/2026.10.5
+• https://docs.openclaw.ai/releases/2026.9.3
 
----
+4️⃣ 【OpenClaw Enterprise (OCE) 开源免费，落地企业级 Agent 控制平面】
+9 月 29 日 OpenClaw 基金会宣布开源 OpenClaw Enterprise（OCE）：一个 MIT 协议、厂商中立、面向敏感环境的"持久化 Agent 管理平台"，前身是 OpenAI 内部项目，捐给基金会后由 Red Hat 和 NVIDIA 共同参与开发。它是独立仓库 openclaw/openclaw-enterprise，不 fork 运行时、不锁功能，提供多租户、可信/不可信工作负载硬边界、沙箱、基于 LLM 的复核、细粒度权限与全生命周期审计。OpenAI 与 Red Hat 已在内部试点运行。
+🔗 原文链接：
+• https://openclaw.ai/blog/openclaw-enterprise
+• https://qz.com/openclaw-enterprise-ai-agent-control-plane-093026
+• https://cellcog.ai/blog/openclaw-enterprise
+• https://github.com/openclaw/openclaw-enterprise
 
-【2】腾讯 AIG 加入 ClawScan：ClawHub 安全审查再升级
+5️⃣ 【微软 Autopilot 建立在 OpenClaw 之上，Scout 走的是"Agent 治理"路线】
+9 月 25 日微软把 Copilot 重构为 Home / Code / Autopilot 三块，其中 Autopilot 直接基于 OpenClaw 构建；更早的 Build 2026 上微软还发布了桌面自主 Agent "Scout"。治理上每个 Autopilot 拥有独立的 Entra 身份、按任务限定权限，并由 Purview 策略实时拦截写操作。与之对照的是 OpenClaw 自己的"迟到但免费"路线——两者回答的是同一个问题：在企业里跑常驻 Agent 需要什么。
+🔗 原文链接：
+• https://openclaws.io/blog/microsoft-autopilot-openclaw-enterprise
+• https://innfactory.ai/en/blog/microsoft-scout-openclaw-for-microsoft-365
+• https://openclaw.ai/press
 
-OpenClaw 宣布将腾讯 AIG（AI Guard）纳入 ClawScan 安全扫描体系，与已有的 SkillSpector 形成双引擎审查。所有上传到 ClawHub 的技能和插件现在都经过 AIG + SkillSpector 的双重检测，扫描结果进入持续反馈循环以提升风险识别能力。这意味着从第三方市场安装技能的安全性大幅提高，我们引入外部技能时可以更有信心。
+6️⃣ 【安全态势：2026 年公开安全通告达 722 条，其中 14 条为严重级】
+一份社区统计显示 OpenClaw 今年累计 722 条安全公告、其中 14 条为 Critical，且不同来源统计口径并不一致——这说明"读到的数字都对不上"本身是个问题。配合 3-4 月那波被社区称为项目史上最密集的安全加固（节点能力与配对解耦、远程节点事件默认标记为不可信、凭据从配置响应中脱敏、Skill 增加 realpath 校验、TLS 1.3 最低标准、提示注入防护内置到系统提示层），生产环境使用应把这些升级视为强制项而非可选项。
+🔗 原文链接：
+• https://openclaws.io
+• https://petronellatech.com/blog/openclaw-ai-agent-guide-2026
+• https://medium.com/@ezraclintoc/openclaw-in-2026-whats-changed-since-the-chaos-started-4da3ecf1df0f
 
-原文链接：https://openclaw.ai/blog/openclaw-collaborates-with-nvidia-for-stronger-agent-skill-security
+━━━━━━━━━━━━━━━━━━━━
+🧠 【豆浆学习笔记】
 
----
+📌 版本落后提示
+本地跑的是 2026.9.5，官方已到 2026.10.6，中间差了 9 个版本。9.5 → 9.7 那一段是"原子更新 + 备份校验 + 自动回滚"，10.x 又补了 Skill Workshop 2.0、子任务面板、公开会话链接。建议王抽一个维护窗口升级（务必用 `bash ~/.scripts/safe-gateway-restart.sh` 走安全重启，配置变更前先备份）。
 
-【3】Active Memory 主动记忆：从"静态记忆"到"动态检索"
+💡 可直接落地的三件事
+1️⃣ **Skill Workshop 2.0 的版本留痕** — 我们的工作流技能（比如飞书多渠道同步规则、派发标准格式）现在改错了只能手改文件回滚。10.5 之后可以走 Workshop 提案 → 审核 → 应用的正规流程，Undo 和 10 个版本存档相当于给技能加了 Git 保险。这条对我们的"铁律：主Agent不自己写代码"是天然配套——技能变更从此有可审计的评审轨迹。
+2️⃣ **侧边栏 Subagents / Processes 面板** — 派发子Agent后能直接在会话旁看到运行状态和命令输出，配合定点 Stop，不用再靠我口头汇报"还在跑"。对多项目跟进的场景，透明度直接提升。
+3️⃣ **公开会话链接要谨慎** — 一键把飞书里的对话变成免登录可读链接，虽然方便分享给王，但在公司环境里属于敏感信息外泄路径。我们的招投标内容、内部日志不适合走这个功能；如需汇报，建议改成"导出文档发飞书"，而不是公开链接。
 
-2026.4 版本引入的 Active Memory 插件（后续持续优化）改变了记忆的工作方式。早期的 Agent 只能访问会话启动时 MEMORY.md 中的内容；现在 Agent 可以主动检索相关记忆，按需读取，不再依赖"碰巧在文件里"。这对于长期跟踪项目进展、多轮复杂对话场景非常有价值，我们可以把 MEMORY.md 当作真正的知识库来使用。
+⚠️ 风险与红线
+• **自动学习有成本和隐私代价**：Skill 的 background learning 会把对话和工具内容发给当前配置的模型供应商（我们现在走 MiniMax），可能产生额外费用。可以设为 Off，但 `/learn` 手动触发仍可用——建议保持现状前先评估。
+• **公开链接的"未来消息"陷阱**：不是快照而是持续暴露，关掉也追不回已保存副本，涉密内容一律不用。
+• **722 条安全通告的数字要打问号**：不同来源统计口径不一，别被单一数字吓到或麻痹。真正该做的是保持版本跟进 + `openclaw doctor` 体检。
 
-原文链接：https://petronellatech.com/blog/openclaw-ai-agent-guide-2026
-
----
-
-【4】OpenClaw 2.0 全链路重构完成（2026.8.1）
-
-8月发布的"OpenClaw 2.0"是一次全面重构，涵盖安装、消息、记忆、技能、模型、自动化、浏览器/原生应用、插件、安全等所有层面。官方称之为"意外诞生 OpenClaw 2.0"，是一次从底层到上层的系统性升级。升级后长对话更流畅，负载下响应更快，插件加载也优化为按需加载（不再启动时就全部加载）。
-
-原文链接：https://docs.openclaw.ai/releases/2026.8.1
-
----
-
-【5】安全加固密集期：3-4月发布史上最大安全更新
-
-从3月底到4月中，OpenClaw 发布了项目历史上规模最大、密度最高的安全更新，涵盖权限隔离、工作区完整性、网络防御、跨组件信任等方面。重要改动包括：环境变量强化（阻止不可信来源注入）、WebSocket 会话在 Token/密码轮换后立即失效、远程节点事件默认标记为不可信等。运行在多用户或公网环境的团队必须尽快升级。
-
-原文链接：https://petronellatech.com/blog/openclaw-ai-agent-guide-2026
-
----
-
-【6】OpenClaw 基金会正式成立，项目走向非营利治理
-
-7月，OpenClaw 正式成立 OpenClaw Foundation，Peter Steinberger 在加入 OpenAI 后推动了这一转型。项目承诺保持 MIT 开源协议，OpenAI 继续提供赞助支持。基金会模式下项目有了专职团队和正式合作伙伴关系，长期可持续发展有了制度保障。这也意味着 OpenClaw 从个人作品正式成为社区基础设施。
-
-原文链接：https://openclaw.ai/blog/introducing-the-openclaw-foundation
-
----
-
-【7】OpenClaw 2026.9.7：Agents API + ChatGPT 登录 + 更智能的会话恢复
-
-最新正式版 2026.9.7 集成了 OpenAI Agents API 和 Sign in with ChatGPT（Beta），Mac/iPhone/iPad 聊天体验优化，并在更新备份、回滚保护方面做了改进。插件懒加载机制让大型工具集不再重复初始化工作，响应速度有明显提升。这个版本是从旧版升级的推荐目标版本。
-
-原文链接：https://docs.openclaw.ai/releases/2026.9.7
-
----
-
-【豆浆学习笔记】
-
-📌 对我们最有价值的更新：
-1. **原子化更新机制** —— 我们Gateway平时不关机更新，这个改进让我在更新时丢消息的风险大大降低，下次更新可以更安心
-2. **Active Memory** —— 我现在的 MEMORY.md 还是被动读取，这个功能如果启用，我就能主动检索历史记忆，对王的项目跟进会更有连续性
-3. **ClawHub 安全升级** —— 以后从市场装技能有双重扫描，用起来更放心
-4. **2026.9.7 是推荐升级目标** —— 我们的 2026.9.5 离最新稳定版只差一个小版本，值得跟进
-
-⚠️ 值得关注的：
-- 4月底的"艰难一周"事件（插件依赖修复循环拖慢Gateway）提醒我们：批量更新配置后要观察Gateway状态，不能认为"发出去就完事了"
-- 安全加固是必须跟进的，关系到Gateway的可靠性
-
-🔮 可以尝试的：
-- Skill Workshop 功能 —— 把我们重复的工作流程固化下来，让我能更快学会新技能
-- MCP Apps 支持 —— 如果有外部工具需要接入，这个通道值得关注
-
+🔍 值得持续跟踪
+• OCE（OpenClaw Enterprise）开源控制平面——多租户 + 硬安全边界 + 审计，这套思路正是"公司里跑多个常驻 Agent"该有的样子。招投标代理业务涉及多个项目、多个子系统交叉建设，将来若要横向铺开 Agent，OCE 的治理模型值得先读懂。
+• 微软 Autopilot + Entra 身份 + Purview 策略，说明大厂 Agent 治理已经定型。我们不需要自建，但要知道边界在哪——尤其公司若采购 M365，Agent 365 的治理平面（$15/用户/月）可能会与我们的飞书工作流产生分工。
+• 9.7 引入的"可重放会话恢复"和 10.6 的"升级可续跑"，对长会话 + 频繁升级的场景是刚需，值得在升级窗口实测一次。
