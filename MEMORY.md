@@ -234,6 +234,63 @@
 102. **【配置变更·已生效但未入库】`openclaw.json` 的 `agents.defaults.timeoutSeconds` 由 600 提升到 1800（11-01 00:0x 前置变更，当前未提交）**：这是对第 98 条"skill-collection-review 撞 10 分钟 run 上限"的直接处置（把默认 agent 超时从 10 分钟放宽到 30 分钟）。**⚠️ 但必须注意边界：agent 超时 ≠ cron 任务的 `runTimeoutSeconds`，后者是独立参数**——10-31 实测的 600000~815716ms 失败是**子任务 run 上限**（subagent spawn 的 timeout），不必然受 `agents.defaults.timeoutSeconds` 约束 → **该改动能否真正救回 skill-collection-review 需实测验证，不能先下结论**；若无效，仍需给 `skill-collection-review-*` 显式传 `runTimeoutSeconds`（20~30 分钟）或缩小 review 范围。**另注：1800s 的 agent 超时意味着单个 agent turn 最长可跑 30 分钟，配合 cron 密集触发会拉长队列占用**，建议同时观察是否有新的超时/堆积
 103. **【备份口径·重要】`~/.openclaw` 主仓库的 `workspace-memory/` 目录至今未被 git 跟踪，记忆官自己的日志没有进入备份**：实测 `git ls-files workspace-memory/` 返回空、`git status` 中显示 `?? workspace-memory/`。**含义：① 本工作手册 AGENTS.md 所说"记忆官自己的日志：`~/.openclaw/workspace-memory/memory/`"实际处于"本机有、远端无"的状态——Mac mini 一坏，记忆官侧日志（含每日整合记录与故障修正轨迹）全部丢失，而中央记忆库 MEMORY.md 因在 workspace 仓库内仍有备份**；② 下一步应把 `workspace-memory/` 纳入主仓库跟踪（注意其中大量 `?? ../` 跨目录条目需先加 .gitignore 规则），或至少把每日记忆官日志单独 push 到 `origin-workspace` 的一个 `memory-log` 分支。**✅ 已于 11-01 00:1x 修复：`workspace-memory/` 全量（105 个文件 / 9036 行 / 852 KB）已纳入 `~/.openclaw` 主仓库跟踪并 push 至 `origin-workspace main:config-backup`（commit `af5e890`），远端 config-backup 已 ls-remote 复验。备份覆盖已补齐，但该目录含 2026-04~04 的历史日记共 804 KB，后续每次提交体积需留意**
 104. **【仓库状态·非故障说明】`~/.openclaw/workspace` 仓库长期挂着 23 个 `D`（已删除）与大量 `??`（未跟踪），经核对全部是"文件搬家/清理后的正常残留"，不是数据丢失**：① `skills/self-improving-agent/`（16 个文件）已迁至 `~/.openclaw/skills/self-improving-agent/`（主仓库已跟踪，仍在 git 里，SKILL.md 21606 B 在位）→ workspace 内显示为 D 属正常；② `TOOLS.md` 已迁至 `~/.openclaw/workspace-memory/TOOLS.md`（记忆官工作手册侧）→ workspace 内显示为 D 属正常；③ `.openclaw/workspace-state.json` → 已迁为 `workspace-state.json.migrated.<hash>.*`（120 B）；④ `memory/cron-output/` 下 5 份简报 txt 显示为 D 是因为 10-31 心跳已推送并按流程删除（推送回执 messageId 齐全），**这是"已送达"而非"被误删"**；⑤ `work/projects` 子模块指针 8ffec1b → **ffa3500**（三次 auto backup：10-21 23:05 / 10-21 23:10 / 10-22 23:00，改动 `auto-backup.sh`、`data/daily_tasks.json`、新增 `data/projects.json.bak.20261021230455`）属**远端已推的正常指针前移**，尚未在本仓库提交；⑥ 未跟踪新增包括 `DREAMS.md`（30249 B，dreaming 日记正文）、`backend-agent/`（独立 git 仓库）、10-26~10-30 的 16 份 `memory/cron-history/*` 简报归档、`MEMORY.md.bak.*` 系列、`tmp_risk_*.xlsx/jpg` 临时文件。**含义：①②③④ 应当在下一轮提交中以 `git add` 显式记录"已迁移"状态（否则每次备份都带着 23 个 D 噪声），⑥ 中的 `tmp_risk_*` 属临时垃圾应加 .gitignore，16 份 cron-history 简报属有价值素材应入库**
+105. **【事实修正·长期待办关闭】"10-24 三份 cron 简报均未生成"是误判 —— 三个任务都是工作日调度（11-01 实测）**：第 30 条（10-25 起连续 4 个周期记录的"待排查故障"）**根因是没人读 cron 的 `schedule.expr`**：`ai-morning-briefing` = `0 8 * * 1-5`、`ai-work-briefing` = `30 11 * * 1-5`、`ai-evening-briefing` = `0 17 * * 1-5`（均 tz=Asia/Shanghai）→ **10-24 是周六、10-25 是周日，本来就不该有产物**。**重新核算 10-12~11-01 的真实缺口（只算工作日）**：ai-morning-briefing 缺 **10-12（周一）**；ai-evening-briefing 缺 **10-16（周五）、10-21（周三）**；ai-work-briefing 缺 **10-22（周四）、10-27（周二）**；openclaw-daily-news 无缺口（11-01 尚未到 09:00）→ **真正的"工作日缺产物"只有 5 天，且属当天任务偶发失败，不是"三个任务都坏了"**。**处置**：原第 30 条与 `05-系统稳定性`/`11-故障记录` 中的"10-24 三份简报未生成"故障条目应关闭，改为按上述 5 个具体日期逐个查 cron run 记录。**方法论教训：先看 schedule 再谈缺口** —— 连续 4 个周期把"周末不跑"当成"任务故障"，说明巡检类判断必须先核对调度表达式
+106. **【故障诊断修正·重要】11-01 03:00 首轮失败的真因是上游 429 + provider 级 120s idle timeout，不是 agent 超时（11-01 Gateway 日志实测）**：`~/Library/Logs/openclaw/gateway-auto.log` 显示完整失败链 —— 03:01:40 `status=429`（elapsedMs=100259，body `{"error":{"message":"server is busy, please retry later","type":"overloaded_error"}}`）→ 03:03:41 `LLM idle timeout (120s): no response from model` → `transient retry window elapsed for minimax/MiniMax-M2.7 after 1/8 retries; failing over` → `Profile minimax:cn idle timeout (model silent). **No further authorized account for this provider**` → 整轮 error（lastDurationMs=222420，consecutiveErrors=1）。**两点关键含义：① provider 级 120s idle timeout 与 agent 级 `agents.defaults.timeoutSeconds` 是两套机制** —— 因此把 timeoutSeconds 从 600 提到 1800 对本次失败**无效**（此前 `05-系统稳定性` 把首轮超时一律归因为"agent 超时偏小"，需按本条修正）；② **本机完全没有故障转移通道** —— `auth.profiles` 只有 `minimax:cn` 一个、`auth.order` 为空 → 429 或超时时无第二账号可切，**直接整轮失败**。**可执行结论：要真正兜底必须补一个备用 provider 或备用 auth profile 并写进 `auth.order`，继续调 agent 超时是无效动作**
+107. **【验证进展·首次实证】`agents.defaults.timeoutSeconds` 600→1800 已入库，且首次出现 19 分钟成功的实证（11-01）**：该变更**已进入 `~/.openclaw` 主仓库**（commit `43bd664`，"记忆日备份 2026-11-01 … openclaw.json agents.defaults.timeoutSeconds 600→1800"）→ **第 102 条"已生效但未入库"可以划掉**。**新实证**：skill-collection-review 系列里 **tools-agent 本轮 ok，耗时 1144773 ms（约 19 分钟）** —— 在旧 600s 上限下这不可能完成 → **新窗口确实装得下重型 review**。**⚠️ 但 4 个 error 任务不能算已修复**：其 600000~815716ms 上限来自**当时生效的旧 600s 默认值**，lastRunAt 分布在 10-29~10-30，**从未在新配置下跑过** → 真实验证窗口是下一个 7 天周期（约 11 月初）；subagent-backend 804027ms 与 subagent-test 228084ms 同样说明"接近 10 分钟"是危险区。另注：这 9 个任务都是 `every 604800000ms`（7 天）、`payload.timeoutSeconds` 为空，**真要稳还需显式传 `runTimeoutSeconds` 或缩小 review 范围**
+108. **【记忆系统】promote 候选 8 → 9，且首次出现"当日命中"条目（11-01 实测）**：`Recall updated` 从 10-30T19:03:27.602Z 推进到 **10-31T19:14:01.677Z**（本轮 2 次 `memory search` 触发）→ **"写入由查询驱动"第五次验证**，spaced 388 → 387，entryCount 512 / promoted 1 / concept-tagged 512 不变。放宽到 `--min-score 0 --min-recall-count 1 --min-unique-queries 1` 后候选 8 → 9，新增 `memory/2026-10-22.md:1-18`（rc=1 / uq=1 / maxScore 0.5707 / 加权分 0.5006），其 **`recallDays` = 2026-11-01（即当日）** —— 此前所有候选的 recallDays 都落在更早日期，**"当日命中"这条路是通的**。但加权分仍远低于 0.750 门槛（frequency 0.289 / diversity 0.2 / consolidation 0.2），**再次坐实第 53/90 条：门槛是加权综合分，需跨日 + 多措辞**
+109. **【记忆系统·新物证】dreaming 摄入断点连续第 11 个周期不变，且定位到"目标路径根本不存在"（11-01 实测）**：plugin-state 实测 `dreaming-session-ingestion-files` 670 / `-seen` 159 / `dreaming-daily-ingestion` 1，max(created_at)=**1787488567508 → 2026-08-23 20:36:07.508**，与前 10 个周期**逐毫秒一致** → 停摆不是"写入失败"，而是"写入目标从未被创建"。**新物证**：`openclaw memory status` 报 `Dream ingestion: ~/.openclaw/workspace/memory/.dreams/session-ingestion.json`，但**该文件在磁盘上不存在**，同目录只有 `session-ingestion.json.migrated`（2026-05-19 迁移产物）→ **2026-05 迁移后，新路径的写入方可能根本没有被恢复**。与 10-27 教训合流：**status 输出的 "ingestion state present" 是假阳性，产物存在性检查不足以判定健康度**。**处置：巡检脚本应显式校验 `memory/.dreams/session-ingestion.json` 存在且 mtime 新鲜，而不是只信 status 输出**
+110. **【系统变更·需王确认】新增第三个自定义 LaunchAgent：`com.wjj.skyworth.bootvideo-watchdog`（11-01 实测）**：plist 落地时间 **2026-10-31 22:30**（在本轮 03:00 之前约 4.5 小时，是本周期观察窗口内唯一的系统级变更），`launchctl list` 已加载（exit 0）。脚本 `~/Library/Application Support/tianci-ad/scripts/bootvideo-time-watchdog.sh`，`/bin/bash` 调用，`RunAtLoad=true` + **`StartInterval 600`（每 10 分钟）**，stdout/stderr 写入 `~/Library/Application Support/tianci-ad/logs/bootvideo-watchdog.launchd.{out,err}.log`。按 HEARTBEAT「启动自检」规则，除 gateway-auto 与 projecttracker 之外的**其它自定义 LaunchAgent 需告警**；但从命名与路径看属**创维/天慈侧业务 watchdog**，与本机 OpenClaw 与项目跟踪体系无关，**不是故障**。**仍需王确认是否为有意安装**
+111. **【工具口径·脚本必读】多 agent 配置下 `openclaw memory search/promote` 必须显式带 `--agent`（11-01 实测）**：不带 `--agent` 直接返回 `Multiple agents are configured, but this operation has no explicit owner. Select an agent explicitly; CLI callers can pass --agent <id>, channels can add a binding, and ambient services can set their agentId target.` → **脚本化调用必须固定 `--agent main`**，否则直接报错退出（只影响 CLI，不影响 Gateway 运行时路径）。本机注册了 **9 个 agent**（main / memory-agent / feishu-agent / tools-agent / frontend-dev / subagent-backend / subagent-frontend / subagent-test / zhanling），任何"读记忆"的巡检脚本都要显式指定所有者
+112. **【版本观察】上游连续两个周期零版本移动（11-01 直查）**：dist-tags 与 10-30 **完全一致** —— latest **2026.10.9**（10-29 15:46:49Z）、extended-stable **2026.9.36**（10-29 19:40:15Z）、beta **2026.10.10-beta.5**（10-30 03:22:37Z）→ **首次连续两个周期没有新版本发布**，说明 10 月末的发布潮已收敛。本地仍 **2026.9.5 (ec9c1a1)** / Node **v26.7.0** → **免升 Node 的功能最全落点仍是 10.5**，而实际可执行的唯一路径仍卡在 **Homebrew portable-ruby 4.0.9 从 ghcr.io 拉取极慢** → 待王确认是否改走 Node 官方二进制 tarball（26.12.1+）绕开 brew auto-update
+
+---
+
+## 🤖 做梦记忆提升 — 2026-10-31
+
+> 执行时间：2026-11-01 03:00（Asia/Shanghai）｜做梦周期：10-30 → 10-31
+> 提升标准：minScore=0.750, minRecallCount=3, minUniqueQueries=3, recencyHalfLifeDays=14, maxAgeDays=30
+> 产出：MEMORY.md 新增段落「🤖 做梦记忆提升 — 2026-10-31」+「📌 下次注意」第 105~112 条
+> 备份：`MEMORY.md.bak.20261101`（281079 bytes）｜分文件：`memory/dreaming/promotion/2026-10-31.md`
+> ⚠️ **本周期为补跑**：11-01 03:00 首轮因**上游 429 + provider 级 120s idle timeout**失败（见第 106 条），本轮 03:04 起接手完成全部产出。
+
+### 基础设施状态（本周期实测）
+
+| 组件 | 状态 | 详情 |
+|------|------|------|
+| 向量索引 | ✅ 全绿 | Indexed **642/642 files · 3942 chunks**；**Dirty: yes**（10-30 为 no，因本周期有新文件）；Embedding cache **5574 条（86.2 MiB）**；Vector store indexed（768 维）；FTS ready；**Agent DB 602.2 → 603.0 MiB** |
+| Recall store | ✅ 伪指标 | 512 entries · 1 promoted · 512 concept-tagged · **387 spaced**（388→387）；**Recall updated 2026-10-31T19:14:01.677Z**（本轮 2 次 memory search 触发，**第五次验证"查询驱动"**） |
+| 自动打分 | ⬜ 0 候选（预期） | 默认阈值 → `No short-term recall candidates`；放宽 `0/1/1` → **候选 8 → 9**，新增 `memory/2026-10-22.md:1-18`（**recallDays=2026-11-01，当日命中**）→ 见「📌 下次注意」第 108 条 |
+| dreaming 三层产物 | ❌ 真停更（不变） | `dreaming-session-ingestion-files` 670 / `-seen` 159 / `daily-ingestion` 1，max(created_at) 仍为 **2026-08-23 20:36:07.508**（逐毫秒一致）；**新物证：`memory/.dreams/session-ingestion.json` 磁盘上不存在** → 见第 109 条 |
+| Ollama | ✅ 在线，无自启 | `127.0.0.1:11434` http 200，PID 54049 `ollama serve`；**仍无 LaunchAgent 自启** |
+| OpenClaw 版本 | ⬜ 零移动 | dist-tags 与 10-30 完全一致（latest 10.9 / extended-stable 9.36 / beta 10.10-beta.5）；本地仍 **2026.9.5 (ec9c1a1)** / Node v26.7.0；升级路径结论不变，唯一可执行路径仍卡 Homebrew portable-ruby 4.0.9 |
+| 素材链 | ⚠️ 工作日缺 5 天 | 10-31 只有 openclaw-daily-news 一份（09:02）；三份工作日简报 10-31/11-01 缺失 —— **但 10-31/11-01 是周末，不是故障**；真正的工作日缺口 5 天 → 见第 105 条 |
+| LaunchAgent | ⚠️ 新增 1 个 | `com.wjj.skyworth.bootvideo-watchdog`（plist 2026-10-31 22:30 新建，StartInterval 600）→ 需王确认 → 见第 110 条 |
+| cron 健康 | ⚠️ 4 个 error | 20 个任务中 16 ok；**4 个 error 全是 skill-collection-review**（frontend-dev 4x / memory-agent 4x / subagent-frontend 5x / zhanling 4x，cause=timeout）；heartbeat-main skipped；memory-daily-backup 11-01 00:00 ok |
+
+### 本周期提升主题（8 项，详见「📌 下次注意」第 105~112 条）
+
+1. **【事实修正·关闭长期待办】** "10-24 三份简报未生成"是误判 —— 三个任务都是 `1-5` 工作日调度，周末本就不跑（第 105 条）
+2. **【故障诊断修正】** 11-01 首轮失败真因是**上游 429 + provider 级 120s idle timeout**，不是 agent 超时；且本机 `auth.order` 为空 → **无任何故障转移通道**（第 106 条）
+3. **【验证进展】** timeoutSeconds 600→1800 已入库；**tools-agent 首次跑出 19 分钟成功实证**；但 4 个 error 任务尚未在新配置下复验（第 107 条）
+4. **【记忆系统】** promote 候选 8 → 9，**首次出现当日命中条目**（recallDays=2026-11-01）（第 108 条）
+5. **【记忆系统·新物证】** dreaming 摄入断点逐毫秒不变，且**目标路径 `session-ingestion.json` 磁盘上根本不存在** → status 的 "ingestion state present" 是假阳性（第 109 条）
+6. **【系统变更】** 新增第三方 LaunchAgent `com.wjj.skyworth.bootvideo-watchdog`，需王确认（第 110 条）
+7. **【工具口径】** 多 agent 下 `openclaw memory search/promote` 必须显式 `--agent main`，否则 CLI 直接报错退出（第 111 条）
+8. **【版本观察】** 上游**连续两个周期零版本移动**；升级路径结论不变，唯一卡点仍是 Homebrew portable-ruby（第 112 条）
+
+### 本周期待办
+
+- [ ] **给 minimax 配备用 auth profile / 备用 provider 并写进 `auth.order`** —— 当前 429 或 idle timeout 无兜底，整轮必挂（第 106 条）
+- [ ] **按 5 个具体日期逐个查工作日缺产物**：ai-morning 10-12、ai-evening 10-16 / 10-21、ai-work 10-22 / 10-27（第 105 条）
+- [ ] **把 `memory/.dreams/session-ingestion.json` 存在性 + mtime 新鲜度写进巡检脚本**（第 109 条）
+- [ ] **向王确认 `com.wjj.skyworth.bootvideo-watchdog` 是否有意安装**（第 110 条）
+- [ ] **所有记忆类 CLI 调用固定加 `--agent main`**（第 111 条）
+- [ ] **skill-collection-review 的 4 个 error 任务等下一个 7 天周期复验**，验证前不宣布修复（第 107 条）
+- [ ] **给 Ollama 配 LaunchAgent 开机自启**
+- [ ] **升 OpenClaw**：9.5 → 10.5（免升 Node）→ 升 Node ≥26.12.1 → 10.9；**绕行方案：Node 官方二进制 tarball**（第 112 条）
+- [ ] **排查招投标平台/政府采购网系统的 PHP 版本（CVE-2026-109618/109619）与 EPICS 类工控组件（CVE-2026-114595）**
+- [ ] 王更新 project-tracker 的 GitHub PAT（或改 SSH），清理明文失效 token
+
 ---
 
 ## 🤖 做梦记忆提升 — 2026-10-30
