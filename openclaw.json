@@ -158,7 +158,7 @@
         "primary": "minimax/MiniMax-M2.7",
         "fallbacks": []
       },
-      "timeoutSeconds": 600,
+      "timeoutSeconds": 1800,
       "models": {
         "minimax/MiniMax-M2.7": {
           "alias": "Minimax"
