@@ -1,0 +1,3601 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-19T08:51:07.577Z",
+  "entries": {
+    "memory:memory/.dreams/session-corpus/2026-04-16.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-16.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-16.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "33f679d35d02"
+      ],
+      "recallDays": [
+        "2026-04-16",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-16.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-16.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-16.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 好的，发现过去24小时内的重要更新： - **2026-04-15**：heartbeat发送问题已解决（需指定`accountId: \"main\"`），HEARTBEAT兜底机制验证成功 - **2026-04-13**：有新的日常记忆 现在更新故障记录并执行备份：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "33f679d35d02"
+      ],
+      "recallDays": [
+        "2026-04-16",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "备份",
+        "好的",
+        "发现",
+        "过去",
+        "小时",
+        "内的",
+        "重要",
+        "更新"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-16.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-16.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-04-16.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 备份完成。简报如下： --- ## 🗂️ 记忆官简报 — 2026-04-16 ### 📥 今日记忆整合 **来源检查：** - `~/.openclaw/workspace/memory/` ✅ 豆浆的记忆 - `~/.openclaw/workspace-work/memory/` ❌ 目录不存在或为空 - `~/.openclaw/workspace-memory/memory/` ❌ 无内容 - `~/.openclaw/workspace-frontend/memory/` ❌ 目录不存在 **识别到的新内容（2026",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "33f679d35d02"
+      ],
+      "recallDays": [
+        "2026-04-16",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "备份",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace-memory/memory",
+        "完成",
+        "简报",
+        "如下",
+        "记忆"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-16.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-16.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-04-16.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "33f679d35d02"
+      ],
+      "recallDays": [
+        "2026-04-16",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-16.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-16.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-04-16.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: **记忆官日简报 — 2026-04-16** --- **📥 记忆读取结果** | 来源 | 状态 | |------|------| | `~/.openclaw/workspace/memory/` | 找到1份新文件：`2026-04-15.md` | | `~/.openclaw/workspace-work/memory/` | ⚠️ 目录不存在，无内容 | **新增内容（2026-04-15.md）** - **heartbeat飞书发送问题**：指定 `accountId: \"main\"` 解决 - **HEART",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "33f679d35d02"
+      ],
+      "recallDays": [
+        "2026-04-16",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "记忆",
+        "简报",
+        "结果",
+        "来源",
+        "状态",
+        "openclaw"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-16.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-16.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-04-16.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "33f679d35d02"
+      ],
+      "recallDays": [
+        "2026-04-16",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-16.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-16.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-04-16.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: 现在我有足够信息进行整合。让我更新中央记忆库并执行备份：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "33f679d35d02"
+      ],
+      "recallDays": [
+        "2026-04-16",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "备份",
+        "现在",
+        "我有",
+        "足够",
+        "信息",
+        "进行",
+        "整合",
+        "更新"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-17.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-17.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-17.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "d5bd631cdecb"
+      ],
+      "recallDays": [
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-17.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-17.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-17.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: Now I'll update MEMORY.md with the new content:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "d5bd631cdecb"
+      ],
+      "recallDays": [
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "now",
+        "i'll",
+        "update",
+        "new",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-17.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-17.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-04-17.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: Now let me also update the system stability topic and execute the git backup:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "d5bd631cdecb"
+      ],
+      "recallDays": [
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "backup",
+        "now",
+        "let",
+        "update",
+        "stability",
+        "topic",
+        "execute",
+        "git"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-17.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-17.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-04-17.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: ## 每日记忆整合简报 — 2026-04-16 ### 执行概况 - **记忆来源**：workspace/memory/（豆浆），workspace-work/memory/ 不存在（无内容） - **Git 备份**：✅ 成功推送到 `origin-workspace:config-backup`（commit 4787f94） --- ### 本次识别的新内容（2026-04-16） **1. OpenClaw 重要版本更新** - v2026.4.5：Memory Dreaming（自动记忆整理）、视频/音乐生成工具 -",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "d5bd631cdecb"
+      ],
+      "recallDays": [
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "backup",
+        "备份",
+        "workspace/memory",
+        "workspace-work/memory",
+        "origin-workspace",
+        "config-backup",
+        "v2026.4.5",
+        "视频/音乐生成工具"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-18.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-18.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-18.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "6ca7743b227b"
+      ],
+      "recallDays": [
+        "2026-04-18",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-18.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-18.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-18.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: Now let me read the current MEMORY.md:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "6ca7743b227b"
+      ],
+      "recallDays": [
+        "2026-04-18",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "now",
+        "let",
+        "read",
+        "current"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-18.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-18.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-04-18.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: Now let me check the current topics to see if they need updating:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "6ca7743b227b"
+      ],
+      "recallDays": [
+        "2026-04-18",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "check",
+        "current",
+        "topics",
+        "see",
+        "need",
+        "updating"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-18.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-18.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-04-18.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: Now I'll add the supplementary update to MEMORY.md, then run the git backup:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-17T19:01:11.568Z",
+      "lastRecalledAt": "2026-04-17T19:01:11.568Z",
+      "queryHashes": [
+        "6ca7743b227b"
+      ],
+      "recallDays": [
+        "2026-04-18",
+        "2026-04-17"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory.md",
+        "now",
+        "i'll",
+        "add",
+        "supplementary",
+        "update",
+        "run"
+      ]
+    },
+    "memory:memory/2026-04-18.md:73:76": {
+      "key": "memory:memory/2026-04-18.md:73:76",
+      "path": "memory/2026-04-18.md",
+      "startLine": 73,
+      "endLine": 76,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 9 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-16.txt:2-2, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:5-5; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-18T19:00:36.838Z",
+      "lastRecalledAt": "2026-04-25T22:06:09.807Z",
+      "queryHashes": [
+        "77ca9720ec15"
+      ],
+      "recallDays": [
+        "2026-04-18",
+        "2026-04-21",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "5-5",
+        "reflections",
+        "theme",
+        "kept",
+        "surfacing"
+      ]
+    },
+    "memory:memory/2026-04-18.md:77:80": {
+      "key": "memory:memory/2026-04-18.md:77:80",
+      "path": "memory/2026-04-18.md",
+      "startLine": 77,
+      "endLine": 80,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `backup` kept surfacing across 8 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:4-4, memory/.dreams/session-corpus/2026-04-16.txt:6-6; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-18T19:00:36.838Z",
+      "lastRecalledAt": "2026-04-25T22:06:09.807Z",
+      "queryHashes": [
+        "77ca9720ec15"
+      ],
+      "recallDays": [
+        "2026-04-18",
+        "2026-04-21",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25"
+      ],
+      "conceptTags": [
+        "backup",
+        "1.00",
+        "1-1",
+        "4-4",
+        "6-6",
+        "reflections",
+        "theme",
+        "kept"
+      ]
+    },
+    "memory:memory/2026-04-18.md:81:84": {
+      "key": "memory:memory/2026-04-18.md:81:84",
+      "path": "memory/2026-04-18.md",
+      "startLine": 81,
+      "endLine": 84,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace-work/memory` kept surfacing across 7 memories.; confidence: 0.93; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflecti",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-18T19:00:36.838Z",
+      "lastRecalledAt": "2026-04-25T22:06:09.807Z",
+      "queryHashes": [
+        "77ca9720ec15"
+      ],
+      "recallDays": [
+        "2026-04-18",
+        "2026-04-21",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25"
+      ],
+      "conceptTags": [
+        "openclaw/workspace-work/memory",
+        "0.93",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-18.md:85:88": {
+      "key": "memory:memory/2026-04-18.md:85:88",
+      "path": "memory/2026-04-18.md",
+      "startLine": 85,
+      "endLine": 88,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace/memory` kept surfacing across 7 memories.; confidence: 0.93; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-18T19:00:36.838Z",
+      "lastRecalledAt": "2026-04-25T22:06:09.807Z",
+      "queryHashes": [
+        "77ca9720ec15"
+      ],
+      "recallDays": [
+        "2026-04-18",
+        "2026-04-21",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "0.93",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-18.md:91:91": {
+      "key": "memory:memory/2026-04-18.md:91:91",
+      "path": "memory/2026-04-18.md",
+      "startLine": 91,
+      "endLine": 91,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: No strong candidate truths surfaced.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-18T19:00:36.838Z",
+      "lastRecalledAt": "2026-04-25T22:06:09.807Z",
+      "queryHashes": [
+        "77ca9720ec15"
+      ],
+      "recallDays": [
+        "2026-04-18",
+        "2026-04-21",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25"
+      ],
+      "conceptTags": [
+        "possible",
+        "lasting",
+        "truths",
+        "strong",
+        "candidate",
+        "surfaced"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-19.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-19.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-19.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-18T19:00:36.838Z",
+      "lastRecalledAt": "2026-04-18T19:00:36.838Z",
+      "queryHashes": [
+        "c9fd66cc4843"
+      ],
+      "recallDays": [
+        "2026-04-19",
+        "2026-04-18"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-19.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-19.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-19.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: **📋 记忆官每日整合简报 · 2026-04-19** --- **记忆来源检查结果：** - `~/.openclaw/workspace/memory/` ✅ 有新内容（做梦日记 2026-04-18） - `~/.openclaw/workspace-work/memory/` ❌ 目录不存在（无可读记忆） --- **过去24小时新记忆识别（2026-04-15~04-17 做梦整理）：** 1. **Heartbeat 修复已确认** - 必须指定 `accountId: \"main\"`，HEARTBEAT 兜底机制验",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-18T19:00:36.838Z",
+      "lastRecalledAt": "2026-04-18T19:00:36.838Z",
+      "queryHashes": [
+        "c9fd66cc4843"
+      ],
+      "recallDays": [
+        "2026-04-19",
+        "2026-04-18"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "04-17",
+        "记忆",
+        "每日",
+        "整合",
+        "简报",
+        "来源"
+      ]
+    },
+    "memory:memory/2026-04-19.md:108:111": {
+      "key": "memory:memory/2026-04-19.md:108:111",
+      "path": "memory/2026-04-19.md",
+      "startLine": 108,
+      "endLine": 111,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 11 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-16.txt:2-2, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:5-5; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-19T19:00:24.565Z",
+      "lastRecalledAt": "2026-04-26T19:00:47.203Z",
+      "queryHashes": [
+        "21faa0df9302"
+      ],
+      "recallDays": [
+        "2026-04-19",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "5-5",
+        "reflections",
+        "theme",
+        "kept",
+        "surfacing"
+      ]
+    },
+    "memory:memory/2026-04-19.md:112:115": {
+      "key": "memory:memory/2026-04-19.md:112:115",
+      "path": "memory/2026-04-19.md",
+      "startLine": 112,
+      "endLine": 115,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `backup` kept surfacing across 10 memories.; confidence: 0.91; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:4-4, memory/.dreams/session-corpus/2026-04-16.txt:6-6; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-19T19:00:24.565Z",
+      "lastRecalledAt": "2026-04-26T19:00:47.203Z",
+      "queryHashes": [
+        "21faa0df9302"
+      ],
+      "recallDays": [
+        "2026-04-19",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "backup",
+        "0.91",
+        "1-1",
+        "4-4",
+        "6-6",
+        "reflections",
+        "theme",
+        "kept"
+      ]
+    },
+    "memory:memory/2026-04-19.md:116:119": {
+      "key": "memory:memory/2026-04-19.md:116:119",
+      "path": "memory/2026-04-19.md",
+      "startLine": 116,
+      "endLine": 119,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace-work/memory` kept surfacing across 10 memories.; confidence: 0.91; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflect",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-19T19:00:24.565Z",
+      "lastRecalledAt": "2026-04-26T19:00:47.203Z",
+      "queryHashes": [
+        "21faa0df9302"
+      ],
+      "recallDays": [
+        "2026-04-19",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "openclaw/workspace-work/memory",
+        "0.91",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-19.md:120:123": {
+      "key": "memory:memory/2026-04-19.md:120:123",
+      "path": "memory/2026-04-19.md",
+      "startLine": 120,
+      "endLine": 123,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace/memory` kept surfacing across 10 memories.; confidence: 0.91; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-19T19:00:24.565Z",
+      "lastRecalledAt": "2026-04-26T19:00:47.203Z",
+      "queryHashes": [
+        "21faa0df9302"
+      ],
+      "recallDays": [
+        "2026-04-19",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "0.91",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-19.md:126:128": {
+      "key": "memory:memory/2026-04-19.md:126:128",
+      "path": "memory/2026-04-19.md",
+      "startLine": 126,
+      "endLine": 128,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: Assistant: **记忆官日简报 — 2026-04-16** --- **📥 记忆读取结果** | 来源 | 状态 | |------|------| | `~/.openclaw/workspace/memory/` | 找到1份新文件：`2026-04-15.md` | | `~/.openclaw/workspace-work/memory/` | ⚠️ 目录不存在，无内容 | **新增内容（2026-04-15.md）** - **heartbeat飞书发送问题**：指定 `accoun",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.62,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-19T19:00:24.565Z",
+      "lastRecalledAt": "2026-04-26T19:00:47.203Z",
+      "queryHashes": [
+        "21faa0df9302"
+      ],
+      "recallDays": [
+        "2026-04-19",
+        "2026-04-22",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "possible",
+        "lasting",
+        "truths",
+        "记忆",
+        "简报",
+        "结果"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-19T19:00:24.565Z",
+      "lastRecalledAt": "2026-04-19T19:00:24.565Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20",
+        "2026-04-19"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: Now I have a comprehensive picture. Let me update the MEMORY.md and run the git backup.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-19T19:00:24.565Z",
+      "lastRecalledAt": "2026-04-19T19:00:24.565Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20",
+        "2026-04-19"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory.md",
+        "now",
+        "comprehensive",
+        "picture",
+        "let",
+        "update",
+        "run"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 备份完成。以下是今日简报： --- **🗂️ 记忆官每日整合简报 — 2026-04-20** **📥 记忆来源检查** - ✅ 豆浆记忆（`~/.openclaw/workspace/memory/`）：4/19 日记已读取（主要是做梦内容，4/18-19 无新 session 事件） - ⚠️ 工作记忆（`~/.openclaw/workspace-work/memory/`）：目录不存在 - ✅ 主题索引已更新：`05-系统稳定性.md`、`08-核心配置.md` **📌 过去24小时重要内容** 1. **Active",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-19T19:00:24.565Z",
+      "lastRecalledAt": "2026-04-19T19:00:24.565Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20",
+        "2026-04-19"
+      ],
+      "conceptTags": [
+        "备份",
+        "openclaw/workspace/memory",
+        "4/19",
+        "4/18-19",
+        "openclaw/workspace-work/memory",
+        "05-系统稳定性.md",
+        "08-核心配置.md",
+        "完成"
+      ]
+    },
+    "memory:memory/2026-04-20.md:148:151": {
+      "key": "memory:memory/2026-04-20.md:148:151",
+      "path": "memory/2026-04-20.md",
+      "startLine": 148,
+      "endLine": 151,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 15 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-16.txt:2-2, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:5-5; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 2,
+      "groundedCount": 0,
+      "totalScore": 1.24,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-20T19:00:50.976Z",
+      "lastRecalledAt": "2026-04-27T19:00:10.035Z",
+      "queryHashes": [
+        "511fd8111b88"
+      ],
+      "recallDays": [
+        "2026-04-20",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "5-5",
+        "reflections",
+        "theme",
+        "kept",
+        "surfacing"
+      ]
+    },
+    "memory:memory/2026-04-20.md:152:155": {
+      "key": "memory:memory/2026-04-20.md:152:155",
+      "path": "memory/2026-04-20.md",
+      "startLine": 152,
+      "endLine": 155,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace-work/memory` kept surfacing across 14 memories.; confidence: 0.93; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflect",
+      "recallCount": 0,
+      "dailyCount": 2,
+      "groundedCount": 0,
+      "totalScore": 1.24,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-20T19:00:50.976Z",
+      "lastRecalledAt": "2026-04-27T19:00:10.035Z",
+      "queryHashes": [
+        "511fd8111b88"
+      ],
+      "recallDays": [
+        "2026-04-20",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27"
+      ],
+      "conceptTags": [
+        "openclaw/workspace-work/memory",
+        "0.93",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-20.md:156:159": {
+      "key": "memory:memory/2026-04-20.md:156:159",
+      "path": "memory/2026-04-20.md",
+      "startLine": 156,
+      "endLine": 159,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace/memory` kept surfacing across 14 memories.; confidence: 0.93; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 2,
+      "groundedCount": 0,
+      "totalScore": 1.24,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-20T19:00:50.976Z",
+      "lastRecalledAt": "2026-04-27T19:00:10.035Z",
+      "queryHashes": [
+        "511fd8111b88"
+      ],
+      "recallDays": [
+        "2026-04-20",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "0.93",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-20.md:160:163": {
+      "key": "memory:memory/2026-04-20.md:160:163",
+      "path": "memory/2026-04-20.md",
+      "startLine": 160,
+      "endLine": 163,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `backup` kept surfacing across 13 memories.; confidence: 0.87; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:4-4, memory/.dreams/session-corpus/2026-04-16.txt:6-6; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 2,
+      "groundedCount": 0,
+      "totalScore": 1.24,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-20T19:00:50.976Z",
+      "lastRecalledAt": "2026-04-27T19:00:10.035Z",
+      "queryHashes": [
+        "511fd8111b88"
+      ],
+      "recallDays": [
+        "2026-04-20",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27"
+      ],
+      "conceptTags": [
+        "backup",
+        "0.87",
+        "1-1",
+        "4-4",
+        "6-6",
+        "reflections",
+        "theme",
+        "kept"
+      ]
+    },
+    "memory:memory/2026-04-20.md:166:168": {
+      "key": "memory:memory/2026-04-20.md:166:168",
+      "path": "memory/2026-04-20.md",
+      "startLine": 166,
+      "endLine": 168,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: Assistant: **📋 记忆官每日整合简报 · 2026-04-19** --- **记忆来源检查结果：** - `~/.openclaw/workspace/memory/` ✅ 有新内容（做梦日记 2026-04-18） - `~/.openclaw/workspace-work/memory/` ❌ 目录不存在（无可读记忆） --- **过去24小时新记忆识别（2026-04-15~04-17 做梦整理）：** 1. **Heartbeat 修复已确认** - 必须指定 `accountId",
+      "recallCount": 0,
+      "dailyCount": 2,
+      "groundedCount": 0,
+      "totalScore": 1.24,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-20T19:00:50.976Z",
+      "lastRecalledAt": "2026-04-27T19:00:10.035Z",
+      "queryHashes": [
+        "511fd8111b88"
+      ],
+      "recallDays": [
+        "2026-04-20",
+        "2026-04-23",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "04-17",
+        "possible",
+        "lasting",
+        "truths",
+        "记忆",
+        "每日"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-20.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-20.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-04-20.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "User: [cron:aebe7632-71f9-4692-ae96-931b4af22ee2 memory-weekly-review] 你是记忆官。请执行每周记忆回顾任务： 1) 读取 ~/.openclaw/workspace/memory/ 目录下本周的所有日记文件 2) 读取 ~/.openclaw/workspace/MEMORY.md 了解当前长期记忆 3) 将本周重要内容提炼更新到 MEMORY.md（中央记忆库） 4) 清理过期或不再相关的内容 5) 执行备份： cd ~/.openclaw && git add workspace/",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:00:50.976Z",
+      "lastRecalledAt": "2026-04-20T19:00:50.976Z",
+      "queryHashes": [
+        "9bbfcb9cbaf5"
+      ],
+      "recallDays": [
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "备份",
+        "memory-weekly-review",
+        "openclaw/workspace/memory",
+        "openclaw/workspace/memory.md",
+        "memory.md",
+        "cron:aebe7632",
+        "71f9",
+        "ae96"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-21.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-21.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-21.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:00:50.976Z",
+      "lastRecalledAt": "2026-04-20T19:00:50.976Z",
+      "queryHashes": [
+        "01a984828e3e"
+      ],
+      "recallDays": [
+        "2026-04-21",
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-21.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-21.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-21.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: **🗂️ 记忆官简报 | 2026-04-20** --- ### 一、今日记忆文件检查 **豆浆记忆 (workspace/memory/)** - 发现 2026-04-20 日记（含做梦系统 Light/REM 内容） - cron-history 各简报正常生成（AI晚报含10条，带链接） **工作项目记忆 (workspace-work/memory/)** - 目录不存在（无新增） --- ### 二、识别到的重要更新 1. **战灵学习助手项目进展** - 飞书机器人「战灵」已创建并配置完成 - App ID: cl",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-20T19:00:50.976Z",
+      "lastRecalledAt": "2026-04-20T19:00:50.976Z",
+      "queryHashes": [
+        "01a984828e3e"
+      ],
+      "recallDays": [
+        "2026-04-21",
+        "2026-04-20"
+      ],
+      "conceptTags": [
+        "workspace/memory",
+        "light/rem",
+        "cron-history",
+        "workspace-work/memory",
+        "记忆",
+        "简报",
+        "今日",
+        "文件"
+      ]
+    },
+    "memory:memory/2026-04-21.md:143:146": {
+      "key": "memory:memory/2026-04-21.md:143:146",
+      "path": "memory/2026-04-21.md",
+      "startLine": 143,
+      "endLine": 146,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 18 memories.; confidence: 0.95; evidence: memory/.dreams/session-corpus/2026-04-16.txt:2-2, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:5-5; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 3,
+      "groundedCount": 0,
+      "totalScore": 1.8599999999999999,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-21T19:00:27.909Z",
+      "lastRecalledAt": "2026-04-28T19:00:09.858Z",
+      "queryHashes": [
+        "f52400c81d76"
+      ],
+      "recallDays": [
+        "2026-04-21",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "0.95",
+        "2-2",
+        "3-3",
+        "5-5",
+        "reflections",
+        "theme",
+        "kept",
+        "surfacing"
+      ]
+    },
+    "memory:memory/2026-04-21.md:147:150": {
+      "key": "memory:memory/2026-04-21.md:147:150",
+      "path": "memory/2026-04-21.md",
+      "startLine": 147,
+      "endLine": 150,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace/memory` kept surfacing across 18 memories.; confidence: 0.95; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 3,
+      "groundedCount": 0,
+      "totalScore": 1.8599999999999999,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-21T19:00:27.909Z",
+      "lastRecalledAt": "2026-04-28T19:00:09.858Z",
+      "queryHashes": [
+        "f52400c81d76"
+      ],
+      "recallDays": [
+        "2026-04-21",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "0.95",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-21.md:151:154": {
+      "key": "memory:memory/2026-04-21.md:151:154",
+      "path": "memory/2026-04-21.md",
+      "startLine": 151,
+      "endLine": 154,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace-work/memory` kept surfacing across 17 memories.; confidence: 0.89; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflect",
+      "recallCount": 0,
+      "dailyCount": 3,
+      "groundedCount": 0,
+      "totalScore": 1.8599999999999999,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-21T19:00:27.909Z",
+      "lastRecalledAt": "2026-04-28T19:00:09.858Z",
+      "queryHashes": [
+        "f52400c81d76"
+      ],
+      "recallDays": [
+        "2026-04-21",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "openclaw/workspace-work/memory",
+        "0.89",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-21.md:155:158": {
+      "key": "memory:memory/2026-04-21.md:155:158",
+      "path": "memory/2026-04-21.md",
+      "startLine": 155,
+      "endLine": 158,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `backup` kept surfacing across 15 memories.; confidence: 0.79; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:4-4, memory/.dreams/session-corpus/2026-04-16.txt:6-6; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 3,
+      "groundedCount": 0,
+      "totalScore": 1.8599999999999999,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-21T19:00:27.909Z",
+      "lastRecalledAt": "2026-04-28T19:00:09.858Z",
+      "queryHashes": [
+        "f52400c81d76"
+      ],
+      "recallDays": [
+        "2026-04-21",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "backup",
+        "0.79",
+        "1-1",
+        "4-4",
+        "6-6",
+        "reflections",
+        "theme",
+        "kept"
+      ]
+    },
+    "memory:memory/2026-04-21.md:161:163": {
+      "key": "memory:memory/2026-04-21.md:161:163",
+      "path": "memory/2026-04-21.md",
+      "startLine": 23,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "- Candidate: Possible Lasting Truths: Assistant: **📋 记忆官每日整合简报 · 2026-04-19** --- **记忆来源检查结果：** - `~/.openclaw/workspace/memory/` ✅ 有新内容（做梦日记 2026-04-18） - `~/.openclaw/workspace-work/memory/` ❌ 目录不存在（无可读记忆） --- **过去24小时新记忆识别（2026-04-15~04-17 做梦整理）：** 1. **Heartbeat 修复已确认** - 必须指定 `accountId - confidence: 0.62 - evidence: memory/2026-04-20.md:166-168",
+      "recallCount": 0,
+      "dailyCount": 3,
+      "groundedCount": 0,
+      "totalScore": 1.8599999999999999,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-21T19:00:27.909Z",
+      "lastRecalledAt": "2026-04-28T19:00:09.858Z",
+      "queryHashes": [
+        "f52400c81d76"
+      ],
+      "recallDays": [
+        "2026-04-21",
+        "2026-04-24",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "04-17",
+        "0.62",
+        "memory/2026-04-20.md",
+        "166-168",
+        "candidate",
+        "possible"
+      ],
+      "promotedAt": "2026-04-28T19:00:09.858Z"
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-21T19:00:27.909Z",
+      "lastRecalledAt": "2026-04-21T19:00:27.909Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: Now let me read the MEMORY.md to find the last section to append after:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-21T19:00:27.909Z",
+      "lastRecalledAt": "2026-04-21T19:00:27.909Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "now",
+        "let",
+        "read",
+        "find",
+        "last",
+        "section",
+        "append"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: Now I'll append the daily integration to MEMORY.md and execute the backup:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-21T19:00:27.909Z",
+      "lastRecalledAt": "2026-04-21T19:00:27.909Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory.md",
+        "now",
+        "i'll",
+        "append",
+        "integration",
+        "execute"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: Now executing the git backup:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-21T19:00:27.909Z",
+      "lastRecalledAt": "2026-04-21T19:00:27.909Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "backup",
+        "now",
+        "executing",
+        "git"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: **🗂️ 记忆官日报 2026-04-22** **已完成：** - ✅ 读取 2026-04-21 记忆文件（豆浆 memory/） - ✅ workspace-work/memory 不存在（无工作项目记忆目录） - ✅ MEMORY.md 已追加 2026-04-22 每日整合 - ✅ Git备份成功（3文件，commit 76ed9ea → config-backup分支） **2026-04-21 记忆要点：** | 内容 | 摘要 | |------|------| | 定时任务 | 全部5个cron任务正常执行（mo",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-21T19:00:27.909Z",
+      "lastRecalledAt": "2026-04-21T19:00:27.909Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-21"
+      ],
+      "conceptTags": [
+        "backup",
+        "备份",
+        "workspace-work/memory",
+        "memory.md",
+        "config-backup分支",
+        "记忆",
+        "日报",
+        "完成"
+      ]
+    },
+    "memory:memory/2026-04-22.md:148:151": {
+      "key": "memory:memory/2026-04-22.md:148:151",
+      "path": "memory/2026-04-22.md",
+      "startLine": 148,
+      "endLine": 151,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 24 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-16.txt:2-2, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:5-5; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 4,
+      "groundedCount": 0,
+      "totalScore": 2.48,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-29T19:00:10.075Z",
+      "queryHashes": [
+        "7b7a9134bc2c"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "5-5",
+        "reflections",
+        "theme",
+        "kept",
+        "surfacing"
+      ]
+    },
+    "memory:memory/2026-04-22.md:152:155": {
+      "key": "memory:memory/2026-04-22.md:152:155",
+      "path": "memory/2026-04-22.md",
+      "startLine": 152,
+      "endLine": 155,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace/memory` kept surfacing across 21 memories.; confidence: 0.88; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 4,
+      "groundedCount": 0,
+      "totalScore": 2.48,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-29T19:00:10.075Z",
+      "queryHashes": [
+        "7b7a9134bc2c"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "0.88",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-22.md:156:159": {
+      "key": "memory:memory/2026-04-22.md:156:159",
+      "path": "memory/2026-04-22.md",
+      "startLine": 156,
+      "endLine": 159,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `backup` kept surfacing across 20 memories.; confidence: 0.83; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:4-4, memory/.dreams/session-corpus/2026-04-16.txt:6-6; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 4,
+      "groundedCount": 0,
+      "totalScore": 2.48,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-29T19:00:10.075Z",
+      "queryHashes": [
+        "7b7a9134bc2c"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30"
+      ],
+      "conceptTags": [
+        "backup",
+        "0.83",
+        "1-1",
+        "4-4",
+        "6-6",
+        "reflections",
+        "theme",
+        "kept"
+      ]
+    },
+    "memory:memory/2026-04-22.md:160:163": {
+      "key": "memory:memory/2026-04-22.md:160:163",
+      "path": "memory/2026-04-22.md",
+      "startLine": 160,
+      "endLine": 163,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace-work/memory` kept surfacing across 20 memories.; confidence: 0.83; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflect",
+      "recallCount": 0,
+      "dailyCount": 4,
+      "groundedCount": 0,
+      "totalScore": 2.48,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-29T19:00:10.075Z",
+      "queryHashes": [
+        "7b7a9134bc2c"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30"
+      ],
+      "conceptTags": [
+        "openclaw/workspace-work/memory",
+        "0.83",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-22.md:166:168": {
+      "key": "memory:memory/2026-04-22.md:166:168",
+      "path": "memory/2026-04-22.md",
+      "startLine": 166,
+      "endLine": 168,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: Assistant: **📋 记忆官每日整合简报 · 2026-04-19** --- **记忆来源检查结果：** - `~/.openclaw/workspace/memory/` ✅ 有新内容（做梦日记 2026-04-18） - `~/.openclaw/workspace-work/memory/` ❌ 目录不存在（无可读记忆） --- **过去24小时新记忆识别（2026-04-15~04-17 做梦整理）：** 1. **Heartbeat 修复已确认** - 必须指定 `accountId",
+      "recallCount": 0,
+      "dailyCount": 4,
+      "groundedCount": 0,
+      "totalScore": 2.48,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-29T19:00:10.075Z",
+      "queryHashes": [
+        "7b7a9134bc2c"
+      ],
+      "recallDays": [
+        "2026-04-22",
+        "2026-04-25",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "04-17",
+        "possible",
+        "lasting",
+        "truths",
+        "记忆",
+        "每日"
+      ],
+      "promotedAt": "2026-04-28T19:00:09.858Z"
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: [cron:aebe7632-71f9-4692-ae96-931b4af22ee2 memory-weekly-review] 你是记忆官。请执行每周记忆回顾任务： 1) 读取 ~/.openclaw/workspace/memory/ 目录下本周的所有日记文件 2) 读取 ~/.openclaw/workspace/MEMORY.md 了解当前长期记忆 3) 将本周重要内容提炼更新到 MEMORY.md（中央记忆库） 4) 清理过期或不再相关的内容 5) 执行备份： cd ~/.openclaw && git add workspace/",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "备份",
+        "memory-weekly-review",
+        "openclaw/workspace/memory",
+        "openclaw/workspace/memory.md",
+        "memory.md",
+        "cron:aebe7632",
+        "71f9",
+        "ae96"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: Now let me update MEMORY.md with the key findings and then perform the git backup.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory.md",
+        "now",
+        "let",
+        "update",
+        "key",
+        "findings",
+        "perform"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "User: [cron:aebe7632-71f9-4692-ae96-931b4af22ee2 memory-weekly-review] 你是记忆官。请执行每周记忆回顾任务： 1) 读取 ~/.openclaw/workspace/memory/ 目录下本周的所有日记文件 2) 读取 ~/.openclaw/workspace/MEMORY.md 了解当前长期记忆 3) 将本周重要内容提炼更新到 MEMORY.md（中央记忆库） 4) 清理过期或不再相关的内容 5) 执行备份： cd ~/.openclaw && git add workspace/",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "备份",
+        "memory-weekly-review",
+        "openclaw/workspace/memory",
+        "openclaw/workspace/memory.md",
+        "memory.md",
+        "cron:aebe7632",
+        "71f9",
+        "ae96"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "Assistant: Now let me read the diary files from this week (4/13 onwards) to extract key content:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "4/13",
+        "now",
+        "let",
+        "read",
+        "diary",
+        "week",
+        "onwards",
+        "extract"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: Now let me check the topics files to understand the current state:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "check",
+        "topics",
+        "understand",
+        "current",
+        "state"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "Assistant: Now I have a full picture. Let me update MEMORY.md with this week's key updates:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "now",
+        "full",
+        "picture",
+        "let",
+        "update",
+        "week's",
+        "key"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:12:12": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:12:12",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 12,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "Assistant: Now let me update the pending items and add a clear next-steps section at the end of MEMORY.md:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "next-steps",
+        "memory.md",
+        "now",
+        "let",
+        "update",
+        "pending",
+        "items",
+        "add"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:13:13": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:13:13",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 13,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "Assistant: Now let me also update the 战灵 topic file to note the pending test:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "update",
+        "topic",
+        "pending",
+        "test"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:14:14": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:14:14",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "Assistant: Now let me run the git backup:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "backup",
+        "now",
+        "let",
+        "run",
+        "git"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:15:15": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:15:15",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 15,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "Assistant: 备份完成 ✅ --- ## 📋 记忆官每周回顾简报 — 2026-04-22 ### 本周做了什么更新 **1. MEMORY.md 结构性更新** - 更新\"紧急关注\"：announce bug 状态更新为 ✅ 已解决 - 新增\"战灵测试\"待确认事项（4/21 晚应测试，待记录结果） - 更新\"本周关键词\"标签：Ollama向量搜索、战灵项目启动、Cron多项修复、v2026.4.15发布 **2. topics/12-战灵项目.md 更新** - 状态更新为\"⏳ 待确认测试结果\" **3. topics/08-核心配置.md",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "备份",
+        "memory.md",
+        "4/21",
+        "v2026.4.15发布",
+        "topics/12-战灵项目.md",
+        "topics/08-核心配置.md",
+        "完成",
+        "记忆"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:16:16": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:16:16",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "User: [cron:aebe7632-71f9-4692-ae96-931b4af22ee2 memory-weekly-review] 你是记忆官。请执行每周记忆回顾任务： 1) 读取 ~/.openclaw/workspace/memory/ 目录下本周的所有日记文件 2) 读取 ~/.openclaw/workspace/MEMORY.md 了解当前长期记忆 3) 将本周重要内容提炼更新到 MEMORY.md（中央记忆库） 4) 清理过期或不再相关的内容 5) 执行备份： cd ~/.openclaw && git add workspace/",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "备份",
+        "memory-weekly-review",
+        "openclaw/workspace/memory",
+        "openclaw/workspace/memory.md",
+        "memory.md",
+        "cron:aebe7632",
+        "71f9",
+        "ae96"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:17:17": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:17:17",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 17,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "Assistant: Now I have a comprehensive picture. Let me update MEMORY.md with the week's key developments.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "memory.md",
+        "now",
+        "comprehensive",
+        "picture",
+        "let",
+        "update",
+        "week's",
+        "key"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:18:18": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:18:18",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "Assistant: Now I'll update MEMORY.md with the weekly review summary, then do the git backup.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory.md",
+        "now",
+        "i'll",
+        "update",
+        "weekly",
+        "review",
+        "summary"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:19:19": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:19:19",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 19,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "Assistant: Now update the topics files:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "now",
+        "update",
+        "topics"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:20:20": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:20:20",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 20,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "Assistant: Backup complete. Now let me also check that the workspace submodule (containing MEMORY.md) has been committed:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory.md",
+        "complete",
+        "now",
+        "let",
+        "check",
+        "submodule",
+        "containing"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-22.txt:21:21": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-22.txt:21:21",
+      "path": "memory/.dreams/session-corpus/2026-04-22.txt",
+      "startLine": 21,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "Assistant: **记忆官每周回顾完成 ✅** --- ## 📋 2026-04-22 本周回顾简报 **备份状态：✅ 成功** - 主仓库 → `origin-workspace/config-backup`（commit f233ba6） - workspace子模块 → `origin/main`（commit 0d1b853） --- ### 🆕 本周重大事项（6项） 1. **OpenClaw v2026.4.15 发布（4/16）** — 里程碑更新：126项代码变更、Claude Opus 4.7、LanceDB本地向量库、Dee",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "a1f7c25a87a0"
+      ],
+      "recallDays": [
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "backup",
+        "备份",
+        "origin-workspace/config-backup",
+        "origin/main",
+        "v2026.4.15",
+        "4/16",
+        "4.7",
+        "记忆"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-23.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-23.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-23.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "104ad850261a"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-23.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-23.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-23.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 过去24小时（4/22）没有新增日记，最后一篇是4/22 03:00生成的。MEMORY.md已包含4/22的每日整合内容。 现在执行备份：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "104ad850261a"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "备份",
+        "4/22",
+        "最后一篇是4/22",
+        "memory.md已包含4/22的每日整合内容",
+        "过去",
+        "小时",
+        "没有",
+        "新增"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-23.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-23.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-04-23.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: 📋 **每日记忆整合简报 — 2026-04-22** --- ### 📂 记忆文件检查 | 目录 | 状态 | |------|------| | `~/.openclaw/workspace/memory/`（豆浆） | ✅ 正常，最后更新 `2026-04-22.md`（32KB） | | `~/.openclaw/workspace-work/memory/`（工作） | ❌ 目录不存在，无内容 | --- ### 🧠 新增记忆内容（4/22） **做梦系统**：生成 `2026-04-22.md`，Light Sle",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-22T19:00:50.478Z",
+      "lastRecalledAt": "2026-04-22T19:00:50.478Z",
+      "queryHashes": [
+        "104ad850261a"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-22"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "4/22",
+        "每日",
+        "记忆",
+        "整合",
+        "简报",
+        "文件"
+      ]
+    },
+    "memory:memory/2026-04-23.md:248:251": {
+      "key": "memory:memory/2026-04-23.md:248:251",
+      "path": "memory/2026-04-23.md",
+      "startLine": 248,
+      "endLine": 251,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 41 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-16.txt:2-2, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:5-5; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 5,
+      "groundedCount": 0,
+      "totalScore": 3.1,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-23T22:06:32.586Z",
+      "lastRecalledAt": "2026-04-30T19:00:10.573Z",
+      "queryHashes": [
+        "b7fd25b71b44"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30",
+        "2026-05-01"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "5-5",
+        "reflections",
+        "theme",
+        "kept",
+        "surfacing"
+      ]
+    },
+    "memory:memory/2026-04-23.md:252:255": {
+      "key": "memory:memory/2026-04-23.md:252:255",
+      "path": "memory/2026-04-23.md",
+      "startLine": 252,
+      "endLine": 255,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace/memory` kept surfacing across 28 memories.; confidence: 0.78; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 5,
+      "groundedCount": 0,
+      "totalScore": 3.1,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-23T22:06:32.586Z",
+      "lastRecalledAt": "2026-04-30T19:00:10.573Z",
+      "queryHashes": [
+        "b7fd25b71b44"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30",
+        "2026-05-01"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "0.78",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-23.md:256:259": {
+      "key": "memory:memory/2026-04-23.md:256:259",
+      "path": "memory/2026-04-23.md",
+      "startLine": 256,
+      "endLine": 259,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `backup` kept surfacing across 27 memories.; confidence: 0.75; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:4-4, memory/.dreams/session-corpus/2026-04-16.txt:6-6; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 5,
+      "groundedCount": 0,
+      "totalScore": 3.1,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-23T22:06:32.586Z",
+      "lastRecalledAt": "2026-04-30T19:00:10.573Z",
+      "queryHashes": [
+        "b7fd25b71b44"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30",
+        "2026-05-01"
+      ],
+      "conceptTags": [
+        "backup",
+        "0.75",
+        "1-1",
+        "4-4",
+        "6-6",
+        "reflections",
+        "theme",
+        "kept"
+      ]
+    },
+    "memory:memory/2026-04-23.md:262:264": {
+      "key": "memory:memory/2026-04-23.md:262:264",
+      "path": "memory/2026-04-23.md",
+      "startLine": 262,
+      "endLine": 264,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.51 evidence=memory/2026-04-18.md:91-91]; Reflections: Theme: `assistant` kept surfacing across 9 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-16.tx",
+      "recallCount": 0,
+      "dailyCount": 5,
+      "groundedCount": 0,
+      "totalScore": 3.1,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-23T22:06:32.586Z",
+      "lastRecalledAt": "2026-04-30T19:00:10.573Z",
+      "queryHashes": [
+        "b7fd25b71b44"
+      ],
+      "recallDays": [
+        "2026-04-23",
+        "2026-04-26",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30",
+        "2026-05-01"
+      ],
+      "conceptTags": [
+        "0.51",
+        "memory/2026-04-18.md",
+        "91-91",
+        "1.00",
+        "possible",
+        "lasting",
+        "truths",
+        "strong"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-24.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-24.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-24.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-23T22:06:32.586Z",
+      "lastRecalledAt": "2026-04-23T22:06:32.586Z",
+      "queryHashes": [
+        "c2c2313ce194"
+      ],
+      "recallDays": [
+        "2026-04-24",
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-24.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-24.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-24.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: **记忆日简报 2026-04-24** **📥 新增内容摘要** 1. **OpenClaw 版本落后**（需关注） - 当前运行 v2026.4.14，最新已到 v2026.4.21，差7个版本 - v2026.4.21 修复了 npm 安装问题和图像生成默认模型切换 - 建议：根据使用情况决定是否升级 2. **AI/科技动态** - DeepSeek 估值翻倍至200亿美元（腾讯阿里洽谈中） - 小米开源 MiMo-V2.5，百万 Token 超长上下文 - 华为乾崑智驾 ADS 5 发布，六维安全架构 - 谷歌发布第八代",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-23T22:06:32.586Z",
+      "lastRecalledAt": "2026-04-23T22:06:32.586Z",
+      "queryHashes": [
+        "c2c2313ce194"
+      ],
+      "recallDays": [
+        "2026-04-24",
+        "2026-04-23"
+      ],
+      "conceptTags": [
+        "v2026.4.14",
+        "v2026.4.21",
+        "ai/科技动态",
+        "mimo-v2.5",
+        "记忆",
+        "简报",
+        "新增",
+        "内容"
+      ]
+    },
+    "memory:memory/2026-04-24.md:258:261": {
+      "key": "memory:memory/2026-04-24.md:258:261",
+      "path": "memory/2026-04-24.md",
+      "startLine": 258,
+      "endLine": 261,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 43 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-16.txt:2-2, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:5-5; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-24T19:00:42.061Z",
+      "lastRecalledAt": "2026-05-01T19:00:11.190Z",
+      "queryHashes": [
+        "409c33906af9"
+      ],
+      "recallDays": [
+        "2026-04-24",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30",
+        "2026-05-01",
+        "2026-05-02"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "5-5",
+        "reflections",
+        "theme",
+        "kept",
+        "surfacing"
+      ]
+    },
+    "memory:memory/2026-04-24.md:262:265": {
+      "key": "memory:memory/2026-04-24.md:262:265",
+      "path": "memory/2026-04-24.md",
+      "startLine": 262,
+      "endLine": 265,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace/memory` kept surfacing across 30 memories.; confidence: 0.77; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-24T19:00:42.061Z",
+      "lastRecalledAt": "2026-05-01T19:00:11.190Z",
+      "queryHashes": [
+        "409c33906af9"
+      ],
+      "recallDays": [
+        "2026-04-24",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30",
+        "2026-05-01",
+        "2026-05-02"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "0.77",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-24.md:268:270": {
+      "key": "memory:memory/2026-04-24.md:268:270",
+      "path": "memory/2026-04-24.md",
+      "startLine": 268,
+      "endLine": 270,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: Possible Lasting Truths: No strong candidate truths surfaced. [confidence=0.58 evidence=memory/2026-04-18.md:91-91]; Reflections: Theme: `assistant` kept surfacing across 9 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-16.tx",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-24T19:00:42.061Z",
+      "lastRecalledAt": "2026-05-01T19:00:11.190Z",
+      "queryHashes": [
+        "409c33906af9"
+      ],
+      "recallDays": [
+        "2026-04-24",
+        "2026-04-28",
+        "2026-04-27",
+        "2026-04-29",
+        "2026-04-30",
+        "2026-05-01",
+        "2026-05-02"
+      ],
+      "conceptTags": [
+        "0.58",
+        "memory/2026-04-18.md",
+        "91-91",
+        "1.00",
+        "possible",
+        "lasting",
+        "truths",
+        "strong"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-25.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-25.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-25.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-24T19:00:42.061Z",
+      "lastRecalledAt": "2026-04-24T19:00:42.061Z",
+      "queryHashes": [
+        "0ebfd40e58af"
+      ],
+      "recallDays": [
+        "2026-04-25",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-25.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-25.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-25.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: **每日记忆整合简报 - 2026-04-25** --- ### 📋 过去24小时记忆更新 **豆浆记忆 (2026-04-24)** - OpenClaw版本状态：v2026.4.14，连续5天无变化；最新v2026.4.21已发布 - 战灵每日备份：成功，43KB - 定时任务体系稳定 - workspace-work/memory/ 仍不存在，无工作项目记忆 **新整合内容** - OpenClaw v2026.4.21发布详情（npm修复、gpt-image-2默认切换） - 昨日重要新闻：DeepSeek 200亿估值",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-24T19:00:42.061Z",
+      "lastRecalledAt": "2026-04-24T19:00:42.061Z",
+      "queryHashes": [
+        "0ebfd40e58af"
+      ],
+      "recallDays": [
+        "2026-04-25",
+        "2026-04-24"
+      ],
+      "conceptTags": [
+        "gpt",
+        "备份",
+        "v2026.4.14",
+        "最新v2026.4.21已发布",
+        "workspace-work/memory",
+        "v2026.4.21发布详情",
+        "gpt-image-2默认切换",
+        "每日"
+      ]
+    },
+    "memory:memory/2026-04-25.md:273:276": {
+      "key": "memory:memory/2026-04-25.md:273:276",
+      "path": "memory/2026-04-25.md",
+      "startLine": 273,
+      "endLine": 276,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 45 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-16.txt:2-2, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:5-5; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-25T22:06:09.807Z",
+      "lastRecalledAt": "2026-05-02T19:00:10.336Z",
+      "queryHashes": [
+        "90c0a0f693f1"
+      ],
+      "recallDays": [
+        "2026-04-25",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-30",
+        "2026-05-01",
+        "2026-05-02",
+        "2026-05-03"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "5-5",
+        "reflections",
+        "theme",
+        "kept",
+        "surfacing"
+      ]
+    },
+    "memory:memory/2026-04-25.md:277:280": {
+      "key": "memory:memory/2026-04-25.md:277:280",
+      "path": "memory/2026-04-25.md",
+      "startLine": 277,
+      "endLine": 280,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace/memory` kept surfacing across 32 memories.; confidence: 0.77; evidence: memory/.dreams/session-corpus/2026-04-16.txt:1-1, memory/.dreams/session-corpus/2026-04-16.txt:3-3, memory/.dreams/session-corpus/2026-04-16.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-25T22:06:09.807Z",
+      "lastRecalledAt": "2026-05-02T19:00:10.336Z",
+      "queryHashes": [
+        "90c0a0f693f1"
+      ],
+      "recallDays": [
+        "2026-04-25",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-30",
+        "2026-05-01",
+        "2026-05-02",
+        "2026-05-03"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "0.77",
+        "1-1",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-25.md:283:285": {
+      "key": "memory:memory/2026-04-25.md:283:285",
+      "path": "memory/2026-04-25.md",
+      "startLine": 283,
+      "endLine": 285,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: Possible Lasting Truths: Assistant: **记忆官日简报 — 2026-04-16** --- **📥 记忆读取结果** | 来源 | 状态 | |------|------| | `~/.openclaw/workspace/memory/` | 找到1份新文件：`2026-04-15.md` | | `~/.openclaw/workspace-work/memory/` | ⚠️ 目录不存在，无内容 | **新增内容（2026-04-15.md）** - **hea",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-25T22:06:09.807Z",
+      "lastRecalledAt": "2026-05-02T19:00:10.336Z",
+      "queryHashes": [
+        "90c0a0f693f1"
+      ],
+      "recallDays": [
+        "2026-04-25",
+        "2026-04-29",
+        "2026-04-28",
+        "2026-04-30",
+        "2026-05-01",
+        "2026-05-02",
+        "2026-05-03"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "possible",
+        "lasting",
+        "truths",
+        "记忆",
+        "简报",
+        "结果"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-26.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-26.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-26.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-25T22:06:09.807Z",
+      "lastRecalledAt": "2026-04-25T22:06:09.807Z",
+      "queryHashes": [
+        "2f7d4f01eb0b"
+      ],
+      "recallDays": [
+        "2026-04-26",
+        "2026-04-25"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-26.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-26.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-26.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: --- **记忆官每日记忆整合简报 | 2026-04-26** **记忆文件检查：** - ✅ 豆浆记忆 `~/.openclaw/workspace/memory/2026-04-25.md` — 存在，4/25 03:00 生成 - ❌ 工作项目记忆 `~/.openclaw/workspace-work/memory/` — 目录不存在，无记忆记录 **今日更新：** - MEMORY.md 新增 2026-04-26 日整合记录（版本状态、做梦亮点、备份结果） - Git 备份已推送至 `origin-workspace/",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-25T22:06:09.807Z",
+      "lastRecalledAt": "2026-04-25T22:06:09.807Z",
+      "queryHashes": [
+        "2f7d4f01eb0b"
+      ],
+      "recallDays": [
+        "2026-04-26",
+        "2026-04-25"
+      ],
+      "conceptTags": [
+        "备份",
+        "4/25",
+        "openclaw/workspace-work/memory",
+        "memory.md",
+        "origin-workspace",
+        "记忆",
+        "每日",
+        "整合"
+      ]
+    },
+    "memory:memory/2026-04-26.md:203:206": {
+      "key": "memory:memory/2026-04-26.md:203:206",
+      "path": "memory/2026-04-26.md",
+      "startLine": 203,
+      "endLine": 206,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 42 memories.; confidence: 1.00; evidence: memory/.dreams/session-corpus/2026-04-18.txt:2-2, memory/.dreams/session-corpus/2026-04-18.txt:3-3, memory/.dreams/session-corpus/2026-04-18.txt:4-4; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-26T19:00:47.203Z",
+      "lastRecalledAt": "2026-05-03T19:00:09.688Z",
+      "queryHashes": [
+        "9b4c3d373463"
+      ],
+      "recallDays": [
+        "2026-04-26",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-05-01",
+        "2026-05-02",
+        "2026-05-03",
+        "2026-05-04"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "3-3",
+        "4-4",
+        "reflections",
+        "theme",
+        "kept",
+        "surfacing"
+      ]
+    },
+    "memory:memory/2026-04-26.md:207:210": {
+      "key": "memory:memory/2026-04-26.md:207:210",
+      "path": "memory/2026-04-26.md",
+      "startLine": 207,
+      "endLine": 210,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace/memory` kept surfacing across 29 memories.; confidence: 0.75; evidence: memory/.dreams/session-corpus/2026-04-18.txt:1-1, memory/2026-04-18.md:85-88, memory/.dreams/session-corpus/2026-04-19.txt:1-1; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-26T19:00:47.203Z",
+      "lastRecalledAt": "2026-05-03T19:00:09.688Z",
+      "queryHashes": [
+        "9b4c3d373463"
+      ],
+      "recallDays": [
+        "2026-04-26",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-05-01",
+        "2026-05-02",
+        "2026-05-03",
+        "2026-05-04"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "0.75",
+        "1-1",
+        "memory/2026-04-18.md",
+        "85-88",
+        "reflections",
+        "theme",
+        "openclaw"
+      ]
+    },
+    "memory:memory/2026-04-26.md:213:215": {
+      "key": "memory:memory/2026-04-26.md:213:215",
+      "path": "memory/2026-04-26.md",
+      "startLine": 213,
+      "endLine": 215,
+      "source": "memory",
+      "snippet": "Possible Lasting Truths: Possible Lasting Truths: Assistant: **📋 记忆官每日整合简报 · 2026-04-19** --- **记忆来源检查结果：** - `~/.openclaw/workspace/memory/` ✅ 有新内容（做梦日记 2026-04-18） - `~/.openclaw/workspace-work/memory/` ❌ 目录不存在（无可读记忆） --- **过去24小时新记忆识别（2026-04-15~04-17 做梦整理）：** 1. **Heartbeat",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-26T19:00:47.203Z",
+      "lastRecalledAt": "2026-05-03T19:00:09.688Z",
+      "queryHashes": [
+        "9b4c3d373463"
+      ],
+      "recallDays": [
+        "2026-04-26",
+        "2026-04-30",
+        "2026-04-29",
+        "2026-05-01",
+        "2026-05-02",
+        "2026-05-03",
+        "2026-05-04"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "04-17",
+        "possible",
+        "lasting",
+        "truths",
+        "记忆",
+        "每日"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: [cron:36c87da9-2b3c-4fd4-b2dd-6ecd65a94083 memory-daily-backup] 你是记忆官。请执行每日记忆整合任务： 1. 读取以下记忆文件，检查过去24小时内是否有新内容： - ~/.openclaw/workspace/memory/ 目录（豆浆的记忆） - ~/.openclaw/workspace-work/memory/ 目录（工作项目记忆） 2. 识别新增内容：项目进展、决策记录、问题备忘 3. 将重要内容追加到 ~/.openclaw/workspace/MEMORY.md（中央记",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-26T19:00:47.203Z",
+      "lastRecalledAt": "2026-04-26T19:00:47.203Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-27",
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "backup",
+        "memory-daily-backup",
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "openclaw/workspace/memory.md",
+        "cron",
+        "36c87da9",
+        "2b3c"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-27.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-27.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-27.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: **每日记忆整合简报 2026-04-27** **记忆文件检查** - 豆浆记忆：`~/.openclaw/workspace/memory/2026-04-26.md` ✅ 正常（3:00生成） - 工作项目记忆：`~/.openclaw/workspace-work/memory/` ❌ 目录不存在，无记忆记录 **更新到中央记忆库的内容** 1. **OpenClaw 版本差距扩大**：当前 v2026.4.14，最新 v2026.4.23（9个小版本差），v2026.4.23 含 GPT-image-2 OAuth + 子",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-26T19:00:47.203Z",
+      "lastRecalledAt": "2026-04-26T19:00:47.203Z",
+      "queryHashes": [
+        "e29ad1ab29b1"
+      ],
+      "recallDays": [
+        "2026-04-27",
+        "2026-04-26"
+      ],
+      "conceptTags": [
+        "gpt",
+        "openclaw/workspace-work/memory",
+        "v2026.4.14",
+        "v2026.4.23",
+        "gpt-image-2",
+        "每日",
+        "记忆",
+        "整合"
+      ]
+    },
+    "memory:memory/2026-04-27.md:218:221": {
+      "key": "memory:memory/2026-04-27.md:218:221",
+      "path": "memory/2026-04-27.md",
+      "startLine": 218,
+      "endLine": 221,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `assistant` kept surfacing across 42 memories.; confidence: 1.00; evidence: memory/2026-04-18.md:73-76, memory/.dreams/session-corpus/2026-04-19.txt:2-2, memory/2026-04-19.md:108-111; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-27T19:00:10.035Z",
+      "lastRecalledAt": "2026-05-04T19:00:02.205Z",
+      "queryHashes": [
+        "6c24d11cf4d7"
+      ],
+      "recallDays": [
+        "2026-04-28",
+        "2026-04-27",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-05-02",
+        "2026-05-03",
+        "2026-05-04",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "1.00",
+        "memory/2026-04-18.md",
+        "73-76",
+        "2-2",
+        "memory/2026-04-19.md",
+        "108-111",
+        "reflections",
+        "theme"
+      ]
+    },
+    "memory:memory/2026-04-27.md:222:225": {
+      "key": "memory:memory/2026-04-27.md:222:225",
+      "path": "memory/2026-04-27.md",
+      "startLine": 222,
+      "endLine": 225,
+      "source": "memory",
+      "snippet": "Reflections: Theme: `openclaw/workspace/memory` kept surfacing across 31 memories.; confidence: 0.79; evidence: memory/2026-04-18.md:85-88, memory/.dreams/session-corpus/2026-04-19.txt:1-1, memory/.dreams/session-corpus/2026-04-19.txt:2-2; note: reflection",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-27T19:00:10.035Z",
+      "lastRecalledAt": "2026-05-04T19:00:02.205Z",
+      "queryHashes": [
+        "6c24d11cf4d7"
+      ],
+      "recallDays": [
+        "2026-04-28",
+        "2026-04-27",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-05-02",
+        "2026-05-03",
+        "2026-05-04",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "0.79",
+        "memory/2026-04-18.md",
+        "85-88",
+        "1-1",
+        "2-2",
+        "reflections",
+        "theme"
+      ]
+    },
+    "memory:memory/2026-04-27.md:228:230": {
+      "key": "memory:memory/2026-04-27.md:228:230",
+      "path": "memory/2026-04-27.md",
+      "startLine": 13,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "- Candidate: Possible Lasting Truths: Possible Lasting Truths: Assistant: **📋 记忆官每日整合简报 · 2026-04-19** --- **记忆来源检查结果：** - `~/.openclaw/workspace/memory/` ✅ 有新内容（做梦日记 2026-04-18） - `~/.openclaw/workspace-work/memory/` ❌ 目录不存在（无可读记忆） --- **过去24小时新记忆识别（2026-04-15~04-17 做梦整理）：** 1. **Heartbeat - confidence: 0.62 - evidence: memory/2026-04-26.md:213-215",
+      "recallCount": 0,
+      "dailyCount": 6,
+      "groundedCount": 0,
+      "totalScore": 3.72,
+      "maxScore": 0.62,
+      "firstRecalledAt": "2026-04-27T19:00:10.035Z",
+      "lastRecalledAt": "2026-05-04T19:00:02.205Z",
+      "queryHashes": [
+        "6c24d11cf4d7"
+      ],
+      "recallDays": [
+        "2026-04-28",
+        "2026-04-27",
+        "2026-05-01",
+        "2026-04-30",
+        "2026-05-02",
+        "2026-05-03",
+        "2026-05-04",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory",
+        "openclaw/workspace-work/memory",
+        "04-17",
+        "0.62",
+        "memory/2026-04-26.md",
+        "213-215",
+        "candidate",
+        "possible"
+      ],
+      "promotedAt": "2026-05-04T19:00:02.205Z"
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-29.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-29.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-04-29.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: 🗂️ 记忆官简报 | 2026-04-28 每日记忆整合 ━━━━━━━━━━━━━━━━━━━━━━ 📋 记忆文件检查 - 豆浆记忆：❌ 2026-04-28 日记不存在（最后日记为 2026-04-27 03:00） - 工作项目记忆：❌ 目录不存在 - 做梦记忆：✅ 2026-04-28 03:00 生成（light/rem/deep） ━━━━━━━━━━━━━━━━━━━━━━ ⚠️ 重要发现：2026-04-28 定时简报部分缺失 | 任务 | 状态 | |------|------| | AI早报 | ❌ 未生成",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-28T19:00:09.858Z",
+      "lastRecalledAt": "2026-04-28T19:00:09.858Z",
+      "queryHashes": [
+        "401e1af52a6f"
+      ],
+      "recallDays": [
+        "2026-04-29",
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "light/rem/deep",
+        "记忆",
+        "简报",
+        "每日",
+        "整合",
+        "文件",
+        "检查",
+        "豆浆"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-04-29.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-04-29.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-04-29.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 战灵测试结果（04/21晚）仍待确认",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-04-28T19:00:09.858Z",
+      "lastRecalledAt": "2026-04-28T19:00:09.858Z",
+      "queryHashes": [
+        "401e1af52a6f"
+      ],
+      "recallDays": [
+        "2026-04-29",
+        "2026-04-28"
+      ],
+      "conceptTags": [
+        "04/21晚",
+        "测试",
+        "结果",
+        "确认"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-17.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-17.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-05-17.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: I'll execute the daily memory consolidation task. Let me start by reading the memory files from both directories.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-16T19:00:02.949Z",
+      "lastRecalledAt": "2026-05-16T19:00:02.949Z",
+      "queryHashes": [
+        "7c821d0b4905"
+      ],
+      "recallDays": [
+        "2026-05-17",
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "i'll",
+        "execute",
+        "consolidation",
+        "task",
+        "let",
+        "start",
+        "reading",
+        "both"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-17.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-17.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-05-17.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: ## 每日记忆整合简报 **日期：** 2026-05-17（周日）00:00 --- ### 1. 记忆文件检查 | 来源 | 最后更新 | 状态 | |------|---------|------| | 豆浆记忆 | `2026-05-16.md`（224字节） | ✅ 05-16有新日记 | | 工作项目记忆 | 目录不存在 | ❌ 无记录 | **过去24小时（05-16）日记内容：** - OpenClaw版本检查：当前 v2026.5.12，已是最新稳定版，无升级需求 **05-11 ~ 05-15 静默期观察：**",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-16T19:00:02.949Z",
+      "lastRecalledAt": "2026-05-16T19:00:02.949Z",
+      "queryHashes": [
+        "7c821d0b4905"
+      ],
+      "recallDays": [
+        "2026-05-17",
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "05-16有新日记",
+        "05-16",
+        "v2026.5.12",
+        "05-11",
+        "05-15",
+        "每日",
+        "记忆",
+        "整合"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-17.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-17.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-05-17.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: `~/.openclaw/workspace-work/memory/` 目录仍不存在，无工作记忆记录 | | 战灵备份 | 05-15 cron状态为error，需排查 | | 简报cron | 4个简报cron状态全是skipped，需验证heartbeat读取cron-output逻辑 | | 简报恢复确认 | 05-12简报问题修复后是否正常工作，需验证 |",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-16T19:00:02.949Z",
+      "lastRecalledAt": "2026-05-16T19:00:02.949Z",
+      "queryHashes": [
+        "7c821d0b4905"
+      ],
+      "recallDays": [
+        "2026-05-17",
+        "2026-05-16"
+      ],
+      "conceptTags": [
+        "备份",
+        "openclaw/workspace-work/memory",
+        "05-15",
+        "需验证heartbeat读取cron-output逻辑",
+        "05-12简报问题修复后是否正常工作",
+        "openclaw",
+        "目录",
+        "不存在"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-19.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-19.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-05-19.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: 现在我已清楚情况，让我完成整合任务：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-19T08:51:07.577Z",
+      "lastRecalledAt": "2026-05-19T08:51:07.577Z",
+      "queryHashes": [
+        "2fd3160a10b6"
+      ],
+      "recallDays": [
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "现在",
+        "清楚",
+        "情况",
+        "完成",
+        "整合",
+        "任务"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-19.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-19.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-05-19.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: 好，现在进行备份：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-19T08:51:07.577Z",
+      "lastRecalledAt": "2026-05-19T08:51:07.577Z",
+      "queryHashes": [
+        "2fd3160a10b6"
+      ],
+      "recallDays": [
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "备份",
+        "现在",
+        "进行"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-19.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-19.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-05-19.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: --- ## 🗂️ 记忆官每日整合简报 — 2026-05-19 ### 📅 过去24小时记忆检查结果 | 记忆来源 | 最新文件 | 状态 | |---------|---------|------| | 豆浆每日记忆 | 2026-05-16 | ⚠️ 3天无新内容 | | 豆浆dreaming | 2026-05-17 ✅ | 正常（5/17已有记录） | | OpenClaw cron-output | 2026-05-17 ✅ | 有新闻简报+版本监控 | | 工作项目记忆 | 不存在 | ❌ 目录不存在 | **发现",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-19T08:51:07.577Z",
+      "lastRecalledAt": "2026-05-19T08:51:07.577Z",
+      "queryHashes": [
+        "2fd3160a10b6"
+      ],
+      "recallDays": [
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "5/17已有记录",
+        "cron-output",
+        "记忆",
+        "每日",
+        "整合",
+        "简报",
+        "过去",
+        "小时"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-19.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-19.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-05-19.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "Assistant: 1. **豆浆每日记忆中断**：05-16 → 05-19 连续3天无日常记录，需要确认豆浆是否正常工作或手动补充 2. **workspace-work 不存在**：工作项目可能有独立workspace，但目前未建立，建议与豆浆确认是否有遗漏的workspace 3. **dreaming 睡眠记录正常**：deep-promoted 0 candidate，说明近期无重大新信息需要沉淀到长期记忆 4. **sessions.json 变化较大**（+1229/-1632 行）：可能涉及会话合并或过期会话清理，属于正常维护 ---",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-19T08:51:07.577Z",
+      "lastRecalledAt": "2026-05-19T08:51:07.577Z",
+      "queryHashes": [
+        "2fd3160a10b6"
+      ],
+      "recallDays": [
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "05-16",
+        "05-19",
+        "workspace-work",
+        "deep-promoted",
+        "sessions.json",
+        "豆浆",
+        "每日",
+        "记忆"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-19.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-19.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-05-19.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: 现在我已经读取了所有相关文件。本周（5/11-5/16）的日记数据如下： - **5/11**：完整日记（世界数字教育大会、v2026.5.12已升级） - **5/12-5/15**：无日记文件 - **5/16**：极简短记（224字节，可能仅心跳记录） 需要更新到 MEMORY.md 和各 topic 文件中。让我执行更新：",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-19T08:51:07.577Z",
+      "lastRecalledAt": "2026-05-19T08:51:07.577Z",
+      "queryHashes": [
+        "2fd3160a10b6"
+      ],
+      "recallDays": [
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "5/11-5/16",
+        "5/11",
+        "v2026.5.12已升级",
+        "5/12-5/15",
+        "5/16",
+        "memory.md",
+        "现在",
+        "已经"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-19.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-19.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-05-19.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: --- ## 📊 记忆官每周回顾简报 **执行时间：** 2026-05-19 16:43 (Asia/Shanghai) **回顾周期：** 2026-05-11 ~ 2026-05-19 --- ### ✅ 已完成的更新 #### 1. MEMORY.md 更新（版本状态） - **系统稳定性.md**：版本从 v2026.4.25 更新为 **v2026.5.12**（f066dd2，05-11升级） - **核心配置.md**：版本同步更新为 **v2026.5.12** #### 2. 战灵微信crash记录归档 - 根",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-19T08:51:07.577Z",
+      "lastRecalledAt": "2026-05-19T08:51:07.577Z",
+      "queryHashes": [
+        "2fd3160a10b6"
+      ],
+      "recallDays": [
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "asia/shanghai",
+        "memory.md",
+        "系统稳定性.md",
+        "v2026.4.25",
+        "v2026.5.12",
+        "05-11升级",
+        "核心配置.md",
+        "记忆"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-19.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-19.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-05-19.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: 已推送 | commit 716c03d → origin-workspace/main | > 注：主仓库 `agents/` 目录已纳入 submodule，不再独立追踪。 --- ### 📌 当前系统状态（截至2026-05-19） - **运行版本**：v2026.5.12 ✅ 最新稳定版 - **战灵备份**：每日01:00自动执行，持续成功 - **简报任务**：AI早报/晚报/工作简报/日报正常发送（工作日） - **做梦功能**：每周日凌晨3点运行，正常 - **GitHub SSH**：已配置，可正常push -",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-19T08:51:07.577Z",
+      "lastRecalledAt": "2026-05-19T08:51:07.577Z",
+      "queryHashes": [
+        "2fd3160a10b6"
+      ],
+      "recallDays": [
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "备份",
+        "origin-workspace/main",
+        "截至2026-05-19",
+        "v2026.5.12",
+        "ai早报/晚报/工作简报/日报正常发送",
+        "推送",
+        "commit",
+        "716c03d"
+      ]
+    }
+  }
+}
