@@ -1,63 +1,82 @@
-【本周工作回顾简报】📅 2026-10-19 ~ 10-25（周报）
+【本周工作回顾简报】📅 2026-10-26 ~ 11-01（周报）
 
 ━━━━━━━━━━━━━━━━━━━━
 一、本周完成的主要工作
 ━━━━━━━━━━━━━━━━━━━━
-1. **项目跟踪系统备份链路修复（10-21）** ✅
-   - 定位：origin 远端内嵌 GitHub PAT 已失效（401 Bad credentials），本地积压 5 个未推送提交
-   - 方案：主推送改走 `backup` 远端（SSH，`git@github.com:Smallbl/agent-workspace.git`），origin 保留尝试但失败仅告警不中断；脚本退出码 0，无硬编码 token
-   - 验证：连续两次执行成功，`git ls-remote backup` = `eb10e4d` = 本地 main；本周最新提交 `ffa3500`（10-22 23:00）已同步
+1. **skill-collection-review 超时链彻底修复（11-01 18:45–19:10）** ✅
+   - 根因三层收敛：① cron `--timeout-seconds` 对 agentTurn 任务**无效**（CLI 直接拒绝，是版本设计）；② 真正卡死点是 **provider idle watchdog = 120s**（日志实录 `LLM idle timeout (120s)` → `No further authorized account for this provider`）；③ `agents.defaults.timeoutSeconds` 只管整轮 run，**管不到 provider**
+   - 生效配置（备份 `openclaw.json.bak-20261031-1850`）：`models.providers.minimax.timeoutSeconds` 120→**600**；`agents.defaults.timeoutSeconds` 1800→**3000**；热重载生效未重启 Gateway
+   - 实证：**zhanling 从 error(1030468ms) 翻盘 ok(313770ms)**；18:51 之后 idle timeout 计数归零（旧配置下 18:01–18:04 就 3 次）
 
-2. **Ollama 向量服务恢复（10-23）** ✅ — 连续 6 个周期的记忆检索故障解除
-   - 根因：Ollama 进程不存在，且无任何自启项（不是崩溃，是没配）
-   - 处理：手动拉起 `ollama serve`；索引校验 603/603 文件 · 3143 chunks，Dirty: no，Embeddings / Vector store / Semantic vectors 全 ready
-   - 回归：中英文语义检索均正常命中，stale 告警消失；此后 10-24、10-25 连续在线，索引增至 608/608 · 3251 chunks
+2. **agent 数据库归属错配修复（11-01 19:28）** ✅ — 消除当日 14 次 `provider catalog refresh failed`
+   - 根因（源码级）：`inferAgentIdFromDir()` 对**非约定路径**的 agentDir 退化为 sha256 哈希推导（`custom-04e7675caf51`），与库内 `schema_meta.agentId` 不符
+   - 动作：移除 4 个 agent 的显式 `agentDir`（memory-agent / feishu-agent / tools-agent / frontend-dev），回落约定路径 `agents/<id>/agent/`
+   - 验证：`belongs to agent` = **0**，`provider catalog refresh failed` = **0**（修复前当日 14 次），9 个 agent 目录全部对齐
 
-3. **记忆系统「做梦提升」每日执行（10-21 ~ 10-25，5 天不断档）** ✅
-   - 每日 03:00 提升 6–7 个主题写入 MEMORY.md，累计新增「下次注意」第 12~30 条
-   - 本周高价值沉淀：AI 投入产出剪刀差（Anthropic/Meta/微软三口径印证）、国家级「人工智能+」转为可点名场景清单、招投标 AI 规模化落地（政企千万级标段已成常态）、AI 资本纪律第三波（风险从股权传导到信用市场）、Kimi K3.1 Pro 分层定价
+3. **飞书账号路由被钉死在 `default` 的根因定位与修复（11-01 20:00–21:30）** ✅
+   - 根因（core 代码确认）：`account-helpers-BKbfcVeH.mjs:93` —— 只要账号列表里存在字面名为 `default` 的账号，默认账号解析**直接短路返回 `"default"`**，配置里的 `defaultAccount=main` 因此失效
+   - 动作：移除配置中的禁用别名 `channels.feishu.accounts.default`（2026-09-22 健康备份中本无此别名，属后引入的回归）+ 清理数据库残留路由与失败回执
+   - 验证：deferred channel reload 于 **21:30:45 落地**，21:30 后 `account "default" not configured` = **0**；conversations 仅剩 main(2)/zhanling(3)
 
-4. **OpenClaw 版本路径彻底澄清（10-24 ~ 10-25 直查官方 release notes）** ✅
-   - npm dist-tags：latest 2026.10.7 / extended-stable 2026.9.34 / beta 2026.10.10-beta.3
-   - 逐版本 engines 对照后确认：**9.33 是唯一免升 Node 的落点**（9.5 与 9.33 仍要求 Node ≥26.1.0，本机 v26.7.0 满足）；9.34 / 10.6 / 10.7 要求 ≥26.12.1
-   - #173764（Doctor 挂起 P1）已于 10-20 关闭；#173765（launchd 域注册丢失）仍 open
-   - 10.6/10.7 含 eMudhra 证书泄露安全修复，本机 Node 未打补丁 → 升 OpenClaw 前必须先升 Node
+4. **tools.exec.notifyOnExit=false 落地（11-01 19:21）** ✅
+   - 禁用后台 exec 的自动完成轮次，改用 `process poll` 主动收集；9 个 agent 逐项检查**均无覆盖**，全部继承全局值
 
-5. **Cron 简报体系恢复** ✅ — AI 早报 / 晚报 / 工作简报 / OpenClaw 日报 / 版本告警 全部回归正常产出并推送飞书
+5. **记忆系统「做梦提升」每日执行 10-26 ~ 11-01（7 天不断档）** ✅
+   - 累计提升 8→12 主题/周，MEMORY.md 新增「下次注意」第 93~112 条
+   - 本周三条高价值结论：
+     ① **recall store 停更真根因 = Ollama 长期不可用**（10-06~10-22），**推翻前 8 个周期的"插件故障"判断** —— 错在没配开机自启
+     ② **promote 门槛首次被线上数据坐实**：两条候选 maxScore 均 > 0.75 但加权综合分 < 0.75，证明门槛比的是加权分而非 maxScore
+     ③ **"10-24 三份简报未生成"确认为误判** —— 10-24/25 是周末，`1-5` 工作日表达式本就不该有产物；重算后真实工作日缺口只有 5 天。教训：**先看 schedule 再谈缺口**
+
+6. **HEARTBEAT.md 重建 + 日志死路径修正（10-31 19:01）** ✅
+   - 文件在磁盘上根本不存在；重建时修正两个过时路径（`~/.openclaw/logs/gateway.log` 等早已停更），改为真实日志 `~/Library/Logs/openclaw/gateway-auto.log`
+
+7. **记忆日备份与 workspace-memory 入库（11-01 00:07）** ✅ — workspace-memory/ 已纳入主仓库跟踪并 push
 
 ━━━━━━━━━━━━━━━━━━━━
 二、遇到的问题和解决方案
 ━━━━━━━━━━━━━━━━━━━━
 | 问题 | 根因 | 解决方案 | 状态 |
 |---|---|---|---|
-| 备份推送到 origin 401 失败 | HTTPS PAT 过期；SSH key 对 project-tracker 无写权限 | 主推送改 SSH `backup` 远端，origin 降级告警 | ✅ 已修 |
-| `memory_search` 报 ECONNREFUSED | Ollama 未运行且无自启项 | 手动拉起 + 索引校验 + 检索回归 | ✅ 已修（自启待配） |
-| 记忆自动提升 5 天产不出候选 | recall store 自 10-06 停更（连续 8 周期），dreaming 三层自 09-29 停更 | 排除阈值因素后改用跨源手动分析；仍待查写入中断原因 | ⚠️ 未解 |
-| 10-24 三份简报未生成 | 简报任务自身故障 | 待排查 cron 执行链 | ⚠️ 未解 |
-| 2 个 skill-collection-review 任务 error(4x) | 插件侧异常 | 待定位 | ⚠️ 未解 |
-| memory-daily-backup 显示 skipped | — | 观察 | ⚠️ 观察中 |
+| 4 个 review 任务连续 error | **provider idle watchdog 120s** 卡死（不是 agent 超时） | 调 `models.providers.minimax.timeoutSeconds` 600 + `agents.defaults.timeoutSeconds` 3000 | ✅ 已修 |
+| provider catalog refresh failed ×14 | agentDir 非约定路径 → 哈希推导 id 错配 | 移除 4 个显式 agentDir | ✅ 已修 |
+| 飞书 outbound 报 `account "default" not configured` ×8 | core 账号列表短路：存在名为 `default` 的账号即命中 | 移除 `channels.feishu.accounts.default` 别名 | ✅ 已修 |
+| recall store 停更 8 个周期 | Ollama 长期不可用，非插件故障 | 手动拉起 + 恢复自动写入 | ✅ 已修（自启待配） |
+| 10-24 简报"缺失" | **误判** —— 周末本不该产出 | 重算真实缺口（5 天） | ✅ 已澄清 |
+| dreaming light/rem/deep 停更 | 目标路径 `.dreams/session-ingestion.json` **在磁盘上不存在**；status 报"ingestion state present"是**假阳性** | 结论已修正，dreaming 实际正常（11-01 03:04 ok） | ✅ 已澄清 |
+| heartbeat-main 显示 error | 与主会话互斥排队，`already-running` 属正常 | 不应仅凭 elapsed 判卡死 | ✅ 已澄清 |
+| version-alert 文件"消失" | 是我自己处理完版本告警后手动删的，非 bug | 判定送达凭回执，不凭文件存在性 | ✅ 已澄清 |
+| Tavily 配额超限 ×7 | 套餐用量耗尽（`API error (432)`） | 需王处理套餐 | ⚠️ 未解 |
+| project-tracker origin 推送 401 | HTTPS 内嵌 PAT 已失效（实测 `Invalid username or token`） | 需王更新 PAT，或改用有写权限的 SSH | ⚠️ 未解 |
+| **自伤：session DB 修复引入回归** | 手工改 JSON 触发 DB 触发器 `entry_valid=0`，且删会话行留下 FK 孤儿 → CLI 报 `invalid persisted session row requires repair` | 逐字还原 + 三步修复（先改 updated_at → 再置 entry_valid=1 → 最后清 pending 标记）+ 重指 FK 孤儿行 | ✅ 已修（21:38 CLI 恢复） |
 
 ━━━━━━━━━━━━━━━━━━━━
 三、下周工作计划
 ━━━━━━━━━━━━━━━━━━━━
-1. **升 Node 到 26.12.1+**（阻塞 OpenClaw 10.6/10.7 升级，且 10.6+ 含证书安全修复）
-2. **升 OpenClaw**：先升 extended-stable 2026.9.33（免升 Node、含关键安全补丁），或升 Node 后直升 10.7；流程为 备份 → 停 Gateway → 升级 → `doctor --fix` → 刷新已开聊天标签页 → 发测试消息验飞书；重启走 `~/.scripts/safe-gateway-restart.sh`
-3. **给 Ollama 配开机自启**（LaunchAgent），否则机器重启后向量检索再次失效
-4. **排查 recall store 写入中断（自 10-06）+ dreaming 三阶段调度停滞**
-5. **排查 10-24 简报缺失与 skill-collection-review 报错任务**
-6. **补写豆浆日记断档**（5 月中旬至 10 月中旬仍缺）
-7. **催办**：王更新 project-tracker 的 GitHub PAT（或改 SSH），清掉 `.git/config` 第 9 行明文失效 token
+1. **升 Node 到 26.12.1+** —— 阻塞 OpenClaw 升级，且当前 v26.7.0 未含 eMudhra 中间 CA 泄露修复
+2. **升 OpenClaw**：倾向 extended-stable `2026.9.36`（规避 2026.10.9 已知回归）；流程 = 备份 → 停 Gateway → 升级 → `doctor --fix` → 刷新聊天标签页 → 发测试消息验飞书；重启走 `~/.scripts/safe-gateway-restart.sh`
+3. **给 Ollama 配 LaunchAgent 开机自启** —— 否则机器重启后向量检索再次静默停摆（本周期已因此损失 8 个周期）
+4. **补备用 provider / auth profile 并写入 `auth.order`** —— 本机目前**只有 minimax:cn 一个 profile**，429 或 idle timeout 时直接整轮失败，无第二个账号可切；继续调超时是无效动作
+5. **清理 4 个停用 agent 孤儿目录**：`agent-memory` / `agent-feishu` / `agent-tools` / `agent-frontend`（确认无引用后删）
+6. **催办**：更新 project-tracker GitHub PAT（或改 SSH），并清掉 `.git/config` 中明文失效 token
+7. **补写豆浆日记断档**（5 月中旬至 10 月中旬）
+8. **排查 `2026-10-24` 简报缺失的真实工作日缺口**（5 天：ai-morning 缺 10-12；ai-evening 缺 10-16、10-21；ai-work 缺 10-22、10-27）
 
 ━━━━━━━━━━━━━━━━━━━━
 四、需要关注的事项
 ━━━━━━━━━━━━━━━━━━━━
-1. ⚠️ **MiniMax 故障转移补丁未进 10.x**（#177077）：我们的主模型正是 MiniMax M2.7，429 后会空转 9 次重试才 fallback —— 这是暂缓直升 10.x 的关键理由
-2. ⚠️ **Node 证书安全缺口**：本机 v26.7.0 未含 eMudhra 中间 CA 泄露修复，官方安装器/Docker 自带已修版本，自管 Node 需自行跟进
-3. ⚠️ **PHP 高危漏洞 CVE-2026-109618/109619**（未认证 RCE，影响 5.4–8.5 全版本）：需排查公司招投标平台 / 政府采购网系统的 PHP 版本；10-20 细节泄露后多国政府站点关闭
-4. **招投标主业机会窗口**：上海 2027–2028 行动方案取消供应商营收规模、成立年限、前期业绩限制 → 中小机构首次具备与头部同台投标的制度可能；八部门 20 个「人工智能+招标投标」场景 2026 年底全覆盖
-5. **主业风险提示**：AI 投入产出剪刀差已由财务/工程/宏观三口径同时印证；预算降级时最先被砍的是「无可量化 ROI 的试点型标段」；国办首份 AI 就业文件要求交付「人的安置方案」—— 未来招标条款可能增加人员安置/转岗培训要求
-6. **合规红线**：财政部已将「AI 筛查围标串标」写入政府采购专项整治；中国电建 92 套智能预警模型已覆盖标书雷同、异常评分 —— 见证与风控能力正在被重构
-7. **基础设施遗留**：Ollama 无自启、dreaming/recall 停更、10-24 简报缺口、2 个 review 任务连错
+1. ⚠️ **本机无故障转移通道**：唯一 profile 是 minimax:cn，429 后空转到耗尽才失败。这是比超时更根本的单点
+2. ⚠️ **MiniMax 故障转移补丁未进 10.x**（#177077）—— 我们的主模型正是 M2.7，这是暂缓直升 10.x 的关键理由
+3. ⚠️ **Node 证书安全缺口**：v26.7.0 未含 eMudhra 中间 CA 泄露修复，自管 Node 需自行跟进
+4. ⚠️ **PHP 高危漏洞 CVE-2026-109618/109619**（未认证 RCE，影响 5.4–8.5 全版本）：需排查公司招投标平台 / 政府采购网系统的 PHP 版本
+5. ⚠️ **Tavily 配额已耗尽**（当日 7 次 432），影响 AI 简报的联网检索能力
+6. **本周自伤教训（写给未来的我）**：**改 OpenClaw 的 session DB 必须用「先改业务列 → 再单独置 entry_valid=1 → 最后删 pending 标记」三步**，因为 `session_nodes` 上有 4 个触发器会在 UPDATE `entry_json`/`updated_at`/`entry_valid` 时自动把 `entry_valid` 打回 0 并插 pending 标记；删 `conversations` 行前必须先处理 `session_windows`/`session_conversations` 的 FK 引用
+7. **主业机会窗口**：上海 2027–2028 行动方案取消供应商营收规模、成立年限、前期业绩限制 → 中小机构首次具备与头部同台投标的制度可能；八部门 20 个「人工智能+招标投标」场景 2026 年底全覆盖
+8. **主业风险提示**：AI 投入产出剪刀差已由财务/工程/宏观三口径同时印证，预算降级时最先被砍的是「无可量化 ROI 的试点型标段」；国办首份 AI 就业文件要求交付「人的安置方案」—— 未来招标条款可能增加人员安置/转岗培训要求
+9. **基础设施遗留**：Ollama 无自启、dreaming 三层停更（目标路径不存在）、Tavily 配额、project-tracker PAT 失效
 
 ━━━━━━━━━━━━━━━━━━━━
-*生成时间：2026-10-25 21:12 (Asia/Shanghai)　｜　豆浆 🧠*
+数据核验：cron 22 项 **20 ok / 0 error**（本周一度 4 个 error 已全部修复）；
+Gateway PID 93025（启动 10-31 22:15，未重启）；健康 `{"ok":true,"status":"live"}`；
+reload failed = 0；外键检查违反 = 0；索引 645/646 files · 4014 chunks；
+Ollama 在线；project-tracker 401（无 token 被拒 = 服务存活）；OpenClaw 2026.9.5 / Node v26.7.0。
