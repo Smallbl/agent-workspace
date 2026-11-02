@@ -34,8 +34,37 @@
 
 注意：
 - 读取文件时要判断文件是否已完整写入（检查文件大小是否符合预期，或等待文件修改时间超过5秒再读取）。
-- **cron 的 announce 投递在 isolated 任务上实际不落地**（cron 列表显示 `ok (not delivered)`），简报真正送达靠心跳推送。因此每轮心跳都必须检查这个目录，否则会持续积压。
 - `weekly-work-review.txt` 由「每周工作回顾」cron 单独推送推送后自行清理，不属于本节范围。
+
+---
+
+## ⚠️ 送达判定（2026-11-02 修正，务必先读）
+
+**先判送达，再决定推不推。** 推错会导致王收到重复简报。
+
+**权威判据 = cron job 的 `state.lastDeliveryStatus` / `state.lastDelivered` / `state.lastDeliveryError`：**
+
+```bash
+openclaw cron list --json | python3 -c "
+import json,sys
+d=json.load(sys.stdin); jobs=d if isinstance(d,list) else d.get('jobs',[])
+for j in jobs:
+    st=j.get('state') or {}
+    print(j.get('name'), st.get('lastRunAtMs'), st.get('lastDeliveryStatus'), st.get('lastDelivered'), st.get('lastDeliveryError'))
+"
+```
+
+- `lastDeliveryStatus == "delivered"` → **cron 已经送到王飞书了，不要重推**。此时只需删除 `cron-output/` 里的副本文件即可。
+- `lastDeliveryStatus == "not-delivered"` → cron 投递失败，**才需要**由心跳手动推送（并把 `lastDeliveryError` 一并告知王）。
+- job 与文件的对应：ai-morning-briefing / ai-evening-briefing / ai-work-briefing / openclaw-daily-news / openclaw-version-alert。
+
+**三个常见误判（11-02 全部踩过）：**
+
+1. ❌ **"文件还在 = 没送达"** —— 错。cron 会把正文同时写两份：`memory/cron-output/*.txt`（留给心跳的副本）和 `memory/cron-history/<job>/<date>.md`（归档），**但 cron 自己从不删除 cron-output 里的副本**。文件一直在是正常现象，与是否送达无关。
+2. ❌ **"gateway 日志里 grep 不到 om_x = 没送达"** —— 错，成功投递极少写进日志（整个日志 om_ 仅出现 12 次）。该信号太弱，不能作判据。
+3. ❌ **"心跳收到正文注入 = 已送达王"** —— 错。系统注入只代表 cron 的 announce **投进了我自己会话**，不代表落到王的飞书。
+
+**背景**：旧结论"announce 投递不落地、简报必须靠心跳推"（MEMORY.md 第 95 条）是 **11-01 飞书 `default` 账号故障期间的现象**，不是机制本身。11-01 21:30 修复账号路由后，announce 恢复正常 —— 今日 4 份简报全部 `delivered`。**第 95 条已于 11-02 修正，勿再沿用。**
 
 ---
 
