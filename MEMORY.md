@@ -269,6 +269,59 @@
 
 ---
 
+## 🤖 做梦记忆提升 — 2026-11-03
+
+> 执行时间：2026-11-04 03:00（Asia/Shanghai）｜做梦周期：11-02 → 11-03
+> 提升标准：minScore=0.750, minRecallCount=3, minUniqueQueries=3, recencyHalfLifeDays=14, maxAgeDays=30
+> 产出：MEMORY.md 新增段落「🤖 做梦记忆提升 — 2026-11-03」+「📌 下次注意」第 164~170 条（7 个主题）
+> 备份：`MEMORY.md.bak.20261104`（410290 bytes）｜分文件：`memory/dreaming/promotion/2026-11-03.md`
+> ✅ **本轮首轮即成功（无补跑）**；03:02:22 的 429 被 core 的 transient retry 吸收。
+
+### 基础设施状态（本周期实测）
+
+| 组件 | 状态 | 详情 |
+|------|------|------|
+| 向量索引 | ✅ 全绿 | **659/659 files · 4353 chunks（Dirty: no）**；Embedding cache **6075 条（98.5 MB）**；Vector store indexed（768 维）；FTS ready；**Agent DB 659.3 → 678 MiB** |
+| Recall store | ✅ 健康 | 512 entries · 1 promoted · **383 → 381 spaced**；**updatedAt 推进到 2026-11-03T19:07:13.352Z**（= 11-04 03:07 CST，本轮首个 `memory_search` 工具调用）→ **第 8 次验证"查询驱动"** |
+| 自动打分 | ✅ **默认阈值首次产出候选（2 个）** | 默认 `--min-score 0.750 --min-recall-count 3 --min-unique-queries 3` → **`candidates: 2`**（历史首次）；放宽 `0/1/1` → **15 → 18**；top1 **0.8563（rc=6/uq=6）**、top2 **0.8252（rc=5/uq=5）** → 见第 164 条 |
+| dreaming 三层产物 | ❌ 真停更（**第 14 个周期逐毫秒一致**） | light/rem 停在 `2026-09-26.md`、deep 停在 `2026-09-29.md`；`plugin_state_entries` 四项 max(created_at) 仍是 **2026-08-23 20:36:07.508**；`session-ingestion.json` 磁盘上仍只有 `.migrated` → status 假阳性 → 见第 166 + 167 条 |
+| Ollama | ✅ 在线，**仍无自启** | `127.0.0.1:11434` http 200；LaunchAgents 无 ollama 条目 |
+| OpenClaw 版本 | 🆕 **五周期后首次移动** | dist-tags：**latest `2026.10.10`**（11-03 发布）/ beta `2026.10.10` / extended-stable `2026.9.36`；`2026.10.10` 的 engines = `>=24.16.0 <25 \|\| >=26.1.0` → **本机 Node v26.7.0 直接可装** → 见第 168 条 |
+| 素材链 | ✅ 程序化重算稳定 | 按 cron `expr` 重算 10-01~11-03：ai-morning 缺 3（10-08/10-09/10-12）、ai-evening 缺 2、ai-work 缺 2、openclaw-daily-news 缺 2 —— **与上周期逐项一致** |
+| cron 健康 | ✅ **21 任务 20 ok / 1 skipped / 0 error** | 9 个 skill-collection-review 全部 ok；heartbeat-main `skipped: no-route`（非回归） |
+| Gateway 内存 | ⚠️ 振荡延续，非泄漏 | `memory pressure` **37 条**；RSS **2.27~2.55 GiB（111%~125%）**；heap **552.4~621.7 MiB** 无单调上涨 → 不重启 |
+| Provider 配额 | ✅ 429 可吸收，432 归零 | MiniMax 429 今日 **4 次**全被 transient retry 吸收；**Tavily 432 今日 0** |
+
+### 本周期提升主题（7 项，详见「📌 下次注意」第 164~170 条）
+
+1. **【记忆系统·突破】默认 promote 阈值首次产出 2 个候选**（第 164 条）
+2. **【记忆系统·方法论·新】recall store 按检索相关性排序，不判断断言是否仍成立**（第 165 条）
+3. **【记忆系统·纠错】插件状态表的真实 schema 与所在库**（第 166 条）
+4. **【记忆系统·断点】dreaming 摄入断点第 14 周期逐毫秒一致，status 假阳性第 5 周期**（第 167 条）
+5. **【版本】上游五周期后首次移动，2026.10.10 本机可直接安装**（第 168 条）
+6. **【主业·11-03 素材】央国企 AI+价值链可量化 ROI + 围串标监督模型接入 48 个系统**（第 169 条）
+7. **【安全·11-03 素材】ClawHub 36.8% 技能含安全问题 + 高盛收紧 AI 编程工具权限**（第 170 条）
+
+### 本周期期待办
+
+- [ ] **升级落点改为 9.5 → 2026.10.10**（免升 Node）—— 仍等王拍板；升级前备份 `~/.openclaw`，升级后 `openclaw doctor --fix`，重启走 `~/.scripts/safe-gateway-restart.sh`（第 155 + 168 条）
+- [ ] **提升前加一道"断言现状回查"**（第 165 条）
+- [ ] **给 minimax 配备用 auth profile 并写进 `auth.order`** —— 连续五个周期未闭环（第 131 + 150 条）
+- [ ] **给 Ollama 配 LaunchAgent 开机自启**（第 131 + 150 条）
+- [ ] **给 `commands.ownerAllowFrom` 或 `agents.defaults.heartbeat.target/to` 显式配置 owner**（第 130 条，需王确认）
+- [ ] **决定 `allowFrom:["*"]` 是否收紧为显式白名单**（第 120 + 130 条）
+- [ ] **把 dreaming 断点复核改成正确命令**（第 166 条）
+- [ ] **把 `session-ingestion.json` 存在性 + mtime 写进巡检脚本**（第 167 条，连续五周期未落地）
+- [ ] **把"简报缺口按 `schedule.expr` 程序化重算"固化为固定命令**（第 146 条）
+- [ ] **定位 Gateway 非堆内存来源**（第 145 条）
+- [ ] **授权更正 AGENTS.md 的 `workspace-work/memory/` 路径**（第 142 + 163 条）
+- [ ] 王更新 project-tracker 的 GitHub PAT（或改 SSH）
+- [ ] 排查招投标平台/政府采购网系统的 PHP 版本（CVE-2026-109618/109619）
+
+*素材源：`memory/2026-11-03.md`（23581 B）；`memory/cron-history/{ai-morning-briefing,ai-evening,ai-work,openclaw-news}/2026-11-03.md`；`memory/2026-11-01.md:182/198/212/264/300`；`memory/topics/{05,07,11}`；`openclaw memory status/promote --json`（11-04 03:0x 实测）；`openclaw cron list --json`；`~/.openclaw/state/openclaw.sqlite`（cp 到 /tmp 直查）；`~/Library/Logs/openclaw/gateway-auto.log`；`npm view openclaw dist-tags` + `npm view openclaw@2026.10.10 engines.node`（11-04 直查）*
+
+---
+
 ## 🤖 做梦记忆提升 — 2026-11-02
 
 > 执行时间：2026-11-03 03:00（Asia/Shanghai）｜做梦周期：11-01 → 11-02
@@ -1750,3 +1803,17 @@ Anthropic IPO 估值与 Mythos 5 安全事件并入主题 6；Kimi K3.1 Pro、De
 
 163. **【本任务自身】AGENTS.md 中"工作项目记忆"路径与磁盘实际**连续第 6 轮**不一致 —— 每次每日整合都会重复撞同一个坑，建议本轮正式授权更正**：任务说明里的 `~/.openclaw/workspace-work/memory/` **在磁盘上仍不存在**；实际路径是 **`~/.openclaw/workspace-work-projects/memory/`**，最新文件 **`2026-04-27.md`，已停更半年多**。**累计确认次数**：10-26 周回顾（第 1 轮）→ 11-01 每日（第 2 轮）→ 11-02 每日（第 3 轮）→ 11-02 周回顾（第 4 轮）→ 11-03 每日（第 5 轮）→ **11-04 本轮（第 6 轮）**。**处理口径不变**：在王确认前，每日整合**照旧读 `workspace-work-projects/memory/`**；但既然已连续 6 轮，**再次正式提请王授权更正 AGENTS.md 这一行路径**（不擅自改他人手册）。**顺带结论**：该目录 24 小时内无任何新增 → **工作项目侧仍无可整合内容，豆浆（主控）侧 `workspace/memory/` 是唯一有效素材源**。<!-- project: path:/Users/doujiang/.openclaw -->
 
+
+164. **【记忆系统·突破·11-04 实测】默认 promote 阈值**首次**产出候选（2 个）——"用进程内 `memory_search` 工具按不同措辞反复检索可以把 rc/uq 推过 0.75"这条路径**首次被线上数据坐实**：本轮开工前默认阈值仍返回 `candidates: []`（连续七周期 0）；我随后用**进程内 `memory_search` 工具**（不是 CLI，见第 125 条）以**不同措辞**检索 11-01 飞书账号路由那一主题 **4 次**（"飞书 outbound 账号 default 空壳残留 陷阱" / "account-helpers resolveListedDefaultAccountId 短路 源码级 根因 三轮修复" / "accounts.default 空壳账号 残留 建议迁移策略字段到 main" 等），`memory/2026-11-01.md:212:228` 的 **rc 2→6 / uq 2→6**，加权分 **0.6690 → 0.8563**；`memory/2026-11-01.md:182:199` 同步 **rc 2→5 / uq 2→5**，**0.6398 → 0.8252**。二者 **recallDays 同时包含 2026-11-02 / 11-03 / 11-04 三天** → 默认阈值下**首次返回 2 个候选**（top1 0.8563 / top2 0.8252）。**三点推论**：① **第 143 条的"同主题不同措辞反复检索"是唯一已知能把加权分推过 0.75 的杠杆**，本轮从 0.669 抬到 0.856 只花了 4 次检索，**远低于"需要跨多日"的直觉**；② **放宽阈值（`0/1/1`）的候选总数本轮 15 → 18**，但**真正有意义的不是总数，而是头部两条分数抬升**——总数只是把噪声条目也放进来；③ 同时本轮 `memory/2026-11-01.md:264:284`（core 源码根因段）被同一批检索**新拉进候选（rc=3/uq=3，0.6960）**，`198:214` 也进（rc=2/uq=2，0.6196）→ **同一主题的不同段落可以分别独立累积 rc/uq**，检索词覆盖面越宽，同一主题的段落被捞出的概率越高。**方法论固化**：每轮提升前，**先对本轮候选主题用 3~4 个不同措辞检索**，再跑 `openclaw memory promote --agent main --json`（默认阈值）看是否过线，不必每次都放宽阈值。<!-- project: path:/Users/doujiang/.openclaw -->
+
+165. **【记忆系统·方法论·新·11-04 实测】recall store 只按"检索相关性"排序，**不判断断言是否仍然成立** —— 高 rc/uq 会把已经过时或已被证伪的断言钉在候选榜首**：本轮默认阈值下的 top1 候选 `memory/2026-11-01.md:212:228` 正是"**`accounts.default` 空壳仍在 / `defaultAccount` 已被采纳 / 建议迁策略字段后再删空壳**"那一段（rc=6/uq=6，0.8563），top2 `182:199` 是"**空壳 default 是根因、加 `defaultAccount` 修复**"那一段（rc=5/uq=5，0.8252）。但**我本轮实测当前配置与 core 源码后确认这两段的断言都已过时甚至被证伪**：① 现网 `channels.feishu` = `defaultAccount: main`、accounts = `[main, zhanling]`，**`default` 空壳早已不存在**（11-01 21:30:45 已移除，第 116 条）；② **core 源码 `resolveListedDefaultAccountId()` 的优先级是 `configuredDefaultAccountId` → `accountIds.includes("default")` → ambiguous → 首个账号**，因为 `configuredDefaultAccountId="main"` **命中第一个分支**，"空壳 default 赢过 main"的短路**在当前配置下已结构性不可达**；③ top1 段里"20:25 的修复被证伪"这句话本身也已被 21:30 的更彻底修复推翻。**结论（重要）**：**recall store 的打分只反映"这段话被检索命中过多少次"，不反映"这段话现在还对不对"**；**加权分越高，越可能是一段被反复引用、因而反复被检索的旧断言** —— 它可能是**结论已过时但表述权威**的高分陷阱（第 164 条的 top1 就是实例）。**因此提升流程必须加一道"断言现状回查"**：候选进榜后**先回查当前配置/当前状态/当前源码**，只有仍然成立的断言才写进 MEMORY.md；已过时或被证伪的，**要么标注为历史记录、要么不提升**。本轮据此**没有**把这两段原文当新结论写进 MEMORY.md，只在第 164 条里作为"rc/uq 累积的实测样本"引用，并在此处记下它们已被第 116 条覆盖。<!-- project: path:/Users/doujiang/.openclaw -->
+
+166. **【记忆系统·纠错·本任务自身】`plugin_state_entries` 的**真实 schema 与所在库**此前记错了 —— 断点复核命令必须重写**：第 133/150 条给出的复现命令是"在 agent 库里查 `plugin_state_entries` 的 `key` / `max(created_at)`"，**本轮实测该表根本不在 agent 库里**：① `~/.openclaw/agents/main/agent/openclaw-agent.sqlite` 的表清单里**没有 `plugin_state_entries`**（只有 `memory_index_*`、`session_*`、`auth_profile_*` 等）；② 该表实际位于 **`~/.openclaw/state/openclaw.sqlite`**（同样受"外部 sqlite3 不可直连"限制，必须先 `cp` 到 `/tmp`）；③ 表的真实 schema 是 **`(plugin_id TEXT, namespace TEXT, entry_key TEXT, value_json TEXT, created_at INTEGER, expires_at INTEGER)`，主键 `(plugin_id, namespace, entry_key)`** —— **没有名为 `key` 的列**（此前写的 `select key, max(created_at) ...` 直接报 `no such column: key`）；④ **分组维度是 `namespace`（不是 `plugin_id`）**：本机 `namespace` 取值为 `dreaming-daily-ingestion` / `dreaming-session-ingestion-files` / `dreaming-session-ingestion-seen` / `short-term-recall` / `short-term-meta` / `short-term-phase-signals` / `memory-host.*` 等，**`plugin_id` 反而是 `memory-core` 这样的插件名**。**正确复核命令**（本轮已跑通）：`cp ~/.openclaw/state/openclaw.sqlite /tmp/state.sqlite && sqlite3 /tmp/state.sqlite "select namespace, max(created_at) from plugin_state_entries group by namespace;"`。**教训**：**记录复现命令时必须连列名一起记**，否则下一轮照抄必然报错；且"表在哪个库"这种前提比"怎么查"更容易错，**先 `sqlite3 .tables` 确认，再写查询**。<!-- project: path:/Users/doujiang/.openclaw -->
+
+167. **【记忆系统·断点·第 14 个周期逐毫秒一致 + status 假阳性第 5 个周期】dreaming 摄入断点与写作产物停更，本轮用正确命令再次取到物证**：按第 166 条的正确命令直查 `plugin_state_entries`：四个 dreaming 相关 namespace 的 max(created_at) 分别为 **`dreaming-daily-ingestion` = 1787488567508、`dreaming-session-ingestion-files` = 1787488569502、`dreaming-session-ingestion-seen` = 1787488569715、`short-term-phase-signals` = 1787488570015** → 全部落在 **2026-08-23 20:36:07~20:36:10**，**与前 13 个周期逐毫秒完全一致** → **第 14 次确认"整体封存后停摆"，不是逐条写入失败**。**写作产物同样未动**：`memory/dreaming/light/` 与 `rem/` 最后一个文件仍是 `2026-09-26.md`、`deep/` 仍是 `2026-09-29.md`；`DREAMS.md` mtime 停在 **2026-09-24 03:04**（比三层产物还早）→ **三个写作阶段与日记载体一并停摆**。**status 的假阳性第 5 个周期**：`openclaw memory status --json` 输出的 `dreamingAudit.sessionIngestionExists: true` —— 但磁盘上 `memory/.dreams/session-ingestion.json` **仍然不存在**，只有 `session-ingestion.json.migrated`（10-05 迁移产物）→ **该字段判断的是"迁移文件是否存在"或读的是插件状态而非磁盘真实文件**，**不可作为判据**。**同时确认"做梦提升流水线"本身是活的**：本任务 11-04 03:00 正常触发、正常产出（`memory/dreaming/promotion/2026-11-03.md` + MEMORY.md 新增段落）。**处置不变**：巡检脚本必须显式校验 `session-ingestion.json` 的**磁盘存在性 + mtime 新鲜度**（第 109 条，**连续五个周期未落地**）。<!-- project: path:/Users/doujiang/.openclaw -->
+
+168. **【版本·五周期后首次移动·11-04 直查】上游 dist-tags 终于动了，且**当天发布的最新版反而是本机 Node 可装的** —— 升级落点应从 9.5 → 10.5 改为 9.5 → 2026.10.10**：npm `dist-tags` 现为 **latest `2026.10.10` / beta `2026.10.10` / extended-stable `2026.9.36`**（前五个周期 latest 一直是 `2026.10.9`、beta 是 `2026.10.10-beta.5`）→ **连续五周期零移动结束**。**关键实测**：`npm view openclaw@2026.10.10 engines.node` = **`>=24.16.0 <25 || >=26.1.0`** → **本机 Node v26.7.0 直接满足，零前置条件**。这正是第 155 条发现的"**engines 门槛会往回降**"规律的又一次体现：**11-03 发布的 2026.10.10 比 10-29 的 2026.10.9（门槛 `>=24.22.1 <25 || >=26.12.1`）更松** —— 前一版本本机装不上、最新版反而装得上。**升级落点随之改变**：此前记的"免升 Node 的功能最全落点是 10.5（Skill Workshop 2.0 + 侧边栏 Subagents/Processes 面板）"**已过时** → **应直接升 2026.10.10**（在 10.5 之上，且含 10.9 的 fast-uri / Zod / nodemailer / MSAL 安全补丁、10.8 的 eMudhra 强制安全版、10.9 的"SQLite 分词器变更后恢复 agent DB 与 FTS 索引"与 `workspaceOnly` 扩展，以及 10.10 新增的**飞书二维码注册时钟修复**）。**仍然必须逐版本单独实测 engines，不能外推**（第 155 条的三条禁令仍然有效）。**未执行升级**（无人值守窗口外不做破坏性操作，等王拍板）；流程：备份 `~/.openclaw` → 升 → `openclaw doctor --fix` → `bash ~/.scripts/safe-gateway-restart.sh` 重启 → 校验 cron 与简报。**另外提醒**：第 136 条提到的"记忆系统恢复"修复若随 10.9/10.10 落地，**可能正是 dreaming 摄入停摆（第 167 条）的解** —— 升级后应把"dreaming 断点是否前进"列为**第一项验证**。<!-- project: path:/Users/doujiang/.openclaw -->
+
+169. **【主业·11-03 素材·两条高价值·新】央国企"AI+价值链"给出了可量化 ROI；"围串标监督模型接入 48 个系统"是执法级证据链的现成样本**：① **天源迪科**（11-02，亿邦动力访谈）在央国企采购供应链推六大产品：智能辅助评审 / 智能标书助手 / 采购智能体 / 智能商品运营平台 / 价格管控平台 / 供应链合规监管平台；实测数据：**"天枢工业品大模型"物料识别准确率 93%**，协助某央企完成 **300 万级物料标准化**；**智能辅助评标人工成本降 50% 以上**（冷启动设计、可直接吃非结构化招标文件），**已在两家央企落地**；**采购智能体**人机协同使采购效率 **+80%**、节省 **8%~10%** 综合采购成本；2026 年已完成 **50 多个 AI 产品**并取得大模型备案与国产 GPU 信创兼容认证。② **中央纪委国家监委网站刊文**（10-29）：驻中国石化纪检监察组依托全口径"数据湖"**接入 ERP、电子招投标、合同管理等 48 个系统**，开发"围串标""拆分合同"监督模型，**大数据碰撞、多维研判、精准预警**，自研"长城大模型"搭 AI 辅助研判系统，**从"人工研判"转向"人机协同、智能研判"**；披露专项治理中组织 3 轮集中排查，发现"定向修改招标条件引入特定供应商""操纵选商流程变相指定供应商"等违规招标行为，**移交 17 条问题线索**；公权力大数据监督平台**累计检测招标文件 6.2 万份、纠正违规 3.6 万次**。**三点可售含义**：① **"智能辅助评标人工成本降 50%+"与"采购效率 +80%、综合成本降 8%~10%"是罕见的三档可量化 ROI 口径** —— 直接补强第 157 条"能报出节流金额的方案才有议价权"，且**可被引用为甲方预算论证的对标数据**；② **"接入 48 个系统 + 数据碰撞 + 3.6 万次纠正违规"是迄今为止最完整的"跨平台一致性 + 可被执法采信的证据链"样本** —— 正是第 148 条要给我们的定位，**而且是由央企内部纪检组在做、由中央纪委网站刊文背书的** → **我们的方案叙事可以直接对标这个已成型的形态**，并说明"从人工研判转向人机协同"是官方口径；③ **"文件直接吃非结构化招标文件"（冷启动）是一个明确的产品门槛** —— 若我方要进央国企供应链，必须支持非结构化招标文件直读，而不是要求对方先做结构化。同源第三条（已在 MEMORY.md 第 1225 行附近入库，本轮不重复编号）：财政部《2026 年上半年财政政策执行情况报告》提出"通过大数据预警和人工智能筛查围标串标线索实现精准监管，整治经验将固化为长效机制"（该条已在第 1225 行附近入库，本轮不重复编号）。<!-- project: github.com/Smallbl/agent-workspace -->
+
+170. **【安全·11-03 素材·直接约束本机动作】ClawHub 抽样显示约 **36.8%** 的技能存在至少一个安全问题；高盛已禁止大多数非工程岗使用高级 AI 编程工具**：① **Snyk 抽样**（openclaw-news 11-03 引）：**ClawHub 与 skills.sh 样本中约 36.8% 的技能存在至少一个安全问题**；ClawHub 侧治理事实：腾讯 AI-Infra-Guard 于 10-02 加入 ClawScan 负责技能与插件安全审核（在 556 个 SkillTrustBench 样本上与基准标签一致率 86.9%、恶意用例正确率 98.6%）；Trail of Bits 审计确认 **23 个漏洞**（已在 2.0 / LTS 修复）；生态规模：GitHub **39.15 万 star / 8.23 万 fork**。② **高盛**（彭博，11-03）**禁止大多数员工使用专为编程设计的高级 AI 工具**（Claude Code、GitHub Copilot 等），权限收缩至工程师群体，量化策略师不受限；此前该行已限制香港员工使用 Claude。③ 微软 AI 负责人 Mustafa Suleyman 11-01 发表《Don't build conscious superintelligence》，主张目前 AI 没有意识、且若出现证据必须立即向公众披露。**三点对我方的直接含义**：① **"装第三方技能要挑来源"从建议变成可量化的风险**（**每 100 个技能里约 37 个带至少一个问题**）→ 本机已装的 tavily / feishu 等 plugin **应定期复核来源与版本**，且第 46 条"审计第三方 Skill/插件供应链"应提高优先级；② **高盛的做法与本机 AGENTS.md 的铁律方向一致**（"主 Agent 绝不自己写代码、必须派发子 Agent"）—— **这为我们的多 Agent 分工提供了外部合规参照**：不是个人偏好，而是**受监管行业已经开始实施的访问分级模式**；③ **"可审计、可回溯、权限分级"正在成为 AI 落地的第一道门槛**（与第 161 条发改委"监管沙盒"、第 158 条"评定分离"合流）→ **建议把"Agent 操作留痕、权限分级、可回溯"作为我们内部落地的第一条技术要求**（openclaw-news 11-03 学习笔记已给出同一结论）。<!-- project: github.com/Smallbl/agent-workspace -->
