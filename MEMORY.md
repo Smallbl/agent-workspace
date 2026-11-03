@@ -1683,3 +1683,16 @@ Anthropic IPO 估值与 Mythos 5 安全事件并入主题 6；Kimi K3.1 Pro、De
 - **根因**：payload 从不检查 engines，只做版本号比较，所以只要版本号新就无条件建议升级。**已于 09:30 修改 payload 加入硬性门槛校验**（见第 137 条），首个运行窗口为 **11-03 17:00**。
 - **升级建议（以实测为准，覆盖告警原文）**：① 免升 Node → 升 **2026.10.5**（推荐，功能较全且门槛满足）；② 升 Node 至 `>=26.12.1` 后再直升 `2026.10.9`（安全补丁最全，但需先动 Node）；③ **不要**升 2026.9.36 / 2026.10.6+ / 2026.10.9（在升 Node 之前均装不上）。
 - 附：`openclaw update --dry-run --tag <v>` 三个版本均只走 `validating` 步即 skipped，**不暴露引擎门槛**，所以门槛只能用 `npm view` 实测——`openclaw update` 自身有 "Minimum Node engine / Running Node" 报错文案，实际升级时才会拦截。<!-- project: github.com/Smallbl/agent-workspace -->
+
+153. **【结论·11-03 12:05】cron 归档目录"缺失"之谜解开：job 名 ≠ 目录名，空目录是纯遗留；且"旧目录名 vs 新目录名被覆盖"的猜测是错的 —— 两者并存且各有专属 job**：此前我多次记录「`memory/cron-history/openclaw-daily-news/`、`ai-work-briefing/`、`ai-morning/` 为空 → 怀疑新版 job 归档覆盖了旧目录」，并把 2026-10-08/09/12 的归档缺口列为待查。**本次逐个 job 读 payload 里自述的归档路径后真相大白**：
+- **payload 自述路径**（唯一权威）：`ai-work-briefing` → `cron-history/ai-work`；`openclaw-daily-news` → `cron-history/openclaw-news`；`ai-evening-briefing` → `cron-history/ai-evening`；`ai-morning-briefing` → `cron-history/ai-morning-briefing`。
+- **实测目录**：`ai-work/`124 份（最新 11-03）、`openclaw-news/`142 份（最新 11-03）、`ai-evening/`107 份（最新 11-02）、`ai-morning-briefing/`113 份（最新 11-03）——**四个 job 全部正常归档，无覆盖、无丢失**。
+- **空目录 = 纯遗留，可安全删除**：`ai-work-briefing/`、`openclaw-daily-news/`、`ai-morning/`（0 文件，无任何 job 引用）；`ai-evening-briefing/`21 份但最新停在 **2026-05-22**，是 5 月旧命名残留。
+- **此前记为"缺失"的 2026-10-08/09/12 其实存在**（在 `openclaw-news/` 里）：三份全部齐全 → **这部分"缺口"是误判，已消案**。
+- **但 `ai-morning-briefing` 的 10-08/10-09/10-12 是真缺口**（同期的 `ai-work/`、`ai-evening/`、`openclaw-news/` 三者都有这三个日期），说明那三天早报 job 本身没跑或没落盘，与目录改名无关。
+- **方法论**：判断"归档是否缺失"**必须先从 job payload 读出它自述的目录路径**，再用目录名去猜必然误判（job 名带 `-briefing` 后缀的三个里有两个不叫这个名）。<!-- project: github.com/Smallbl/agent-workspace -->
+
+154. **【结论·11-03 12:05】Gateway 内存再验证：今日 30 次 RSS>140% 全部**不是泄漏**；真正变化是**诊断阈值被调低**（3.07 → 2.05 GiB），导致比例读数整体上移**：按第 136 条立的判定规则（RSS>140% **且** heap 同步上涨才算泄漏）复核今日数据：
+- 今日 `RSS>140%` 共 **30 条**（集中 04:06–06:36，rss≈2.87–2.89 GiB，ratio 140.0%–141.1%）；该区间 heap 在 **548.7–620.6 MiB** 间震荡，**首 555.8 → 尾 590.5 MiB**，单调上涨段 20/29，**无趋势性抬升 → 不构成泄漏**（对照 11-02 同期 heap 537.7–679.8 MiB，区间更宽）。
+- **此前误判的关键**：03:14 那条 `level=critical`（rss=3.17 GiB / **threshold=3.07 GiB** / ratio=103.1%）与今日 130 条（threshold=**2.05 GiB** / ratio≈113–125%）**不是同一个基准**——**阈值从 3.07 GiB 被调到了 2.05 GiB**，所以 ratio 从 ~103% 变成 ~140% 是**分母变小**，不是分子暴涨。**不加区分地跨阈值比较 ratio 是错的**。
+- 现状：RSS 2.41–2.63 GiB（当前 2.63），heap 552–648 MiB，Gateway PID 93025 存活 43.5h，health=live；**无需重启**。继续观察规则不变：仅当 **RSS>140%（同阈值基准）且 heap 同步单调上涨**才按泄漏处理。<!-- project: path:/Users/doujiang/.openclaw -->
