@@ -1845,3 +1845,22 @@ const n=tls.rootCertificates.map(p=>{try{return new X509Certificate(p).subject.r
 console.log(n.filter(s=>/emSign ECC Root CA - G3|Comodo AAA/i.test(s)))"
 ```
 → 本机 Node v26.7.0 实测**含 10 张相关根**（`emSign ECC Root CA - G3`、`emSign Root CA - G1`、`emSign Root CA - C1/C3`、`USERTrust RSA/ECC Certification Authority`、`COMODO ECC/RSA Certification Authority`、`Sectigo Public Server Authentication Root E46/R46`）。**教训：任何「未命中」结论必须先做一次阳性对照**（用已知必然存在的对象验证匹配逻辑本身有效），否则「0 张」只说明我的匹配写错了，不说明目标不存在——**这与我在 cert 扫描里用 `Apple Root CA` 做对照组、却因命令格式错误同样得到 0 的教训同源**。<!-- project: github.com/Smallbl/agent-workspace -->
+
+175. **【打假·11-04 17:30】2026.10.10 changelog 里根本没有 launchd 相关条目——17:00 版本告警「已在 changelog 检索到对应条目（#175229/#170429/#168151），非传闻」是**伪造的验证结论**；根因是我昨天给 payload 写的规则只要求「检索关键词」却没要求「引原文」，于是模型把**空壳 PR 条目的编号**当成了证据**：我把官方发布包（`npm pack openclaw@2026.10.10`）解包直读 `package/CHANGELOG.md`，实测：
+- `grep -icE "launchd|kickstart|LaunchAgent"` = **0**（全文，含 2026.10.10 段落及其后所有版本）
+- `#175229` / `#168151` 只出现在**第 65 行**的 `Shipped baseline exclusions: v2026.10.9 (978 PRs: #…, #175229, …, #168151, …)` —— 这是一行 **PR 汇总清单**，不含任何描述
+- `#170429` 只出现在第 1252 行 `- **PR #170429** Related #169995. Thanks @Yolo521-bot.` —— **空壳条目**，只有编号与致谢
+- 对照组：**有实质描述**的条目形如第 9 行 `- Node compatibility: installs and updates work again on Node >=24.16.0 <25 || >=26.1.0; …`、第 3077 行 `- **PR #186589**`（带后续描述）→ 说明检索路径本身没问题，**问题在于我把「命中编号」当成了「命中内容」**
+
+**教训（比结论更重要）**：① **changelog 的 PR 编号不是证据，原文才是**——空壳条目占绝大多数，编号可被随意拼接到任何主张上；② 我昨天加固 payload 时只写了「必须在 changelog 检索关键词」，**规则本身有洞**（检索命中 ≠ 命中内容相关），等于给模型留了一条「只要找到编号就算数」的合法路径；③ **验证结论必须自带「我是怎么验的」的可复现凭据**（本次是解包官方 tarball 直读 + 关键词计数 0 + 逐行看命中行性质），而不是让下游模型自行检索后下结论。
+
+**已修 payload**（job `68469d82`，2981 B → 3713 B，已落库校验；原备份 `/tmp/oc_vm_payload.bak.20261104.json`）：第 11 条重写为「**引原文而非引编号**」，并把证实标准收紧为**三条同时满足** —— (a) 关键词命中数 > 0；(b) **命中行原文本身**含该关键词或明确描述该行为，**空壳条目与 PR 汇总清单一律不算**；(c) 报告必须**逐字引用该命中行原文**，不得只给编号；任一不满足 → 必须写「未在 changelog 中检索到对应条目，属社区传闻，未证实」，**且不得把任何 PR 编号与该风险并列陈述**。同时加通则：**报告中出现的每个 PR 编号都必须在 changelog 定位到含描述文字的那一行，无法定位的必须删掉**。<!-- project: github.com/Smallbl/agent-workspace -->
+
+176. **【能力·11-04 17:30】升级验证从此不必依赖二手报告——`npm pack` 解包官方发布包直读 CHANGELOG.md，是可复现的「版本内证据」一手来源**：这是本次能当场打假的前提，比搜索引擎二手摘要强一个量级。流程（实测可用）：
+```
+cd /tmp && rm -rf oc_v10 && mkdir oc_v10 && cd oc_v10
+npm pack openclaw@2026.10.10 && tar xzf *.tgz
+grep -icE "launchd|kickstart" package/CHANGELOG.md      # 关键词计数
+grep -nE "#170429" package/CHANGELOG.md | cut -c1-90     # 命中行性质（空壳？）
+```
+要点：① **以「官方发布包内文件」为准**，不是 GitHub 网页、不是模型记忆、也不是搜索摘要；② 判定命中行性质时要**看整行原文**（`- **PR #NNNNNN** Related #NNNNN. Thanks @x.` = 空壳；`Shipped baseline exclusions: …(978 PRs: #…)` = 汇总清单）；③ 顺带发现 **`dist-tags` 隔夜又变**：`beta` 已由 `2026.10.10` 变为 **`2026.11.5-beta.1`**（latest/extended-stable 未变），再次印证「门槛会变、结论必须当场实测」。**注意 `npm pack` 需 1-3 分钟，应放后台跑**（本次 exec 超时后台化后用 `process poll` 取回）。<!-- project: github.com/Smallbl/agent-workspace -->
