@@ -9,7 +9,7 @@
 所有智能体的记忆文件分散在各自workspace的 `memory/` 目录下：
 - `~/.openclaw/workspace/memory/` — 豆浆（主控）的记忆
 - `~/.openclaw/workspace-frontend/memory/` — 前端官的记忆
-- `~/.openclaw/workspace-work/memory/` — 工作项目相关记忆
+- `~/.openclaw/workspace-work-projects/memory/` — 工作项目相关记忆（**2026-11-06 修正**：原记的 `workspace-work/memory/` 在磁盘上不存在）
 
 ## 工作流程
 
@@ -45,7 +45,7 @@
 
 - 中央记忆库：`~/.openclaw/workspace/MEMORY.md`
 - 记忆官自己的日志：`~/.openclaw/workspace-memory/memory/`
-- Git备份到 `origin-workspace` 的 `memory-archive` 分支
+- Git 备份（**2026-11-06 修正**：原记的 `memory-archive` 分支并不存在，实际是两仓顺序 —— 先 `workspace` 仓库推 `origin main`，再根仓库推 `origin-workspace main:config-backup`）
 
 ## Tools
 
