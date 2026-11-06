@@ -2,3 +2,9 @@
 # 临时文件
 tmp_risk_*.xlsx
 tmp_risk_*.jpg
+
+# 含明文凭据的配置文件，绝不入库
+openclaw.json
+openclaw.json.*
+auth-profiles.json
+auth-state.json
