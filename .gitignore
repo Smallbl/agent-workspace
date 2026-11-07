@@ -8,3 +8,14 @@ openclaw.json
 openclaw.json.*
 auth-profiles.json
 auth-state.json
+
+# OpenClaw 运行时状态目录（含 workspace-state 迁移副本），不入库
+.openclaw/
+
+# 本地备份文件（MEMORY.md.bak.* / HEARTBEAT.md.bak.* / cron/jobs.json.bak.*），
+# 内容均为已入库文件的副本，留作本地回滚，禁止误提交
+*.bak
+*.bak.*
+
+# GitHub API 仓库元数据快照（含公开性证据），无需入库
+ghrepo.json
