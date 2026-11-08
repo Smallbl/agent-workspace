@@ -1,82 +1,99 @@
-【本周工作回顾简报】📅 2026-10-26 ~ 11-01（周报）
+【本周工作回顾简报】📅 2026-11-02 ~ 11-08（周报）
 
 ━━━━━━━━━━━━━━━━━━━━
 一、本周完成的主要工作
 ━━━━━━━━━━━━━━━━━━━━
-1. **skill-collection-review 超时链彻底修复（11-01 18:45–19:10）** ✅
-   - 根因三层收敛：① cron `--timeout-seconds` 对 agentTurn 任务**无效**（CLI 直接拒绝，是版本设计）；② 真正卡死点是 **provider idle watchdog = 120s**（日志实录 `LLM idle timeout (120s)` → `No further authorized account for this provider`）；③ `agents.defaults.timeoutSeconds` 只管整轮 run，**管不到 provider**
-   - 生效配置（备份 `openclaw.json.bak-20261031-1850`）：`models.providers.minimax.timeoutSeconds` 120→**600**；`agents.defaults.timeoutSeconds` 1800→**3000**；热重载生效未重启 Gateway
-   - 实证：**zhanling 从 error(1030468ms) 翻盘 ok(313770ms)**；18:51 之后 idle timeout 计数归零（旧配置下 18:01–18:04 就 3 次）
+1. **🚨 重大安全事件自查并遏制：明文凭据公开泄漏（11-06）**
+   - 自查发现 `openclaw.json` 被 git 跟踪并推到**公开仓库** `Smallbl/agent-workspace`，含 4 项**与活配置逐字节一致**的凭据：两个飞书 `appSecret`、tavily `apiKey`（实测仍有效、可盗刷）、`gateway.auth.token`
+   - 暴露跨度 2026-05-20 → 06-15，**已公开约 5.5 个月**；`DINGDANGMAOUP/agent-workspace` fork 仍含该文件
+   - 已执行遏制（可逆、无需授权）：两仓库 `git rm --cached openclaw.json` + `.gitignore` 加规则；**同时修掉两个备份 cron 的 payload**（每日/每周备份里硬编码 `git add openclaw.json`，等于每天主动把密钥推上去）；公开路径已实测 404
+   - 遗留：4 项凭据**轮换**、历史改写、fork 处理 —— 需王拍板
 
-2. **agent 数据库归属错配修复（11-01 19:28）** ✅ — 消除当日 14 次 `provider catalog refresh failed`
-   - 根因（源码级）：`inferAgentIdFromDir()` 对**非约定路径**的 agentDir 退化为 sha256 哈希推导（`custom-04e7675caf51`），与库内 `schema_meta.agentId` 不符
-   - 动作：移除 4 个 agent 的显式 `agentDir`（memory-agent / feishu-agent / tools-agent / frontend-dev），回落约定路径 `agents/<id>/agent/`
-   - 验证：`belongs to agent` = **0**，`provider catalog refresh failed` = **0**（修复前当日 14 次），9 个 agent 目录全部对齐
+2. **版本监控体系加固：从 6506 → 13226 字符，四类假阴性逐类修掉**
+   - **第二类假 404**：告警把 beta 与 `2026.9.36` 判为"无 release notes"，实测两版 notes 都存在（tag 引用 + GitHub Releases API）→ 可用性校验由两源扩为**五源**
+   - **第三类字节截断**：告警写 `2026.9.36 → 3,463B`，实测连测 3 次均为 **4,810B**（落盘/Content-Length/contents API 三路一致），差额 1,347B 恰是尾部 28 条 PR 清单 → 新增 R13 三路交叉核验
+   - **第四类 API 限流**：GitHub API 403 ≠ 版本不存在（阳性对照：必然不存在的 `v2026.1.1` 也返 403）→ 新增 R14
+   - 措辞与清单不符也修掉：「【四个】URL」→「【五个】URL」；新增 R9–R12（发布线覆盖、命中源标注、根证书口径、同批 cron 矛盾时交叉复核）
 
-3. **飞书账号路由被钉死在 `default` 的根因定位与修复（11-01 20:00–21:30）** ✅
-   - 根因（core 代码确认）：`account-helpers-BKbfcVeH.mjs:93` —— 只要账号列表里存在字面名为 `default` 的账号，默认账号解析**直接短路返回 `"default"`**，配置里的 `defaultAccount=main` 因此失效
-   - 动作：移除配置中的禁用别名 `channels.feishu.accounts.default`（2026-09-22 健康备份中本无此别名，属后引入的回归）+ 清理数据库残留路由与失败回执
-   - 验证：deferred channel reload 于 **21:30:45 落地**，21:30 后 `account "default" not configured` = **0**；conversations 仅剩 main(2)/zhanling(3)
+3. **日报 payload 三轮加固，错误源头堵住（11-06）**
+   - 当日日报实测有 4 处**实质性错误**（把 `2026.10.10` 当 Latest、把两个版本的 engines 地板当成"项目当前要求"、断言旧 Node 上会"拒绝执行"、称配置变更不需重启）
+   - 加固项：版本事实必须来自当次 `npm view openclaw dist-tags` + 标注观测时刻；逐版本实测 `engines.node` 且严格区分**准入门槛 vs 安全补丁地板**；任何"未命中"断言先做**阳性对照**；本机数字当场实测；孤儿 agent 目录数一律以 `doctor` 原文为唯一权威（我自算差集得 6 个是错的，实为 2 个）
 
-4. **tools.exec.notifyOnExit=false 落地（11-01 19:21）** ✅
-   - 禁用后台 exec 的自动完成轮次，改用 `process poll` 主动收集；9 个 agent 逐项检查**均无覆盖**，全部继承全局值
+4. **送达判定机制纠错（本周最有价值的一条方法论）**
+   - 推翻沿用多日的"announce 对 isolated+announce 不落地"结论 —— 那是飞书账号故障期的现象被误当成机制特性
+   - **唯一权威判据**：`openclaw cron list --json` 的 `state.lastDeliveryStatus` / `lastDelivered` / `lastDeliveryError`；`delivered` → 只删副本不重推，`not-delivered` → 才手工推
+   - 三个常见误判：① 日志 grep 不到 `om_x` ② 心跳收到正文注入 ③ cron-output 文件还在 —— 均不等于未送达
+   - 代价：王在 11-02 收到各 2 份重复简报，已如实告知；此后每日巡检**零重复推送**
 
-5. **记忆系统「做梦提升」每日执行 10-26 ~ 11-01（7 天不断档）** ✅
-   - 累计提升 8→12 主题/周，MEMORY.md 新增「下次注意」第 93~112 条
-   - 本周三条高价值结论：
-     ① **recall store 停更真根因 = Ollama 长期不可用**（10-06~10-22），**推翻前 8 个周期的"插件故障"判断** —— 错在没配开机自启
-     ② **promote 门槛首次被线上数据坐实**：两条候选 maxScore 均 > 0.75 但加权综合分 < 0.75，证明门槛比的是加权分而非 maxScore
-     ③ **"10-24 三份简报未生成"确认为误判** —— 10-24/25 是周末，`1-5` 工作日表达式本就不该有产物；重算后真实工作日缺口只有 5 天。教训：**先看 schedule 再谈缺口**
+5. **记忆系统本周持续稳定运行（做梦提升 7 天不断档）**
+   - MEMORY.md 由 332KB → **675KB**，「下次注意」条目 125 → **264**
+   - 03:00 做梦提升每日首轮即成功；每日 00:00 整合无断档
+   - 关键纠错：① 养 recall 候选**必须用进程内 `memory_search` 工具**，CLI 不写 recall store ② "查询驱动"应为"**recorded** 才驱动"（skipped 不加信号）③ 落盘脚本必须入库，否则每轮都被重写并重新翻车
 
-6. **HEARTBEAT.md 重建 + 日志死路径修正（10-31 19:01）** ✅
-   - 文件在磁盘上根本不存在；重建时修正两个过时路径（`~/.openclaw/logs/gateway.log` 等早已停更），改为真实日志 `~/Library/Logs/openclaw/gateway-auto.log`
+6. **素材链缺口彻底消案（第 6 次逐项一致）**
+   - 复算脚本 `scripts/recompute_material_gaps.py` 落盘，首跑即错（27 个假缺口）→ 根因是**任务名 ≠ 落盘目录名**（`ai-work-briefing` → `ai-work`），加显式 `dir` 字段后正确
+   - 最终结论：9 个缺口日**全部落在 2026-09-23~10-31 飞书空壳账号故障窗口内** → 应标为**历史永久缺口**，不再排查
+   - 此前记为"缺失"的 10-08/09/12 其实存在（在 `openclaw-news/` 里）—— 误判已消案
 
-7. **记忆日备份与 workspace-memory 入库（11-01 00:07）** ✅ — workspace-memory/ 已纳入主仓库跟踪并 push
+7. **架构认知纠正：cron scratch 才是巡检权威源（11-03）**
+   - OpenClaw 迁移到 scratch 机制后，**实际生效的是 `cron scratch`，它不再自动跟随 workspace 文件** → 连改 workspace 两次都不生效，夜班反复"发现"同一批问题
+   - 铁律落库：巡检以 scratch 为准，改 `workspace/HEARTBEAT.md` 必须同步 `cron scratch --file`
+
+8. **升级落点评估完成（结论已定，等王拍板）**
+   - 建议升 **OpenClaw 2026.11.1**：engines `>=24.16.0 <25 || >=26.1.0`，本机 Node v26.7.0 **已满足，不需要先升 Node**（此前"必须先升 Node"的顺序是过度约束）
+   - Node → **26.13.0** 是**独立的** eMudhra 证书链安全修复，两件事互不阻断、可分别排期
+   - `2026.9.36`（extended-stable）release notes 实测存在，**重新成为可评估的兜底落点**
+
+9. **主业素材高价值跟踪（招投标 AI 落地）**
+   - **陕西**公共资源交易平台「招标文件合规智能检测」11-03 正式上线（一致完备性/合法合规性/公平竞争/敏感字 四项检测 + 含法规依据与修改建议的审查报告）→ 继河南后第二个省级平台把"AI 体检招标文件"制度化
+   - **新疆**《招标投标现场管理实施细则（征求意见稿）》第十七条：暗标项目须系统**自动擦除文档属性、隐藏 Logo 水印、评分项随机重编号、全程留痕上链**，**不具备自动匿名化功能的交易系统不得承接暗标评标** → 硬性准入条款
+   - **国家发改委**《招标投标领域公共信用信息目录（2026 年版）》→ 围串标识别模型的数据底座，跨部门比对的基础
+   - **合规门槛**：「云境标书 AI」首获网信办算法**备案号** → 政企采购 AI 标书工具无备案号基本进不了国企央企供应商目录
+   - **模式信号**：广东招投标监管网上线 AI 助手；剑鱼标讯 **MCP** 上线，4.1 亿条数据开放 7 类 19 个工具 → 招投标数据从"可检索"升级为"AI 可调用"
+   - **落地节奏**：八部门 2026-02 实施意见 → 2026 年底检测/辅助评标/围串标识别在部分省市全覆盖，2027 年底推向全国
+   - → **陕西「四项检测」+ 新疆「暗标自动匿名化」+ 发改委「信用信息目录」可作为本地系统功能清单的骨架对标**
 
 ━━━━━━━━━━━━━━━━━━━━
 二、遇到的问题和解决方案
 ━━━━━━━━━━━━━━━━━━━━
 | 问题 | 根因 | 解决方案 | 状态 |
 |---|---|---|---|
-| 4 个 review 任务连续 error | **provider idle watchdog 120s** 卡死（不是 agent 超时） | 调 `models.providers.minimax.timeoutSeconds` 600 + `agents.defaults.timeoutSeconds` 3000 | ✅ 已修 |
-| provider catalog refresh failed ×14 | agentDir 非约定路径 → 哈希推导 id 错配 | 移除 4 个显式 agentDir | ✅ 已修 |
-| 飞书 outbound 报 `account "default" not configured` ×8 | core 账号列表短路：存在名为 `default` 的账号即命中 | 移除 `channels.feishu.accounts.default` 别名 | ✅ 已修 |
-| recall store 停更 8 个周期 | Ollama 长期不可用，非插件故障 | 手动拉起 + 恢复自动写入 | ✅ 已修（自启待配） |
-| 10-24 简报"缺失" | **误判** —— 周末本不该产出 | 重算真实缺口（5 天） | ✅ 已澄清 |
-| dreaming light/rem/deep 停更 | 目标路径 `.dreams/session-ingestion.json` **在磁盘上不存在**；status 报"ingestion state present"是**假阳性** | 结论已修正，dreaming 实际正常（11-01 03:04 ok） | ✅ 已澄清 |
-| heartbeat-main 显示 error | 与主会话互斥排队，`already-running` 属正常 | 不应仅凭 elapsed 判卡死 | ✅ 已澄清 |
-| version-alert 文件"消失" | 是我自己处理完版本告警后手动删的，非 bug | 判定送达凭回执，不凭文件存在性 | ✅ 已澄清 |
-| Tavily 配额超限 ×7 | 套餐用量耗尽（`API error (432)`） | 需王处理套餐 | ⚠️ 未解 |
-| project-tracker origin 推送 401 | HTTPS 内嵌 PAT 已失效（实测 `Invalid username or token`） | 需王更新 PAT，或改用有写权限的 SSH | ⚠️ 未解 |
-| **自伤：session DB 修复引入回归** | 手工改 JSON 触发 DB 触发器 `entry_valid=0`，且删会话行留下 FK 孤儿 → CLI 报 `invalid persisted session row requires repair` | 逐字还原 + 三步修复（先改 updated_at → 再置 entry_valid=1 → 最后清 pending 标记）+ 重指 FK 孤儿行 | ✅ 已修（21:38 CLI 恢复） |
+| 4 项凭据公开泄漏 5.5 个月 | 备份 cron payload 硬编码 `git add openclaw.json`，等于每天主动推密钥 | `git rm --cached` + `.gitignore` + **改掉两个备份 cron 的 payload**；公开路径已 404 | ⚠️ 遏制完成，**轮换待王授权** |
+| 告警把可评估版本判为"无 notes" | 源清单只测 docs + main/CHANGELOG，漏 tag 引用与 Releases API | 可用性校验扩为五源，"任一取到正文即算可用" | ✅ 已修 |
+| 告警字节数比实测少 1,347B | 单次抓取被截断（差值恰为尾部 PR 清单） | R13 三路交叉核验（`wc -c` / Content-Length / contents API） | ✅ 已修 |
+| GitHub API 403 被当作"版本不存在" | 未区分 404 与限流 403 | R14：403 只标"限流未取到数据"，改用 raw 路径判定 | ✅ 已修 |
+| 简报重复推送（王收到 2 份） | 沿用故障期现象当机制特性，日志/注入/文件存在三个误判 | 建立唯一权威判据 `lastDeliveryStatus` + HEARTBEAT「送达判定」章节 | ✅ 已修 |
+| 日报 4 处实质错误 | 未做当次实测，凭印象断言版本号与 engines | payload 三轮加固（dist-tags 实测 / 逐版 engines / 阳性对照 / doctor 权威口径） | ✅ 已修 |
+| memory-agent cron 反复 600s 超时 | per-job `payload.timeoutSeconds` 硬编码 600，且 `agents.defaults` 管不到 per-job | 600 → **1800**；11-04 首跑 457,822ms 干净通过 | ✅ 已修 |
+| 改 HEARTBEAT.md 不生效 | scratch 机制下生效的是 `cron scratch`，不跟随 workspace 文件 | 铁律：以 scratch 为准，改完必须同步 | ✅ 已修 |
+| recall 候选养不起来 | CLI 走独立进程不写 recall store | 必须用进程内 `memory_search` 工具，且措辞要不同 | ✅ 已修 |
+| 素材缺口复算出 27 个假缺口 | 任务名 ≠ 落盘目录名 | 脚本加显式 `dir` 字段后落盘入库 | ✅ 已修 |
+| 9 个 agent 的技能面零隔离 | `tools.profile=full`、`tools.exec.mode=full`，每人 25 个启用技能 + 完整 exec | 已出收紧方案（skills 两列清单 + sandbox + tools.deny），**未擅自改配置** | ⏳ 待王拍板 |
+| 1354 个 session SQLite 未迁移 | 升级前必须处理 | 升级窗口内停 Gateway 后 `doctor --session-sqlite recover` | ⏳ 待王拍板 |
+| 无 command owner | `commands.ownerAllowFrom` 未设置 | 设为 `feishu:ou_748c15a782356f78466b01436dbbcbe8` | ⏳ 待王拍板 |
+| `heartbeat-main` 连续 skipped 46 次 | `allowFrom:["*"]` 使 owner 路由解析不出具体 ownerId | 同上，改 owner 路由后自然恢复 | ⏳ 待王拍板 |
+| MiniMax 429 每日 6~30 次 | 唯一 `minimax:cn` provider profile，`auth.order` 为空，无故障转移 | 补备用 profile / provider | ⚠️ 未解 |
+| project-tracker 推送 401 | HTTPS 内嵌 PAT 已失效（实测 `Invalid username or token`） | 更新 PAT 或改用有写权限的 SSH | ⚠️ 未解 |
+| Tavily 配额超限 | 套餐用量耗尽 | 本周已连续 7 天 0 次 432，暂已恢复 | ✅ 已恢复 |
 
 ━━━━━━━━━━━━━━━━━━━━
 三、下周工作计划
 ━━━━━━━━━━━━━━━━━━━━
-1. **升 Node 到 26.12.1+** —— 阻塞 OpenClaw 升级，且当前 v26.7.0 未含 eMudhra 中间 CA 泄露修复
-2. **升 OpenClaw**：倾向 extended-stable `2026.9.36`（规避 2026.10.9 已知回归）；流程 = 备份 → 停 Gateway → 升级 → `doctor --fix` → 刷新聊天标签页 → 发测试消息验飞书；重启走 `~/.scripts/safe-gateway-restart.sh`
-3. **给 Ollama 配 LaunchAgent 开机自启** —— 否则机器重启后向量检索再次静默停摆（本周期已因此损失 8 个周期）
-4. **补备用 provider / auth profile 并写入 `auth.order`** —— 本机目前**只有 minimax:cn 一个 profile**，429 或 idle timeout 时直接整轮失败，无第二个账号可切；继续调超时是无效动作
-5. **清理 4 个停用 agent 孤儿目录**：`agent-memory` / `agent-feishu` / `agent-tools` / `agent-frontend`（确认无引用后删）
-6. **催办**：更新 project-tracker GitHub PAT（或改 SSH），并清掉 `.git/config` 中明文失效 token
-7. **补写豆浆日记断档**（5 月中旬至 10 月中旬）
-8. **排查 `2026-10-24` 简报缺失的真实工作日缺口**（5 天：ai-morning 缺 10-12；ai-evening 缺 10-16、10-21；ai-work 缺 10-22、10-27）
+1. **执行 OpenClaw → 2026.11.1 升级** —— 流程：配 command owner → 停 Gateway → `doctor --session-sqlite recover --session-sqlite-all-agents`（先解 1354 个未迁移会话）→ 安装 → 走 `safe-gateway-restart.sh` → 复检。重启必须走安全脚本，避免丢消息
+2. **Node → 26.13.0** —— 与上条独立排期，为 eMudhra 证书链安全修复（Node 26.x 最新，安全地板 26.12.1）
+3. **轮换 4 项已泄漏凭据** —— 两个飞书 `appSecret` 最严重（可冒充账号收发消息），其次 tavily key、gateway token；轮换后验证旧凭据失效
+4. **9 个 agent 收紧工具面** —— 建显式技能两列清单（读外部 / 做）+ `sandbox` + `tools.deny` + exec 收紧；注意技能 allowlist 只是可见性过滤，必须与 sandbox 配套，单做是假安全
+5. **继续加固化版本监控官与日报** —— 观察四类假阴性修复后是否再出现新的；R9–R14 与日报十条规则逐条验收
+6. **主业方向**：把陕西四项检测 / 新疆暗标匿名化 / 发改委信用信息目录三项，转成本地系统的功能清单与选型硬性条款
+7. **补做"记忆缺口"决策** —— 9 个历史永久缺口是否补跑；豆浆日记 2026-05~10 断档是否补写
 
 ━━━━━━━━━━━━━━━━━━━━
 四、需要关注的事项
 ━━━━━━━━━━━━━━━━━━━━
-1. ⚠️ **本机无故障转移通道**：唯一 profile 是 minimax:cn，429 后空转到耗尽才失败。这是比超时更根本的单点
-2. ⚠️ **MiniMax 故障转移补丁未进 10.x**（#177077）—— 我们的主模型正是 M2.7，这是暂缓直升 10.x 的关键理由
-3. ⚠️ **Node 证书安全缺口**：v26.7.0 未含 eMudhra 中间 CA 泄露修复，自管 Node 需自行跟进
-4. ⚠️ **PHP 高危漏洞 CVE-2026-109618/109619**（未认证 RCE，影响 5.4–8.5 全版本）：需排查公司招投标平台 / 政府采购网系统的 PHP 版本
-5. ⚠️ **Tavily 配额已耗尽**（当日 7 次 432），影响 AI 简报的联网检索能力
-6. **本周自伤教训（写给未来的我）**：**改 OpenClaw 的 session DB 必须用「先改业务列 → 再单独置 entry_valid=1 → 最后删 pending 标记」三步**，因为 `session_nodes` 上有 4 个触发器会在 UPDATE `entry_json`/`updated_at`/`entry_valid` 时自动把 `entry_valid` 打回 0 并插 pending 标记；删 `conversations` 行前必须先处理 `session_windows`/`session_conversations` 的 FK 引用
-7. **主业机会窗口**：上海 2027–2028 行动方案取消供应商营收规模、成立年限、前期业绩限制 → 中小机构首次具备与头部同台投标的制度可能；八部门 20 个「人工智能+招标投标」场景 2026 年底全覆盖
-8. **主业风险提示**：AI 投入产出剪刀差已由财务/工程/宏观三口径同时印证，预算降级时最先被砍的是「无可量化 ROI 的试点型标段」；国办首份 AI 就业文件要求交付「人的安置方案」—— 未来招标条款可能增加人员安置/转岗培训要求
-9. **基础设施遗留**：Ollama 无自启、dreaming 三层停更（目标路径不存在）、Tavily 配额、project-tracker PAT 失效
-
-━━━━━━━━━━━━━━━━━━━━
-数据核验：cron 22 项 **20 ok / 0 error**（本周一度 4 个 error 已全部修复）；
-Gateway PID 93025（启动 10-31 22:15，未重启）；健康 `{"ok":true,"status":"live"}`；
-reload failed = 0；外键检查违反 = 0；索引 645/646 files · 4014 chunks；
-Ollama 在线；project-tracker 401（无 token 被拒 = 服务存活）；OpenClaw 2026.9.5 / Node v26.7.0。
+1. 🔴 **凭据轮换与历史改写仍未落地** —— 改历史救不回已被抓取的副本，**轮换是唯一真正堵漏的办法**；公开 fork `DINGDANGMAOUP/agent-workspace` 仍含 openclaw.json，需联系其删除或由王授权处理
+2. 🔴 **`~/.openclaw/backup/20260530/openclaw.json`** 同样含 4 项活凭据（未被 git 跟踪），建议一并清理/收紧权限
+3. 🟡 **Gateway 内存**：全量 2975 条 memory pressure，峰值 **4.27 GiB**（ratio 139.2%，heap 712.8 MiB）；heap 全量非单调 → 判振荡不重启，但**非堆缺口约 3.5 GiB 来源未定位**
+4. 🟡 **Provider 无故障转移**：只有 `minimax:cn` 一个 profile，`auth.order` 为空，429 或 idle timeout 时直接整轮失败 —— 继续调超时是无效动作
+5. 🟡 **`doctor` 三项前置未清**：`No command owner is configured`、`Legacy 1377 / SQLite 1370`、`1354 session issues`；孤儿 agent 目录 2 个（agent-frontend、backend-agent）待清理授权
+6. 🟠 **长期待办未动**：`com.wjj.skyworth.bootvideo-watchdog` 去留、Ollama 开机自启（仍手工拉起，机器重启会静默停摆）、workspace/cron/jobs.json 过期副本清理、Node CA / PHP CVE（招投标平台与政府采购网）、主索引 Dirty 状态
+7. ⚪ **每日巡检零重复推送**，20 个 cron 任务 0 error / 0 未送达，Gateway 连续运行 7 天 4 小时未重启
