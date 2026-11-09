@@ -19,3 +19,6 @@ auth-state.json
 
 # GitHub API 仓库元数据快照（含公开性证据），无需入库
 ghrepo.json
+
+# OpenClaw 工作区状态迁移副本（运行时产物，含随机后缀），不入库
+openclaw-workspace-state.json.migrated.*
