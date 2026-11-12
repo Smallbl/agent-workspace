@@ -42,20 +42,29 @@ weights (normalised over their sum, which is 1.0 by default):
                        phaseBoost = 0 here (phase-signal store is frozen,
                        see item 277) -- so the recomputation is exact.
 
-Two filters are replicated from the source as well, otherwise the
+Four gates are replicated from the source as well, otherwise the
 recomputation lists candidates the CLI hides:
 
   isShortTermMemoryPath(path)
       path must match  memory/<anything>/YYYY-MM-DD[-suffix].md
       (or memory/.dreams/session-corpus/YYYY-MM-DD.md|.txt)
       memory/dreaming/** is excluded.
+      NOTE: the regex is (?:^|/)memory/(?:[^/]+/)*YYYY-MM-DD[-suffix].md$
+      so memory/sessions/2026-11-01-<name>.md DOES pass this gate (item
+      332 corrects an earlier claim that it did not).
   isPromotionOriginBlocked(entry)
       provenance.originClass in {untrusted, system} -> dropped.
+      THIS is the gate that actually blocks the memory/sessions/ entries
+      (they carry originClass=untrusted).
+  isContaminatedDreamingSnippet(snippet)
+      drops dreaming-narrative / raw-session-metadata / raw-turn /
+      memory-flush-prompt / promotion-score-metadata snippets.
+  score threshold + maxAgeDays hard cutoff.
 
-  NOTE the sessions/ trap: a file under memory/sessions/ whose name is
-  NOT YYYY-MM-DD*.md is not a short-term path, and the two entries we
-  have there also carry originClass=untrusted, so both filters agree and
-  the CLI never lists them.  Do not "fix" that by relaxing the filter.
+Also note: recallDays are parsed as UTC midnight (Date.parse(day +
+"T00:00:00.000Z")), not local midnight.  Item 332 found a stale hand
+computation (consolidation 0.446 instead of 0.667) that came from
+mixing these up.
 
 Usage
 -----
@@ -139,10 +148,55 @@ def consolidation_component(recall_days):
 
 
 def day_to_ms(day):
+    """UTC midnight, matching the source: Date.parse(day + "T00:00:00.000Z")."""
     try:
-        return time.mktime(time.strptime(day, "%Y-%m-%d")) * 1000
+        import calendar
+        import time as _time
+
+        y, m, d = (int(part) for part in day.split("-"))
+        return calendar.timegm(_time.strptime("%04d-%02d-%02d" % (y, m, d), "%Y-%m-%d")) * 1000
     except Exception:
         return None
+
+
+# --- contamination gate (short-term-promotion-store-E2BAE-8Z.mjs) ---
+DREAMING_TRANSCRIPT_PROMPT_LINE_RE = re.compile(
+    r"\[[^\]]*dreaming-narrative[^\]]*]\s*(?:User|Assistant):\s*Write a dream diary entry from these memory fragments:?",
+    re.I,
+)
+RAW_SESSION_METADATA_RE = re.compile(
+    r"\bSession Key\b.{0,260}\bSession ID\b|\bSession ID\b.{0,260}\bSession Key\b", re.I
+)
+RAW_CONVERSATION_SUMMARY_RE = re.compile(r"^(?:[-*+]\s*)?Conversation Summary:", re.I)
+RAW_TRANSCRIPT_TURN_RE = re.compile(r"^(?:[-*+]\s*)?(?:user|assistant):\s", re.I)
+MEMORY_FLUSH_PROMPT_RE = re.compile(
+    r"Save important context from this session to the daily memory file\.\s*STRICT RULES:", re.I
+)
+PROMOTION_SCORE_METADATA_RE = re.compile(
+    r"\[\s*score=\d+(?:\.\d+)?\s+(?:signals=\d+\s+)?recalls=\d+\s+avg=\d+(?:\.\d+)?\s+source=memory/",
+    re.I,
+)
+
+
+def is_contaminated_dreaming_snippet(raw, allow_transcript_turn_snippet=False):
+    snippet = re.sub(r"\s+", " ", (raw or "").strip())
+    if not snippet:
+        return False
+    if "<!-- openclaw-memory-promotion:" in snippet.lower():
+        return True
+    if DREAMING_TRANSCRIPT_PROMPT_LINE_RE.search(snippet):
+        return True
+    if RAW_SESSION_METADATA_RE.search(snippet):
+        return True
+    if RAW_CONVERSATION_SUMMARY_RE.search(snippet):
+        return True
+    if not allow_transcript_turn_snippet and RAW_TRANSCRIPT_TURN_RE.search(snippet):
+        return True
+    if MEMORY_FLUSH_PROMPT_RE.search(snippet):
+        return True
+    if PROMOTION_SCORE_METADATA_RE.search(snippet):
+        return True
+    return False
 
 
 def conceptual_component(concept_tags):
@@ -256,6 +310,8 @@ def read_recall_entries(db_path, workspace_dir):
         if not is_short_term_memory_path(path):
             continue
         if is_promotion_origin_blocked(entry):
+            continue
+        if is_contaminated_dreaming_snippet(entry.get("snippet") or ""):
             continue
         out.append(entry)
     return out
