@@ -3322,3 +3322,95 @@ grep -nE "#170429" package/CHANGELOG.md | cut -c1-90     # 命中行性质（空
 356. **【预测口径·第 6 次验证 + 1 处订正】top2 连续时刻 2026-11-17T20:31Z / 测量点 2026-11-19、top1 年龄闸门 2026-12-08 全部复现；⭐ 订正第 339 条：top2 的 `maxAgeDays` 出局日应为 2026-12-05（不是 12-04）**：本轮把 floor 分解式代回原式复算（`score = floor + 0.15·exp(−ln2·age/14)`，floor = **0.748019 / 0.675212**，与第 271 条四位小数逐位一致 → **衰减式第 8 次验证**）：**top1**（`lastRecalledAt = 2026-11-06T19:05:23.084Z`）→ 分数阈值 `age* = 87.3963 天` → 连续时刻 2027-02-02（**永远达不到，被年龄闸门截断**）；年龄闸门 30 天 → **测量点 12-07 age=29.9997 恰好通过（score 0.781984）**、**12-08 age=30.9997 出局** → **top1 出局日 = 2026-12-08**（与第 318/339 条一致）；**top2**（`lastRecalledAt = 2026-11-03T19:08:50.993Z`）→ 分数阈值 `age* = 14.0572 天` → 连续时刻 **2026-11-17T20:31:10.748Z**；测量点 **11-18 age=13.9973 → score 0.750222（仍过）**、**11-19 age=14.9973 → score 0.746599（出局）** → **测量点出局日 = 2026-11-19**（与第 317 条一致）。⭐ **但年龄闸门那一项，第 339 条写的是「top2 maxAgeDays 出局 = 12-04 03:08」，本轮实测应为 12-05**：12-04 测量点 age = **29.9973 天（≤30，仍通过）**，12-05 age = **30.9973 天（>30，出局）** → **第 339 条的「12-04」按本条订正为「12-05」**（**结论「12-08 起默认阈值候选归零」不受影响**，因为 top1 的 12-08 更晚）。**三点含义**：① ⭐ **预测类数字最容易被「抄错一行」污染** —— 第 339 条的整体结论正确、只有一个子项（top2 的年龄闸门日）差一天，而这类差一天的错误在阅读时**完全不可见**（因为它仍然「是个日期」）→ **印证第 306 条通则：凡涉及预测，必须同时写死「连续时刻」与「测量点」两个口径**（本条两者都复现，唯一年龄闸门差一天，靠的正是这个双口径写法才被抓住）；② **本轮把预测的时间表补齐为完整三段** —— **top2 先因分数出局（11-19 测量点）、再因年龄出局（12-05 测量点）**，**top1 只因年龄出局（12-08 测量点）** → **默认阈值候选归零的完整日期 = 2026-12-08（第 318 条成立）**，且**在此之前（11-19 ~ 12-04）默认阈值将只剩 1 个候选**；③ ⭐ **这条预测的最大风险不是算错，而是「到那天真的归零了、而没人说得清为什么」** —— 因为第 350 条已经证明：**供给侧连覆盖最新一天都做不到，而 recall 事件本身几乎全是巡检产生的** → **「12-08 归零」应按大概率事件对待，且到 11-19 起巡检脚本就应该输出「候选数只剩 1，符合第 356 条预测」而不是「无候选，原因未知」**（第 317/318/339/356 条挂的这条待办**已连续四轮未落地**）。<!-- project: path:/Users/doujiang/.openclaw -->
 
 <!-- project: github.com/Smallbl/agent-workspace -->
+
+## 📅 2026-11-15 每日记忆整合
+
+> 记忆官执行时间：2026-11-15 00:0x~00:3x（Asia/Shanghai）｜覆盖 2026-11-14 全天内容
+> 备份：`MEMORY.md.bak.20261115-daily`（1033287 B, md5 `35217c53acf3d4e1b7572249ec7b034b`）
+> 编号接续：上周期实际最大号 **356** → 本轮 **357~363**（7 条）
+
+### 记忆来源检查
+
+| 来源 | 状态 | 大小 / 说明 |
+|------|------|------|
+| `memory/2026-11-14.md` | ✅ | 11816 B（03:0x 做梦提升 + 09:30 / 17:30 两次心跳巡检） |
+| `cron-history/openclaw-news/2026-11-14.md` | ✅ | 5164 B（**本轮无新增主业素材**，仅版本与 doctor 事实） |
+| `cron-history/openclaw-version-alert/2026-11-14.md`（09:00 档） | ✅ | 11240 B |
+| `cron-history/openclaw-version-alert/2026-11-14-1700.md`（17:00 档） | ✅ | 17324 B（**第 348 条命名规则第 1 次实战验证通过**：两档并存不覆盖） |
+| `memory/dreaming/promotion/2026-11-13.md` | ✅ 已入库 | 35666 B（11-14 03:0x 已提升，本轮不重复） |
+| `memory/topics/07-记忆官定时任务.md` / `11-故障记录.md` | ✅ 已更新 | 11-14 03:0x 做梦轮追加 |
+| `~/.openclaw/workspace-work/memory/` | ❌ **路径不存在** | AGENTS.md 与 cron 提示词里这条路径是错的 |
+| `~/.openclaw/workspace-work-projects/memory/` | ⚠️ **停更** | 实际工作项目记忆路径，停更于 2026-04-27（**连续第 19 轮**无新增） |
+
+### 本轮核心变化（2 条口径修正 + 1 条业务侧实证 + 3 条基础设施 + 1 条操作规范验证）
+
+1. ⭐ **口径修正（第 357 条）** —— **同一台机器、同一天，两档版本警报给出的 session SQLite 问题数不一致：09:00 档 = `1354`（Legacy 1377 / SQLite 1371），17:00 档 = `1314`（0 legacy / 1327 sqlite）** → 该数字**是漂移量，不是固定资产**
+2. ⭐ **业务侧实证（第 358 条）** —— recall 新增的 2 条 skipped 的 query 是 **「招投标」与「简报」**（真实业务语义，非巡检）→ **首次证明真实使用确实发生过**，但 `eligibleResultCount=0` → 断点被真实查询再次确认
+3. **记忆供给链（第 359 条）** —— 索引 **724 files / 6109 chunks**（+5/+133）、cache **7781**（+105）、Agent DB **965,758,976 B**（+16 MB）；事件表 **1592 → 1594**；`short-term-meta.updatedAt` **连续第 10 周期**未推进；dreaming 断点 **第 28 周期**
+4. **基础设施（第 360 条）** —— memory pressure 全量 **3656（+97）**；**11-14 单日 134 条 ≈ 11.17 h → 连续第 5 天越 10 h**；峰值三项**仍未上修**；Gateway RSS 由 2.57 → **1.45 GiB 大幅回落**
+5. **Provider 配额（第 361 条）** —— 429 **336 → 343**、overloaded_error **582 → 588**；Tavily 432 **连续 17 天为 0**
+6. **doctor 漂移（第 362 条）** —— in-flight 残留 **2 → 1**（中断遗留标记在自行清理）；session SQLite **1354 → 1314**；**8 个带工具 cron 任务仍走 legacy sender-policy 解析**
+7. **规范验证（第 363 条）** —— 第 348 条「同日多档归档必须加 `-<HHMM>` 后缀」**第 1 次实战验证通过**；版本三个通道**连续第 18 / 4 / 18 周期未动**
+
+### 本轮实测基线（11-15 00:0x~00:3x）
+
+| 项 | 值 | 对比上周期 |
+|----|----|------------|
+| 向量索引 | **724 files / 6109 chunks**（Dirty: no） | 719/5976 → **+5 files / +133 chunks** |
+| Embedding cache | **7781 条 / 126,128,709 B** | 7676 → **+105** |
+| Agent DB（main） | **965,758,976 B（921.3 MiB）** + WAL 1,429,672 B | 949,796,864 B → **+16.0 MB**（WAL 由 44.3 MB 骤降至 1.4 MB） |
+| Recall 库 | **1242 行 / 781 distinct `value.key`** / 9 workspace | **第 6 周期稳定** |
+| `short-term-meta.updatedAt`（main） | `2026-11-06T19:05:23.084Z` | **连续第 10 周期未推进** |
+| 事件表 | **1594（+2）**｜recorded 752（末次 11-06 19:05）／skipped **83（+2）**（末次 **11-13 22:04**）／dream 741／promotion 18 | 新增的 2 条均为 skipped |
+| dreaming 断点 | **第 28 周期**｜`dreaming-daily-ingestion` **仍只有 1 条**（`lastDreamingDayIngested: 2026-05-19`）／`session-ingestion-files` 670、`session-ingestion-seen` 159（created_at 均停 2026-08-23 20:36） | 与第 349 条逐位一致 |
+| memory pressure | 全量 **3656（+97）**｜逐日 11-11:125 / 11-12:213 / 11-13:175 / **11-14:134**｜reason = rss_threshold 3600 + rss_growth 56｜`level=critical` **810**｜峰值 rss **4.27 GiB（第 12 周期未上修）**／heap **959.2 MiB（第 7 周期未上修）**／ratio **195.1%** | **连续第 5 天越 10 h** |
+| Gateway 进程 | PID **93025**，已连续运行 **14 天 1 小时 49 分**，现 RSS **1.45 GiB**（上周期 2.57 GiB） | **大幅回落** |
+| Provider 配额 | 429 **343**｜overloaded_error **588**｜**Tavily 432 精确串 7 条，连续 17 天为 0** | 429 逐日仍涨 |
+| 版本 | latest **2026.11.3**（第 18 周期未动）/ beta **2026.11.5-beta.2**（第 4 周期未动）/ extended-stable **2026.9.37**（第 18 周期未动）｜本机 **2026.9.5** / Node **v26.7.0**｜26.x 末位仍 **26.13.1** | 全部未动 |
+| cron | **20 任务 19 ok / 1 skipped**（`heartbeat-main` `no-route`，累计 skipped **31**）/ **0 error** | 第 312 条口径 |
+| doctor | `No command owner`、**1314 session SQLite issue**、**2 孤儿 agent 目录**、`Retained unconfigured agent database "memory-agent"`、`No successful backup`、browser 段第 8 轮读默认值、`whisper-cli: model file not found`、**1 个 in-flight 残留**、**8 个带工具 cron 走 legacy sender-policy** | findings 基本同构，两项数字漂移 |
+| Ollama | ✅ 在线（127.0.0.1:11434 http 200） | 自启缺口持续 |
+
+<!-- project: github.com/Smallbl/agent-workspace -->
+
+## 📌 下次注意（2026-11-15 每日整合追加）
+
+357. **【口径修正·重要】doctor 的 session SQLite 问题数在同一天内就会漂移 —— 09:00 档报 `1354`（Legacy 1377 / SQLite 1371），17:00 档报 `1314`（0 legacy / 1327 sqlite），两者相差 40**：本轮比对 11-14 两档版本警报的实测原文 —— ① **09:05 档**：`Session SQLite: "Legacy entries: 1377; SQLite entries: 1371." / "Found 1354 session SQLite issue(s)."`；② **17:00 档**：`session-sqlite inspect: 1 target(s), 0 legacy entries, 1327 sqlite entries, 1314 issue(s)`。**三点含义**：① ⭐ **这直接改写了我们此前多轮记录里的一个隐含假设** —— 从第 300 条以来，我们反复把「1354」当作一个**稳定的待迁移会话总数**来写进待办清单与简报（比如第 340/348 条的「升级前置三件套」都写着「1354 个会话」）；**但实测证明它是一个持续漂移的量**（同一天上午 1354、下午 1314，legacy 从 1377 降到 0、SQLite 从 1371 升到 1327）→ **这说明迁移/重写过程一直在发生，只是没有被记录到账上**；② ⭐ **好消息是被掩盖的** —— legacy 从 **1377 → 0**，SQLite 从 **1371 → 1327** → **说明确实有会话在往 SQLite 侧迁移**（不是完全停滞），**doctor 报 1354 大概率是「跨两套存储的待校验差集」而非「未迁移会话总数」**（这与第 354 条拿到的「Legacy 1377 / SQLite 1371 / Transcript events imported=0, validated=150165」是同一组数字的三个侧面）；③ **操作口径必须改** —— 升级前置清单里**不要写死数字**，要写成「**以当次 `openclaw doctor --session-sqlite inspect` 输出为准**」（第 348 条自己就标注过「该数字会随迁移推进漂移」，本轮把它提升为**跨档实测实证**）→ **凡是引用会话条数做决策的地方，都要先重取一次**，否则可能因为一个已经自己修好的问题而卡住升级。<!-- project: path:/Users/doujiang/.openclaw -->
+
+358. **【召回事后·订正第 350 条的一处前提】新增的 2 条 `recall.skipped` 的 query 是「招投标」与「简报」—— 真实业务使用确实发生过，但 `eligibleResultCount` 仍为 0**：本轮直查 `~/.openclaw/state/openclaw.sqlite`（cp 到 `/tmp/oc-state-1115.sqlite` 后查 `plugin_state_entries`）发现 `memory.recall.skipped` **81 → 83（+2）**，末次推进到 **`2026-11-13T22:04:14.593Z`**（此前停 11-12 19:01），两条新增事件的 query 分别是 **`招投标`** 与 **`简报`** —— **⭐ 这是本轮最重要的一条证据**：第 350 条（11-14 03:0x）判定「recall 事件几乎全部由巡检产生（71/81 落在 UTC 19:00，末 5 条 query 全是巡检查询）」，并据此写下「**真实检索根本没发生过**」这一分支。**本轮数据表明这个前提需要收紧**：① **UTC 19:00 集中 71 条的事实不变**（本轮重算：19 时 71 / 10 时 4 / 09 时 3 / 01 时 2 / 22 时 1 / 21 时 1 → **新增的 2 条落在 UTC 21:57 与 22:04，不是 19:00**）；② 但**这两条 query（招投标、简报）是真实业务语义，不是巡检模板** → **说明真实检索确实发生过，且是当天 21:57~22:04 那段时间由真实会话触发**；③ ⭐ **然而结果仍然是 `eligibleResultCount = 0` / `reason = non-short-term-memory-path`** —— 命中的候选是 `USER.md`（招投标那条命中 USER.md 第 5~10 行）、`MEMORY.md` 与 `memory/topics/07-记忆官定时任务.md`，**没有一条落进「短期记忆路径」** → **断点被真实业务查询再次确认：不是「没人用」，而是「用了但召不回日记段落」**。**三点含义**：① ⭐ **这修正了第 350 条的表述强度** —— 第 350 条写「recorded 零新增既可能是『检索没命中日记』也可能是『真实检索根本没发生过』，二者在现有事件表里不可区分」；**本轮把后者排除掉了**：真实检索**存在**（招投标/简报两条为证），因此「recorded 零新增」的诊断**收窄为唯一解释「召回集不含日记段落」** → **第 335/346 条那条「每日整合写完日记后显式发一次 grounded 召回」的待办，其必要性从「可能需要」升级为「唯一修复动作」**（已连续三轮未落地）；② **时序上这两条落在 21:57~22:04（UTC）**，即北京时间 **11-14 05:57~06:04** → 说明真实使用发生在凌晨时段，**恰好与 19:00 巡检时段不重叠** → **巡检脚本应当按 query 语义而不是按小时来区分「巡检产生的 skipped」与「真实产生的 skipped」**（本轮的两条可用 query 字段直接识别：不含 `memory dreaming promotion` / `memory promotion` / `test` 等巡检模板）；③ **这也再次印证第 350 条的方法论** —— 「recall 事件只能证明「发生过查询」，不能证明「记忆被用上了」」；**真正的观测缺口仍是「每日整合写完日记后没有主动登记一次 grounded 候选」**。<!-- project: path:/Users/doujiang/.openclaw -->
+
+359. **【记忆系统·供给链连续第 10 周期停摆，但索引侧继续推进】事件表 1592 → 1594（+2）、`short-term-meta.updatedAt` 连续第 10 周期未推进、dreaming 断点第 28 周期；索引侧 724 files / 6109 chunks 继续增长**：本轮实测（11-15 00:0x）：向量索引 **719 → 724 files / 5976 → 6109 chunks**（Dirty: no，**+5 files / +133 chunks**）；Embedding cache **7676 → 7781 条 / 126,128,709 B**（**+105**）；Agent DB **949,796,864 → 965,758,976 B**（**+16.0 MB**）；⭐ **WAL 由 44,339,472 B（42.3 MiB）骤降至 1,429,672 B（1.4 MB）** → **这是本轮唯一的新结构性观察**（见下）；Recall 库 **1242 行 / 781 distinct `value.key` / 9 workspace**（**第 6 周期稳定**）；`short-term-meta.updatedAt` 仍停 **`2026-11-06T19:05:23.084Z`**（**连续第 10 周期**）；事件表 **1594**（recorded 752 / skipped 83 / dream 741 / promotion 18）；dreaming 三个 namespace 的 `created_at` 仍为 **1787488567508 / 1787488569714 / 1787488569715**（= 2026-08-23 20:36:07.508~09.715，即 **第 28 个周期逐毫秒未动**），`dreaming-daily-ingestion` **仍只有 1 条**（key=`memory/2026-05-16.md`，`lastDreamingDayIngested: 2026-05-19`）。**三点含义**：① ⭐ **WAL 从 42.3 MiB 骤降到 1.4 MiB，而 DB 同时增长 16 MB** → **这几乎可以确定发生过一次 WAL checkpoint + 数据库整理（compaction/vacuum）** → **与第 347/352 条记的「凌晨 RSS 回落」「周期性释放点」在时间上吻合** → **本条为「存在周期性整理动作」提供了第二个独立证据**（之前只有 RSS 曲线一个证据），**并给出可断言的巡检指标：WAL 大小回落 + DB 增长 = 整理动作发生**；② **索引侧持续增长（+5 files / +133 chunks / cache +105）与供给侧连续第 10 周期零推进形成鲜明对比** → **再次确认第 334/346/359 三轮一致的判断：能力侧健康，供给侧停摆**，且**两者是两条独立链路**，**修复面收敛在「摄入/登记」而非「检索能力」**；③ **dreaming 断点第 28 周期逐毫秒一致** → **第 349 条的「daily 摄入器只登记过 1 天」已从「一次性发现」变成「稳定事实」** → **巡检断言应当直接固定为「`dreaming-daily-ingestion` 的行数 > 1 且 `lastDreamingDayIngested` ≥ 昨天」**（当前：1 行 / 2026-05-19），这条断言**连续九轮未落地**。<!-- project: path:/Users/doujiang/.openclaw -->
+
+360. **【基础设施·受压时长连续第 5 天越 10 h 线，但 Gateway RSS 大幅回落、峰值三项仍未上修 → 按第 136 条仍不重启】memory pressure 全量 3559 → 3656（+97）；11-14 单日 134 条 ≈ 11.17 h；Gateway 现 RSS 由 2.57 → 1.45 GiB**：本轮全量扫 `~/Library/Logs/openclaw/gateway-auto.log`（自 2026-09-22 起未轮转）：**3656 条**（上周期 3559，**+97**）；按 reason 拆 = **rss_threshold 3600 + rss_growth 56**（上周期 3507/52）；**逐日分布**：11-05:152 / 11-06:97 / 11-07:81 / 11-08:2 / 11-09:10 / 11-10:22 / 11-11:125 / 11-12:213 / 11-13:175 / **11-14:134** → 按第 321 条换算（条数 ÷ 12）= **11-14 的 134 条 = 11.17 h** → **连续第 5 天越过 10 h 线**（10.42 / 17.75 / 14.58 / 11.17 h）；`level=critical` 累计 **810 条**（上周期 753，**+57**）；**峰值三项复验：全部未上修** → rss 峰值仍 **4,590,043,136 B ≈ 4.27 GiB**（**连续第 12 周期**）／heap 峰值仍 **1,005,755,472 B ≈ 959.2 MiB**（**连续第 7 周期**）／全库 ratio 峰值仍 **195.1%**；末条记录 `2026-11-14T23:59:32` 为 **rss=927.9 MiB / heap=747 MiB / thr=512 MiB / ratio=110.6%**（reason=`rss_growth`，rssGrowth=566.3 MiB）→ **当日最后一次告警时 RSS 已跌到 927.9 MiB**；Gateway PID **93025** 已连续运行 **14 天 1 小时 49 分**，**现 RSS 1,490,960 KB ≈ 1.42 GiB**（上周期 2.57 GiB → **回落 45%**）。**三点含义**：① ⭐ **受压时长连续第 5 天越线，但峰值三项连续 12/7 周期未上修、且当前水位跌到 1.42 GiB（低于上周期一半）** → **第 352 条建议的「受压小时数改联合条件（连续 >10 h **且** 峰值上修 **且** 当前水位不回落）」在本轮以最强形态成立** —— **三个条件里有两个明确为假 → 本轮「不重启」的结论毫无疑义**，同时也**再次证明「受压小时数」单独使用会天天报警却永远无法行动**；② ⭐ **「凌晨/低负载回落」已连续第三轮成立**（第 347 条首见 3.28 → 2.49 GiB、第 352 条 11-14 凌晨 ratio 峰值 126.7%、本轮 1.42 GiB + WAL 整理）→ **结合第 359 条的 WAL 证据，「周期性整理/释放」已从推测升级为可断言事实** → **巡检应把「RSS 回落 + WAL 回落」作为同一条断言的联合信号**；③ **但非堆占用仍是主因**（rss 峰值 4.27 GiB vs heap 上限 959.2 MiB，约 3.3 GiB 非堆）→ **第 145/313 条「定位 Gateway 非堆内存来源」待办继续有效**，且现在多了一个抓手：**在 WAL 整理前后各取一次堆快照做对比**（比在峰值时刻取样更有信息量）。<!-- project: path:/Users/doujiang/.openclaw -->
+
+361. **【Provider·配额压力继续上行但 Tavily 侧连续 17 天为零】429 全库 336 → 343（+7）、overloaded_error 582 → 588（+6）；Tavily 432 精确串仍 7 条、连续 17 天为 0**：本轮实测 `~/Library/Logs/openclaw/gateway-auto.log`：`status=429` **343 条**（上周期 336，**+7**）；`overloaded_error` **588 条**（上周期 582，**+6**）；⭐ **`Tavily Search API error (432)` 精确串计数仍为 7 条**（末次仍 `2026-11-01T09:04:12.271`）→ **「连续 17 天为 0」成立**（第 260/333 条确立的计数口径：必须用精确串，朴素 grep 不可用）。**三点含义**：① **429 与 overloaded_error 双线持续上行**（11 月以来 429 从 300 级稳步涨到 343）→ **与第 341 条记的「算力供应链不确定期」相扣** → **provider 配额必须当作架构约束而非背景噪声**（第 263 条 minimax 备用 auth、第 328 条 payload 瘦身应从「待办」提前到「计划内」）；② **Tavily 侧连续 17 天为 0，说明 Tavily 配额/限流问题已经彻底过去** → **工具选型上 Tavily 可以放心作为默认检索通道**，不必再保留备用搜索路径的冗余设计；③ **本条的边际价值在于「维持」而非「变化」** —— 但**连续记录本身有意义**：它是「429 上涨不是 Tavily 造成的、也不是全通道同时限流」这一判断的持续证据。<!-- project: path:/Users/doujiang/.openclaw -->
+
+362. **【doctor·数字漂移第 2 项 + 一条被忽略的 cron 风险】in-flight 残留 2 → 1（中断遗留标记在自行清理）；8 个带工具的 cron 任务仍走 legacy sender-policy 解析**：本轮 `openclaw doctor` 实测（11-15 00:1x）：① ⭐ **"1 automation is still marked in-flight (`state.runningAtMs` is set)"** —— 而 11-14 09:04 档 cron 报的是 **"2 automations are still marked in-flight"** → **这类残留标记会随 Gateway 重启/任务调度自行清理**，不必当作故障处理（这是本轮与第 357 条并列的第二个「doctor 数字会漂移」实例）；② ⭐ **"8 tool-bearing cron jobs keep legacy sender-policy resolution"**（11-14 09:04 档 cron 已报出同样的 8 个，本轮确认仍为 8）—— 涉及 `openclaw-daily-news` 在内；③ 其余 findings **第 8 轮同构**：`No command owner is configured`、**session SQLite issue（本轮 1314）**、**Found 2 agent directories on disk without a matching agents.entries entry**、`Retained unconfigured agent database "memory-agent"`、`No successful backup is recorded`、browser 段 `allowLegacyAuth=true` 与 `allowSystemProfileImport` **第 8 轮读默认值**、`whisper-cli: model file not found`；④ ⭐ **首次可见 `core/doctor/node-hosting-preconditions` 两条 warning 连续第 2 轮出现**（device-pair 未启用 / gateway.bind 仅 loopback）→ 已从「本轮新增」升级为「稳定存在项」。**三点含义**：① **「legacy sender-policy 解析」是 8 个带工具 cron 的真实风险敞口** —— 这条自 11-14 才进入我们的视野，**至今未处置** → **建议用 `openclaw cron edit <id> --tools <tool,...>` 显式收紧工具上限**（daily-news 排在首位），**这是本轮唯一一条「新出现且可立刻动手」的运维项**，成本极低；② **「in-flight 残留」与「session SQLite 条数」两项已实证为漂移量**（第 357 条）→ **doctor 输出的任何计数类字段都不可跨时点比较**，应写成「以当次输出为准」；③ **`node-hosting-preconditions` 连续第 2 轮出现 → 判定为「稳定存在、非偶发」** —— 结合第 353 条（Gateway 由自定义 plist 托管、CLI 误判）与第 354 条（对外暴露面 = loopback-only + 无 device-pair = 完全不对外）→ **结论仍是：对外暴露面维持现状是安全的默认状态，不必动**。<!-- project: path:/Users/doujiang/.openclaw -->
+
+363. **【规范验证 + 版本静默】第 348 条「同日多档归档必须加 `-<HHMM>` 后缀」**第 1 次实战验证通过**（两档并存、互不覆盖）；版本三通道连续第 18 / 4 / 18 周期未动，Node 26.x 末位仍 26.13.1**：本轮实测 `memory/cron-history/openclaw-version-alert/` 下 **2026-11-14.md（11,240 B，09:05 档）与 2026-11-14-1700.md（17,324 B，17:00 档）并存**，且 11-14 17:30 心跳巡检明确记录「同日 `2026-11-14.md` 为 09:05 档，两档并存不覆盖」→ **第 348 条的规则已从「建议」升格为「已执行且有效」**。**版本侧**：11-14 09:05 与 17:00 两档实测 dist-tags 完全一致 —— latest **`2026.11.3`**、beta **`2026.11.5-beta.2`**、extended-stable **`2026.9.37`**；本轮（11-15 00:0x）复验 **三项仍未动** → **latest 与 extended-stable 连续第 18 周期未动、beta 连续第 4 周期未动**；`npm view node versions --json` 的 26.x 末位仍 **26.13.1**（**第 340 条的读取口径继续生效，不读 dist-tags.latest**）；本机仍 **OpenClaw 2026.9.5 (ec9c1a1) / Node v26.7.0**；npm **11.19.0**（满足官方 ≥11.16 的 `--allow-scripts=openclaw` 要求）。**三点含义**：① ⭐ **归档命名规则已闭环** —— **第 348 条是本库中少见的「零成本、写下即生效」的规则，且现在有了实战证据**，**可以正式从「待办」移到「已固化」**（已写入 `topics/07-记忆官定时任务.md`）；② **版本静默已持续 18 个周期（约 5 周）** → **「等上游有新版本再升」的策略已经充分失效**，**升级决策不应再挂在「等版本」这个理由上** → **本机的真实阻塞只剩三个，且全是我们自己可控的**：Node 未升（v26.7.0 < 26.12.1）、session SQLite 待迁移（当次实测数以 doctor 为准）、`backup_runs` 表 **0 行**；③ **升级动作的技术路径本轮已完全对齐官方口径**（11-14 17:00 档新增两条硬约束：① 官方原文要求 **"the owner should run `openclaw update` once from an independent Terminal outside the Gateway process tree, using the same owning account"** → **不能用 Gateway 内的 `/update`**（本机又恰好无 command owner，双重不可行）；② 官方同一页面要求 **Node 24.16.0+ / 26.1.0+，并强烈建议 24.22.1+/26.12.1+** → **「准入门槛」与「安全地板」是两件事，不互斥**）→ **本机 26.7.0 已满足准入门槛、低于安全地板** → **推荐顺序不变：先升 Node 到 26.13.1（官方 tarball 绕 brew）→ 再装 2026.11.3**，**且此时 2026.9.37 会一并解锁为兜底落点**。<!-- project: github.com/Smallbl/agent-workspace -->
+
+## 📌 本轮待办（2026-11-15 00:0x）
+
+- [ ] ⭐ **用 `openclaw cron edit <id> --tools <tool,...>` 收紧 8 个带工具 cron 的工具上限**（`openclaw-daily-news` 排首位）—— 第 362 条，11-14 首次进入视野，**成本极低、可立刻动手**；需王确认改 job 配置
+- [ ] ⭐ **升 Node → 26.13.1（官方 tarball 绕 brew）+ 升 OpenClaw → 2026.11.3** —— 升级决策**不要再挂在「等新版本」**（已静默 18 周期）；**必须从 Gateway 进程树之外的独立终端执行**（第 363 条新增硬约束）；**不用 Gateway 内 `/update`**（无 command owner）
+- [ ] **升级前置三件套**（数字以当次 doctor 输出为准，**不要写死 1354**，见第 357 条）：配 `commands.ownerAllowFrom` → 停 Gateway 后 `openclaw doctor --session-sqlite recover --session-sqlite-all-agents` → `openclaw backup create`（`backup_runs` 表仍 **0 行**）
+- [ ] ⭐ **落地「每日整合写完日记后显式发一次 grounded 召回」**（`recordGroundedShortTermCandidates`）—— 第 358 条已把断点收窄为**唯一修复动作**，**连续三轮未落地**
+- [ ] ⭐ **给 `dreaming-daily-ingestion` 补新鲜度断言**（当前 1 行 / 2026-05-19）—— **连续九轮未落地**
+- [ ] **把「skipped 事件按 query 语义区分巡检 vs 真实使用」写进巡检脚本**（第 358 条：招投标/简报两条为真实业务样本；判据可用 query 字段，不用 UTC 小时）
+- [ ] **把「第 317/318/356/357 条的口径」写死进巡检脚本**（top2 测量点 2026-11-19 / top1 年龄闸门 2026-12-08 / doctor 数字当次重取；**连续五轮未落地**）
+- [ ] **把「受压小时数」判据改为联合条件**（连续 >10 h **且** 峰值上修 **且** 当前水位不回落）—— 第 360 条已以最强形态成立，**连续两轮未落地**
+- [ ] **把「RSS 回落 + WAL 回落」作为同一条断言的联合信号**（第 359/360 条：已连续三轮成立，且 WAL 由 42.3 MiB 骤降至 1.4 MiB）
+- [ ] **定位 Gateway 非堆内存来源**（rss 峰值 4.27 GiB vs heap 959.2 MiB，约 3.3 GiB 非堆）—— 建议在 **WAL 整理前后**各取一次堆快照对比
+- [ ] **把「第 324 条的 Node 版本读取口径」写死**：`npm view node versions --json` 取 26.x 末位，**不读 dist-tags.latest**
+- [ ] **给 `openclaw-version-monitor` 瘦身 payload**（第 328 条：13226 字符）—— 需王确认改 job 配置
+- [ ] **给 recall 写入侧按路径直接盖 `untrusted` 标记**（`memory/sessions/`、`memory/cron-history/` 每天都在产出内容）
+- [ ] **给多 agent 派发加全局 token 预算闸门 + 「无回执即视为失败并触发接管」的显式规则**（第 344 条 MAMUBench 的两个失分点）
+- [ ] **把我们自己的主指标定为「每周有效任务数」，辅指标为「持续托管中的事务数」**（第 345 条）
+- [ ] **查清插件 promote 自动路径自 2026-05-14 起为何静默**（第 215/240/261 条）
+- [ ] **给 `ollama serve` 配 LaunchAgent 自启**（KeepAlive + RunAtLoad）；给 minimax 配备用 auth profile 并写进 `auth.order`（实测仍 None）—— 第 361 条 provider 压力持续上行
+- [ ] **9 个历史素材缺口标记「历史永久缺口」**，是否补跑由王决定（第 260 条）
+- [ ] 王更新 project-tracker 的 GitHub PAT（或改 SSH）并**吊销**明文失效 token（第 188 条）
+- [ ] **轮换第 219/242/270 条列出的凭据**（飞书两个 appSecret 最严重）
+- [ ] **孤儿 agent 目录**（doctor 权威 2 个：`agent-frontend`、`backend-agent`）清理待王确认；**不得碰 `memory-agent` 的活库**（第 316 条）
+
+<!-- project: github.com/Smallbl/agent-workspace -->
