@@ -35,8 +35,20 @@ weights (normalised over their sum, which is 1.0 by default):
     recency          = exp(-ln2 * ageDays / halfLifeDays)      (clamped 0..1)
     consolidation    = len(recallDays)==0 -> 0
                        len(recallDays)==1 -> 0.2
-                       else 0.55 * ln(n)/ln(4) + 0.45 * spanDays/7
+                       else 0.55 * ln(1+n-1)/ln(1+4) + 0.45 * spanDays/7
+                       i.e. spacing = log1p(n-1)/log1p(4)   <-- NOT ln(n)/ln(4)
                        (max of that and groundedCount/3)
+
+    CORRECTION (2026-11-16 dreaming cycle, item 380): the `ln(n)/ln(4)`
+    spelling in the docstring above was WRONG and cost one mis-verification
+    this cycle -- recomputing with it gave consolidation 0.8714 (top1) /
+    0.5644 (top2) instead of the correct 0.7952 / 0.5040, which moved the
+    score by +0.0076 / +0.0060 and made the score disagree with the CLI.
+    The authoritative source is
+    dist/short-term-promotion-D7_HfkGX.mjs :: calculateConsolidationComponent:
+        spacing = clampScore(Math.log1p(parsed.length - 1) / Math.log1p(4))
+    The CODE below was always right (it uses log1p); only the prose was
+    wrong.  Do not trust this docstring for anything -- read the source.
     conceptual       = len(conceptTags) / 6                     (clamped 0..1)
     score            = sum(weight * component) + phaseBoost
                        phaseBoost = 0 here (phase-signal store is frozen,
