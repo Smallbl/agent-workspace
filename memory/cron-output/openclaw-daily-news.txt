@@ -1,0 +1,41 @@
+【OpenClaw日报】📅2026-11-16
+
+一、版本事实（截至 2026-11-16 实测）
+- 本机：OpenClaw 2026.9.5 (ec9c1a1)，Node v26.7.0
+- `npm view openclaw dist-tags` 实测：latest=2026.11.3、extended-stable=2026.9.37、beta=2026.11.5-beta.3
+- engines 准入门槛实测：2026.11.3 → `>=24.16.0 <25 || >=26.1.0`；2026.9.37 → `>=24.22.1 <25 || >=26.12.1`
+  ⚠️ 本机 Node 26.7.0 满足 2026.11.3，但低于 2026.9.37 在 Node 26 线要求的 26.12.1，升级到 extended-stable 会被 npm 以 engines 拒绝。
+
+二、本机体检（openclaw doctor 原文）
+- Found 2 agent directories on disk without a matching agents.entries entry（示例：agent-frontend、backend-agent）
+- 另有保留的未配置 agent 数据库 memory-agent（/Users/doujiang/.openclaw/agents/agent-memory/openclaw-agent.sqlite）
+- Session SQLite：Legacy entries 1377；SQLite entries 1373；Found 1354 session SQLite issue(s)
+- No successful backup is recorded（建议 openclaw backup create / backup enable）
+- No command owner is configured；device-pair 插件未启用；Gateway 仅绑定 loopback
+
+三、今日要点（3-5条）
+1. 2026.11.3：安全修复版，无新功能
+   官方明确写明“Security release / no new features”。修了空白 worker transfer TLS 指纹导致证书校验被关闭、必填沙箱会话中的会话图片预览可越界读取目录、配置文件读取时 `env.vars` 内联明文值泄漏等问题。重要性：这是升级到 latest 的主要理由。
+   原文：https://docs.openclaw.ai/releases/2026.11.3.md
+
+2. 2026.11.3：更新/备份可靠性集中修复
+   大备份因所有文件共用一个 SQLite 发现截止时间而超时（已改为小批次重试）；受管 macOS Gateway 更新维护时因 LaunchAgent 仍加载而反复重启；中断的更新不再误报成功；更新后 Gateway 停在 stopped 状态时有修复路径。原文同上。
+
+3. 2026.11.3：配置变更的“需要重启”语义未被取消
+   实测 npm pack 解包 2026.11.3 源码，dist/config-*.mjs 与 server-reload-managed-*.mjs 中仍存在 outcome 字符串 `applied-restart-required`、`restart-pending`、`restart required`（前者提示“配置已落盘并更新 Gateway，但需要一次恢复性重启”）。因此不能断言“热更新、不再丢消息”。
+   原文：https://docs.openclaw.ai/releases/2026.11.3.md
+
+4. 2026.11.2 / 2026.11.1：定时任务与消息链路修复
+   11.2 修复：提醒文本中提到 heartbeat/wake 会导致定时提醒消失；自动化无法确认存活归属时自删 schedule 并取消正在运行的任务；旧 delivery topic 在路由变更后残留；Doctor 修复可补记老任务所需账号。11.1 修复：已接受的消息被拒绝、Doctor 检查失败却报成功、Gateway 配置写入卡死；大对话历史的索引与 memory 准备内存占用下降。
+   原文：https://docs.openclaw.ai/releases/2026.11.2.md 、https://docs.openclaw.ai/releases/2026.11.1.md
+
+5. 2026.11.3：模型输出上限与插件缓存隔离
+   对“输出上限未知”的模型提高 fallback 上限以减少截断回复和工具调用被截断（Doctor 会识别旧 cap 但不自动修改）；Firecrawl/Exa/Tavily 搜索不再跨 API 凭证复用缓存结果。重要性：团队并发使用不同供应商密钥时避免结果串味。
+   原文：https://docs.openclaw.ai/releases/2026.11.3.md
+
+【豆浆学习笔记】
+- 本机当前是 2026.9.5，落后 latest 三个补丁线；本轮三个 11.x 版本全是 patch，官方措辞是“no new features”，所以升级动机是安全与稳定性，不是新能力。建议：先升 2026.11.3（engines 满足），暂不碰 extended-stable 2026.9.37，除非先升 Node 到 26.12.1+。
+- 升级前必做三件事：①`openclaw doctor --fix`（本机有 1354 个 session SQLite 问题，且 11.2 官方要求“手动源码升级后、启动前先跑 doctor --fix”）；②先建一次备份——doctor 明说目前没有任何成功备份记录；③升级走官方更新恢复流程，不要用“选个更高版本号”来绕过被阻塞的 updater（11.3 原文明确说选新版本号并不能修复已安装的 updater）。
+- 配置修改仍然需要重启（源码 outcome 字符串佐证），继续遵守工作区 safe-gateway-restart 规范，改配置前先备份、批量改完统一重启。
+- 插件/搜索缓存跨凭证隔离的修复对我们有实际价值：若后续引入多个模型/搜索供应商密钥，必须在配置中分开定义，避免检索结果被错误缓存串用。
+- 可直接应用的改进：把 `openclaw doctor --fix` 与 `openclaw backup create` 加进日常运维清单，并补上 commands.ownerAllowFrom（当前无命令所有者，/update 与重启权限无人可用）。
